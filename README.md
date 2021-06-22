@@ -1,2 +1,2 @@
 # WSIBD-Kelompok-03
- Aplikasi Sistem Informasi Penyewaan Ruang Kos
+ Aplikasi Sistem Informasi Penyewaan Kamar Kos
