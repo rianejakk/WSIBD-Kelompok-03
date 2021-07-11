@@ -1,3 +1,6 @@
+Aplikasi Java KostAiraApp bisa digunakan secara Online maupun Offline
+*Note: Online --  ingin memesan atau melihat kamar yang tersedia dari jauh (tanpa harus datang ke kos)
+       Offline -- ingin memesan atau melihat kamar secara langsung dan diinputkan datanya oleh si pemilik kos
 ---------------------------------------
 |          WSIBD-Kelompok-03          |
 ---------------------------------------
