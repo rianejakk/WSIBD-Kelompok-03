@@ -694,7 +694,7 @@ public class Daftar extends javax.swing.JFrame {
                 lg.show();
                 dispose();
             }
-        }, 5 * 5);
+        }, 50 * 5);
     }//GEN-LAST:event_BackActionPerformed
 
     private void UserFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserFieldKeyReleased

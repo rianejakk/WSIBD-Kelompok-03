@@ -30,6 +30,8 @@ public class DaftarMini extends javax.swing.JFrame {
 
         loader.setVisible(false);
         loader.setEnabled(false);
+        sukses.setVisible(false);
+        sukses.setEnabled(false);
         autoNumber(txtId);
         autoNumber();
         cmbAkses.setSelectedItem("User");
@@ -166,6 +168,7 @@ public class DaftarMini extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KostAiraApp");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setUndecorated(true);
         setResizable(false);
@@ -672,7 +675,6 @@ public class DaftarMini extends javax.swing.JFrame {
                 konek.insertDB(id_user, username, password, akses);
 
 //                autoNumber(txtId);
-
                 loader.setVisible(false);
                 loader.setEnabled(false);
                 sukses.setVisible(true);
@@ -690,7 +692,7 @@ public class DaftarMini extends javax.swing.JFrame {
                 mini.show();
                 dispose();
             }
-        }, 5 * 5);
+        }, 50 * 5);
     }//GEN-LAST:event_BackActionPerformed
 
     private void UserFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserFieldKeyReleased

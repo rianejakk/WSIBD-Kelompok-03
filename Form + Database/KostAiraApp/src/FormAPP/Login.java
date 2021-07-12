@@ -78,7 +78,7 @@ public class Login extends javax.swing.JFrame {
                             } catch (SQLException ex) {
                                 JOptionPane.showMessageDialog(null, ex.getMessage());
                             }
-                        }
+                        } dispose();
                     } else {
                         loader.setVisible(false);
                         loader.setEnabled(false);
@@ -131,6 +131,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KostAiraApp");
         setUndecorated(true);
 
         Bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -339,6 +340,10 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
+        LoginFull.setVisible(false);
+        LoginFull.setEnabled(false);
+        loader.setVisible(true);
+        loader.setEnabled(true);
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {

@@ -184,6 +184,7 @@ public class MenuUser extends javax.swing.JFrame {
         Logout = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KostAiraApp");
         setUndecorated(true);
 
         Bg.setBackground(new java.awt.Color(242, 242, 242));
@@ -1071,7 +1072,7 @@ public class MenuUser extends javax.swing.JFrame {
                 lg.show();
                 dispose();
             }
-        }, 5 * 5);
+        }, 10 * 5);
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void CekButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekButton6ActionPerformed

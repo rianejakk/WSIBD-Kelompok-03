@@ -280,6 +280,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_pengaturan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KostAiraApp");
         setUndecorated(true);
 
         Bg.setBackground(new java.awt.Color(242, 242, 242));
@@ -1565,7 +1566,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 lg.show();
                 dispose();
             }
-        }, 5 * 5);
+        }, 10 * 5);
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void pemesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pemesananMouseClicked

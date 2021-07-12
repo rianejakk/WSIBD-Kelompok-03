@@ -79,6 +79,7 @@ public class LoginMini extends javax.swing.JFrame {
                                 JOptionPane.showMessageDialog(null, ex.getMessage());
                             }
                         }
+                        dispose();
                     } else {
                         loader.setVisible(false);
                         loader.setEnabled(false);
@@ -130,6 +131,7 @@ public class LoginMini extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("KostAiraApp");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setUndecorated(true);
         setResizable(false);
@@ -334,14 +336,21 @@ public class LoginMini extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
+        LoginMini.setVisible(false);
+        LoginMini.setEnabled(false);
+        loader.setVisible(true);
+        loader.setEnabled(true);
+
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
+
                 DaftarMini mini = new DaftarMini();
                 mini.show();
                 dispose();
             }
-        }, 1 * 1);
+            
+        }, 5 * 5);
     }//GEN-LAST:event_DaftarActionPerformed
 
     private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
