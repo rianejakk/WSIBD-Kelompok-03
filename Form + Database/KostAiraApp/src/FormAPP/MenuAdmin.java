@@ -129,28 +129,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         Bg = new javax.swing.JPanel();
-        PengaturanSideBar = new javax.swing.JPanel();
-        Menu8 = new javax.swing.JLabel();
-        Menu9 = new javax.swing.JLabel();
-        minimized7 = new javax.swing.JButton();
-        close7 = new javax.swing.JButton();
-        judul7 = new javax.swing.JLabel();
-        Data_EPelanggan = new javax.swing.JPanel();
-        icoPelanggan2 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        jLabel86 = new javax.swing.JLabel();
-        Data_EUser = new javax.swing.JPanel();
-        jLabel88 = new javax.swing.JLabel();
-        jLabel89 = new javax.swing.JLabel();
-        icoAdmin2 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        Data_EKamar = new javax.swing.JPanel();
-        jLabel90 = new javax.swing.JLabel();
-        jLabel91 = new javax.swing.JLabel();
-        icoPemesanan2 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
         BerandaSideBar = new javax.swing.JPanel();
         Menu1 = new javax.swing.JLabel();
         Menu11 = new javax.swing.JLabel();
@@ -215,26 +193,28 @@ public class MenuAdmin extends javax.swing.JFrame {
         Masuk = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtBooking = new javax.swing.JTextField();
+        txtTipeKamar = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtLokasiKamar = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtTotaBayar = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        txtKodeBayar = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        tgl_masuk = new com.toedter.calendar.JDateChooser();
+        jLabel50 = new javax.swing.JLabel();
+        txtNoKTP = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
         Menu7 = new javax.swing.JLabel();
@@ -258,6 +238,28 @@ public class MenuAdmin extends javax.swing.JFrame {
         icoPay = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
+        PengaturanSideBar = new javax.swing.JPanel();
+        Menu8 = new javax.swing.JLabel();
+        Menu9 = new javax.swing.JLabel();
+        minimized7 = new javax.swing.JButton();
+        close7 = new javax.swing.JButton();
+        judul7 = new javax.swing.JLabel();
+        Data_EPelanggan = new javax.swing.JPanel();
+        icoPelanggan2 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        Data_EUser = new javax.swing.JPanel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        icoAdmin2 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        Data_EKamar = new javax.swing.JPanel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        icoPemesanan2 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
         SideBarMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -285,180 +287,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         Bg.setBackground(new java.awt.Color(242, 242, 242));
         Bg.setLayout(null);
-
-        PengaturanSideBar.setBackground(new java.awt.Color(242, 242, 242));
-        PengaturanSideBar.setMinimumSize(new java.awt.Dimension(1160, 768));
-        PengaturanSideBar.setPreferredSize(new java.awt.Dimension(1160, 768));
-        PengaturanSideBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                PengaturanSideBarSidebarMouseDragged(evt);
-            }
-        });
-        PengaturanSideBar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                PengaturanSideBarSidebarMousePressed(evt);
-            }
-        });
-        PengaturanSideBar.setLayout(null);
-
-        Menu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu8MouseClicked(evt);
-            }
-        });
-        PengaturanSideBar.add(Menu8);
-        Menu8.setBounds(10, 10, 34, 30);
-
-        Menu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu9MouseClicked(evt);
-            }
-        });
-        PengaturanSideBar.add(Menu9);
-        Menu9.setBounds(10, 10, 34, 30);
-
-        minimized7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
-        minimized7.setBorder(null);
-        minimized7.setBorderPainted(false);
-        minimized7.setContentAreaFilled(false);
-        minimized7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized7.setFocusPainted(false);
-        minimized7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimized7ActionPerformed(evt);
-            }
-        });
-        PengaturanSideBar.add(minimized7);
-        minimized7.setBounds(1080, 15, 20, 20);
-
-        close7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
-        close7.setBorder(null);
-        close7.setBorderPainted(false);
-        close7.setContentAreaFilled(false);
-        close7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close7.setFocusPainted(false);
-        close7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                close7ActionPerformed(evt);
-            }
-        });
-        PengaturanSideBar.add(close7);
-        close7.setBounds(1110, 10, 15, 20);
-
-        judul7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
-        PengaturanSideBar.add(judul7);
-        judul7.setBounds(445, 10, 260, 90);
-
-        Data_EPelanggan.setBackground(new java.awt.Color(255, 255, 255));
-        Data_EPelanggan.setOpaque(false);
-        Data_EPelanggan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        icoPelanggan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPelanggan.png"))); // NOI18N
-        Data_EPelanggan.add(icoPelanggan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 70, 130, 130));
-
-        jLabel87.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel87.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel87.setText("Data Pelangan");
-        Data_EPelanggan.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
-
-        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel85.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel85.setText("Input/Edit");
-        Data_EPelanggan.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
-
-        jLabel86.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        jLabel86.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel86MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel86MouseExited(evt);
-            }
-        });
-        Data_EPelanggan.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
-
-        PengaturanSideBar.add(Data_EPelanggan);
-        Data_EPelanggan.setBounds(240, 200, 200, 270);
-
-        Data_EUser.setBackground(new java.awt.Color(255, 255, 255));
-        Data_EUser.setOpaque(false);
-        Data_EUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel88.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel88.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel88.setText("Input/Edit");
-        Data_EUser.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
-
-        jLabel89.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel89.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel89.setText("Data User");
-        Data_EUser.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
-
-        icoAdmin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataAdmin.png"))); // NOI18N
-        Data_EUser.add(icoAdmin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 130));
-
-        jLabel84.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        jLabel84.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel84MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel84MouseExited(evt);
-            }
-        });
-        Data_EUser.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
-
-        PengaturanSideBar.add(Data_EUser);
-        Data_EUser.setBounds(490, 200, 200, 270);
-
-        Data_EKamar.setBackground(new java.awt.Color(255, 255, 255));
-        Data_EKamar.setOpaque(false);
-        Data_EKamar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel90.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel90.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel90.setText("Input/Edit");
-        Data_EKamar.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
-
-        jLabel91.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel91.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel91.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel91.setText("Data Kamar");
-        Data_EKamar.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
-
-        icoPemesanan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPemesanan.png"))); // NOI18N
-        Data_EKamar.add(icoPemesanan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 130));
-
-        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel81.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Data_EKamar.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 230, 180, -1));
-
-        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        jLabel82.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel82MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel82MouseExited(evt);
-            }
-        });
-        Data_EKamar.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
-
-        PengaturanSideBar.add(Data_EKamar);
-        Data_EKamar.setBounds(740, 200, 200, 270);
-
-        Bg.add(PengaturanSideBar);
-        PengaturanSideBar.setBounds(206, 0, 1160, 768);
 
         BerandaSideBar.setBackground(new java.awt.Color(242, 242, 242));
         BerandaSideBar.setMinimumSize(new java.awt.Dimension(1160, 768));
@@ -542,6 +370,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.setOpaque(false);
         button.setLayout(null);
 
+        buttonGroup1.add(gb1);
         gb1.setForeground(new java.awt.Color(255, 255, 255));
         gb1.setBorder(null);
         gb1.addActionListener(new java.awt.event.ActionListener() {
@@ -552,6 +381,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb1);
         gb1.setBounds(10, 0, 13, 20);
 
+        buttonGroup1.add(gb2);
         gb2.setBorder(null);
         gb2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -561,6 +391,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb2);
         gb2.setBounds(29, 0, 13, 20);
 
+        buttonGroup1.add(gb3);
         gb3.setBorder(null);
         gb3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -570,6 +401,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb3);
         gb3.setBounds(48, 0, 13, 20);
 
+        buttonGroup1.add(gb4);
         gb4.setBorder(null);
         gb4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -579,6 +411,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb4);
         gb4.setBounds(67, 0, 13, 20);
 
+        buttonGroup1.add(gb5);
         gb5.setBorder(null);
         gb5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -588,6 +421,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb5);
         gb5.setBounds(86, 0, 13, 20);
 
+        buttonGroup1.add(gb6);
         gb6.setBorder(null);
         gb6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -597,6 +431,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb6);
         gb6.setBounds(105, 0, 13, 20);
 
+        buttonGroup1.add(gb7);
         gb7.setBorder(null);
         gb7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -606,6 +441,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb7);
         gb7.setBounds(124, 0, 13, 20);
 
+        buttonGroup1.add(gb8);
         gb8.setBorder(null);
         gb8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -615,6 +451,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb8);
         gb8.setBounds(143, 0, 13, 20);
 
+        buttonGroup1.add(gb9);
         gb9.setBorder(null);
         gb9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -624,6 +461,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         button.add(gb9);
         gb9.setBounds(162, 0, 13, 20);
 
+        buttonGroup1.add(gb10);
         gb10.setBorder(null);
         gb10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -921,7 +759,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 670, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 720, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -931,22 +769,22 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel39.setText("Tipe Kamar");
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 126, -1));
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 335, -1));
+        txtBooking.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 335, -1));
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 335, -1));
+        txtTipeKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtTipeKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 335, -1));
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel40.setText("Nama Lengkap");
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 126, -1));
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel41.setText("Lokasi Kamar");
         jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
+        txtLokasiKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtLokasiKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
 
         nm_lengkap.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         nm_lengkap.addActionListener(new java.awt.event.ActionListener() {
@@ -954,61 +792,61 @@ public class MenuAdmin extends javax.swing.JFrame {
                 nm_lengkapActionPerformed(evt);
             }
         });
-        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 335, -1));
+        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel42.setText("No. HP Pribadi");
-        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
+        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
 
         txtNoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 335, -1));
+        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 335, -1));
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel43.setText("Jenis Kelamin");
-        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
 
         txtJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 335, -1));
+        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 335, -1));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel44.setText("Alamat");
-        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
 
         txtAlamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
+        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 335, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
 
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, -1));
+        txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel47.setText("Tanggal Masuk");
-        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
+        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel48.setText("No. HP Darurat");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
 
         txtNoDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 335, -1));
+        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 335, -1));
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
 
-        jTextField14.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
+        txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("6 Bulan/disc.5%");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 130, -1));
+        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 130, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Per-Bulan/normal");
@@ -1017,11 +855,11 @@ public class MenuAdmin extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, -1, -1));
+        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, -1, -1));
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("3 bulan/normal");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 120, -1));
+        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 120, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1035,7 +873,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 230, 280));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 340, 30));
+        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 340, 30));
+
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel50.setText("No. KTP");
+        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 126, -1));
+
+        txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 335, -1));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -1239,6 +1084,180 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         Bg.add(LaporanSidebar);
         LaporanSidebar.setBounds(206, 0, 1160, 768);
+
+        PengaturanSideBar.setBackground(new java.awt.Color(242, 242, 242));
+        PengaturanSideBar.setMinimumSize(new java.awt.Dimension(1160, 768));
+        PengaturanSideBar.setPreferredSize(new java.awt.Dimension(1160, 768));
+        PengaturanSideBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                PengaturanSideBarSidebarMouseDragged(evt);
+            }
+        });
+        PengaturanSideBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PengaturanSideBarSidebarMousePressed(evt);
+            }
+        });
+        PengaturanSideBar.setLayout(null);
+
+        Menu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        Menu8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Menu8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Menu8MouseClicked(evt);
+            }
+        });
+        PengaturanSideBar.add(Menu8);
+        Menu8.setBounds(10, 10, 34, 30);
+
+        Menu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        Menu9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Menu9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Menu9MouseClicked(evt);
+            }
+        });
+        PengaturanSideBar.add(Menu9);
+        Menu9.setBounds(10, 10, 34, 30);
+
+        minimized7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
+        minimized7.setBorder(null);
+        minimized7.setBorderPainted(false);
+        minimized7.setContentAreaFilled(false);
+        minimized7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimized7.setFocusPainted(false);
+        minimized7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minimized7ActionPerformed(evt);
+            }
+        });
+        PengaturanSideBar.add(minimized7);
+        minimized7.setBounds(1080, 15, 20, 20);
+
+        close7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
+        close7.setBorder(null);
+        close7.setBorderPainted(false);
+        close7.setContentAreaFilled(false);
+        close7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        close7.setFocusPainted(false);
+        close7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                close7ActionPerformed(evt);
+            }
+        });
+        PengaturanSideBar.add(close7);
+        close7.setBounds(1110, 10, 15, 20);
+
+        judul7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
+        PengaturanSideBar.add(judul7);
+        judul7.setBounds(445, 10, 260, 90);
+
+        Data_EPelanggan.setBackground(new java.awt.Color(255, 255, 255));
+        Data_EPelanggan.setOpaque(false);
+        Data_EPelanggan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        icoPelanggan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPelanggan.png"))); // NOI18N
+        Data_EPelanggan.add(icoPelanggan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 70, 130, 130));
+
+        jLabel87.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel87.setText("Data Pelangan");
+        Data_EPelanggan.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
+
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel85.setText("Input/Edit");
+        Data_EPelanggan.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
+
+        jLabel86.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
+        jLabel86.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel86MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel86MouseExited(evt);
+            }
+        });
+        Data_EPelanggan.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+
+        PengaturanSideBar.add(Data_EPelanggan);
+        Data_EPelanggan.setBounds(240, 200, 200, 270);
+
+        Data_EUser.setBackground(new java.awt.Color(255, 255, 255));
+        Data_EUser.setOpaque(false);
+        Data_EUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel88.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel88.setText("Input/Edit");
+        Data_EUser.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
+
+        jLabel89.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel89.setText("Data User");
+        Data_EUser.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
+
+        icoAdmin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataAdmin.png"))); // NOI18N
+        Data_EUser.add(icoAdmin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 130));
+
+        jLabel84.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
+        jLabel84.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel84MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel84MouseExited(evt);
+            }
+        });
+        Data_EUser.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+
+        PengaturanSideBar.add(Data_EUser);
+        Data_EUser.setBounds(490, 200, 200, 270);
+
+        Data_EKamar.setBackground(new java.awt.Color(255, 255, 255));
+        Data_EKamar.setOpaque(false);
+        Data_EKamar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel90.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel90.setText("Input/Edit");
+        Data_EKamar.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel91.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel91.setText("Data Kamar");
+        Data_EKamar.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
+
+        icoPemesanan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPemesanan.png"))); // NOI18N
+        Data_EKamar.add(icoPemesanan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 130));
+
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(96, 82, 76));
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Data_EKamar.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 230, 180, -1));
+
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
+        jLabel82.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel82MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel82MouseExited(evt);
+            }
+        });
+        Data_EKamar.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+
+        PengaturanSideBar.add(Data_EKamar);
+        Data_EKamar.setBounds(740, 200, 200, 270);
+
+        Bg.add(PengaturanSideBar);
+        PengaturanSideBar.setBounds(206, 0, 1160, 768);
 
         SideBarMenu.setBackground(new java.awt.Color(140, 120, 111));
         SideBarMenu.setMinimumSize(new java.awt.Dimension(210, 768));
@@ -1815,22 +1834,6 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_CekButton6ActionPerformed
 
-    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        //        Beranda f3 = new Beranda();
-        //        f3.setVisible(true);
-        //new Beranda().show();
-        this.setVisible(false);
-    }//GEN-LAST:event_MasukActionPerformed
-
-    private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_nm_lengkapActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu1MouseClicked
         Menu1.setVisible(false);
         Menu1.setEnabled(false);
@@ -1998,6 +2001,22 @@ System.exit(0);
         close7.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_Menu9MouseClicked
 
+    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
+        //        Beranda f3 = new Beranda();
+        //        f3.setVisible(true);
+        //new Beranda().show();
+        this.setVisible(false);
+    }//GEN-LAST:event_MasukActionPerformed
+
+    private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_nm_lengkapActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2123,7 +2142,6 @@ System.exit(0);
     private javax.swing.JLabel ico_pemesanan;
     private javax.swing.JLabel ico_pengaturan;
     private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2153,6 +2171,7 @@ System.exit(0);
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
@@ -2182,11 +2201,6 @@ System.exit(0);
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel judul1;
     private javax.swing.JLabel judul2;
     private javax.swing.JLabel judul4;
@@ -2202,9 +2216,16 @@ System.exit(0);
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
+    private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
+    private javax.swing.JTextField txtBooking;
     public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
+    private javax.swing.JTextField txtKodeBayar;
+    private javax.swing.JTextField txtLokasiKamar;
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
+    private javax.swing.JTextField txtNoKTP;
+    private javax.swing.JTextField txtTipeKamar;
+    private javax.swing.JTextField txtTotaBayar;
     // End of variables declaration//GEN-END:variables
 }
