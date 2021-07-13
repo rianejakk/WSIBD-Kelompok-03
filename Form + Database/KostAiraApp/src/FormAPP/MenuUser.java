@@ -105,8 +105,8 @@ public class MenuUser extends javax.swing.JFrame {
         gb9 = new javax.swing.JRadioButton();
         gb10 = new javax.swing.JRadioButton();
         PanelChat = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
+        chatskrng_txt = new javax.swing.JLabel();
+        wa_icon = new javax.swing.JLabel();
         chatBx = new javax.swing.JToggleButton();
         KamarSideBar = new javax.swing.JPanel();
         Menu2 = new javax.swing.JLabel();
@@ -384,15 +384,15 @@ public class MenuUser extends javax.swing.JFrame {
         PanelChat.setOpaque(false);
         PanelChat.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Chat Sekarang !!!");
-        PanelChat.add(jLabel3);
-        jLabel3.setBounds(60, 27, 140, 20);
+        chatskrng_txt.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        chatskrng_txt.setForeground(new java.awt.Color(255, 255, 255));
+        chatskrng_txt.setText("Chat Sekarang !!!");
+        PanelChat.add(chatskrng_txt);
+        chatskrng_txt.setBounds(60, 27, 140, 20);
 
-        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icoWaP.png"))); // NOI18N
-        PanelChat.add(jLabel64);
-        jLabel64.setBounds(20, 22, 30, 30);
+        wa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icoWaP.png"))); // NOI18N
+        PanelChat.add(wa_icon);
+        wa_icon.setBounds(20, 22, 30, 30);
 
         chatBx.setBackground(new java.awt.Color(96, 82, 76));
         chatBx.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1341,6 +1341,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel button;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
+    private javax.swing.JLabel chatskrng_txt;
     private javax.swing.JButton close1;
     private javax.swing.JButton close2;
     private javax.swing.JButton close4;
@@ -1374,7 +1375,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -1390,7 +1390,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1420,5 +1419,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JTextField txtNoKTP;
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
+    private javax.swing.JLabel wa_icon;
     // End of variables declaration//GEN-END:variables
 }

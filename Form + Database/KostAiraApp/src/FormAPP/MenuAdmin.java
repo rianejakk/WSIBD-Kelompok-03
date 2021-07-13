@@ -481,7 +481,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel79.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel79.setText("Chat Sekarang !!!");
+        jLabel79.setText("Chat Sekarang!");
         PanelChat.add(jLabel79);
         jLabel79.setBounds(60, 27, 140, 20);
 
@@ -1162,13 +1162,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel87.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel87.setForeground(new java.awt.Color(96, 82, 76));
         jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel87.setText("Data Pelangan");
+        jLabel87.setText("Data Pelanggan");
         Data_EPelanggan.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(96, 82, 76));
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel85.setText("Input/Edit");
+        jLabel85.setText("Input /Edit");
         Data_EPelanggan.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
 
         jLabel86.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
@@ -1192,7 +1192,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel88.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel88.setForeground(new java.awt.Color(96, 82, 76));
         jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel88.setText("Input/Edit");
+        jLabel88.setText("Input /Edit");
         Data_EUser.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
 
         jLabel89.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
