@@ -2009,17 +2009,15 @@ System.exit(0);
     }//GEN-LAST:event_MasukActionPerformed
 
     private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_nm_lengkapActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
