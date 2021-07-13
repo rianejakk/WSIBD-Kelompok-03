@@ -1767,35 +1767,35 @@ System.exit(0);
     }//GEN-LAST:event_close7ActionPerformed
 
     private void jLabel82MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel82MouseEntered
 
     private void jLabel82MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseExited
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel82MouseExited
 
     private void jLabel84MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel84MouseEntered
 
     private void jLabel84MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseExited
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel84MouseExited
 
     private void jLabel86MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel86MouseEntered
 
     private void jLabel86MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseExited
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel86MouseExited
 
     private void PengaturanSideBarSidebarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PengaturanSideBarSidebarMouseDragged
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_PengaturanSideBarSidebarMouseDragged
 
     private void PengaturanSideBarSidebarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PengaturanSideBarSidebarMousePressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_PengaturanSideBarSidebarMousePressed
 
     private void Menu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu5MouseClicked
@@ -1831,7 +1831,7 @@ System.exit(0);
     }//GEN-LAST:event_close4ActionPerformed
 
     private void CekButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekButton6ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_CekButton6ActionPerformed
 
     private void Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu1MouseClicked
