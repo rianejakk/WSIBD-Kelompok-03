@@ -5,9 +5,8 @@
  */
 package FormAPP;
 
-import java.awt.Color;
+
 import java.awt.Desktop;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.util.TimerTask;
@@ -1243,14 +1242,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         Data_EKamar.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 230, 180, -1));
 
         jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        jLabel82.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel82MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel82MouseExited(evt);
-            }
-        });
         Data_EKamar.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         PengaturanSideBar.add(Data_EKamar);
@@ -1682,11 +1673,11 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_berandaMouseClicked
 
     private void LaporanSidebarSidebarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporanSidebarSidebarMousePressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_LaporanSidebarSidebarMousePressed
 
     private void LaporanSidebarSidebarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporanSidebarSidebarMouseDragged
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_LaporanSidebarSidebarMouseDragged
 
     private void jLabel64MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel64MouseExited
@@ -1765,14 +1756,6 @@ this.setState(JFrame.ICONIFIED);
     private void close7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close7ActionPerformed
 System.exit(0);
     }//GEN-LAST:event_close7ActionPerformed
-
-    private void jLabel82MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseEntered
-        
-    }//GEN-LAST:event_jLabel82MouseEntered
-
-    private void jLabel82MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseExited
-        
-    }//GEN-LAST:event_jLabel82MouseExited
 
     private void jLabel84MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseEntered
         
