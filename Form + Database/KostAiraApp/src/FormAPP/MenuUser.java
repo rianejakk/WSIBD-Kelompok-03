@@ -6,10 +6,8 @@
 package FormAPP;
 
 import java.awt.Desktop;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -624,11 +622,6 @@ public class MenuUser extends javax.swing.JFrame {
         CekButton6.setBorderPainted(false);
         CekButton6.setContentAreaFilled(false);
         CekButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CekButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CekButton6ActionPerformed(evt);
-            }
-        });
         PemesananSideBar.add(CekButton6);
         CekButton6.setBounds(390, 660, 61, 23);
 
@@ -753,11 +746,6 @@ public class MenuUser extends javax.swing.JFrame {
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Per-Bulan/normal");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, -1, -1));
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
@@ -1080,10 +1068,6 @@ public class MenuUser extends javax.swing.JFrame {
         }, 10 * 5);
     }//GEN-LAST:event_LogoutActionPerformed
 
-    private void CekButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekButton6ActionPerformed
-        
-    }//GEN-LAST:event_CekButton6ActionPerformed
-
     private void close4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close4ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_close4ActionPerformed
@@ -1103,10 +1087,6 @@ public class MenuUser extends javax.swing.JFrame {
         minimized8.setBounds(1286, 15, 20, 20);
         close4.setBounds(1316, 10, 20, 20);
     }//GEN-LAST:event_Menu5MouseClicked
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
         //        Beranda f3 = new Beranda();
@@ -1166,7 +1146,7 @@ public class MenuUser extends javax.swing.JFrame {
     }//GEN-LAST:event_gb10ActionPerformed
 
     private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-        // TODO add your handling code here:
+        
         
     }//GEN-LAST:event_nm_lengkapActionPerformed
 
