@@ -98,15 +98,15 @@ public class Daftar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btn_jkelamin = new javax.swing.ButtonGroup();
         Bg = new javax.swing.JPanel();
         DaftarFull = new javax.swing.JPanel();
         Lbl_Judul = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        Daftar = new javax.swing.JToggleButton();
-        minimized1 = new javax.swing.JButton();
-        minimized = new javax.swing.JButton();
-        close = new javax.swing.JButton();
+        Lbl_Judul2 = new javax.swing.JLabel();
+        jtButton_Daftar = new javax.swing.JToggleButton();
+        JButton_minimized1 = new javax.swing.JButton();
+        JButton_minimized = new javax.swing.JButton();
+        JButton_close = new javax.swing.JButton();
         Lbl_IdCust = new javax.swing.JLabel();
         txtCust = new javax.swing.JTextField();
         Lbl_IdUser = new javax.swing.JLabel();
@@ -142,23 +142,23 @@ public class Daftar extends javax.swing.JFrame {
         cmbAkses = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         Lbl_HakAkses = new javax.swing.JLabel();
-        Back = new javax.swing.JButton();
-        pola = new javax.swing.JLabel();
-        gambar1 = new javax.swing.JLabel();
-        fullscreen = new javax.swing.JButton();
+        JButton_Back = new javax.swing.JButton();
+        JLabel_pola = new javax.swing.JLabel();
+        JLabel_gambar1 = new javax.swing.JLabel();
+        JButton_fullscreen = new javax.swing.JButton();
         loader = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jPanel_load = new javax.swing.JPanel();
+        lbl_loadjudul = new javax.swing.JLabel();
         lbl_loader = new javax.swing.JLabel();
         img_loader = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_loadbesar = new javax.swing.JLabel();
+        lbl_loading = new javax.swing.JLabel();
         sukses = new javax.swing.JPanel();
         Masuk1 = new javax.swing.JToggleButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel3_sukses = new javax.swing.JPanel();
+        lbl_judulsukses = new javax.swing.JLabel();
         centang = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lbl_suksesbesar = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -185,65 +185,65 @@ public class Daftar extends javax.swing.JFrame {
         Lbl_Judul.setText("Daftar ");
         DaftarFull.add(Lbl_Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 80, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 28)); // NOI18N
-        jLabel1.setText("Kost Aira App");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        DaftarFull.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 210, 40));
+        Lbl_Judul2.setFont(new java.awt.Font("Segoe UI Light", 0, 28)); // NOI18N
+        Lbl_Judul2.setText("Kost Aira App");
+        Lbl_Judul2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        DaftarFull.add(Lbl_Judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 210, 40));
 
-        Daftar.setBackground(new java.awt.Color(52, 135, 239));
-        Daftar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Daftar.setForeground(new java.awt.Color(255, 255, 255));
-        Daftar.setText("Daftar");
-        Daftar.setBorder(null);
-        Daftar.setBorderPainted(false);
-        Daftar.setContentAreaFilled(false);
-        Daftar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Daftar.setOpaque(true);
-        Daftar.addActionListener(new java.awt.event.ActionListener() {
+        jtButton_Daftar.setBackground(new java.awt.Color(52, 135, 239));
+        jtButton_Daftar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jtButton_Daftar.setForeground(new java.awt.Color(255, 255, 255));
+        jtButton_Daftar.setText("Daftar");
+        jtButton_Daftar.setBorder(null);
+        jtButton_Daftar.setBorderPainted(false);
+        jtButton_Daftar.setContentAreaFilled(false);
+        jtButton_Daftar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jtButton_Daftar.setOpaque(true);
+        jtButton_Daftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DaftarActionPerformed(evt);
+                jtButton_DaftarActionPerformed(evt);
             }
         });
-        DaftarFull.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 530, 100, 40));
+        DaftarFull.add(jtButton_Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 530, 100, 40));
 
-        minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
-        minimized1.setBorder(null);
-        minimized1.setBorderPainted(false);
-        minimized1.setContentAreaFilled(false);
-        minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized1.setFocusPainted(false);
-        minimized1.addActionListener(new java.awt.event.ActionListener() {
+        JButton_minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
+        JButton_minimized1.setBorder(null);
+        JButton_minimized1.setBorderPainted(false);
+        JButton_minimized1.setContentAreaFilled(false);
+        JButton_minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JButton_minimized1.setFocusPainted(false);
+        JButton_minimized1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimized1ActionPerformed(evt);
+                JButton_minimized1ActionPerformed(evt);
             }
         });
-        DaftarFull.add(minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1258, 15, 20, 20));
+        DaftarFull.add(JButton_minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1258, 15, 20, 20));
 
-        minimized.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize1.png"))); // NOI18N
-        minimized.setBorder(null);
-        minimized.setBorderPainted(false);
-        minimized.setContentAreaFilled(false);
-        minimized.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized.setFocusPainted(false);
-        minimized.addActionListener(new java.awt.event.ActionListener() {
+        JButton_minimized.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize1.png"))); // NOI18N
+        JButton_minimized.setBorder(null);
+        JButton_minimized.setBorderPainted(false);
+        JButton_minimized.setContentAreaFilled(false);
+        JButton_minimized.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JButton_minimized.setFocusPainted(false);
+        JButton_minimized.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimizedActionPerformed(evt);
+                JButton_minimizedActionPerformed(evt);
             }
         });
-        DaftarFull.add(minimized, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
+        DaftarFull.add(JButton_minimized, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
 
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
-        close.setBorder(null);
-        close.setBorderPainted(false);
-        close.setContentAreaFilled(false);
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.setFocusPainted(false);
-        close.addActionListener(new java.awt.event.ActionListener() {
+        JButton_close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
+        JButton_close.setBorder(null);
+        JButton_close.setBorderPainted(false);
+        JButton_close.setContentAreaFilled(false);
+        JButton_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JButton_close.setFocusPainted(false);
+        JButton_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closeActionPerformed(evt);
+                JButton_closeActionPerformed(evt);
             }
         });
-        DaftarFull.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 10, -1, 20));
+        DaftarFull.add(JButton_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 10, -1, 20));
 
         Lbl_IdCust.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         Lbl_IdCust.setForeground(new java.awt.Color(51, 51, 51));
@@ -368,13 +368,13 @@ public class Daftar extends javax.swing.JFrame {
         jPanel1.add(Lbl_JenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, -1));
 
         Opsi_Laki.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(Opsi_Laki);
+        btn_jkelamin.add(Opsi_Laki);
         Opsi_Laki.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Opsi_Laki.setText("Laki-laki");
         jPanel1.add(Opsi_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, -1));
 
         Opsi_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(Opsi_Perempuan);
+        btn_jkelamin.add(Opsi_Perempuan);
         Opsi_Perempuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Opsi_Perempuan.setText("Perempuan");
         Opsi_Perempuan.addActionListener(new java.awt.event.ActionListener() {
@@ -460,32 +460,32 @@ public class Daftar extends javax.swing.JFrame {
 
         DaftarFull.add(ScrollData, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 645, 310));
 
-        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icons8_back_arrow_26px.png"))); // NOI18N
-        Back.setBorder(null);
-        Back.setContentAreaFilled(false);
-        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Back.addActionListener(new java.awt.event.ActionListener() {
+        JButton_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icons8_back_arrow_26px.png"))); // NOI18N
+        JButton_Back.setBorder(null);
+        JButton_Back.setContentAreaFilled(false);
+        JButton_Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JButton_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
+                JButton_BackActionPerformed(evt);
             }
         });
-        DaftarFull.add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, -1, -1));
+        DaftarFull.add(JButton_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, -1, -1));
 
-        pola.setBackground(new java.awt.Color(255, 255, 255));
-        pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola1.png"))); // NOI18N
-        pola.setOpaque(true);
-        DaftarFull.add(pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 675, 768));
+        JLabel_pola.setBackground(new java.awt.Color(255, 255, 255));
+        JLabel_pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola1.png"))); // NOI18N
+        JLabel_pola.setOpaque(true);
+        DaftarFull.add(JLabel_pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 675, 768));
 
-        gambar1.setBackground(new java.awt.Color(255, 255, 255));
-        gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Login69x768.png"))); // NOI18N
-        gambar1.setOpaque(true);
-        DaftarFull.add(gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        JLabel_gambar1.setBackground(new java.awt.Color(255, 255, 255));
+        JLabel_gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Login69x768.png"))); // NOI18N
+        JLabel_gambar1.setOpaque(true);
+        DaftarFull.add(JLabel_gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
-        fullscreen.setBorder(null);
-        fullscreen.setBorderPainted(false);
-        fullscreen.setContentAreaFilled(false);
-        DaftarFull.add(fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
+        JButton_fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
+        JButton_fullscreen.setBorder(null);
+        JButton_fullscreen.setBorderPainted(false);
+        JButton_fullscreen.setContentAreaFilled(false);
+        DaftarFull.add(JButton_fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
 
         Bg.add(DaftarFull);
         DaftarFull.setBounds(0, 0, 1365, 768);
@@ -496,34 +496,34 @@ public class Daftar extends javax.swing.JFrame {
         loader.setPreferredSize(new java.awt.Dimension(1366, 768));
         loader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_load.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel_load.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
+        lbl_loadjudul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
+        jPanel_load.add(lbl_loadjudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
 
         lbl_loader.setBackground(new java.awt.Color(255, 255, 255));
         lbl_loader.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_loader.setForeground(new java.awt.Color(96, 82, 76));
         lbl_loader.setText("Mohon Tunggu . . .");
-        jPanel2.add(lbl_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
+        jPanel_load.add(lbl_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
 
         img_loader.setBackground(new java.awt.Color(255, 255, 255));
         img_loader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/ring_1.gif"))); // NOI18N
         img_loader.setOpaque(true);
-        jPanel2.add(img_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 139, 141));
+        jPanel_load.add(img_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 139, 141));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
+        lbl_loadbesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
+        jPanel_load.add(lbl_loadbesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
 
-        loader.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
+        loader.add(jPanel_load, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur3.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(1366, 768));
-        jLabel2.setMinimumSize(new java.awt.Dimension(1366, 768));
-        jLabel2.setOpaque(true);
-        jLabel2.setPreferredSize(new java.awt.Dimension(1366, 768));
-        loader.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
+        lbl_loading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur3.png"))); // NOI18N
+        lbl_loading.setMaximumSize(new java.awt.Dimension(1366, 768));
+        lbl_loading.setMinimumSize(new java.awt.Dimension(1366, 768));
+        lbl_loading.setOpaque(true);
+        lbl_loading.setPreferredSize(new java.awt.Dimension(1366, 768));
+        loader.add(lbl_loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         Bg.add(loader);
         loader.setBounds(0, 0, 1366, 768);
@@ -549,21 +549,21 @@ public class Daftar extends javax.swing.JFrame {
         });
         sukses.add(Masuk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 473, 100, 40));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3_sukses.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3_sukses.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
+        lbl_judulsukses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
+        jPanel3_sukses.add(lbl_judulsukses, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
 
         centang.setBackground(new java.awt.Color(255, 255, 255));
         centang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/centang2.png"))); // NOI18N
         centang.setOpaque(true);
-        jPanel3.add(centang, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 110, 110));
+        jPanel3_sukses.add(centang, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 110, 110));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
+        lbl_suksesbesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
+        jPanel3_sukses.add(lbl_suksesbesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
 
-        sukses.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
+        sukses.add(jPanel3_sukses, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur3.png"))); // NOI18N
         jLabel7.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -590,9 +590,9 @@ public class Daftar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
-        Daftar.setVisible(false);
-        Daftar.setEnabled(false);
+    private void jtButton_DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtButton_DaftarActionPerformed
+        jtButton_Daftar.setVisible(false);
+        jtButton_Daftar.setEnabled(false);
         loader.setVisible(true);
         loader.setEnabled(true);
         new java.util.Timer().schedule(new TimerTask() {
@@ -629,7 +629,7 @@ public class Daftar extends javax.swing.JFrame {
                 sukses.setEnabled(true);
             }
         }, 1120 * 5);
-    }//GEN-LAST:event_DaftarActionPerformed
+    }//GEN-LAST:event_jtButton_DaftarActionPerformed
 
     private void HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HideActionPerformed
         Show.setVisible(true);
@@ -647,15 +647,15 @@ public class Daftar extends javax.swing.JFrame {
         Show.setEnabled(false);
     }//GEN-LAST:event_ShowActionPerformed
 
-    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+    private void JButton_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_closeActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_closeActionPerformed
+    }//GEN-LAST:event_JButton_closeActionPerformed
 
-    private void minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized1ActionPerformed
+    private void JButton_minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_minimized1ActionPerformed
         this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_minimized1ActionPerformed
+    }//GEN-LAST:event_JButton_minimized1ActionPerformed
 
-    private void minimizedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizedActionPerformed
+    private void JButton_minimizedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_minimizedActionPerformed
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -665,7 +665,7 @@ public class Daftar extends javax.swing.JFrame {
             }
         }, 5 * 5);
 
-    }//GEN-LAST:event_minimizedActionPerformed
+    }//GEN-LAST:event_JButton_minimizedActionPerformed
 
     private void DaftarFullMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DaftarFullMousePressed
         Lbl_NoKTP.getX();
@@ -682,7 +682,7 @@ public class Daftar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Opsi_PerempuanActionPerformed
 
-    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+    private void JButton_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_BackActionPerformed
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -691,7 +691,7 @@ public class Daftar extends javax.swing.JFrame {
                 dispose();
             }
         }, 50 * 5);
-    }//GEN-LAST:event_BackActionPerformed
+    }//GEN-LAST:event_JButton_BackActionPerformed
 
     private void UserFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserFieldKeyReleased
         LblLength(UserField, 25);
@@ -830,11 +830,16 @@ public class Daftar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AlamatField;
-    private javax.swing.JButton Back;
     private javax.swing.JPanel Bg;
-    private javax.swing.JToggleButton Daftar;
     private javax.swing.JPanel DaftarFull;
     private javax.swing.JButton Hide;
+    private javax.swing.JButton JButton_Back;
+    private javax.swing.JButton JButton_close;
+    private javax.swing.JButton JButton_fullscreen;
+    private javax.swing.JButton JButton_minimized;
+    private javax.swing.JButton JButton_minimized1;
+    private javax.swing.JLabel JLabel_gambar1;
+    private javax.swing.JLabel JLabel_pola;
     private javax.swing.JTextField KTPField;
     private javax.swing.JLabel Lbl_Alamat;
     private javax.swing.JLabel Lbl_HakAkses;
@@ -842,6 +847,7 @@ public class Daftar extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_IdUser;
     private javax.swing.JLabel Lbl_JenisKelamin;
     private javax.swing.JLabel Lbl_Judul;
+    private javax.swing.JLabel Lbl_Judul2;
     private javax.swing.JLabel Lbl_Nama;
     private javax.swing.JLabel Lbl_NoHP1;
     private javax.swing.JLabel Lbl_NoHP2;
@@ -858,24 +864,15 @@ public class Daftar extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JButton Show;
     private javax.swing.JTextField UserField;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup btn_jkelamin;
     private javax.swing.JLabel centang;
-    private javax.swing.JButton close;
     private javax.swing.JComboBox<String> cmbAkses;
-    private javax.swing.JButton fullscreen;
-    private javax.swing.JLabel gambar1;
     private javax.swing.JLabel img_loader;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel3_sukses;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel_load;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
@@ -883,11 +880,14 @@ public class Daftar extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JToggleButton jtButton_Daftar;
+    private javax.swing.JLabel lbl_judulsukses;
+    private javax.swing.JLabel lbl_loadbesar;
     private javax.swing.JLabel lbl_loader;
+    private javax.swing.JLabel lbl_loading;
+    private javax.swing.JLabel lbl_loadjudul;
+    private javax.swing.JLabel lbl_suksesbesar;
     private javax.swing.JPanel loader;
-    private javax.swing.JButton minimized;
-    private javax.swing.JButton minimized1;
-    private javax.swing.JLabel pola;
     private javax.swing.JPanel sukses;
     private javax.swing.JTextField txtCust;
     private javax.swing.JTextField txtId;

@@ -103,10 +103,10 @@ public class DaftarMini extends javax.swing.JFrame {
         Bg = new javax.swing.JPanel();
         DaftarMini = new javax.swing.JPanel();
         Lbl_Judul = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        fullscreen = new javax.swing.JButton();
-        minimized1 = new javax.swing.JButton();
-        close = new javax.swing.JButton();
+        lbl_judul2 = new javax.swing.JLabel();
+        bttn_fullscreen = new javax.swing.JButton();
+        bttn_minimized1 = new javax.swing.JButton();
+        bttn_close = new javax.swing.JButton();
         txtCust = new javax.swing.JTextField();
         Lbl_IdCust = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
@@ -144,22 +144,22 @@ public class DaftarMini extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Back = new javax.swing.JButton();
         Daftar = new javax.swing.JToggleButton();
-        pola = new javax.swing.JLabel();
-        gambar1 = new javax.swing.JLabel();
+        lbl_pola = new javax.swing.JLabel();
+        lbl_gambar1 = new javax.swing.JLabel();
         loader = new javax.swing.JPanel();
         loading = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lbl_judulload = new javax.swing.JLabel();
         lbl_loader = new javax.swing.JLabel();
         img_loader = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_loadbesar = new javax.swing.JLabel();
+        lbl_load = new javax.swing.JLabel();
         sukses = new javax.swing.JPanel();
         Masuk = new javax.swing.JToggleButton();
         sukses1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        img_loader2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lbl_judulsukses = new javax.swing.JLabel();
+        img_ceklis = new javax.swing.JLabel();
+        lbl_suksesbesar = new javax.swing.JLabel();
+        lbl_sukses = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("KostAiraApp");
@@ -188,49 +188,49 @@ public class DaftarMini extends javax.swing.JFrame {
         Lbl_Judul.setText("Daftar ");
         DaftarMini.add(Lbl_Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 80, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 28)); // NOI18N
-        jLabel1.setText("Kost Aira App");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        DaftarMini.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 120, 210, 40));
+        lbl_judul2.setFont(new java.awt.Font("Segoe UI Light", 0, 28)); // NOI18N
+        lbl_judul2.setText("Kost Aira App");
+        lbl_judul2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        DaftarMini.add(lbl_judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 120, 210, 40));
 
-        fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
-        fullscreen.setBorder(null);
-        fullscreen.setBorderPainted(false);
-        fullscreen.setContentAreaFilled(false);
-        fullscreen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fullscreen.setFocusPainted(false);
-        fullscreen.addActionListener(new java.awt.event.ActionListener() {
+        bttn_fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
+        bttn_fullscreen.setBorder(null);
+        bttn_fullscreen.setBorderPainted(false);
+        bttn_fullscreen.setContentAreaFilled(false);
+        bttn_fullscreen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_fullscreen.setFocusPainted(false);
+        bttn_fullscreen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fullscreenActionPerformed(evt);
+                bttn_fullscreenActionPerformed(evt);
             }
         });
-        DaftarMini.add(fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 20, 20));
+        DaftarMini.add(bttn_fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 20, 20));
 
-        minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
-        minimized1.setBorder(null);
-        minimized1.setBorderPainted(false);
-        minimized1.setContentAreaFilled(false);
-        minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized1.setFocusPainted(false);
-        minimized1.addActionListener(new java.awt.event.ActionListener() {
+        bttn_minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
+        bttn_minimized1.setBorder(null);
+        bttn_minimized1.setBorderPainted(false);
+        bttn_minimized1.setContentAreaFilled(false);
+        bttn_minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_minimized1.setFocusPainted(false);
+        bttn_minimized1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimized1ActionPerformed(evt);
+                bttn_minimized1ActionPerformed(evt);
             }
         });
-        DaftarMini.add(minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 16, 20, 20));
+        DaftarMini.add(bttn_minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 16, 20, 20));
 
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
-        close.setBorder(null);
-        close.setBorderPainted(false);
-        close.setContentAreaFilled(false);
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.setFocusPainted(false);
-        close.addActionListener(new java.awt.event.ActionListener() {
+        bttn_close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
+        bttn_close.setBorder(null);
+        bttn_close.setBorderPainted(false);
+        bttn_close.setContentAreaFilled(false);
+        bttn_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_close.setFocusPainted(false);
+        bttn_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closeActionPerformed(evt);
+                bttn_closeActionPerformed(evt);
             }
         });
-        DaftarMini.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 20));
+        DaftarMini.add(bttn_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 20));
 
         txtCust.setEditable(false);
         txtCust.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -473,15 +473,15 @@ public class DaftarMini extends javax.swing.JFrame {
         });
         DaftarMini.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 100, 40));
 
-        pola.setBackground(new java.awt.Color(255, 255, 255));
-        pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola.png"))); // NOI18N
-        pola.setOpaque(true);
-        DaftarMini.add(pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 450, 600));
+        lbl_pola.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola.png"))); // NOI18N
+        lbl_pola.setOpaque(true);
+        DaftarMini.add(lbl_pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 450, 600));
 
-        gambar1.setBackground(new java.awt.Color(102, 102, 102));
-        gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Logins.png"))); // NOI18N
-        gambar1.setOpaque(true);
-        DaftarMini.add(gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
+        lbl_gambar1.setBackground(new java.awt.Color(102, 102, 102));
+        lbl_gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Logins.png"))); // NOI18N
+        lbl_gambar1.setOpaque(true);
+        DaftarMini.add(lbl_gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
 
         Bg.add(DaftarMini);
         DaftarMini.setBounds(0, 0, 898, 600);
@@ -495,8 +495,8 @@ public class DaftarMini extends javax.swing.JFrame {
         loading.setBackground(new java.awt.Color(255, 255, 255));
         loading.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
-        loading.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 200, 60));
+        lbl_judulload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
+        loading.add(lbl_judulload, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 200, 60));
 
         lbl_loader.setBackground(new java.awt.Color(255, 255, 255));
         lbl_loader.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -509,17 +509,17 @@ public class DaftarMini extends javax.swing.JFrame {
         img_loader.setOpaque(true);
         loading.add(img_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 139, 141));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.1.png"))); // NOI18N
-        loading.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 310));
+        lbl_loadbesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.1.png"))); // NOI18N
+        loading.add(lbl_loadbesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 310));
 
         loader.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 610, 310));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur1.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(910, 600));
-        jLabel2.setMinimumSize(new java.awt.Dimension(910, 600));
-        jLabel2.setOpaque(true);
-        jLabel2.setPreferredSize(new java.awt.Dimension(910, 600));
-        loader.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 600));
+        lbl_load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur1.png"))); // NOI18N
+        lbl_load.setMaximumSize(new java.awt.Dimension(910, 600));
+        lbl_load.setMinimumSize(new java.awt.Dimension(910, 600));
+        lbl_load.setOpaque(true);
+        lbl_load.setPreferredSize(new java.awt.Dimension(910, 600));
+        loader.add(lbl_load, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 600));
 
         Bg.add(loader);
         loader.setBounds(0, 0, 910, 600);
@@ -548,25 +548,25 @@ public class DaftarMini extends javax.swing.JFrame {
         sukses1.setBackground(new java.awt.Color(255, 255, 255));
         sukses1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
-        sukses1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 200, 60));
+        lbl_judulsukses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
+        sukses1.add(lbl_judulsukses, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 200, 60));
 
-        img_loader2.setBackground(new java.awt.Color(255, 255, 255));
-        img_loader2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/centang.png"))); // NOI18N
-        img_loader2.setOpaque(true);
-        sukses1.add(img_loader2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 80, 80));
+        img_ceklis.setBackground(new java.awt.Color(255, 255, 255));
+        img_ceklis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/centang.png"))); // NOI18N
+        img_ceklis.setOpaque(true);
+        sukses1.add(img_ceklis, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 80, 80));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.1.png"))); // NOI18N
-        sukses1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 310));
+        lbl_suksesbesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.1.png"))); // NOI18N
+        sukses1.add(lbl_suksesbesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 310));
 
         sukses.add(sukses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 610, 310));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur1.png"))); // NOI18N
-        jLabel11.setMaximumSize(new java.awt.Dimension(910, 600));
-        jLabel11.setMinimumSize(new java.awt.Dimension(910, 600));
-        jLabel11.setOpaque(true);
-        jLabel11.setPreferredSize(new java.awt.Dimension(910, 600));
-        sukses.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 600));
+        lbl_sukses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blur1.png"))); // NOI18N
+        lbl_sukses.setMaximumSize(new java.awt.Dimension(910, 600));
+        lbl_sukses.setMinimumSize(new java.awt.Dimension(910, 600));
+        lbl_sukses.setOpaque(true);
+        lbl_sukses.setPreferredSize(new java.awt.Dimension(910, 600));
+        sukses.add(lbl_sukses, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 600));
 
         Bg.add(sukses);
         sukses.setBounds(0, 0, 910, 600);
@@ -586,13 +586,13 @@ public class DaftarMini extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+    private void bttn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_closeActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_closeActionPerformed
+    }//GEN-LAST:event_bttn_closeActionPerformed
 
-    private void minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized1ActionPerformed
+    private void bttn_minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized1ActionPerformed
         this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_minimized1ActionPerformed
+    }//GEN-LAST:event_bttn_minimized1ActionPerformed
 
     private void DaftarMiniMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DaftarMiniMousePressed
         xx = evt.getX();
@@ -605,7 +605,7 @@ public class DaftarMini extends javax.swing.JFrame {
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_DaftarMiniMouseDragged
 
-    private void fullscreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullscreenActionPerformed
+    private void bttn_fullscreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_fullscreenActionPerformed
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -615,7 +615,7 @@ public class DaftarMini extends javax.swing.JFrame {
             }
         }, 5 * 5);
 
-    }//GEN-LAST:event_fullscreenActionPerformed
+    }//GEN-LAST:event_bttn_fullscreenActionPerformed
 
     private void HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HideActionPerformed
         Show.setVisible(true);
@@ -822,19 +822,12 @@ public class DaftarMini extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JButton Show;
     private javax.swing.JTextField UserField;
-    private javax.swing.JButton close;
+    private javax.swing.JButton bttn_close;
+    private javax.swing.JButton bttn_fullscreen;
+    private javax.swing.JButton bttn_minimized1;
     private javax.swing.JComboBox<String> cmbAkses;
-    private javax.swing.JButton fullscreen;
-    private javax.swing.JLabel gambar1;
+    private javax.swing.JLabel img_ceklis;
     private javax.swing.JLabel img_loader;
-    private javax.swing.JLabel img_loader2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -844,11 +837,18 @@ public class DaftarMini extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lbl_gambar1;
+    private javax.swing.JLabel lbl_judul2;
+    private javax.swing.JLabel lbl_judulload;
+    private javax.swing.JLabel lbl_judulsukses;
+    private javax.swing.JLabel lbl_load;
+    private javax.swing.JLabel lbl_loadbesar;
     private javax.swing.JLabel lbl_loader;
+    private javax.swing.JLabel lbl_pola;
+    private javax.swing.JLabel lbl_sukses;
+    private javax.swing.JLabel lbl_suksesbesar;
     private javax.swing.JPanel loader;
     private javax.swing.JPanel loading;
-    private javax.swing.JButton minimized1;
-    private javax.swing.JLabel pola;
     private javax.swing.JPanel sukses;
     private javax.swing.JPanel sukses1;
     private javax.swing.JTextField txtCust;

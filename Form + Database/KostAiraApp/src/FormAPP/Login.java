@@ -5,7 +5,6 @@
  */
 package FormAPP;
 
-import static FormAPP.MenuAdmin.NamaUser1;
 import static FormAPP.MenuUser.NamaUser2;
 import java.awt.Toolkit;
 import java.sql.ResultSet;
@@ -15,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static FormAPP.MenuAdmin.lbl_NamaUser1;
 
 /**
  *
@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
             public void run() {
                 try {
                     String username, password;
-                    username = UserField.getText();
+                    username = txtUserField.getText();
                     password = PassField.getText();
                     ConnectDB konek = new ConnectDB();
                     ResultSet rs = konek.conLogin(username, password);
@@ -57,7 +57,7 @@ public class Login extends javax.swing.JFrame {
                         if ("Admin".equals(rs.getString("akses"))) {
                             MenuAdmin ad = new MenuAdmin();
                             ad.show();
-                            NamaUser1.setText(rs.getString("username"));
+                            lbl_NamaUser1.setText(rs.getString("username"));
 
                         } else if ("User".equals(rs.getString("akses"))) {
                             MenuUser usr = new MenuUser();
@@ -102,27 +102,27 @@ public class Login extends javax.swing.JFrame {
         LoginFull = new javax.swing.JPanel();
         Lbl_Judul = new javax.swing.JLabel();
         Lbl_Username = new javax.swing.JLabel();
-        UserField = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
+        txtUserField = new javax.swing.JTextField();
+        jSpasi1 = new javax.swing.JSeparator();
         Lbl_Password = new javax.swing.JLabel();
-        Hide = new javax.swing.JButton();
-        Show = new javax.swing.JButton();
+        bttn_Hide = new javax.swing.JButton();
+        bttn_Show = new javax.swing.JButton();
         PassField = new javax.swing.JPasswordField();
-        jSeparator2 = new javax.swing.JSeparator();
+        jSpasi2 = new javax.swing.JSeparator();
         Daftar = new javax.swing.JToggleButton();
         Masuk = new javax.swing.JToggleButton();
-        minimized1 = new javax.swing.JButton();
-        minimized = new javax.swing.JButton();
-        close = new javax.swing.JButton();
-        pola = new javax.swing.JLabel();
-        gambar1 = new javax.swing.JLabel();
-        fullscreen = new javax.swing.JButton();
+        bttn_minimized1 = new javax.swing.JButton();
+        bttn_minimized = new javax.swing.JButton();
+        bttn_close = new javax.swing.JButton();
+        lbl_pola = new javax.swing.JLabel();
+        lbl_gambar1 = new javax.swing.JLabel();
+        lbl_fullscreen = new javax.swing.JButton();
         loader = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jPanel2_load = new javax.swing.JPanel();
+        lbl_loadjudul = new javax.swing.JLabel();
         lbl_loader = new javax.swing.JLabel();
         img_loader = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_loadbesar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -155,46 +155,51 @@ public class Login extends javax.swing.JFrame {
         Lbl_Username.setText("Username");
         LoginFull.add(Lbl_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 280, -1, -1));
 
-        UserField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        UserField.setBorder(null);
-        UserField.setOpaque(false);
-        LoginFull.add(UserField, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 300, 370, 40));
-        LoginFull.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 340, 370, 10));
+        txtUserField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtUserField.setBorder(null);
+        txtUserField.setOpaque(false);
+        LoginFull.add(txtUserField, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 300, 370, 40));
+        LoginFull.add(jSpasi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 340, 370, 10));
 
         Lbl_Password.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lbl_Password.setForeground(new java.awt.Color(51, 51, 51));
         Lbl_Password.setText("Password");
         LoginFull.add(Lbl_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, -1, -1));
 
-        Hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/hide_32px.png"))); // NOI18N
-        Hide.setBorder(null);
-        Hide.setBorderPainted(false);
-        Hide.setContentAreaFilled(false);
-        Hide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Hide.addActionListener(new java.awt.event.ActionListener() {
+        bttn_Hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/hide_32px.png"))); // NOI18N
+        bttn_Hide.setBorder(null);
+        bttn_Hide.setBorderPainted(false);
+        bttn_Hide.setContentAreaFilled(false);
+        bttn_Hide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_Hide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HideActionPerformed(evt);
+                bttn_HideActionPerformed(evt);
             }
         });
-        LoginFull.add(Hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 26, 18));
+        LoginFull.add(bttn_Hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 26, 18));
 
-        Show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/show_32px.png"))); // NOI18N
-        Show.setBorder(null);
-        Show.setBorderPainted(false);
-        Show.setContentAreaFilled(false);
-        Show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Show.addActionListener(new java.awt.event.ActionListener() {
+        bttn_Show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/show_32px.png"))); // NOI18N
+        bttn_Show.setBorder(null);
+        bttn_Show.setBorderPainted(false);
+        bttn_Show.setContentAreaFilled(false);
+        bttn_Show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_Show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowActionPerformed(evt);
+                bttn_ShowActionPerformed(evt);
             }
         });
-        LoginFull.add(Show, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 26, 18));
+        LoginFull.add(bttn_Show, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 26, 18));
 
         PassField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         PassField.setBorder(null);
         PassField.setOpaque(false);
+        PassField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PassFieldActionPerformed(evt);
+            }
+        });
         LoginFull.add(PassField, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 380, 370, 40));
-        LoginFull.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 370, 10));
+        LoginFull.add(jSpasi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 370, 10));
 
         Daftar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Daftar.setForeground(new java.awt.Color(51, 51, 51));
@@ -225,60 +230,60 @@ public class Login extends javax.swing.JFrame {
         });
         LoginFull.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 440, 100, 40));
 
-        minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
-        minimized1.setBorder(null);
-        minimized1.setBorderPainted(false);
-        minimized1.setContentAreaFilled(false);
-        minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized1.setFocusPainted(false);
-        minimized1.addActionListener(new java.awt.event.ActionListener() {
+        bttn_minimized1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
+        bttn_minimized1.setBorder(null);
+        bttn_minimized1.setBorderPainted(false);
+        bttn_minimized1.setContentAreaFilled(false);
+        bttn_minimized1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_minimized1.setFocusPainted(false);
+        bttn_minimized1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimized1ActionPerformed(evt);
+                bttn_minimized1ActionPerformed(evt);
             }
         });
-        LoginFull.add(minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1258, 15, 20, 20));
+        LoginFull.add(bttn_minimized1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1258, 15, 20, 20));
 
-        minimized.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize1.png"))); // NOI18N
-        minimized.setBorder(null);
-        minimized.setBorderPainted(false);
-        minimized.setContentAreaFilled(false);
-        minimized.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized.setFocusPainted(false);
-        minimized.addActionListener(new java.awt.event.ActionListener() {
+        bttn_minimized.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize1.png"))); // NOI18N
+        bttn_minimized.setBorder(null);
+        bttn_minimized.setBorderPainted(false);
+        bttn_minimized.setContentAreaFilled(false);
+        bttn_minimized.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_minimized.setFocusPainted(false);
+        bttn_minimized.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimizedActionPerformed(evt);
+                bttn_minimizedActionPerformed(evt);
             }
         });
-        LoginFull.add(minimized, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
+        LoginFull.add(bttn_minimized, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
 
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
-        close.setBorder(null);
-        close.setBorderPainted(false);
-        close.setContentAreaFilled(false);
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.setFocusPainted(false);
-        close.addActionListener(new java.awt.event.ActionListener() {
+        bttn_close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
+        bttn_close.setBorder(null);
+        bttn_close.setBorderPainted(false);
+        bttn_close.setContentAreaFilled(false);
+        bttn_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_close.setFocusPainted(false);
+        bttn_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closeActionPerformed(evt);
+                bttn_closeActionPerformed(evt);
             }
         });
-        LoginFull.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 10, -1, 20));
+        LoginFull.add(bttn_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 10, -1, 20));
 
-        pola.setBackground(new java.awt.Color(255, 255, 255));
-        pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola1.png"))); // NOI18N
-        pola.setOpaque(true);
-        LoginFull.add(pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 675, 768));
+        lbl_pola.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_pola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/pola1.png"))); // NOI18N
+        lbl_pola.setOpaque(true);
+        LoginFull.add(lbl_pola, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 675, 768));
 
-        gambar1.setBackground(new java.awt.Color(255, 255, 255));
-        gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Login69x768.png"))); // NOI18N
-        gambar1.setOpaque(true);
-        LoginFull.add(gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        lbl_gambar1.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_gambar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Thumbnail_Login69x768.png"))); // NOI18N
+        lbl_gambar1.setOpaque(true);
+        LoginFull.add(lbl_gambar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
-        fullscreen.setBorder(null);
-        fullscreen.setBorderPainted(false);
-        fullscreen.setContentAreaFilled(false);
-        LoginFull.add(fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
+        lbl_fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/maximize.png"))); // NOI18N
+        lbl_fullscreen.setBorder(null);
+        lbl_fullscreen.setBorderPainted(false);
+        lbl_fullscreen.setContentAreaFilled(false);
+        LoginFull.add(lbl_fullscreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 20, 20));
 
         Bg.add(LoginFull);
         LoginFull.setBounds(0, 0, 1365, 768);
@@ -287,27 +292,27 @@ public class Login extends javax.swing.JFrame {
         loader.setOpaque(false);
         loader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2_load.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2_load.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
+        lbl_loadjudul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label1.png"))); // NOI18N
+        jPanel2_load.add(lbl_loadjudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 200, 60));
 
         lbl_loader.setBackground(new java.awt.Color(255, 255, 255));
         lbl_loader.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_loader.setForeground(new java.awt.Color(96, 82, 76));
         lbl_loader.setText("Mohon Tunggu . . .");
-        jPanel2.add(lbl_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
+        jPanel2_load.add(lbl_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
 
         img_loader.setBackground(new java.awt.Color(255, 255, 255));
         img_loader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/ring_1.gif"))); // NOI18N
         img_loader.setOpaque(true);
-        jPanel2.add(img_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 139, 141));
+        jPanel2_load.add(img_loader, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 139, 141));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
+        lbl_loadbesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/3.2.png"))); // NOI18N
+        jPanel2_load.add(lbl_loadbesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
 
-        loader.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
+        loader.add(jPanel2_load, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 740, 380));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/blurLogin.png"))); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -353,31 +358,31 @@ public class Login extends javax.swing.JFrame {
         loginUser();
     }//GEN-LAST:event_MasukActionPerformed
 
-    private void HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HideActionPerformed
-        Show.setVisible(true);
-        Show.setEnabled(true);
+    private void bttn_HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_HideActionPerformed
+        bttn_Show.setVisible(true);
+        bttn_Show.setEnabled(true);
         PassField.setEchoChar((char) 0);
-        Hide.setVisible(false);
-        Hide.setEnabled(false);
-    }//GEN-LAST:event_HideActionPerformed
+        bttn_Hide.setVisible(false);
+        bttn_Hide.setEnabled(false);
+    }//GEN-LAST:event_bttn_HideActionPerformed
 
-    private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
-        Hide.setVisible(true);
-        Hide.setEnabled(true);
+    private void bttn_ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_ShowActionPerformed
+        bttn_Hide.setVisible(true);
+        bttn_Hide.setEnabled(true);
         PassField.setEchoChar((char) 8226);
-        Show.setVisible(false);
-        Show.setEnabled(false);
-    }//GEN-LAST:event_ShowActionPerformed
+        bttn_Show.setVisible(false);
+        bttn_Show.setEnabled(false);
+    }//GEN-LAST:event_bttn_ShowActionPerformed
 
-    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+    private void bttn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_closeActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_closeActionPerformed
+    }//GEN-LAST:event_bttn_closeActionPerformed
 
-    private void minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized1ActionPerformed
+    private void bttn_minimized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized1ActionPerformed
         this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_minimized1ActionPerformed
+    }//GEN-LAST:event_bttn_minimized1ActionPerformed
 
-    private void minimizedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizedActionPerformed
+    private void bttn_minimizedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimizedActionPerformed
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -387,7 +392,7 @@ public class Login extends javax.swing.JFrame {
             }
         }, 5 * 5);
 
-    }//GEN-LAST:event_minimizedActionPerformed
+    }//GEN-LAST:event_bttn_minimizedActionPerformed
 
     private void LoginFullMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginFullMousePressed
         xx = evt.getX();
@@ -399,6 +404,10 @@ public class Login extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_LoginFullMouseDragged
+
+    private void PassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PassFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -438,29 +447,29 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Bg;
     private javax.swing.JToggleButton Daftar;
-    private javax.swing.JButton Hide;
     private javax.swing.JLabel Lbl_Judul;
     private javax.swing.JLabel Lbl_Password;
     private javax.swing.JLabel Lbl_Username;
     private javax.swing.JPanel LoginFull;
     private javax.swing.JToggleButton Masuk;
     private javax.swing.JPasswordField PassField;
-    private javax.swing.JButton Show;
-    private javax.swing.JTextField UserField;
-    private javax.swing.JButton close;
-    private javax.swing.JButton fullscreen;
-    private javax.swing.JLabel gambar1;
+    private javax.swing.JButton bttn_Hide;
+    private javax.swing.JButton bttn_Show;
+    private javax.swing.JButton bttn_close;
+    private javax.swing.JButton bttn_minimized;
+    private javax.swing.JButton bttn_minimized1;
     private javax.swing.JLabel img_loader;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel jPanel2_load;
+    private javax.swing.JSeparator jSpasi1;
+    private javax.swing.JSeparator jSpasi2;
+    private javax.swing.JButton lbl_fullscreen;
+    private javax.swing.JLabel lbl_gambar1;
+    private javax.swing.JLabel lbl_loadbesar;
     private javax.swing.JLabel lbl_loader;
+    private javax.swing.JLabel lbl_loadjudul;
+    private javax.swing.JLabel lbl_pola;
     private javax.swing.JPanel loader;
-    private javax.swing.JButton minimized;
-    private javax.swing.JButton minimized1;
-    private javax.swing.JLabel pola;
+    private javax.swing.JTextField txtUserField;
     // End of variables declaration//GEN-END:variables
 }

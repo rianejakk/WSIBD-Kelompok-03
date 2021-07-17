@@ -78,15 +78,15 @@ public class MenuUser extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         Bg = new javax.swing.JPanel();
         BerandaSideBar = new javax.swing.JPanel();
-        Menu1 = new javax.swing.JLabel();
-        Menu7 = new javax.swing.JLabel();
-        minimized2 = new javax.swing.JButton();
-        close1 = new javax.swing.JButton();
-        judul1 = new javax.swing.JLabel();
-        Slide1 = new javax.swing.JLabel();
-        Text2 = new javax.swing.JLabel();
-        Kamar3 = new javax.swing.JLabel();
-        Kamar4 = new javax.swing.JLabel();
+        lbl_Menu1 = new javax.swing.JLabel();
+        bttn_Menu7 = new javax.swing.JLabel();
+        bttn_minimized2 = new javax.swing.JButton();
+        bttn_close1 = new javax.swing.JButton();
+        lbl_judul1 = new javax.swing.JLabel();
+        lbl_Slide1 = new javax.swing.JLabel();
+        lbl_Text2 = new javax.swing.JLabel();
+        lbl_Kamar3 = new javax.swing.JLabel();
+        lbl_Kamar4 = new javax.swing.JLabel();
         button = new javax.swing.JPanel();
         gb1 = new javax.swing.JRadioButton();
         gb2 = new javax.swing.JRadioButton();
@@ -99,15 +99,15 @@ public class MenuUser extends javax.swing.JFrame {
         gb9 = new javax.swing.JRadioButton();
         gb10 = new javax.swing.JRadioButton();
         PanelChat = new javax.swing.JPanel();
-        chatskrng_txt = new javax.swing.JLabel();
-        wa_icon = new javax.swing.JLabel();
+        lbl_chatskrng_txt = new javax.swing.JLabel();
+        lbl_wa_icon = new javax.swing.JLabel();
         chatBx = new javax.swing.JToggleButton();
         KamarSideBar = new javax.swing.JPanel();
-        Menu2 = new javax.swing.JLabel();
-        Menu3 = new javax.swing.JLabel();
+        lbl_Menu2 = new javax.swing.JLabel();
+        lbl_Menu3 = new javax.swing.JLabel();
         minimized4 = new javax.swing.JButton();
         close2 = new javax.swing.JButton();
-        judul2 = new javax.swing.JLabel();
+        lbl_judul2 = new javax.swing.JLabel();
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -128,33 +128,33 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         PemesananSideBar = new javax.swing.JPanel();
-        Menu5 = new javax.swing.JLabel();
-        Menu8 = new javax.swing.JLabel();
+        lbl_Menu5 = new javax.swing.JLabel();
+        lbl_Menu8 = new javax.swing.JLabel();
         minimized8 = new javax.swing.JButton();
         close4 = new javax.swing.JButton();
-        judul4 = new javax.swing.JLabel();
+        lbl_judul4 = new javax.swing.JLabel();
         CekButton6 = new javax.swing.JButton();
         form = new javax.swing.JPanel();
         Lbl_Judul1 = new javax.swing.JLabel();
         ScrollData = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Masuk = new javax.swing.JToggleButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
+        lbl_idbooking = new javax.swing.JLabel();
+        lbl_tipekamar = new javax.swing.JLabel();
         txtBooking = new javax.swing.JTextField();
         txtTipeKamar = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
+        lbl_namalengkap = new javax.swing.JLabel();
+        lbl_lokasi = new javax.swing.JLabel();
         txtLokasiKamar = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
+        lbl_nohppribadi = new javax.swing.JLabel();
+        lbl_jeniskelamin = new javax.swing.JLabel();
+        lbl_alamat = new javax.swing.JLabel();
+        lbl_totalbayar = new javax.swing.JLabel();
         txtTotaBayar = new javax.swing.JTextField();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
+        lbl_lamasewa = new javax.swing.JLabel();
+        lbl_tglmasuk = new javax.swing.JLabel();
+        lbl_nohpdarurat = new javax.swing.JLabel();
+        lbl_kodebayar = new javax.swing.JLabel();
         txtKodeBayar = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -165,7 +165,7 @@ public class MenuUser extends javax.swing.JFrame {
         txtNoKTP = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         SideBarMenu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_photos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         beranda = new javax.swing.JPanel();
@@ -196,75 +196,75 @@ public class MenuUser extends javax.swing.JFrame {
         });
         BerandaSideBar.setLayout(null);
 
-        Menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        lbl_Menu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_Menu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu1MouseClicked(evt);
+                lbl_Menu1MouseClicked(evt);
             }
         });
-        BerandaSideBar.add(Menu1);
-        Menu1.setBounds(10, 10, 34, 30);
+        BerandaSideBar.add(lbl_Menu1);
+        lbl_Menu1.setBounds(10, 10, 34, 30);
 
-        Menu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu7.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttn_Menu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        bttn_Menu7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_Menu7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu7MouseClicked(evt);
+                bttn_Menu7MouseClicked(evt);
             }
         });
-        BerandaSideBar.add(Menu7);
-        Menu7.setBounds(10, 10, 34, 30);
+        BerandaSideBar.add(bttn_Menu7);
+        bttn_Menu7.setBounds(10, 10, 34, 30);
 
-        minimized2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
-        minimized2.setBorder(null);
-        minimized2.setBorderPainted(false);
-        minimized2.setContentAreaFilled(false);
-        minimized2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimized2.setFocusPainted(false);
-        minimized2.addActionListener(new java.awt.event.ActionListener() {
+        bttn_minimized2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
+        bttn_minimized2.setBorder(null);
+        bttn_minimized2.setBorderPainted(false);
+        bttn_minimized2.setContentAreaFilled(false);
+        bttn_minimized2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_minimized2.setFocusPainted(false);
+        bttn_minimized2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minimized2ActionPerformed(evt);
+                bttn_minimized2ActionPerformed(evt);
             }
         });
-        BerandaSideBar.add(minimized2);
-        minimized2.setBounds(1080, 15, 20, 20);
+        BerandaSideBar.add(bttn_minimized2);
+        bttn_minimized2.setBounds(1080, 15, 20, 20);
 
-        close1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
-        close1.setBorder(null);
-        close1.setBorderPainted(false);
-        close1.setContentAreaFilled(false);
-        close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close1.setFocusPainted(false);
-        close1.addActionListener(new java.awt.event.ActionListener() {
+        bttn_close1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/close.png"))); // NOI18N
+        bttn_close1.setBorder(null);
+        bttn_close1.setBorderPainted(false);
+        bttn_close1.setContentAreaFilled(false);
+        bttn_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_close1.setFocusPainted(false);
+        bttn_close1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                close1ActionPerformed(evt);
+                bttn_close1ActionPerformed(evt);
             }
         });
-        BerandaSideBar.add(close1);
-        close1.setBounds(1110, 10, 20, 20);
+        BerandaSideBar.add(bttn_close1);
+        bttn_close1.setBounds(1110, 10, 20, 20);
 
-        judul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
-        BerandaSideBar.add(judul1);
-        judul1.setBounds(445, 10, 260, 90);
+        lbl_judul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
+        BerandaSideBar.add(lbl_judul1);
+        lbl_judul1.setBounds(445, 10, 260, 90);
 
-        Slide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"))); // NOI18N
-        BerandaSideBar.add(Slide1);
-        Slide1.setBounds(350, 130, 450, 260);
+        lbl_Slide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"))); // NOI18N
+        BerandaSideBar.add(lbl_Slide1);
+        lbl_Slide1.setBounds(350, 130, 450, 260);
 
-        Text2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text2.setText("Jl. Taman Kampus, Lingkungan Krajan Timur, Tegalgede, Kec. Sumbersari, Kabupaten Jember");
-        BerandaSideBar.add(Text2);
-        Text2.setBounds(300, 440, 570, 20);
+        lbl_Text2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Text2.setText("Jl. Taman Kampus, Lingkungan Krajan Timur, Tegalgede, Kec. Sumbersari, Kabupaten Jember");
+        BerandaSideBar.add(lbl_Text2);
+        lbl_Text2.setBounds(300, 440, 570, 20);
 
-        Kamar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/buttonKamar1.png"))); // NOI18N
-        Kamar3.setPreferredSize(new java.awt.Dimension(190, 230));
-        BerandaSideBar.add(Kamar3);
-        Kamar3.setBounds(340, 500, 160, 200);
+        lbl_Kamar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/buttonKamar1.png"))); // NOI18N
+        lbl_Kamar3.setPreferredSize(new java.awt.Dimension(190, 230));
+        BerandaSideBar.add(lbl_Kamar3);
+        lbl_Kamar3.setBounds(340, 500, 160, 200);
 
-        Kamar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/buttonKamar2.png"))); // NOI18N
-        BerandaSideBar.add(Kamar4);
-        Kamar4.setBounds(670, 500, 160, 200);
+        lbl_Kamar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/buttonKamar2.png"))); // NOI18N
+        BerandaSideBar.add(lbl_Kamar4);
+        lbl_Kamar4.setBounds(670, 500, 160, 200);
 
         button.setOpaque(false);
         button.setLayout(null);
@@ -378,15 +378,15 @@ public class MenuUser extends javax.swing.JFrame {
         PanelChat.setOpaque(false);
         PanelChat.setLayout(null);
 
-        chatskrng_txt.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        chatskrng_txt.setForeground(new java.awt.Color(255, 255, 255));
-        chatskrng_txt.setText("Chat Sekarang !!!");
-        PanelChat.add(chatskrng_txt);
-        chatskrng_txt.setBounds(60, 27, 140, 20);
+        lbl_chatskrng_txt.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_chatskrng_txt.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_chatskrng_txt.setText("Chat Sekarang !!!");
+        PanelChat.add(lbl_chatskrng_txt);
+        lbl_chatskrng_txt.setBounds(60, 27, 140, 20);
 
-        wa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icoWaP.png"))); // NOI18N
-        PanelChat.add(wa_icon);
-        wa_icon.setBounds(20, 22, 30, 30);
+        lbl_wa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icoWaP.png"))); // NOI18N
+        PanelChat.add(lbl_wa_icon);
+        lbl_wa_icon.setBounds(20, 22, 30, 30);
 
         chatBx.setBackground(new java.awt.Color(96, 82, 76));
         chatBx.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -417,25 +417,25 @@ public class MenuUser extends javax.swing.JFrame {
         KamarSideBar.setPreferredSize(new java.awt.Dimension(1160, 768));
         KamarSideBar.setLayout(null);
 
-        Menu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Menu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        lbl_Menu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_Menu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu2MouseClicked(evt);
+                lbl_Menu2MouseClicked(evt);
             }
         });
-        KamarSideBar.add(Menu2);
-        Menu2.setBounds(10, 10, 34, 30);
+        KamarSideBar.add(lbl_Menu2);
+        lbl_Menu2.setBounds(10, 10, 34, 30);
 
-        Menu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Menu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        lbl_Menu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_Menu3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu3MouseClicked(evt);
+                lbl_Menu3MouseClicked(evt);
             }
         });
-        KamarSideBar.add(Menu3);
-        Menu3.setBounds(10, 10, 34, 30);
+        KamarSideBar.add(lbl_Menu3);
+        lbl_Menu3.setBounds(10, 10, 34, 30);
 
         minimized4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
         minimized4.setBorder(null);
@@ -465,9 +465,9 @@ public class MenuUser extends javax.swing.JFrame {
         KamarSideBar.add(close2);
         close2.setBounds(1110, 10, 20, 20);
 
-        judul2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
-        KamarSideBar.add(judul2);
-        judul2.setBounds(445, 10, 260, 90);
+        lbl_judul2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
+        KamarSideBar.add(lbl_judul2);
+        lbl_judul2.setBounds(445, 10, 260, 90);
 
         ScrollData2.setBackground(new java.awt.Color(255, 255, 255));
         ScrollData2.setBorder(null);
@@ -566,25 +566,25 @@ public class MenuUser extends javax.swing.JFrame {
         PemesananSideBar.setPreferredSize(new java.awt.Dimension(1160, 768));
         PemesananSideBar.setLayout(null);
 
-        Menu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Menu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        lbl_Menu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_Menu5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu5MouseClicked(evt);
+                lbl_Menu5MouseClicked(evt);
             }
         });
-        PemesananSideBar.add(Menu5);
-        Menu5.setBounds(10, 10, 34, 30);
+        PemesananSideBar.add(lbl_Menu5);
+        lbl_Menu5.setBounds(10, 10, 34, 30);
 
-        Menu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
-        Menu8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Menu8.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Menu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/menu.png"))); // NOI18N
+        lbl_Menu8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_Menu8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Menu8MouseClicked(evt);
+                lbl_Menu8MouseClicked(evt);
             }
         });
-        PemesananSideBar.add(Menu8);
-        Menu8.setBounds(10, 10, 34, 30);
+        PemesananSideBar.add(lbl_Menu8);
+        lbl_Menu8.setBounds(10, 10, 34, 30);
 
         minimized8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/minimize.png"))); // NOI18N
         minimized8.setBorder(null);
@@ -614,9 +614,9 @@ public class MenuUser extends javax.swing.JFrame {
         PemesananSideBar.add(close4);
         close4.setBounds(1110, 10, 20, 20);
 
-        judul4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
-        PemesananSideBar.add(judul4);
-        judul4.setBounds(445, 10, 260, 90);
+        lbl_judul4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
+        PemesananSideBar.add(lbl_judul4);
+        lbl_judul4.setBounds(445, 10, 260, 90);
 
         CekButton6.setBorder(null);
         CekButton6.setBorderPainted(false);
@@ -657,13 +657,13 @@ public class MenuUser extends javax.swing.JFrame {
         });
         jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 720, 100, 40));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel6.setText("ID Booking");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 126, -1));
+        lbl_idbooking.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_idbooking.setText("ID Booking");
+        jPanel1.add(lbl_idbooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 126, -1));
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel39.setText("Tipe Kamar");
-        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 126, -1));
+        lbl_tipekamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_tipekamar.setText("Tipe Kamar");
+        jPanel1.add(lbl_tipekamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 126, -1));
 
         txtBooking.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 335, -1));
@@ -671,13 +671,13 @@ public class MenuUser extends javax.swing.JFrame {
         txtTipeKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtTipeKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 335, -1));
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel40.setText("Nama Lengkap");
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
+        lbl_namalengkap.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_namalengkap.setText("Nama Lengkap");
+        jPanel1.add(lbl_namalengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel41.setText("Lokasi Kamar");
-        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
+        lbl_lokasi.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_lokasi.setText("Lokasi Kamar");
+        jPanel1.add(lbl_lokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
 
         txtLokasiKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtLokasiKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
@@ -690,52 +690,52 @@ public class MenuUser extends javax.swing.JFrame {
         });
         jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel42.setText("No. HP Pribadi");
-        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
+        lbl_nohppribadi.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_nohppribadi.setText("No. HP Pribadi");
+        jPanel1.add(lbl_nohppribadi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
 
         txtNoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 335, -1));
 
-        jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel43.setText("Jenis Kelamin");
-        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
+        lbl_jeniskelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_jeniskelamin.setText("Jenis Kelamin");
+        jPanel1.add(lbl_jeniskelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
 
         txtJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 335, -1));
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel44.setText("Alamat");
-        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
+        lbl_alamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_alamat.setText("Alamat");
+        jPanel1.add(lbl_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
 
         txtAlamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 335, -1));
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
+        lbl_totalbayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_totalbayar.setText("Total Bayar");
+        jPanel1.add(lbl_totalbayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
+        lbl_lamasewa.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_lamasewa.setText("Lama sewa");
+        jPanel1.add(lbl_lamasewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
 
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel47.setText("Tanggal Masuk");
-        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
+        lbl_tglmasuk.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_tglmasuk.setText("Tanggal Masuk");
+        jPanel1.add(lbl_tglmasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel48.setText("No. HP Darurat");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
+        lbl_nohpdarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_nohpdarurat.setText("No. HP Darurat");
+        jPanel1.add(lbl_nohpdarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
 
         txtNoDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 335, -1));
 
-        jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
+        lbl_kodebayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_kodebayar.setText("Kode Bayar");
+        jPanel1.add(lbl_kodebayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, -1));
@@ -791,8 +791,8 @@ public class MenuUser extends javax.swing.JFrame {
         SideBarMenu.setPreferredSize(new java.awt.Dimension(210, 768));
         SideBarMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileW.png"))); // NOI18N
-        SideBarMenu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 30, 100, 100));
+        lbl_photos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileW.png"))); // NOI18N
+        SideBarMenu.add(lbl_photos, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 30, 100, 100));
 
         jSeparator1.setBackground(new java.awt.Color(96, 82, 76));
         jSeparator1.setForeground(new java.awt.Color(96, 82, 76));
@@ -1008,13 +1008,13 @@ public class MenuUser extends javax.swing.JFrame {
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_BerandaSideBarMouseDragged
 
-    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
+    private void bttn_close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close1ActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_close1ActionPerformed
+    }//GEN-LAST:event_bttn_close1ActionPerformed
 
-    private void minimized2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized2ActionPerformed
+    private void bttn_minimized2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized2ActionPerformed
         this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_minimized2ActionPerformed
+    }//GEN-LAST:event_bttn_minimized2ActionPerformed
 
     private void pemesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pemesananMouseClicked
         ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px_P.png"));
@@ -1040,22 +1040,22 @@ public class MenuUser extends javax.swing.JFrame {
         
     }//GEN-LAST:event_pemesananMouseClicked
 
-    private void Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu1MouseClicked
-        Menu1.setVisible(false);
-        Menu1.setEnabled(false);
-        Menu7.setVisible(true);
-        Menu7.setEnabled(true);
+    private void lbl_Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu1MouseClicked
+        lbl_Menu1.setVisible(false);
+        lbl_Menu1.setEnabled(false);
+        bttn_Menu7.setVisible(true);
+        bttn_Menu7.setEnabled(true);
         setPanel(BerandaSideBar);
-        judul1.setBounds(545, 10, 260, 90);
-        Slide1.setBounds(448, 130, 450, 260);
+        lbl_judul1.setBounds(545, 10, 260, 90);
+        lbl_Slide1.setBounds(448, 130, 450, 260);
         button.setBounds(575, 390, 200, 220);
-        Text2.setBounds(400, 440, 570, 20);
-        Kamar3.setBounds(420, 500, 160, 200);
-        Kamar4.setBounds(790, 500, 160, 200);
-        minimized2.setBounds(1286, 15, 20, 20);
-        close1.setBounds(1316, 10, 20, 20);
+        lbl_Text2.setBounds(400, 440, 570, 20);
+        lbl_Kamar3.setBounds(420, 500, 160, 200);
+        lbl_Kamar4.setBounds(790, 500, 160, 200);
+        bttn_minimized2.setBounds(1286, 15, 20, 20);
+        bttn_close1.setBounds(1316, 10, 20, 20);
         PanelChat.setBounds(1138, 710, 210, 70);
-    }//GEN-LAST:event_Menu1MouseClicked
+    }//GEN-LAST:event_lbl_Menu1MouseClicked
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         new java.util.Timer().schedule(new TimerTask() {
@@ -1076,17 +1076,17 @@ public class MenuUser extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minimized8ActionPerformed
 
-    private void Menu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu5MouseClicked
-        Menu5.setVisible(false);
-        Menu5.setEnabled(false);
-        Menu8.setVisible(true);
-        Menu8.setEnabled(true);
+    private void lbl_Menu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu5MouseClicked
+        lbl_Menu5.setVisible(false);
+        lbl_Menu5.setEnabled(false);
+        lbl_Menu8.setVisible(true);
+        lbl_Menu8.setEnabled(true);
         setPanel(PemesananSideBar);
-        judul4.setBounds(545, 10, 260, 90);
+        lbl_judul4.setBounds(545, 10, 260, 90);
         form.setBounds(154, 110, 1050, 610);
         minimized8.setBounds(1286, 15, 20, 20);
         close4.setBounds(1316, 10, 20, 20);
-    }//GEN-LAST:event_Menu5MouseClicked
+    }//GEN-LAST:event_lbl_Menu5MouseClicked
 
     private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
         //        Beranda f3 = new Beranda();
@@ -1097,52 +1097,52 @@ public class MenuUser extends javax.swing.JFrame {
 
     private void gb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb1ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb1ActionPerformed
 
     private void gb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb2ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/2.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb2ActionPerformed
 
     private void gb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb3ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/3.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb3ActionPerformed
 
     private void gb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb4ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/4.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb4ActionPerformed
 
     private void gb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb5ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/5.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb5ActionPerformed
 
     private void gb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb6ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/6.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb6ActionPerformed
 
     private void gb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb7ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/7.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb7ActionPerformed
 
     private void gb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb8ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/8.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb8ActionPerformed
 
     private void gb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb9ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/9.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb9ActionPerformed
 
     private void gb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb10ActionPerformed
         ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/10.png"));
-        Slide1.setIcon(gmbr);
+        lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb10ActionPerformed
 
     private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
@@ -1150,22 +1150,22 @@ public class MenuUser extends javax.swing.JFrame {
         
     }//GEN-LAST:event_nm_lengkapActionPerformed
 
-    private void Menu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu7MouseClicked
-        Menu7.setVisible(false);
-        Menu7.setEnabled(false);
-        Menu1.setVisible(true);
-        Menu1.setEnabled(true);
-        judul1.setBounds(445, 10, 260, 90);
-        Slide1.setBounds(350, 130, 450, 260);
+    private void bttn_Menu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttn_Menu7MouseClicked
+        bttn_Menu7.setVisible(false);
+        bttn_Menu7.setEnabled(false);
+        lbl_Menu1.setVisible(true);
+        lbl_Menu1.setEnabled(true);
+        lbl_judul1.setBounds(445, 10, 260, 90);
+        lbl_Slide1.setBounds(350, 130, 450, 260);
         button.setBounds(480, 390, 200, 220);
-        Text2.setBounds(300, 440, 570, 20);
-        Kamar3.setBounds(340, 500, 160, 200);
-        Kamar4.setBounds(670, 500, 160, 200);
-        minimized2.setBounds(1080, 15, 20, 20);
-        close1.setBounds(1110, 10, 20, 20);
+        lbl_Text2.setBounds(300, 440, 570, 20);
+        lbl_Kamar3.setBounds(340, 500, 160, 200);
+        lbl_Kamar4.setBounds(670, 500, 160, 200);
+        bttn_minimized2.setBounds(1080, 15, 20, 20);
+        bttn_close1.setBounds(1110, 10, 20, 20);
         PanelChat.setBounds(932, 710, 210, 70);
         resetPanel(BerandaSideBar);
-    }//GEN-LAST:event_Menu7MouseClicked
+    }//GEN-LAST:event_bttn_Menu7MouseClicked
 
     private void chatBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chatBxActionPerformed
         try{
@@ -1183,42 +1183,42 @@ public class MenuUser extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minimized4ActionPerformed
 
-    private void Menu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu3MouseClicked
-        Menu3.setVisible(false);
-        Menu3.setEnabled(false);
-        Menu2.setVisible(true);
-        Menu2.setEnabled(true);
+    private void lbl_Menu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu3MouseClicked
+        lbl_Menu3.setVisible(false);
+        lbl_Menu3.setEnabled(false);
+        lbl_Menu2.setVisible(true);
+        lbl_Menu2.setEnabled(true);
         resetPanel(KamarSideBar);
-        judul2.setBounds(445, 10, 260, 90);
+        lbl_judul2.setBounds(445, 10, 260, 90);
         ScrollData2.setBounds(50, 110, 1050, 610);
         minimized4.setBounds(1080, 15, 20, 20);
         close2.setBounds(1110, 10, 20, 20);
-    }//GEN-LAST:event_Menu3MouseClicked
+    }//GEN-LAST:event_lbl_Menu3MouseClicked
 
-    private void Menu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu2MouseClicked
-        Menu2.setVisible(false);
-        Menu2.setEnabled(false);
-        Menu3.setVisible(true);
-        Menu3.setEnabled(true);
+    private void lbl_Menu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu2MouseClicked
+        lbl_Menu2.setVisible(false);
+        lbl_Menu2.setEnabled(false);
+        lbl_Menu3.setVisible(true);
+        lbl_Menu3.setEnabled(true);
         setPanel(KamarSideBar);
-        judul2.setBounds(545, 10, 260, 90);
+        lbl_judul2.setBounds(545, 10, 260, 90);
         ScrollData2.setBounds(154, 110, 1050, 610);
         minimized4.setBounds(1286, 15, 20, 20);
         close2.setBounds(1316, 10, 20, 20);
 
-    }//GEN-LAST:event_Menu2MouseClicked
+    }//GEN-LAST:event_lbl_Menu2MouseClicked
 
-    private void Menu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu8MouseClicked
-        Menu8.setVisible(false);
-        Menu8.setEnabled(false);
-        Menu5.setVisible(true);
-        Menu5.setEnabled(true);
+    private void lbl_Menu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu8MouseClicked
+        lbl_Menu8.setVisible(false);
+        lbl_Menu8.setEnabled(false);
+        lbl_Menu5.setVisible(true);
+        lbl_Menu5.setEnabled(true);
         resetPanel(PemesananSideBar);
-        judul4.setBounds(445, 10, 260, 90);
+        lbl_judul4.setBounds(445, 10, 260, 90);
         form.setBounds(50, 110, 1050, 610);
         minimized8.setBounds(1080, 15, 20, 20);
         close4.setBounds(1110, 10, 20, 20);
-    }//GEN-LAST:event_Menu8MouseClicked
+    }//GEN-LAST:event_lbl_Menu8MouseClicked
 
     
     public static void main(String args[]) {
@@ -1288,8 +1288,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel BerandaSideBar;
     private javax.swing.JPanel Bg;
     private javax.swing.JButton CekButton6;
-    private javax.swing.JLabel Kamar3;
-    private javax.swing.JLabel Kamar4;
     private javax.swing.JPanel KamarSideBar;
     private javax.swing.JLabel Lbl_Judul1;
     private javax.swing.JLabel Lbl_beranda;
@@ -1297,12 +1295,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_pemesanan;
     private javax.swing.JToggleButton Logout;
     private javax.swing.JToggleButton Masuk;
-    private javax.swing.JLabel Menu1;
-    private javax.swing.JLabel Menu2;
-    private javax.swing.JLabel Menu3;
-    private javax.swing.JLabel Menu5;
-    private javax.swing.JLabel Menu7;
-    private javax.swing.JLabel Menu8;
     public static final javax.swing.JLabel NamaUser2 = new javax.swing.JLabel();
     private javax.swing.JPanel PanelChat;
     private javax.swing.JPanel PanelKamar;
@@ -1310,14 +1302,13 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JScrollPane ScrollData2;
     private javax.swing.JPanel SideBarMenu;
-    private javax.swing.JLabel Slide1;
-    private javax.swing.JLabel Text2;
     private javax.swing.JPanel beranda;
+    private javax.swing.JLabel bttn_Menu7;
+    private javax.swing.JButton bttn_close1;
+    private javax.swing.JButton bttn_minimized2;
     private javax.swing.JPanel button;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
-    private javax.swing.JLabel chatskrng_txt;
-    private javax.swing.JButton close1;
     private javax.swing.JButton close2;
     private javax.swing.JButton close4;
     private javax.swing.JPanel form;
@@ -1335,7 +1326,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel ico_kamar;
     private javax.swing.JLabel ico_pemesanan;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1350,20 +1340,8 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1373,11 +1351,34 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel judul1;
-    private javax.swing.JLabel judul2;
-    private javax.swing.JLabel judul4;
     private javax.swing.JPanel kamar;
-    private javax.swing.JButton minimized2;
+    private javax.swing.JLabel lbl_Kamar3;
+    private javax.swing.JLabel lbl_Kamar4;
+    private javax.swing.JLabel lbl_Menu1;
+    private javax.swing.JLabel lbl_Menu2;
+    private javax.swing.JLabel lbl_Menu3;
+    private javax.swing.JLabel lbl_Menu5;
+    private javax.swing.JLabel lbl_Menu8;
+    private javax.swing.JLabel lbl_Slide1;
+    private javax.swing.JLabel lbl_Text2;
+    private javax.swing.JLabel lbl_alamat;
+    private javax.swing.JLabel lbl_chatskrng_txt;
+    private javax.swing.JLabel lbl_idbooking;
+    private javax.swing.JLabel lbl_jeniskelamin;
+    private javax.swing.JLabel lbl_judul1;
+    private javax.swing.JLabel lbl_judul2;
+    private javax.swing.JLabel lbl_judul4;
+    private javax.swing.JLabel lbl_kodebayar;
+    private javax.swing.JLabel lbl_lamasewa;
+    private javax.swing.JLabel lbl_lokasi;
+    private javax.swing.JLabel lbl_namalengkap;
+    private javax.swing.JLabel lbl_nohpdarurat;
+    private javax.swing.JLabel lbl_nohppribadi;
+    private javax.swing.JLabel lbl_photos;
+    private javax.swing.JLabel lbl_tglmasuk;
+    private javax.swing.JLabel lbl_tipekamar;
+    private javax.swing.JLabel lbl_totalbayar;
+    private javax.swing.JLabel lbl_wa_icon;
     private javax.swing.JButton minimized4;
     private javax.swing.JButton minimized8;
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
@@ -1393,6 +1394,5 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JTextField txtNoKTP;
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
-    private javax.swing.JLabel wa_icon;
     // End of variables declaration//GEN-END:variables
 }
