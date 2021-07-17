@@ -5,15 +5,17 @@
  */
 package FormAPP;
 
-
 import java.awt.Desktop;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -38,8 +40,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         LaporanSidebar.setEnabled(false);
         PengaturanSideBar.setVisible(false);
         PengaturanSideBar.setEnabled(false);
-        
-
+        autoNumber(txtUser);
+        autoNumber();
 
     }
 
@@ -77,7 +79,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPemesananP.png"));
         label.setIcon(gmbr);
     }
-    
+
     private void setIconPanelButton4(JLabel label) {
         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPembayaranP.png"));
         label.setIcon(gmbr);
@@ -97,22 +99,95 @@ public class MenuAdmin extends javax.swing.JFrame {
         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPemesanan.png"));
         label.setIcon(gmbr);
     }
-    
+
     private void resetIconPanelButton4(JLabel label) {
         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPembayaran.png"));
         label.setIcon(gmbr);
     }
-    
+
     private void setPanel(JPanel panel) {
         SideBarMenu.setVisible(false);
         SideBarMenu.setEnabled(false);
         panel.setBounds(0, 0, 1366, 768);
     }
-    
+
     private void resetPanel(JPanel panel) {
         SideBarMenu.setVisible(true);
         SideBarMenu.setEnabled(true);
         panel.setBounds(206, 0, 1160, 768);
+    }
+
+    private void resetForm(){
+        autoNumber(txtUser);
+        autoNumber();
+        txtUsername.setText("");
+        txtPass.setText("");
+        txtKTP.setText("");
+        txtNama.setText("");
+        String jeniskelamin = null;
+        if (Opsi_Laki.isSelected()) {
+            jeniskelamin = "Laki-laki";
+        } else if (Opsi_Perempuan.isSelected()) {
+            jeniskelamin = "Perempuan";
+        }
+
+        txtAlmt.setText("");
+        txtNoHp.setText("");
+        txtNoHPDarurat.setText("");
+
+        cmbAkses.setSelectedIndex(0);
+    }
+    
+    private void LblLength(JTextField txt, int length) {
+        String input = txt.getText();
+        if (input.length() > length) {
+            JOptionPane.showMessageDialog(rootPane, "jumlah input melebihi batas");
+            txt.setText("");
+        }
+    }
+
+    private void autoNumber(JTextField f1) {
+        String id_user = "U0";
+        int i = 0;
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB(id_user);
+
+            while (rs.next()) {
+                id_user = rs.getString("id_user");
+            }
+            id_user = id_user.substring(1);
+            i = Integer.parseInt(id_user) + 1;
+            id_user = "00" + i;
+            id_user = "U0" + id_user.substring(id_user.length() - 2);
+            f1.setText(id_user);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error pada ID User");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void autoNumber() {
+        String id_cust = "U0";
+        int i = 0;
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB1(id_cust);
+
+            while (rs.next()) {
+                id_cust = rs.getString("id_cust");
+            }
+            id_cust = id_cust.substring(1);
+            i = Integer.parseInt(id_cust) + 1;
+            id_cust = "00" + i;
+            id_cust = "U0" + id_cust.substring(id_cust.length() - 2);
+            txtCust.setText(id_cust);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error pada ID Cust");
+            System.out.println(e.getMessage());
+        }
     }
 
     int xy, xx;
@@ -294,19 +369,23 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         ScrollData1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
-        Masuk1 = new javax.swing.JToggleButton();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        txtLokasiKamar1 = new javax.swing.JTextField();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
+        Lbl_Username = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        Lbl_Pass = new javax.swing.JLabel();
+        txtPass = new javax.swing.JPasswordField();
+        Lbl_KTP = new javax.swing.JLabel();
+        Lbl_Nama = new javax.swing.JLabel();
+        Lbl_Jkl = new javax.swing.JLabel();
         Opsi_Laki = new javax.swing.JRadioButton();
         Opsi_Perempuan = new javax.swing.JRadioButton();
-        jLabel62 = new javax.swing.JLabel();
-        txtNoKTP1 = new javax.swing.JTextField();
-        jLabel63 = new javax.swing.JLabel();
+        Lbl_Alamat = new javax.swing.JLabel();
+        Lbl_NoHP = new javax.swing.JLabel();
+        Lbl_NoHPDarurat = new javax.swing.JLabel();
+        Lbl_HakAkses = new javax.swing.JLabel();
+        cmbAkses = new javax.swing.JComboBox<>();
+        Hide = new javax.swing.JButton();
+        Show = new javax.swing.JButton();
+        Simpan = new javax.swing.JToggleButton();
         jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1583,27 +1662,27 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_IdUser.setForeground(new java.awt.Color(51, 51, 51));
         Lbl_IdUser.setText("IdUser :");
         InputDataPelanggan.add(Lbl_IdUser);
-        Lbl_IdUser.setBounds(900, 90, 33, 14);
+        Lbl_IdUser.setBounds(900, 90, 35, 15);
 
         txtUser.setEditable(false);
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         txtUser.setBorder(null);
         txtUser.setOpaque(false);
         InputDataPelanggan.add(txtUser);
-        txtUser.setBounds(940, 90, 50, 14);
+        txtUser.setBounds(940, 90, 50, 15);
 
         Lbl_IdCust.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         Lbl_IdCust.setForeground(new java.awt.Color(51, 51, 51));
         Lbl_IdCust.setText("IdCust :");
         InputDataPelanggan.add(Lbl_IdCust);
-        Lbl_IdCust.setBounds(1000, 90, 33, 14);
+        Lbl_IdCust.setBounds(1000, 90, 35, 15);
 
         txtCust.setEditable(false);
         txtCust.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         txtCust.setBorder(null);
         txtCust.setOpaque(false);
         InputDataPelanggan.add(txtCust);
-        txtCust.setBounds(1040, 90, 50, 14);
+        txtCust.setBounds(1040, 90, 50, 15);
 
         form1.setBackground(new java.awt.Color(255, 255, 255));
         form1.setOpaque(false);
@@ -1630,73 +1709,52 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Masuk1.setBackground(new java.awt.Color(52, 135, 239));
-        Masuk1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Masuk1.setForeground(new java.awt.Color(255, 255, 255));
-        Masuk1.setText("Simpan");
-        Masuk1.setBorder(null);
-        Masuk1.setBorderPainted(false);
-        Masuk1.setContentAreaFilled(false);
-        Masuk1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Masuk1.setOpaque(true);
-        Masuk1.addActionListener(new java.awt.event.ActionListener() {
+        Lbl_Username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Username.setText("Username");
+        jPanel3.add(Lbl_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 126, -1));
+
+        txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 335, -1));
+
+        Lbl_Pass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Pass.setText("Password");
+        jPanel3.add(Lbl_Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 126, -1));
+        jPanel3.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 335, 30));
+
+        Lbl_KTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_KTP.setText("No. KTP");
+        jPanel3.add(Lbl_KTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 126, -1));
+
+        txtKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtKTP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Masuk1ActionPerformed(evt);
+                txtKTPActionPerformed(evt);
             }
         });
-        jPanel3.add(Masuk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 100, 40));
+        jPanel3.add(txtKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 335, -1));
 
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel52.setText("No. KTP");
-        jPanel3.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 126, -1));
+        Lbl_Nama.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Nama.setText("Nama Lengkap");
+        jPanel3.add(Lbl_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 126, -1));
 
-        jLabel53.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel53.setText("Username");
-        jPanel3.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 126, -1));
+        txtNama.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 335, -1));
 
-        txtLokasiKamar1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtLokasiKamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 335, -1));
-
-        nm_lengkap1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        nm_lengkap1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nm_lengkap1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(nm_lengkap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 335, -1));
-
-        jLabel54.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel54.setText("No. HP Pribadi");
-        jPanel3.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 126, -1));
-
-        txtNoHP1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtNoHP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 335, -1));
-
-        jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel55.setText("Jenis Kelamin");
-        jPanel3.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 126, -1));
-
-        jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel56.setText("Nama Lengkap");
-        jPanel3.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 126, -1));
-
-        txtAlamat1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtAlamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 335, -1));
-
-        jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel60.setText("No. HP Darurat");
-        jPanel3.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 126, -1));
-
-        txtNoDarurat1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtNoDarurat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 335, -1));
+        Lbl_Jkl.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Jkl.setText("Jenis Kelamin");
+        jPanel3.add(Lbl_Jkl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 126, -1));
 
         Opsi_Laki.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(Opsi_Laki);
         Opsi_Laki.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Opsi_Laki.setText("Laki-laki");
+        Opsi_Laki.setEnabled(false);
         jPanel3.add(Opsi_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
         Opsi_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(Opsi_Perempuan);
         Opsi_Perempuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Opsi_Perempuan.setSelected(true);
         Opsi_Perempuan.setText("Perempuan");
         Opsi_Perempuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1705,19 +1763,73 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         jPanel3.add(Opsi_Perempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel62.setText("Password");
-        jPanel3.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 126, -1));
+        Lbl_Alamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Alamat.setText("Alamat");
+        jPanel3.add(Lbl_Alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
 
-        txtNoKTP1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtNoKTP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 335, -1));
+        txtAlmt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtAlmt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 335, -1));
 
-        jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel63.setText("Alamat");
-        jPanel3.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
+        Lbl_NoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_NoHP.setText("No. HP Pribadi");
+        jPanel3.add(Lbl_NoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 126, -1));
 
-        txtAlamat2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel3.add(txtAlamat2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 335, -1));
+        txtNoHp.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtNoHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 335, -1));
+
+        Lbl_NoHPDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_NoHPDarurat.setText("No. HP Darurat");
+        jPanel3.add(Lbl_NoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 126, -1));
+
+        txtNoHPDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtNoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 335, -1));
+
+        Lbl_HakAkses.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_HakAkses.setText("Hak Akses");
+        jPanel3.add(Lbl_HakAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 126, -1));
+
+        cmbAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih sebagai", "Admin", "User" }));
+        jPanel3.add(cmbAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 335, 30));
+
+        Hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/hide_32px.png"))); // NOI18N
+        Hide.setBorder(null);
+        Hide.setBorderPainted(false);
+        Hide.setContentAreaFilled(false);
+        Hide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Hide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HideActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 26, 18));
+
+        Show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/show_32px.png"))); // NOI18N
+        Show.setBorder(null);
+        Show.setBorderPainted(false);
+        Show.setContentAreaFilled(false);
+        Show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Show, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 26, 18));
+
+        Simpan.setBackground(new java.awt.Color(52, 135, 239));
+        Simpan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Simpan.setForeground(new java.awt.Color(255, 255, 255));
+        Simpan.setText("Simpan");
+        Simpan.setBorder(null);
+        Simpan.setBorderPainted(false);
+        Simpan.setContentAreaFilled(false);
+        Simpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Simpan.setOpaque(true);
+        Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SimpanActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 100, 40));
 
         ScrollData1.setViewportView(jPanel3);
 
@@ -1922,11 +2034,11 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_berandaMouseClicked
 
     private void LaporanSidebarSidebarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporanSidebarSidebarMousePressed
-        
+
     }//GEN-LAST:event_LaporanSidebarSidebarMousePressed
 
     private void LaporanSidebarSidebarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporanSidebarSidebarMouseDragged
-        
+
     }//GEN-LAST:event_LaporanSidebarSidebarMouseDragged
 
     private void jLabel64MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel64MouseExited
@@ -1999,35 +2111,35 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_Menu8MouseClicked
 
     private void minimized7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized7ActionPerformed
-this.setState(JFrame.ICONIFIED);
+        this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minimized7ActionPerformed
 
     private void close7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close7ActionPerformed
-System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_close7ActionPerformed
 
     private void jLabel84MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseEntered
-        setIconPanelButton2(icoAdmin2);  
+        setIconPanelButton2(icoAdmin2);
     }//GEN-LAST:event_jLabel84MouseEntered
 
     private void jLabel84MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel84MouseExited
-        resetIconPanelButton2(icoAdmin2);  
+        resetIconPanelButton2(icoAdmin2);
     }//GEN-LAST:event_jLabel84MouseExited
 
     private void jLabel86MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseEntered
-setIconPanelButton1(icoPelanggan2);  
+        setIconPanelButton1(icoPelanggan2);
     }//GEN-LAST:event_jLabel86MouseEntered
 
     private void jLabel86MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseExited
-resetIconPanelButton1(icoPelanggan2);  
+        resetIconPanelButton1(icoPelanggan2);
     }//GEN-LAST:event_jLabel86MouseExited
 
     private void PengaturanSideBarSidebarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PengaturanSideBarSidebarMouseDragged
-        
+
     }//GEN-LAST:event_PengaturanSideBarSidebarMouseDragged
 
     private void PengaturanSideBarSidebarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PengaturanSideBarSidebarMousePressed
-        
+
     }//GEN-LAST:event_PengaturanSideBarSidebarMousePressed
 
     private void Menu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu5MouseClicked
@@ -2063,7 +2175,7 @@ resetIconPanelButton1(icoPelanggan2);
     }//GEN-LAST:event_close4ActionPerformed
 
     private void CekButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekButton6ActionPerformed
-        
+
     }//GEN-LAST:event_CekButton6ActionPerformed
 
     private void Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu1MouseClicked
@@ -2109,59 +2221,59 @@ resetIconPanelButton1(icoPelanggan2);
     }//GEN-LAST:event_close1ActionPerformed
 
     private void gb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb1ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb1ActionPerformed
 
     private void gb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb2ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/2.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/2.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb2ActionPerformed
 
     private void gb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb3ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/3.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/3.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb3ActionPerformed
 
     private void gb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb4ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/4.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/4.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb4ActionPerformed
 
     private void gb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb5ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/5.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/5.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb5ActionPerformed
 
     private void gb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb6ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/6.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/6.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb6ActionPerformed
 
     private void gb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb7ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/7.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/7.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb7ActionPerformed
 
     private void gb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb8ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/8.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/8.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb8ActionPerformed
 
     private void gb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb9ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/9.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/9.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb9ActionPerformed
 
     private void gb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb10ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/10.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/10.png"));
         Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb10ActionPerformed
 
     private void chatBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chatBxActionPerformed
-        try{
+        try {
             Desktop.getDesktop().browse(new URL("https://api.whatsapp.com/send?phone=6287743310528&text=Kak%20saya%20ingin%20cek%20kamar.😊").toURI());
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
         }
     }//GEN-LAST:event_chatBxActionPerformed
@@ -2241,21 +2353,21 @@ resetIconPanelButton1(icoPelanggan2);
     }//GEN-LAST:event_MasukActionPerformed
 
     private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-        
+
 
     }//GEN-LAST:event_nm_lengkapActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        
+
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jLabel82MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseEntered
-setIconPanelButton3(icoPemesanan2);  
+        setIconPanelButton3(icoPemesanan2);
 
     }//GEN-LAST:event_jLabel82MouseEntered
 
     private void jLabel82MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseExited
-resetIconPanelButton3(icoPemesanan2);  
+        resetIconPanelButton3(icoPemesanan2);
     }//GEN-LAST:event_jLabel82MouseExited
 
     private void minimized9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimized9ActionPerformed
@@ -2263,20 +2375,51 @@ resetIconPanelButton3(icoPemesanan2);
     }//GEN-LAST:event_minimized9ActionPerformed
 
     private void close5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close5ActionPerformed
-System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_close5ActionPerformed
 
     private void Opsi_PerempuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Opsi_PerempuanActionPerformed
 
     }//GEN-LAST:event_Opsi_PerempuanActionPerformed
 
-    private void nm_lengkap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkap1ActionPerformed
+    private void txtKTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKTPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nm_lengkap1ActionPerformed
+    }//GEN-LAST:event_txtKTPActionPerformed
 
-    private void Masuk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Masuk1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Masuk1ActionPerformed
+    private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
+        try {
+        String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
+        id_cust = txtCust.getText();
+        id_user = txtUser.getText();
+        username = txtUsername.getText();
+        password = txtPass.getText();
+        noktp = txtKTP.getText();
+        nama = txtNama.getText();
+        jeniskelamin = null;
+        if (Opsi_Laki.isSelected()) {
+            jeniskelamin = "Laki-laki";
+        } else if (Opsi_Perempuan.isSelected()) {
+            jeniskelamin = "Perempuan";
+        }
+
+        alamat = txtAlmt.getText();
+        nohppribadi = txtNoHp.getText();
+        nohpdarurat = txtNoHPDarurat.getText();
+
+        akses = (String) cmbAkses.getSelectedItem();
+
+        ConnectDB konek = new ConnectDB();
+        konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
+        konek.insertDB(id_user, username, password, akses);
+        
+        JOptionPane.showMessageDialog(rootPane, "Sukses");
+        resetForm();
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(rootPane, "Error");
+            System.out.println(e.getMessage());
+        }
+
+    }//GEN-LAST:event_SimpanActionPerformed
 
     private void jLabel86MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel86MouseClicked
         InputDataPelanggan.setVisible(true);
@@ -2294,11 +2437,35 @@ System.exit(0);
     }//GEN-LAST:event_jLabel86MouseClicked
 
     private void Menu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu3MouseClicked
-        // TODO add your handling code here:
+        Menu3.setVisible(false);
+        Menu3.setEnabled(false);
+        Menu14.setVisible(true);
+        Menu14.setEnabled(true);
+        setPanel(InputDataPelanggan);
+        judul5.setBounds(545, 10, 260, 90);
+        form1.setBounds(154, 110, 1050, 610);
+        Lbl_IdUser.setBounds(1000, 90, 35, 15);
+        txtUser.setBounds(1040, 90, 50, 15);
+        Lbl_IdCust.setBounds(1100, 90, 35, 15);
+        txtCust.setBounds(1140, 90, 50, 15);
+        minimized9.setBounds(1286, 15, 20, 20);
+        close5.setBounds(1316, 10, 20, 20);
     }//GEN-LAST:event_Menu3MouseClicked
 
     private void Menu14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu14MouseClicked
-        // TODO add your handling code here:
+        Menu14.setVisible(false);
+        Menu14.setEnabled(false);
+        Menu3.setVisible(true);
+        Menu3.setEnabled(true);
+        resetPanel(InputDataPelanggan);
+        judul5.setBounds(445, 10, 260, 90);
+        form1.setBounds(50, 110, 1050, 610);
+        Lbl_IdUser.setBounds(900, 90, 35, 15);
+        txtUser.setBounds(940, 90, 50, 15);
+        Lbl_IdCust.setBounds(1000, 90, 35, 15);
+        txtCust.setBounds(1040, 90, 50, 15);
+        minimized9.setBounds(1080, 15, 20, 20);
+        close5.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_Menu14MouseClicked
 
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
@@ -2314,7 +2481,22 @@ System.exit(0);
         LaporanSidebar.setEnabled(false);
     }//GEN-LAST:event_jLabel24MouseClicked
 
-    
+    private void HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HideActionPerformed
+        Show.setVisible(true);
+        Show.setEnabled(true);
+        txtPass.setEchoChar((char) 0);
+        Hide.setVisible(false);
+        Hide.setEnabled(false);
+    }//GEN-LAST:event_HideActionPerformed
+
+    private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
+        Hide.setVisible(true);
+        Hide.setEnabled(true);
+        txtPass.setEchoChar((char) 8226);
+        Show.setVisible(false);
+        Show.setEnabled(false);
+    }//GEN-LAST:event_ShowActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2373,13 +2555,23 @@ System.exit(0);
     private javax.swing.JPanel Data_Pelanggan;
     private javax.swing.JPanel Data_Pembayaran;
     private javax.swing.JPanel Data_Pemesanan;
+    private javax.swing.JButton Hide;
     private javax.swing.JPanel InputDataPelanggan;
     private javax.swing.JLabel Kamar3;
     private javax.swing.JLabel Kamar4;
     private javax.swing.JPanel KamarSideBar;
     private javax.swing.JPanel LaporanSidebar;
+    private javax.swing.JLabel Lbl_Alamat;
+    private javax.swing.JLabel Lbl_HakAkses;
     private javax.swing.JLabel Lbl_IdCust;
     private javax.swing.JLabel Lbl_IdUser;
+    private javax.swing.JLabel Lbl_Jkl;
+    private javax.swing.JLabel Lbl_KTP;
+    private javax.swing.JLabel Lbl_Nama;
+    private javax.swing.JLabel Lbl_NoHP;
+    private javax.swing.JLabel Lbl_NoHPDarurat;
+    private javax.swing.JLabel Lbl_Pass;
+    private javax.swing.JLabel Lbl_Username;
     private javax.swing.JLabel Lbl_beranda;
     private javax.swing.JLabel Lbl_kamar;
     private javax.swing.JLabel Lbl_laporan;
@@ -2387,7 +2579,6 @@ System.exit(0);
     private javax.swing.JLabel Lbl_pengaturan;
     private javax.swing.JToggleButton Logout;
     private javax.swing.JToggleButton Masuk;
-    private javax.swing.JToggleButton Masuk1;
     private javax.swing.JLabel Menu1;
     private javax.swing.JLabel Menu10;
     private javax.swing.JLabel Menu11;
@@ -2410,7 +2601,9 @@ System.exit(0);
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JScrollPane ScrollData1;
     private javax.swing.JScrollPane ScrollData2;
+    private javax.swing.JButton Show;
     private javax.swing.JPanel SideBarMenu;
+    private javax.swing.JToggleButton Simpan;
     private javax.swing.JLabel Slide1;
     private javax.swing.JLabel Text2;
     private javax.swing.JPanel beranda;
@@ -2423,6 +2616,7 @@ System.exit(0);
     private javax.swing.JButton close5;
     private javax.swing.JButton close6;
     private javax.swing.JButton close7;
+    private javax.swing.JComboBox<String> cmbAkses;
     private javax.swing.JPanel form;
     private javax.swing.JPanel form1;
     private javax.swing.JRadioButton gb1;
@@ -2481,15 +2675,7 @@ System.exit(0);
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -2534,27 +2720,27 @@ System.exit(0);
     private javax.swing.JButton minimized8;
     private javax.swing.JButton minimized9;
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
-    public static final javax.swing.JTextField nm_lengkap1 = new javax.swing.JTextField();
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtAlamat1 = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtAlamat2 = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtAlmt = new javax.swing.JTextField();
     private javax.swing.JTextField txtBooking;
     private javax.swing.JTextField txtCust;
     public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtKodeBayar;
     private javax.swing.JTextField txtLokasiKamar;
-    private javax.swing.JTextField txtLokasiKamar1;
+    public static final javax.swing.JTextField txtNama = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtNoDarurat1 = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtNoHP1 = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtNoHPDarurat = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtNoHp = new javax.swing.JTextField();
     private javax.swing.JTextField txtNoKTP;
-    private javax.swing.JTextField txtNoKTP1;
+    private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
     private javax.swing.JTextField txtUser;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
