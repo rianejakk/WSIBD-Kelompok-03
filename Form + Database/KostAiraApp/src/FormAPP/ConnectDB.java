@@ -117,6 +117,17 @@ public class ConnectDB {
         }
         return rs;
     }
+    
+    public ResultSet slctDB() {
+        try {
+            String sql = "SELECT id_cust, login_user.username, login_user.password, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
 
     public ResultSet conLogin(String username, String password) {
         try {
