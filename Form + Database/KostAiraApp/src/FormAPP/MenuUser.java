@@ -135,7 +135,7 @@ public class MenuUser extends javax.swing.JFrame {
         judul4 = new javax.swing.JLabel();
         CekButton6 = new javax.swing.JButton();
         form = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        Lbl_Judul1 = new javax.swing.JLabel();
         ScrollData = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Masuk = new javax.swing.JToggleButton();
@@ -629,10 +629,10 @@ public class MenuUser extends javax.swing.JFrame {
         form.setOpaque(false);
         form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(96, 82, 76));
-        jLabel5.setText("Formulir Pemesanan Kamar");
-        form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        Lbl_Judul1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Lbl_Judul1.setForeground(new java.awt.Color(96, 82, 76));
+        Lbl_Judul1.setText("Formulir Pemesanan Kamar");
+        form.add(Lbl_Judul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
 
         ScrollData.setBackground(new java.awt.Color(255, 255, 255));
         ScrollData.setBorder(null);
@@ -1291,6 +1291,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel Kamar3;
     private javax.swing.JLabel Kamar4;
     private javax.swing.JPanel KamarSideBar;
+    private javax.swing.JLabel Lbl_Judul1;
     private javax.swing.JLabel Lbl_beranda;
     private javax.swing.JLabel Lbl_kamar;
     private javax.swing.JLabel Lbl_pemesanan;
@@ -1361,7 +1362,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
