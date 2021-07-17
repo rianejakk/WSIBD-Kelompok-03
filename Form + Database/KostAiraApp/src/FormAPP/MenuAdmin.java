@@ -291,6 +291,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtCust = new javax.swing.JTextField();
         form1 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         ScrollData1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         Masuk1 = new javax.swing.JToggleButton();
@@ -1613,6 +1614,15 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel23.setText("Input Data Pelanggan ");
         form1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 20, -1, -1));
 
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/backIco.png"))); // NOI18N
+        jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
+        form1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, 20, 20));
+
         ScrollData1.setBackground(new java.awt.Color(255, 255, 255));
         ScrollData1.setBorder(null);
         ScrollData1.setOpaque(false);
@@ -2291,6 +2301,19 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_Menu14MouseClicked
 
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        PengaturanSideBar.setVisible(true);
+        PengaturanSideBar.setEnabled(true);
+        BerandaSideBar.setVisible(false);
+        BerandaSideBar.setEnabled(false);
+        KamarSideBar.setVisible(false);
+        KamarSideBar.setEnabled(false);
+        PemesananSideBar.setVisible(false);
+        PemesananSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);
+    }//GEN-LAST:event_jLabel24MouseClicked
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2441,6 +2464,7 @@ System.exit(0);
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel39;
