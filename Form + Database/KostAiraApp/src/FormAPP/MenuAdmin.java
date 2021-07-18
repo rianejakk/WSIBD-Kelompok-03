@@ -477,7 +477,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_Cari1 = new javax.swing.JLabel();
         txtCari1 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tabel1 = new javax.swing.JTable();
+        tabelKamar = new javax.swing.JTable();
         jSeparator3 = new javax.swing.JSeparator();
         Lk_bawah = new javax.swing.JRadioButton();
         Jk_kamar01 = new javax.swing.JRadioButton();
@@ -1454,6 +1454,9 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         lbl_kkamar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
         lbl_kkamar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_kkamarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbl_kkamarMouseEntered(evt);
             }
@@ -2272,7 +2275,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jScrollPane4.setAutoscrolls(true);
 
-        tabel1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelKamar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -2290,13 +2293,13 @@ public class MenuAdmin extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9"
             }
         ));
-        tabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelKamar.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tabelKamar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabel1MouseClicked(evt);
+                tabelKamarMouseClicked(evt);
             }
         });
-        jScrollPane4.setViewportView(tabel1);
+        jScrollPane4.setViewportView(tabelKamar);
 
         bttn_Hide1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
 
@@ -2909,7 +2912,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Opsi_PerempuanActionPerformed
 
     private void txtKTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKTPActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtKTPActionPerformed
 
     private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
@@ -3112,80 +3115,97 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_tabelMouseClicked
 
     private void Simpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Simpan1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Simpan1ActionPerformed
 
     private void Simpan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Simpan2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Simpan2ActionPerformed
 
     private void bttn_Opsi_LakiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Opsi_LakiActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bttn_Opsi_LakiActionPerformed
 
     private void lbl_Menu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu4MouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_lbl_Menu4MouseClicked
 
     private void lbl_Menu15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu15MouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_lbl_Menu15MouseClicked
 
     private void bttn_minimized10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized10ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bttn_minimized10ActionPerformed
 
     private void bttn_close8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close8ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bttn_close8ActionPerformed
 
     private void lbl_back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_back1MouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_lbl_back1MouseClicked
 
     private void txtkodekamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodekamarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtkodekamarActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void browse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_browse1ActionPerformed
 
     private void txtCari1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCari1KeyReleased
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCari1KeyReleased
 
-    private void tabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tabel1MouseClicked
+    private void tabelKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKamarMouseClicked
+        
+    }//GEN-LAST:event_tabelKamarMouseClicked
 
     private void Lk_bawahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lk_bawahActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Lk_bawahActionPerformed
 
     private void Jk_kamar02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jk_kamar02ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Jk_kamar02ActionPerformed
 
     private void Lk_atasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lk_atasActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Lk_atasActionPerformed
 
     private void txtUkuranKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUkuranKamarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtUkuranKamarActionPerformed
+
+    private void lbl_kkamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseClicked
+        InputDataKamar.setVisible(true);
+        InputDataKamar.setEnabled(true);
+        BerandaSideBar.setVisible(false);
+        BerandaSideBar.setEnabled(false);
+        KamarSideBar.setVisible(false);
+        KamarSideBar.setEnabled(false);
+        PemesananSideBar.setVisible(false);
+        PemesananSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);
+        PengaturanSideBar.setVisible(false);
+        PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setVisible(false);
+    }//GEN-LAST:event_lbl_kkamarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3459,7 +3479,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
     private javax.swing.JTable tabel;
-    private javax.swing.JTable tabel1;
+    private javax.swing.JTable tabelKamar;
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
     private javax.swing.JTextArea txtAlmt;
