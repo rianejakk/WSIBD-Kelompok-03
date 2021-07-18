@@ -52,14 +52,16 @@ public class MenuAdmin extends javax.swing.JFrame {
         DefaultTableModel tbl = new DefaultTableModel();
 
         tbl.addColumn("ID Cust");
-        tbl.addColumn("USERNAME");
-        tbl.addColumn("PASSWORD");
         tbl.addColumn("NO.KTP");
         tbl.addColumn("NAMA LENGKAP");
         tbl.addColumn("JENIS KELAMIN");
         tbl.addColumn("ALAMAT");
         tbl.addColumn("NO.HP");
         tbl.addColumn("NO.DARURAT");
+        tbl.addColumn("ID LOGIN");
+        tbl.addColumn("USERNAME");
+        tbl.addColumn("PASSWORD");
+        tbl.addColumn("HAK AKSES");
 
 
  
@@ -71,14 +73,60 @@ public class MenuAdmin extends javax.swing.JFrame {
             while (rs.next()) {
                 tbl.addRow(new Object[]{
                     rs.getString("id_cust"),
-                    rs.getString("username"),
-                    rs.getString("password"),
                     rs.getString("NoKTP"),
                     rs.getString("NamaLengkap"),
                     rs.getString("JenisKelamin"),
                     rs.getString("Alamat"),
                     rs.getString("NoHpPribadi"),
-                    rs.getString("NoHpDarurat")
+                    rs.getString("NoHpDarurat"),
+                    rs.getString("id_user"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("akses")
+                });
+                tabel.setModel(tbl);
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Salah");
+//            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+        
+        public void showTableKamar() {
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("ID Cust");
+        tbl.addColumn("NO.KTP");
+        tbl.addColumn("NAMA LENGKAP");
+        tbl.addColumn("JENIS KELAMIN");
+        tbl.addColumn("ALAMAT");
+        tbl.addColumn("NO.HP");
+        tbl.addColumn("NO.DARURAT");
+        tbl.addColumn("ID LOGIN");
+        tbl.addColumn("USERNAME");
+        tbl.addColumn("PASSWORD");
+        tbl.addColumn("HAK AKSES");
+
+
+ 
+        tabel.setModel(tbl);
+
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.slctDB();
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("id_cust"),
+                    rs.getString("NoKTP"),
+                    rs.getString("NamaLengkap"),
+                    rs.getString("JenisKelamin"),
+                    rs.getString("Alamat"),
+                    rs.getString("NoHpPribadi"),
+                    rs.getString("NoHpDarurat"),
+                    rs.getString("id_user"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("akses")
                 });
                 tabel.setModel(tbl);
             }
@@ -412,7 +460,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_datapelanggan = new javax.swing.JLabel();
         lbl_back = new javax.swing.JLabel();
         ScrollForm = new javax.swing.JScrollPane();
-        bttn_Hide = new javax.swing.JPanel();
+        panelPelanggan = new javax.swing.JPanel();
         Lbl_Username = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         Lbl_Pass = new javax.swing.JLabel();
@@ -459,7 +507,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_datapelanggan1 = new javax.swing.JLabel();
         lbl_back1 = new javax.swing.JLabel();
         ScrollForm1 = new javax.swing.JScrollPane();
-        bttn_Hide1 = new javax.swing.JPanel();
+        panelKamar = new javax.swing.JPanel();
         Lbl_jeniskamar = new javax.swing.JLabel();
         Lbl_lokasikamar = new javax.swing.JLabel();
         Lbl_uploadpapkmr = new javax.swing.JLabel();
@@ -1809,22 +1857,22 @@ public class MenuAdmin extends javax.swing.JFrame {
         ScrollForm.setBorder(null);
         ScrollForm.setOpaque(false);
 
-        bttn_Hide.setBackground(new java.awt.Color(255, 255, 255));
-        bttn_Hide.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelPelanggan.setBackground(new java.awt.Color(255, 255, 255));
+        panelPelanggan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Lbl_Username.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Username.setText("Username");
-        bttn_Hide.add(Lbl_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 126, -1));
+        panelPelanggan.add(Lbl_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 126, -1));
 
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 310, -1));
+        panelPelanggan.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 310, -1));
 
         Lbl_Pass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Pass.setText("Password");
-        bttn_Hide.add(Lbl_Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 126, -1));
+        panelPelanggan.add(Lbl_Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 126, -1));
 
         txtPass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 280, 30));
+        panelPelanggan.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 280, 30));
 
         bttn_Hide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/hide_32px.png"))); // NOI18N
         bttn_Hide2.setBorder(null);
@@ -1836,7 +1884,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 bttn_Hide2ActionPerformed(evt);
             }
         });
-        bttn_Hide.add(bttn_Hide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
+        panelPelanggan.add(bttn_Hide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
 
         bttn_Show2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/show_32px.png"))); // NOI18N
         bttn_Show2.setBorder(null);
@@ -1848,15 +1896,15 @@ public class MenuAdmin extends javax.swing.JFrame {
                 bttn_Show2ActionPerformed(evt);
             }
         });
-        bttn_Hide.add(bttn_Show2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
+        panelPelanggan.add(bttn_Show2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
 
         txtPass1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtPass1.setEnabled(false);
-        bttn_Hide.add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 310, 30));
+        panelPelanggan.add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 310, 30));
 
         Lbl_KTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_KTP.setText("No. KTP");
-        bttn_Hide.add(Lbl_KTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 126, -1));
+        panelPelanggan.add(Lbl_KTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 126, -1));
 
         txtKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtKTP.addActionListener(new java.awt.event.ActionListener() {
@@ -1864,18 +1912,18 @@ public class MenuAdmin extends javax.swing.JFrame {
                 txtKTPActionPerformed(evt);
             }
         });
-        bttn_Hide.add(txtKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 310, -1));
+        panelPelanggan.add(txtKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 310, -1));
 
         Lbl_Nama.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Nama.setText("Nama Lengkap");
-        bttn_Hide.add(Lbl_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 126, -1));
+        panelPelanggan.add(Lbl_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 126, -1));
 
         txtNama.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide.add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 310, -1));
+        panelPelanggan.add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 310, -1));
 
         Lbl_Jkl.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Jkl.setText("Jenis Kelamin");
-        bttn_Hide.add(Lbl_Jkl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 126, -1));
+        panelPelanggan.add(Lbl_Jkl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 126, -1));
 
         bttn_Opsi_Laki.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(bttn_Opsi_Laki);
@@ -1887,43 +1935,44 @@ public class MenuAdmin extends javax.swing.JFrame {
                 bttn_Opsi_LakiActionPerformed(evt);
             }
         });
-        bttn_Hide.add(bttn_Opsi_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        panelPelanggan.add(bttn_Opsi_Laki, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
         bttn_Opsi_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(bttn_Opsi_Perempuan);
         bttn_Opsi_Perempuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        bttn_Opsi_Perempuan.setSelected(true);
         bttn_Opsi_Perempuan.setText("Perempuan");
         bttn_Opsi_Perempuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bttn_Opsi_PerempuanActionPerformed(evt);
             }
         });
-        bttn_Hide.add(bttn_Opsi_Perempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
+        panelPelanggan.add(bttn_Opsi_Perempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
 
         Lbl_Alamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Alamat.setText("Alamat");
-        bttn_Hide.add(Lbl_Alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
+        panelPelanggan.add(Lbl_Alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
 
         Lbl_NoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_NoHP.setText("No. HP Pribadi");
-        bttn_Hide.add(Lbl_NoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 126, -1));
+        panelPelanggan.add(Lbl_NoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 126, -1));
 
         txtNoHp.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide.add(txtNoHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 310, -1));
+        panelPelanggan.add(txtNoHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 310, -1));
 
         Lbl_NoHPDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_NoHPDarurat.setText("No. HP Darurat");
-        bttn_Hide.add(Lbl_NoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 126, -1));
+        panelPelanggan.add(Lbl_NoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 126, -1));
 
         txtNoHPDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide.add(txtNoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 310, -1));
+        panelPelanggan.add(txtNoHPDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 310, -1));
 
         Lbl_HakAkses.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_HakAkses.setText("Hak Akses");
-        bttn_Hide.add(Lbl_HakAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 126, -1));
+        panelPelanggan.add(Lbl_HakAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 126, -1));
 
         cmbAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih sebagai", "Admin", "User" }));
-        bttn_Hide.add(cmbAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 310, 30));
+        panelPelanggan.add(cmbAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 310, 30));
 
         Simpan2.setBackground(new java.awt.Color(52, 135, 239));
         Simpan2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1939,7 +1988,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 Simpan2ActionPerformed(evt);
             }
         });
-        bttn_Hide.add(Simpan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
+        panelPelanggan.add(Simpan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
 
         Simpan1.setBackground(new java.awt.Color(52, 135, 239));
         Simpan1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1955,7 +2004,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 Simpan1ActionPerformed(evt);
             }
         });
-        bttn_Hide.add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
+        panelPelanggan.add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
 
         Simpan.setBackground(new java.awt.Color(52, 135, 239));
         Simpan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1971,22 +2020,22 @@ public class MenuAdmin extends javax.swing.JFrame {
                 SimpanActionPerformed(evt);
             }
         });
-        bttn_Hide.add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, 100, 40));
+        panelPelanggan.add(Simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, 100, 40));
 
         txtAlmt.setColumns(20);
         txtAlmt.setLineWrap(true);
         txtAlmt.setRows(5);
         jScrollPane1.setViewportView(txtAlmt);
 
-        bttn_Hide.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 310, -1));
+        panelPelanggan.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 310, -1));
 
         Lbl_Data.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Lbl_Data.setText("Data");
-        bttn_Hide.add(Lbl_Data, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+        panelPelanggan.add(Lbl_Data, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
 
         lbl_foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bttn_Hide.add(lbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
-        bttn_Hide.add(txtPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
+        panelPelanggan.add(lbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
+        panelPelanggan.add(txtPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
 
         browse.setText("...");
         browse.addActionListener(new java.awt.event.ActionListener() {
@@ -1994,18 +2043,18 @@ public class MenuAdmin extends javax.swing.JFrame {
                 browseActionPerformed(evt);
             }
         });
-        bttn_Hide.add(browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 229, 32, 22));
+        panelPelanggan.add(browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 229, 32, 22));
 
         Lbl_Cari.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Lbl_Cari.setText("Cari Data");
-        bttn_Hide.add(Lbl_Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
+        panelPelanggan.add(Lbl_Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
 
         txtCari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCariKeyReleased(evt);
             }
         });
-        bttn_Hide.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 370, -1));
+        panelPelanggan.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 370, -1));
 
         jScrollPane2.setAutoscrolls(true);
 
@@ -2035,12 +2084,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabel);
 
-        bttn_Hide.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
+        panelPelanggan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        bttn_Hide.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
+        panelPelanggan.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
 
-        ScrollForm.setViewportView(bttn_Hide);
+        ScrollForm.setViewportView(panelPelanggan);
 
         form1.add(ScrollForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1064, 500));
 
@@ -2157,20 +2206,20 @@ public class MenuAdmin extends javax.swing.JFrame {
         ScrollForm1.setBorder(null);
         ScrollForm1.setOpaque(false);
 
-        bttn_Hide1.setBackground(new java.awt.Color(255, 255, 255));
-        bttn_Hide1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelKamar.setBackground(new java.awt.Color(255, 255, 255));
+        panelKamar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Lbl_jeniskamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_jeniskamar.setText("Jenis Kamar");
-        bttn_Hide1.add(Lbl_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 126, -1));
+        panelKamar.add(Lbl_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 126, -1));
 
         Lbl_lokasikamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_lokasikamar.setText("Lokasi Kamar");
-        bttn_Hide1.add(Lbl_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 126, -1));
+        panelKamar.add(Lbl_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 126, -1));
 
         Lbl_uploadpapkmr.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_uploadpapkmr.setText("Upload Foto Kamar");
-        bttn_Hide1.add(Lbl_uploadpapkmr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 140, -1));
+        panelKamar.add(Lbl_uploadpapkmr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 140, -1));
 
         txtkodekamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtkodekamar.addActionListener(new java.awt.event.ActionListener() {
@@ -2178,18 +2227,18 @@ public class MenuAdmin extends javax.swing.JFrame {
                 txtkodekamarActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(txtkodekamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 90, -1));
+        panelKamar.add(txtkodekamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 90, -1));
 
         Lbl_fasilitas.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_fasilitas.setText("Fasilitas");
-        bttn_Hide1.add(Lbl_fasilitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 126, -1));
+        panelKamar.add(Lbl_fasilitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 126, -1));
 
         file_name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bttn_Hide1.add(file_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 210, -1));
+        panelKamar.add(file_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 210, -1));
 
         Lbl_HakAkses1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_HakAkses1.setText("Kode Kamar");
-        bttn_Hide1.add(Lbl_HakAkses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 126, -1));
+        panelKamar.add(Lbl_HakAkses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 126, -1));
 
         btnEdit.setBackground(new java.awt.Color(52, 135, 239));
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2205,7 +2254,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 btnEditActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
+        panelKamar.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
 
         btnHapus.setBackground(new java.awt.Color(52, 135, 239));
         btnHapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2221,7 +2270,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 btnHapusActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(btnHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
+        panelKamar.add(btnHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
 
         btnSimpan.setBackground(new java.awt.Color(52, 135, 239));
         btnSimpan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2237,22 +2286,22 @@ public class MenuAdmin extends javax.swing.JFrame {
                 btnSimpanActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, 100, 40));
+        panelKamar.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, 100, 40));
 
         txtFasilitas.setColumns(20);
         txtFasilitas.setLineWrap(true);
         txtFasilitas.setRows(5);
         jScrollPane3.setViewportView(txtFasilitas);
 
-        bttn_Hide1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 310, -1));
+        panelKamar.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 310, -1));
 
         Lbl_Data1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Lbl_Data1.setText("Data");
-        bttn_Hide1.add(Lbl_Data1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+        panelKamar.add(Lbl_Data1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
 
         lbl_fotopreview.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bttn_Hide1.add(lbl_fotopreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 140, 170));
-        bttn_Hide1.add(txtPath1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
+        panelKamar.add(lbl_fotopreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 140, 170));
+        panelKamar.add(txtPath1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
 
         browse1.setText("...");
         browse1.addActionListener(new java.awt.event.ActionListener() {
@@ -2260,18 +2309,18 @@ public class MenuAdmin extends javax.swing.JFrame {
                 browse1ActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(browse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 229, 32, 22));
+        panelKamar.add(browse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 229, 32, 22));
 
         Lbl_Cari1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Lbl_Cari1.setText("Cari Data");
-        bttn_Hide1.add(Lbl_Cari1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
+        panelKamar.add(Lbl_Cari1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
 
         txtCari1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCari1KeyReleased(evt);
             }
         });
-        bttn_Hide1.add(txtCari1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 370, -1));
+        panelKamar.add(txtCari1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 370, -1));
 
         jScrollPane4.setAutoscrolls(true);
 
@@ -2301,10 +2350,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tabelKamar);
 
-        bttn_Hide1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
+        panelKamar.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        bttn_Hide1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
+        panelKamar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
 
         Lk_bawah.setBackground(new java.awt.Color(255, 255, 255));
         Lk_bawah.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -2314,12 +2363,12 @@ public class MenuAdmin extends javax.swing.JFrame {
                 Lk_bawahActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(Lk_bawah, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
+        panelKamar.add(Lk_bawah, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         Jk_kamar01.setBackground(new java.awt.Color(255, 255, 255));
         Jk_kamar01.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Jk_kamar01.setText("Kamar 01");
-        bttn_Hide1.add(Jk_kamar01, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        panelKamar.add(Jk_kamar01, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         Jk_kamar02.setBackground(new java.awt.Color(255, 255, 255));
         Jk_kamar02.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -2329,7 +2378,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 Jk_kamar02ActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(Jk_kamar02, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+        panelKamar.add(Jk_kamar02, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         Lk_atas.setBackground(new java.awt.Color(255, 255, 255));
         Lk_atas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -2339,15 +2388,15 @@ public class MenuAdmin extends javax.swing.JFrame {
                 Lk_atasActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(Lk_atas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, -1));
+        panelKamar.add(Lk_atas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, -1));
 
         Lbl_ukurankamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_ukurankamar.setText("Ukuran Kamar");
-        bttn_Hide1.add(Lbl_ukurankamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 126, -1));
+        panelKamar.add(Lbl_ukurankamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 126, -1));
 
         btnPilihFile.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnPilihFile.setText("Pilih File");
-        bttn_Hide1.add(btnPilihFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, 30));
+        panelKamar.add(btnPilihFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, 30));
 
         txtUkuranKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtUkuranKamar.addActionListener(new java.awt.event.ActionListener() {
@@ -2355,12 +2404,12 @@ public class MenuAdmin extends javax.swing.JFrame {
                 txtUkuranKamarActionPerformed(evt);
             }
         });
-        bttn_Hide1.add(txtUkuranKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 310, -1));
+        panelKamar.add(txtUkuranKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 310, -1));
 
         lbl_foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bttn_Hide1.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
+        panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
 
-        ScrollForm1.setViewportView(bttn_Hide1);
+        ScrollForm1.setViewportView(panelKamar);
 
         form2.add(ScrollForm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1064, 500));
 
@@ -3088,18 +3137,21 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         int row = tabel.getSelectedRow();
-        txtUsername.setText(tabel.getValueAt(row, 1).toString());
-        txtPass.setText(tabel.getValueAt(row, 2).toString());
-        txtKTP.setText(tabel.getValueAt(row, 3).toString());
-        txtNama.setText(tabel.getValueAt(row, 4).toString());
-        if (tabel.getValueAt(row, 4).equals("Laki-laki")) {
-            jRadioButton1.setSelected(true);
-        } else if (tabel.getValueAt(row, 4).equals("Perempuan")) {
-            jRadioButton2.setSelected(true);
+        txtCust.setText(tabel.getValueAt(row, 0).toString());
+        txtKTP.setText(tabel.getValueAt(row, 1).toString());
+        txtNama.setText(tabel.getValueAt(row, 2).toString());
+        if (tabel.getValueAt(row, 3).equals("Laki-laki")) {
+            bttn_Opsi_Laki.setSelected(true);
+        } else if (tabel.getValueAt(row, 3).equals("Perempuan")) {
+            bttn_Opsi_Perempuan.setSelected(true);
         }
-        txtAlamat.setText(tabel.getValueAt(row, 5).toString());
-        txtNoHp.setText(tabel.getValueAt(row, 6).toString());
-        txtNoHPDarurat.setText(tabel.getValueAt(row, 7).toString());
+        txtAlmt.setText(tabel.getValueAt(row, 4).toString());
+        txtNoHp.setText(tabel.getValueAt(row, 5).toString());
+        txtNoHPDarurat.setText(tabel.getValueAt(row, 6).toString());
+        txtUser.setText(tabel.getValueAt(row, 7).toString());
+        txtUsername.setText(tabel.getValueAt(row, 8).toString());
+        txtPass.setText(tabel.getValueAt(row, 9).toString());
+        cmbAkses.setSelectedItem(tabel.getValueAt(row, 10).toString());
 //        try {
 //
 //            String sql = "select * from tabmahasiswa where nim='" + txtNIM.getText() + "'";
@@ -3350,8 +3402,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnPilihFile;
     private javax.swing.JToggleButton btnSimpan;
     private javax.swing.JButton bttn_CekButton6;
-    private javax.swing.JPanel bttn_Hide;
-    private javax.swing.JPanel bttn_Hide1;
     private javax.swing.JButton bttn_Hide2;
     private javax.swing.JToggleButton bttn_Logout;
     private javax.swing.JRadioButton bttn_Opsi_Laki;
@@ -3505,6 +3555,8 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_spasi;
     private javax.swing.JLabel lbl_tekschat;
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
+    private javax.swing.JPanel panelKamar;
+    private javax.swing.JPanel panelPelanggan;
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
     private javax.swing.JTable tabel;

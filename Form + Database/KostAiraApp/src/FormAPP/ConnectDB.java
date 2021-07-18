@@ -134,7 +134,7 @@ public class ConnectDB {
     
     public ResultSet slctDB() {
         try {
-            String sql = "SELECT id_cust, login_user.username, login_user.password, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
+            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
