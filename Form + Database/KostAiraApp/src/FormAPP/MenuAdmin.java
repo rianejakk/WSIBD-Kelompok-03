@@ -3159,7 +3159,36 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-    
+    try {
+        String kode_kamar, lokasi_kamar, Kjenis_kamar, ukuran, fasilitas;
+        kode_kamar = txtkodekamar.getText();
+        ukuran = txtUkuranKamar.getText();
+        fasilitas = txtFasilitas.getText();
+        
+        Kjenis_kamar = null;
+        if (Jk_kamar01.isSelected()) {
+            Kjenis_kamar = "K01";
+        } else if (Jk_kamar02.isSelected()) {
+            Kjenis_kamar = "K02";
+        }
+        
+        lokasi_kamar = null;
+        if (Lk_atas.isSelected()) {
+            lokasi_kamar = "Atas";
+        } else if (Lk_bawah.isSelected()) {
+            lokasi_kamar = "Bawah";
+        }
+
+        ConnectDB konek = new ConnectDB();
+        konek.insertDB(kode_kamar, lokasi_kamar, Kjenis_kamar, ukuran, fasilitas);
+        
+        JOptionPane.showMessageDialog(rootPane, "Sukses");
+        resetForm();
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(rootPane, "Error");
+            System.out.println(e.getMessage());
+        }
+        showTables();
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void browse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse1ActionPerformed
