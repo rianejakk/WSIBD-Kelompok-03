@@ -428,6 +428,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_kkamar = new javax.swing.JLabel();
         SideBarMenu = new javax.swing.JPanel();
         lbl_photos = new javax.swing.JLabel();
+        lbl_photos1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lbl_menu = new javax.swing.JLabel();
         beranda = new javax.swing.JPanel();
@@ -499,10 +500,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         bttn_minimized10 = new javax.swing.JButton();
         bttn_close8 = new javax.swing.JButton();
         lbl_judul8 = new javax.swing.JLabel();
-        Lbl_IdUser1 = new javax.swing.JLabel();
-        txtUser1 = new javax.swing.JTextField();
-        Lbl_IdCust1 = new javax.swing.JLabel();
-        txtCust1 = new javax.swing.JTextField();
         form2 = new javax.swing.JPanel();
         lbl_datapelanggan1 = new javax.swing.JLabel();
         lbl_back1 = new javax.swing.JLabel();
@@ -1525,8 +1522,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         SideBarMenu.setPreferredSize(new java.awt.Dimension(210, 768));
         SideBarMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_photos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileW.png"))); // NOI18N
+        lbl_photos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileS.png"))); // NOI18N
         SideBarMenu.add(lbl_photos, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 30, 100, 100));
+
+        lbl_photos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileS.png"))); // NOI18N
+        SideBarMenu.add(lbl_photos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 30, 100, 100));
 
         jSeparator1.setBackground(new java.awt.Color(96, 82, 76));
         jSeparator1.setForeground(new java.awt.Color(96, 82, 76));
@@ -2157,32 +2157,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_judul8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
         InputDataKamar.add(lbl_judul8);
         lbl_judul8.setBounds(445, 10, 260, 90);
-
-        Lbl_IdUser1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        Lbl_IdUser1.setForeground(new java.awt.Color(51, 51, 51));
-        Lbl_IdUser1.setText("IdUser :");
-        InputDataKamar.add(Lbl_IdUser1);
-        Lbl_IdUser1.setBounds(900, 90, 35, 15);
-
-        txtUser1.setEditable(false);
-        txtUser1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        txtUser1.setBorder(null);
-        txtUser1.setOpaque(false);
-        InputDataKamar.add(txtUser1);
-        txtUser1.setBounds(940, 90, 50, 15);
-
-        Lbl_IdCust1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        Lbl_IdCust1.setForeground(new java.awt.Color(51, 51, 51));
-        Lbl_IdCust1.setText("IdCust :");
-        InputDataKamar.add(Lbl_IdCust1);
-        Lbl_IdCust1.setBounds(1000, 90, 35, 15);
-
-        txtCust1.setEditable(false);
-        txtCust1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        txtCust1.setBorder(null);
-        txtCust1.setOpaque(false);
-        InputDataKamar.add(txtCust1);
-        txtCust1.setBounds(1040, 90, 50, 15);
 
         form2.setBackground(new java.awt.Color(255, 255, 255));
         form2.setOpaque(false);
@@ -3217,23 +3191,48 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Opsi_LakiActionPerformed
 
     private void lbl_Menu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu4MouseClicked
-        
+        lbl_Menu4.setVisible(false);
+        lbl_Menu4.setEnabled(false);
+        lbl_Menu15.setVisible(true);
+        lbl_Menu15.setEnabled(true);
+        setPanel(InputDataKamar);
+        lbl_judul8.setBounds(545, 10, 260, 90);
+        form2.setBounds(154, 110, 1050, 610);
+        bttn_minimized10.setBounds(1286, 15, 20, 20);
+        bttn_close8.setBounds(1316, 10, 20, 20);        
     }//GEN-LAST:event_lbl_Menu4MouseClicked
 
     private void lbl_Menu15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu15MouseClicked
-        
+        lbl_Menu15.setVisible(false);
+        lbl_Menu15.setEnabled(false);
+        lbl_Menu4.setVisible(true);
+        lbl_Menu4.setEnabled(true);
+        resetPanel(InputDataKamar);
+        lbl_judul8.setBounds(445, 10, 260, 90);
+        form2.setBounds(50, 110, 1050, 610);
+        bttn_minimized10.setBounds(1080, 15, 20, 20);
+        bttn_close8.setBounds(1110, 10, 20, 20);        
     }//GEN-LAST:event_lbl_Menu15MouseClicked
 
     private void bttn_minimized10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized10ActionPerformed
-        
+this.setState(JFrame.ICONIFIED );
     }//GEN-LAST:event_bttn_minimized10ActionPerformed
 
     private void bttn_close8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close8ActionPerformed
-        
+System.exit(0);
     }//GEN-LAST:event_bttn_close8ActionPerformed
 
     private void lbl_back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_back1MouseClicked
-        
+        PengaturanSideBar.setVisible(true);
+        PengaturanSideBar.setEnabled(true);
+        BerandaSideBar.setVisible(false);
+        BerandaSideBar.setEnabled(false);
+        KamarSideBar.setVisible(false);
+        KamarSideBar.setEnabled(false);
+        PemesananSideBar.setVisible(false);
+        PemesananSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);        
     }//GEN-LAST:event_lbl_back1MouseClicked
 
     private void txtkodekamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodekamarActionPerformed
@@ -3397,9 +3396,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_HakAkses;
     private javax.swing.JLabel Lbl_HakAkses1;
     private javax.swing.JLabel Lbl_IdCust;
-    private javax.swing.JLabel Lbl_IdCust1;
     private javax.swing.JLabel Lbl_IdUser;
-    private javax.swing.JLabel Lbl_IdUser1;
     private javax.swing.JLabel Lbl_Jkl;
     private javax.swing.JLabel Lbl_KTP;
     private javax.swing.JLabel Lbl_Nama;
@@ -3590,6 +3587,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_kuser;
     private javax.swing.JLabel lbl_menu;
     private javax.swing.JLabel lbl_photos;
+    private javax.swing.JLabel lbl_photos1;
     private javax.swing.JLabel lbl_spasi;
     private javax.swing.JLabel lbl_tekschat;
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
@@ -3606,7 +3604,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtCari1;
     private javax.swing.JTextField txtCust;
-    private javax.swing.JTextField txtCust1;
     private javax.swing.JTextArea txtFasilitas;
     public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtKTP = new javax.swing.JTextField();
@@ -3626,7 +3623,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtTotaBayar;
     public static final javax.swing.JTextField txtUkuranKamar = new javax.swing.JTextField();
     private javax.swing.JTextField txtUser;
-    private javax.swing.JTextField txtUser1;
     private javax.swing.JTextField txtUsername;
     public static final javax.swing.JTextField txtkodekamar = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
