@@ -51,7 +51,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         InputDataKamar.setVisible(false);
         InputDataKamar.setEnabled(false);
         autoNumber(txtUser);
-        autoNumber(null, txtkodekamar1);
+        autoNumber1();
         autoNumber();
         showTables();
     }
@@ -239,7 +239,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
     
         private void resetForm(JPanel panel){
-        autoNumber(null, txtkodekamar1);
+        autoNumber1();
         cmb_lokasikamar.setSelectedIndex(0);
         cmb_jeniskamar.setSelectedIndex(0);
         txtjeniskamar1.setText("");
@@ -280,12 +280,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         }
     }
     
-   private void autoNumber(JTextField f1, JTextField f2) {
+    private void autoNumber1() {
         String kode_kamar = "K0";
         int i = 0;
         try {
             ConnectDB konek = new ConnectDB();
-            ResultSet rs = konek.selectDB2(kode_kamar);
+            ResultSet rs = konek.selectDB2("kode_kamar");
 
             while (rs.next()) {
                 kode_kamar = rs.getString("kode_kamar");
@@ -294,15 +294,14 @@ public class MenuAdmin extends javax.swing.JFrame {
             i = Integer.parseInt(kode_kamar) + 1;
             kode_kamar = "00" + i;
             kode_kamar = "K0" + kode_kamar.substring(kode_kamar.length() - 2);
-            f2.setText(kode_kamar);
+            txtkodekamar1.setText(kode_kamar);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error pada Kode Kamar");
+            JOptionPane.showMessageDialog(rootPane, "Error pada ID User");
             System.out.println(e.getMessage());
         }
     }
-
-
+    
     private void autoNumber() {
         String id_cust = "U0";
         int i = 0;
@@ -1565,7 +1564,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         SideBarMenu.setPreferredSize(new java.awt.Dimension(210, 768));
         SideBarMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_photos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileS.png"))); // NOI18N
+        lbl_photos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileW.png"))); // NOI18N
         SideBarMenu.add(lbl_photos, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 30, 100, 100));
 
         lbl_photos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/profileS.png"))); // NOI18N
