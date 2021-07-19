@@ -478,8 +478,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_NoHPDarurat = new javax.swing.JLabel();
         Lbl_HakAkses = new javax.swing.JLabel();
         cmbAkses = new javax.swing.JComboBox<>();
-        Simpan2 = new javax.swing.JToggleButton();
-        Simpan1 = new javax.swing.JToggleButton();
+        edit = new javax.swing.JToggleButton();
+        hapus = new javax.swing.JToggleButton();
         Simpan = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlmt = new javax.swing.JTextArea();
@@ -1974,37 +1974,37 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmbAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih sebagai", "Admin", "User" }));
         panelPelanggan.add(cmbAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 310, 30));
 
-        Simpan2.setBackground(new java.awt.Color(52, 135, 239));
-        Simpan2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Simpan2.setForeground(new java.awt.Color(255, 255, 255));
-        Simpan2.setText("Edit");
-        Simpan2.setBorder(null);
-        Simpan2.setBorderPainted(false);
-        Simpan2.setContentAreaFilled(false);
-        Simpan2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Simpan2.setOpaque(true);
-        Simpan2.addActionListener(new java.awt.event.ActionListener() {
+        edit.setBackground(new java.awt.Color(52, 135, 239));
+        edit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        edit.setForeground(new java.awt.Color(255, 255, 255));
+        edit.setText("Edit");
+        edit.setBorder(null);
+        edit.setBorderPainted(false);
+        edit.setContentAreaFilled(false);
+        edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        edit.setOpaque(true);
+        edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Simpan2ActionPerformed(evt);
+                editActionPerformed(evt);
             }
         });
-        panelPelanggan.add(Simpan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
+        panelPelanggan.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 100, 40));
 
-        Simpan1.setBackground(new java.awt.Color(52, 135, 239));
-        Simpan1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Simpan1.setForeground(new java.awt.Color(255, 255, 255));
-        Simpan1.setText("Hapus");
-        Simpan1.setBorder(null);
-        Simpan1.setBorderPainted(false);
-        Simpan1.setContentAreaFilled(false);
-        Simpan1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Simpan1.setOpaque(true);
-        Simpan1.addActionListener(new java.awt.event.ActionListener() {
+        hapus.setBackground(new java.awt.Color(52, 135, 239));
+        hapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hapus.setForeground(new java.awt.Color(255, 255, 255));
+        hapus.setText("Hapus");
+        hapus.setBorder(null);
+        hapus.setBorderPainted(false);
+        hapus.setContentAreaFilled(false);
+        hapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hapus.setOpaque(true);
+        hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Simpan1ActionPerformed(evt);
+                hapusActionPerformed(evt);
             }
         });
-        panelPelanggan.add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
+        panelPelanggan.add(hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 100, 40));
 
         Simpan.setBackground(new java.awt.Color(52, 135, 239));
         Simpan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2990,13 +2990,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
         konek.insertDB(id_user, username, password, akses);
         
-        JOptionPane.showMessageDialog(rootPane, "Sukses");
+        JOptionPane.showMessageDialog(rootPane, "Tambah Data Pelanggan Sukses!!!");
         resetForm();
+        showTables();
         } catch (Exception e) {
-          JOptionPane.showMessageDialog(rootPane, "Error");
+          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan Pada Data Pelanggan");
             System.out.println(e.getMessage());
         }
-        showTables();
     }//GEN-LAST:event_SimpanActionPerformed
 
     private void lbl_kpelanggan2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kpelanggan2MouseClicked
@@ -3166,13 +3166,51 @@ public class MenuAdmin extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_tabelMouseClicked
 
-    private void Simpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Simpan1ActionPerformed
-        
-    }//GEN-LAST:event_Simpan1ActionPerformed
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+        String id_cust, id_user;
+        id_cust = txtCust.getText();
+        id_user = txtUser.getText();
+        ConnectDB konek = new ConnectDB();
+        konek.deleteDB(id_cust);
+        konek.deleteDB(null, id_user);
+        resetForm();
+        txtUsername.requestFocus();
+        showTables();        
+    }//GEN-LAST:event_hapusActionPerformed
 
-    private void Simpan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Simpan2ActionPerformed
-        
-    }//GEN-LAST:event_Simpan2ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        try {
+        String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
+        id_cust = txtCust.getText();
+        id_user = txtUser.getText();
+        username = txtUsername.getText();
+        password = txtPass.getText();
+        noktp = txtKTP.getText();
+        nama = txtNama.getText();
+        jeniskelamin = null;
+        if (bttn_Opsi_Laki.isSelected()) {
+            jeniskelamin = "Laki-laki";
+        } else if (bttn_Opsi_Perempuan.isSelected()) {
+            jeniskelamin = "Perempuan";
+        }
+
+        alamat = txtAlmt.getText();
+        nohppribadi = txtNoHp.getText();
+        nohpdarurat = txtNoHPDarurat.getText();
+
+        akses = (String) cmbAkses.getSelectedItem();
+
+        ConnectDB konek = new ConnectDB();
+        konek.updateDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
+        konek.updateDB(id_user, username, password, akses);
+        JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
+        resetForm();
+        showTables();    
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Pelanggan");
+            System.out.println(e.getMessage());
+        }    
+    }//GEN-LAST:event_editActionPerformed
 
     private void bttn_Opsi_LakiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Opsi_LakiActionPerformed
         
@@ -3392,8 +3430,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollForm1;
     private javax.swing.JPanel SideBarMenu;
     private javax.swing.JToggleButton Simpan;
-    private javax.swing.JToggleButton Simpan1;
-    private javax.swing.JToggleButton Simpan2;
     private javax.swing.JPanel beranda;
     private javax.swing.JToggleButton browse;
     private javax.swing.JToggleButton browse1;
@@ -3425,6 +3461,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
+    private javax.swing.JToggleButton edit;
     public static final javax.swing.JTextField file_name = new javax.swing.JTextField();
     private javax.swing.JPanel form;
     private javax.swing.JPanel form1;
@@ -3439,6 +3476,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JRadioButton gb7;
     private javax.swing.JRadioButton gb8;
     private javax.swing.JRadioButton gb9;
+    private javax.swing.JToggleButton hapus;
     private javax.swing.JLabel ico_beranda;
     private javax.swing.JLabel ico_kamar;
     private javax.swing.JLabel ico_laporan;

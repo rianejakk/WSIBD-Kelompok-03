@@ -85,20 +85,38 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-//        public void updateDB(String nim, String nama, String alamat) {
-//        try {
-//            String sql = "update mahasiswa set namamhs =?, alamatmhs=? where nimmhs =?";
-//            pst = con.prepareStatement(sql);
-//            pst.setString(1, nama);
-//            pst.setString(2, alamat);
-//            pst.setString(3, nim);
-//            pst.executeUpdate();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
-//
-//    
+    
+        public void updateDB(String id_cust, String noktp, String nama, String jeniskelamin, String alamat, String nohppribadi, String nohpdarurat) {
+        try {
+            String sql = "update pelanggan set NoKTP=?, NamaLengkap=?, JenisKelamin=?, Alamat=?, NoHpPribadi=?, NoHpDarurat=? where id_cust =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, noktp);
+            pst.setString(2, nama);
+            pst.setString(3, jeniskelamin);
+            pst.setString(4, alamat);
+            pst.setString(5, nohppribadi);
+            pst.setString(6, nohpdarurat);
+            pst.setString(7, id_cust);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateDB(String id_user, String username, String password, String akses) {
+        try {
+            String sql = "update login_user set username=?, password=?, akses=? where id_user =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            pst.setString(3, akses);
+            pst.setString(4, id_user);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public ResultSet selectDB() {
         try {
             String sql = "select * from login_user";
@@ -166,15 +184,27 @@ public class ConnectDB {
         return rs;
     }
 
-//    public void deleteDB(String nim) {
-//        try {
-//            String sql = "delete from mahasiswa where nimmhs =?";
-//            pst = con.prepareStatement(sql);
-//            pst.setString(1,nim);
-//            pst.executeUpdate();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
+    public void deleteDB(String id_cust) {
+        try {
+            String sql = "delete from pelanggan where id_cust =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, id_cust);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    public void deleteDB(String id_cust, String id_user) {
+        try {
+            String sql = "delete from login_user where id_user =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, id_user);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }
