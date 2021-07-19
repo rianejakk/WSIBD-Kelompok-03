@@ -239,4 +239,16 @@ public class ConnectDB {
         }
 
     }
+    
+    public void deletesDB(String kode_kamar) {
+        try {
+            String sql = "delete from kamar where kode_kamar=?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, kode_kamar);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }

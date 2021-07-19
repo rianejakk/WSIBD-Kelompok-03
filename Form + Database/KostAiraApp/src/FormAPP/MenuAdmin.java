@@ -51,7 +51,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         InputDataKamar.setVisible(false);
         InputDataKamar.setEnabled(false);
         autoNumber(txtUser);
-        autoNumber1();
+        autoNumbers(txtKodeKamar);
         autoNumber();
         showTables();
         showTableKamar();
@@ -231,7 +231,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
     
         private void resetForm(JPanel panel){
-        autoNumber1();
+        autoNumbers(txtKodeKamar);
         cmb_lokasikamar.setSelectedIndex(0);
         cmb_jeniskamar.setSelectedIndex(0);
         txtjeniskamar1.setText("");
@@ -239,7 +239,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtPass.setText("");
         txtharga.setText("");
         cmb_Status.setSelectedIndex(0);
-        String jeniskelamin = null;
     }
     
     private void LblLength(JTextField txt, int length) {
@@ -272,12 +271,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         }
     }
     
-    private void autoNumber1() {
+    private void autoNumbers(JTextField field) {
         String kode_kamar = "K0";
         int i = 0;
         try {
             ConnectDB konek = new ConnectDB();
-            ResultSet rs = konek.selectDB2("kode_kamar");
+            ResultSet rs = konek.selectDB2(kode_kamar);
 
             while (rs.next()) {
                 kode_kamar = rs.getString("kode_kamar");
@@ -286,10 +285,10 @@ public class MenuAdmin extends javax.swing.JFrame {
             i = Integer.parseInt(kode_kamar) + 1;
             kode_kamar = "00" + i;
             kode_kamar = "K0" + kode_kamar.substring(kode_kamar.length() - 2);
-            txtkodekamar1.setText(kode_kamar);
+            field.setText(kode_kamar);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error pada ID User");
+            JOptionPane.showMessageDialog(rootPane, "Error pada Kode Kamar");
             System.out.println(e.getMessage());
         }
     }
@@ -564,7 +563,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_deskripsikamar = new javax.swing.JLabel();
         Lbl_harga = new javax.swing.JLabel();
         cmb_jeniskamar1 = new javax.swing.JComboBox<>();
-        txtkodekamar1 = new javax.swing.JTextField();
+        txtKodeKamar = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2418,9 +2417,9 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         panelKamar.add(cmb_jeniskamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 100, 30));
 
-        txtkodekamar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtkodekamar1.setEnabled(false);
-        panelKamar.add(txtkodekamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, 30));
+        txtKodeKamar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtKodeKamar.setEnabled(false);
+        panelKamar.add(txtKodeKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, 30));
 
         ScrollForm1.setViewportView(panelKamar);
 
@@ -3267,20 +3266,25 @@ System.exit(0);
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        
+        String kode_kamar;
+        kode_kamar = txtKodeKamar.getText();
+        ConnectDB konek = new ConnectDB();
+        konek.deletesDB(kode_kamar);
+        resetForm();
+        showTableKamar();          
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
     try {
-        String kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status;
-        kode_kamar = txtkodekamar1.getText();
+        String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
+        kode_kamar = txtKodeKamar.getText();
         dsc_fasilitas = txtFasilitas.getText();
         lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
-        Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
+        Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
         status = cmb_Status.getSelectedItem().toString();
         
         ConnectDB konek = new ConnectDB();
-        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status);
+        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
         
         JOptionPane.showMessageDialog(rootPane, "Sukses");
         resetForm(InputDataKamar);
@@ -3288,7 +3292,7 @@ System.exit(0);
           JOptionPane.showMessageDialog(rootPane, "Error");
             System.out.println(e.getMessage());
         }
-        showTables();
+        showTableKamar();
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void browse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse1ActionPerformed
@@ -3301,7 +3305,7 @@ System.exit(0);
 
     private void tabelKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKamarMouseClicked
         int row = tabelKamar.getSelectedRow();
-        txtkodekamar1.setText(tabelKamar.getValueAt(row, 0).toString());
+        txtKodeKamar.setText(tabelKamar.getValueAt(row, 0).toString());
         cmb_lokasikamar.setSelectedItem(tabelKamar.getValueAt(row, 1).toString());
         cmb_jeniskamar.setSelectedItem(tabelKamar.getValueAt(row, 2).toString());
         txtjeniskamar1.setText(tabelKamar.getValueAt(row, 3).toString());
@@ -3652,6 +3656,7 @@ System.exit(0);
     public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtKodeBayar;
+    private javax.swing.JTextField txtKodeKamar;
     private javax.swing.JTextField txtLokasiKamar;
     public static final javax.swing.JTextField txtNama = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
@@ -3669,6 +3674,5 @@ System.exit(0);
     private javax.swing.JTextField txtUsername;
     public static final javax.swing.JTextField txtharga = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtjeniskamar1 = new javax.swing.JTextField();
-    private javax.swing.JTextField txtkodekamar1;
     // End of variables declaration//GEN-END:variables
 }
