@@ -71,15 +71,15 @@ public class ConnectDB {
         }
     }
     
-    public void insertDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String ukuran, String fasilitas) {
+    public void insertDB1(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status) {
         try {
             String sql = "insert into kamar values (?,?,?,?,?)";
             pst = con.prepareStatement(sql);
             pst.setString(1, kode_kamar);
             pst.setString(2, lokasi_kamar);
             pst.setString(3, Kjenis_Kamar);
-            pst.setString(4, ukuran);
-            pst.setString(5, fasilitas);
+            pst.setString(4, dsc_fasilitas);
+            pst.setString(5, status);
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);

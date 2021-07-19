@@ -507,8 +507,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         panelKamar = new javax.swing.JPanel();
         Lbl_jeniskamar = new javax.swing.JLabel();
         Lbl_lokasikamar = new javax.swing.JLabel();
-        Lbl_uploadpapkmr = new javax.swing.JLabel();
-        Lbl_fasilitas = new javax.swing.JLabel();
         Lbl_HakAkses1 = new javax.swing.JLabel();
         btnEdit = new javax.swing.JToggleButton();
         btnHapus = new javax.swing.JToggleButton();
@@ -516,7 +514,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtFasilitas = new javax.swing.JTextArea();
         Lbl_Data1 = new javax.swing.JLabel();
-        lbl_fotopreview = new javax.swing.JLabel();
         txtPath1 = new javax.swing.JTextField();
         browse1 = new javax.swing.JToggleButton();
         Lbl_Cari1 = new javax.swing.JLabel();
@@ -524,13 +521,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tabelKamar = new javax.swing.JTable();
         jSeparator3 = new javax.swing.JSeparator();
-        Lk_bawah = new javax.swing.JRadioButton();
-        Jk_kamar01 = new javax.swing.JRadioButton();
-        Jk_kamar02 = new javax.swing.JRadioButton();
-        Lk_atas = new javax.swing.JRadioButton();
-        Lbl_ukurankamar = new javax.swing.JLabel();
-        btnPilihFile = new javax.swing.JButton();
+        Lbl_status = new javax.swing.JLabel();
         lbl_foto2 = new javax.swing.JLabel();
+        cmb_lokasikamar = new javax.swing.JComboBox<>();
+        cmb_jeniskamar = new javax.swing.JComboBox<>();
+        Lbl_Kjeniskamar = new javax.swing.JLabel();
+        Lbl_deskripsikamar = new javax.swing.JLabel();
+        Lbl_harga = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2185,34 +2182,23 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         Lbl_jeniskamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_jeniskamar.setText("Jenis Kamar");
-        panelKamar.add(Lbl_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 126, -1));
+        panelKamar.add(Lbl_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 126, -1));
 
         Lbl_lokasikamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_lokasikamar.setText("Lokasi Kamar");
-        panelKamar.add(Lbl_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 126, -1));
+        panelKamar.add(Lbl_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 126, -1));
 
-        Lbl_uploadpapkmr.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Lbl_uploadpapkmr.setText("Upload Foto Kamar");
-        panelKamar.add(Lbl_uploadpapkmr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 140, -1));
-
-        txtkodekamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtkodekamar.addActionListener(new java.awt.event.ActionListener() {
+        txtstatus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtstatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtkodekamarActionPerformed(evt);
+                txtstatusActionPerformed(evt);
             }
         });
-        panelKamar.add(txtkodekamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 90, -1));
-
-        Lbl_fasilitas.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Lbl_fasilitas.setText("Fasilitas");
-        panelKamar.add(Lbl_fasilitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 126, -1));
-
-        file_name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        panelKamar.add(file_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 210, -1));
+        panelKamar.add(txtstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 130, -1));
 
         Lbl_HakAkses1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_HakAkses1.setText("Kode Kamar");
-        panelKamar.add(Lbl_HakAkses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 126, -1));
+        panelKamar.add(Lbl_HakAkses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 126, -1));
 
         btnEdit.setBackground(new java.awt.Color(52, 135, 239));
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2267,14 +2253,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtFasilitas.setRows(5);
         jScrollPane3.setViewportView(txtFasilitas);
 
-        panelKamar.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 310, -1));
+        panelKamar.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 310, -1));
 
         Lbl_Data1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Lbl_Data1.setText("Data");
         panelKamar.add(Lbl_Data1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
-
-        lbl_fotopreview.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelKamar.add(lbl_fotopreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 140, 170));
         panelKamar.add(txtPath1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
 
         browse1.setText("...");
@@ -2329,59 +2312,54 @@ public class MenuAdmin extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         panelKamar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
 
-        Lk_bawah.setBackground(new java.awt.Color(255, 255, 255));
-        Lk_bawah.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Lk_bawah.setText("Bawah");
-        Lk_bawah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lk_bawahActionPerformed(evt);
-            }
-        });
-        panelKamar.add(Lk_bawah, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
-
-        Jk_kamar01.setBackground(new java.awt.Color(255, 255, 255));
-        Jk_kamar01.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Jk_kamar01.setText("Kamar 01");
-        panelKamar.add(Jk_kamar01, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-
-        Jk_kamar02.setBackground(new java.awt.Color(255, 255, 255));
-        Jk_kamar02.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Jk_kamar02.setText("Kamar 02");
-        Jk_kamar02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jk_kamar02ActionPerformed(evt);
-            }
-        });
-        panelKamar.add(Jk_kamar02, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
-
-        Lk_atas.setBackground(new java.awt.Color(255, 255, 255));
-        Lk_atas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Lk_atas.setText("Atas");
-        Lk_atas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lk_atasActionPerformed(evt);
-            }
-        });
-        panelKamar.add(Lk_atas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, -1));
-
-        Lbl_ukurankamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Lbl_ukurankamar.setText("Ukuran Kamar");
-        panelKamar.add(Lbl_ukurankamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 126, -1));
-
-        btnPilihFile.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnPilihFile.setText("Pilih File");
-        panelKamar.add(btnPilihFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, 30));
-
-        txtUkuranKamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtUkuranKamar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUkuranKamarActionPerformed(evt);
-            }
-        });
-        panelKamar.add(txtUkuranKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 310, -1));
+        Lbl_status.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_status.setText("Status");
+        panelKamar.add(Lbl_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 126, -1));
 
         lbl_foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
+
+        cmb_lokasikamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lokasi Kamar...", "Atas", "Bawah" }));
+        panelKamar.add(cmb_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 100, 30));
+
+        cmb_jeniskamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih kode", "K01", "K02" }));
+        panelKamar.add(cmb_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 100, 30));
+
+        Lbl_Kjeniskamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_Kjeniskamar.setText("Kode Jenis Kamar");
+        panelKamar.add(Lbl_Kjeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 126, -1));
+
+        txtkodekamar1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtkodekamar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkodekamar1ActionPerformed(evt);
+            }
+        });
+        panelKamar.add(txtkodekamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, -1));
+
+        Lbl_deskripsikamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_deskripsikamar.setText("Deskripsi Kamar");
+        panelKamar.add(Lbl_deskripsikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 126, -1));
+
+        txtjeniskamar1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtjeniskamar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtjeniskamar1ActionPerformed(evt);
+            }
+        });
+        panelKamar.add(txtjeniskamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 100, -1));
+
+        Lbl_harga.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Lbl_harga.setText("Harga");
+        panelKamar.add(Lbl_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 126, -1));
+
+        txtharga.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtharga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txthargaActionPerformed(evt);
+            }
+        });
+        panelKamar.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 130, -1));
 
         ScrollForm1.setViewportView(panelKamar);
 
@@ -3235,9 +3213,9 @@ System.exit(0);
         LaporanSidebar.setEnabled(false);        
     }//GEN-LAST:event_lbl_back1MouseClicked
 
-    private void txtkodekamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodekamarActionPerformed
+    private void txtstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstatusActionPerformed
         
-    }//GEN-LAST:event_txtkodekamarActionPerformed
+    }//GEN-LAST:event_txtstatusActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         
@@ -3249,27 +3227,15 @@ System.exit(0);
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
     try {
-        String kode_kamar, lokasi_kamar, Kjenis_kamar, ukuran, fasilitas;
-        kode_kamar = txtkodekamar.getText();
-        ukuran = txtUkuranKamar.getText();
-        fasilitas = txtFasilitas.getText();
+        String kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status;
+        kode_kamar = txtstatus.getText();
+        dsc_fasilitas = txtFasilitas.getText();
+        lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
+        Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
+        status = txtstatus.getText();
         
-        Kjenis_kamar = null;
-        if (Jk_kamar01.isSelected()) {
-            Kjenis_kamar = "K01";
-        } else if (Jk_kamar02.isSelected()) {
-            Kjenis_kamar = "K02";
-        }
-        
-        lokasi_kamar = null;
-        if (Lk_atas.isSelected()) {
-            lokasi_kamar = "Atas";
-        } else if (Lk_bawah.isSelected()) {
-            lokasi_kamar = "Bawah";
-        }
-
         ConnectDB konek = new ConnectDB();
-        konek.insertDB(kode_kamar, lokasi_kamar, Kjenis_kamar, ukuran, fasilitas);
+        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status);
         
         JOptionPane.showMessageDialog(rootPane, "Sukses");
         resetForm();
@@ -3292,22 +3258,6 @@ System.exit(0);
         
     }//GEN-LAST:event_tabelKamarMouseClicked
 
-    private void Lk_bawahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lk_bawahActionPerformed
-        
-    }//GEN-LAST:event_Lk_bawahActionPerformed
-
-    private void Jk_kamar02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jk_kamar02ActionPerformed
-        
-    }//GEN-LAST:event_Jk_kamar02ActionPerformed
-
-    private void Lk_atasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lk_atasActionPerformed
-        
-    }//GEN-LAST:event_Lk_atasActionPerformed
-
-    private void txtUkuranKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUkuranKamarActionPerformed
-        
-    }//GEN-LAST:event_txtUkuranKamarActionPerformed
-
     private void lbl_kkamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseClicked
         InputDataKamar.setVisible(true);
         InputDataKamar.setEnabled(true);
@@ -3324,6 +3274,18 @@ System.exit(0);
         InputDataPelanggan.setVisible(false);
         InputDataPelanggan.setVisible(false);
     }//GEN-LAST:event_lbl_kkamarMouseClicked
+
+    private void txtkodekamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodekamar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtkodekamar1ActionPerformed
+
+    private void txtjeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtjeniskamar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtjeniskamar1ActionPerformed
+
+    private void txthargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txthargaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3384,8 +3346,6 @@ System.exit(0);
     private javax.swing.JPanel Data_Pemesanan;
     private javax.swing.JPanel InputDataKamar;
     private javax.swing.JPanel InputDataPelanggan;
-    private javax.swing.JRadioButton Jk_kamar01;
-    private javax.swing.JRadioButton Jk_kamar02;
     private javax.swing.JPanel KamarSideBar;
     private javax.swing.JPanel LaporanSidebar;
     private javax.swing.JLabel Lbl_Alamat;
@@ -3399,23 +3359,22 @@ System.exit(0);
     private javax.swing.JLabel Lbl_IdUser;
     private javax.swing.JLabel Lbl_Jkl;
     private javax.swing.JLabel Lbl_KTP;
+    private javax.swing.JLabel Lbl_Kjeniskamar;
     private javax.swing.JLabel Lbl_Nama;
     private javax.swing.JLabel Lbl_NoHP;
     private javax.swing.JLabel Lbl_NoHPDarurat;
     private javax.swing.JLabel Lbl_Pass;
     private javax.swing.JLabel Lbl_Username;
     private javax.swing.JLabel Lbl_beranda;
-    private javax.swing.JLabel Lbl_fasilitas;
+    private javax.swing.JLabel Lbl_deskripsikamar;
+    private javax.swing.JLabel Lbl_harga;
     private javax.swing.JLabel Lbl_jeniskamar;
     private javax.swing.JLabel Lbl_kamar;
     private javax.swing.JLabel Lbl_laporan;
     private javax.swing.JLabel Lbl_lokasikamar;
     private javax.swing.JLabel Lbl_pemesanan;
     private javax.swing.JLabel Lbl_pengaturan;
-    private javax.swing.JLabel Lbl_ukurankamar;
-    private javax.swing.JLabel Lbl_uploadpapkmr;
-    private javax.swing.JRadioButton Lk_atas;
-    private javax.swing.JRadioButton Lk_bawah;
+    private javax.swing.JLabel Lbl_status;
     private javax.swing.JToggleButton Masuk;
     private javax.swing.JPanel PanelChat;
     private javax.swing.JPanel PanelKamar;
@@ -3432,7 +3391,6 @@ System.exit(0);
     private javax.swing.JToggleButton browse1;
     private javax.swing.JToggleButton btnEdit;
     private javax.swing.JToggleButton btnHapus;
-    private javax.swing.JButton btnPilihFile;
     private javax.swing.JToggleButton btnSimpan;
     private javax.swing.JButton bttn_CekButton6;
     private javax.swing.JButton bttn_Hide2;
@@ -3458,8 +3416,9 @@ System.exit(0);
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
+    private javax.swing.JComboBox<String> cmb_jeniskamar;
+    private javax.swing.JComboBox<String> cmb_lokasikamar;
     private javax.swing.JToggleButton edit;
-    public static final javax.swing.JTextField file_name = new javax.swing.JTextField();
     private javax.swing.JPanel form;
     private javax.swing.JPanel form1;
     private javax.swing.JPanel form2;
@@ -3542,7 +3501,6 @@ System.exit(0);
     private javax.swing.JLabel lbl_duser;
     private javax.swing.JLabel lbl_foto;
     private javax.swing.JLabel lbl_foto2;
-    private javax.swing.JLabel lbl_fotopreview;
     private javax.swing.JLabel lbl_icoAdmin;
     private javax.swing.JLabel lbl_icoAdmin2;
     private javax.swing.JLabel lbl_icoPay;
@@ -3621,9 +3579,11 @@ System.exit(0);
     private javax.swing.JTextField txtPath1;
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
-    public static final javax.swing.JTextField txtUkuranKamar = new javax.swing.JTextField();
     private javax.swing.JTextField txtUser;
     private javax.swing.JTextField txtUsername;
-    public static final javax.swing.JTextField txtkodekamar = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtharga = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtjeniskamar1 = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtkodekamar1 = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtstatus = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
 }
