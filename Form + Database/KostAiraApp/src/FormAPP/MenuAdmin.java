@@ -1862,6 +1862,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         txtUser.setBorder(null);
         txtUser.setOpaque(false);
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserActionPerformed(evt);
+            }
+        });
         InputDataPelanggan.add(txtUser);
         txtUser.setBounds(940, 90, 50, 15);
 
@@ -1908,6 +1913,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         panelPelanggan.add(Lbl_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 126, -1));
 
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
         panelPelanggan.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 310, -1));
 
         Lbl_Pass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -2358,6 +2368,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
 
         cmb_lokasikamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lokasi Kamar...", "Atas", "Bawah" }));
+        cmb_lokasikamar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_lokasikamarActionPerformed(evt);
+            }
+        });
         panelKamar.add(cmb_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 100, 30));
 
         cmb_Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
@@ -3327,14 +3342,17 @@ System.exit(0);
             String Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB3(Kjenis_kamar);
-            rs.next();
+            if (rs.next()){
             txtjeniskamar1.setText(rs.getString("jenis_kamar"));
-            txtharga.setText(rs.getString("harga"));
+            txtharga.setText(rs.getString("harga"));}
        } catch (SQLException ex) {
             Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cmb_jeniskamarActionPerformed
 
+    
+    
+    
     private void cmb_jeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_jeniskamar1ActionPerformed
@@ -3342,6 +3360,18 @@ System.exit(0);
     private void cmb_StatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_StatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_StatusActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserActionPerformed
+
+    private void cmb_lokasikamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_lokasikamarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_lokasikamarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
