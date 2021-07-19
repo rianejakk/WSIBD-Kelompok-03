@@ -3300,14 +3300,14 @@ System.exit(0);
     }//GEN-LAST:event_txtCari1KeyReleased
 
     private void tabelKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKamarMouseClicked
-        int row = tabel.getSelectedRow();
+        int row = tabelKamar.getSelectedRow();
         txtkodekamar1.setText(tabelKamar.getValueAt(row, 0).toString());
-//        cmb_lokasikamar.setSelectedItem(tabelKamar.getValueAt(row, 1).toString());
-//        cmb_jeniskamar.setSelectedItem(tabelKamar.getValueAt(row, 2).toString());
+        cmb_lokasikamar.setSelectedItem(tabelKamar.getValueAt(row, 1).toString());
+        cmb_jeniskamar.setSelectedItem(tabelKamar.getValueAt(row, 2).toString());
         txtjeniskamar1.setText(tabelKamar.getValueAt(row, 3).toString());
         txtFasilitas.setText(tabelKamar.getValueAt(row, 4).toString());
         txtharga.setText(tabelKamar.getValueAt(row, 5).toString());
-//        cmb_Status.setSelectedItem(tabelKamar.getValueAt(row, 6).toString());
+        cmb_Status.setSelectedItem(tabelKamar.getValueAt(row, 6).toString());
     }//GEN-LAST:event_tabelKamarMouseClicked
 
     private void lbl_kkamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseClicked

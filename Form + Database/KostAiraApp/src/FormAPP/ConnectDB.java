@@ -174,7 +174,7 @@ public class ConnectDB {
         
      public ResultSet selectDB4() {
         try {
-            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar";
+            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
