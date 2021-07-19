@@ -10,8 +10,11 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -3156,18 +3159,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtUsername.setText(tabel.getValueAt(row, 8).toString());
         txtPass.setText(tabel.getValueAt(row, 9).toString());
         cmbAkses.setSelectedItem(tabel.getValueAt(row, 10).toString());
-//        try {
-//
-//            String sql = "select * from tabmahasiswa where nim='" + txtNIM.getText() + "'";
-//            Statement st = (Statement) koneksiDB.getkoneksi().createStatement();
-//            ResultSet rs = st.executeQuery(sql);
-//            rs.next();
-//            byte[] img = rs.getBytes("photo");
-//            ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(Lbl_image.getWidth(), Lbl_image.getHeight(), Image.SCALE_SMOOTH));
-//            Lbl_image.setIcon(imageIcon);
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, e.getMessage());
-//        }
     }//GEN-LAST:event_tabelMouseClicked
 
     private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
@@ -3332,7 +3323,16 @@ System.exit(0);
     }//GEN-LAST:event_txthargaActionPerformed
 
     private void cmb_jeniskamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamarActionPerformed
-
+        try {
+            String Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB3(Kjenis_kamar);
+            rs.next();
+            txtjeniskamar1.setText(rs.getString("jenis_kamar"));
+            txtharga.setText(rs.getString("harga"));
+       } catch (SQLException ex) {
+            Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_cmb_jeniskamarActionPerformed
 
     private void cmb_jeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamar1ActionPerformed
