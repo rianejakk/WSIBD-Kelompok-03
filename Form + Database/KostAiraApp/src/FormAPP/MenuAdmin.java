@@ -43,6 +43,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         LaporanSidebar.setEnabled(false);
         PengaturanSideBar.setVisible(false);
         PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
         autoNumber(txtUser);
         autoNumber();
         showTables();
