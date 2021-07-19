@@ -54,6 +54,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         autoNumber1();
         autoNumber();
         showTables();
+        showTableKamar();
     }
 
         public void showTables() {
@@ -103,40 +104,31 @@ public class MenuAdmin extends javax.swing.JFrame {
         
         public void showTableKamar() {
         DefaultTableModel tbl = new DefaultTableModel();
-        tbl.addColumn("ID Cust");
-        tbl.addColumn("NO.KTP");
-        tbl.addColumn("NAMA LENGKAP");
-        tbl.addColumn("JENIS KELAMIN");
-        tbl.addColumn("ALAMAT");
-        tbl.addColumn("NO.HP");
-        tbl.addColumn("NO.DARURAT");
-        tbl.addColumn("ID LOGIN");
-        tbl.addColumn("USERNAME");
-        tbl.addColumn("PASSWORD");
-        tbl.addColumn("HAK AKSES");
-
-
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("KODE JENIS KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        
  
-        tabel.setModel(tbl);
+        tabelKamar.setModel(tbl);
 
         try {
             ConnectDB konek = new ConnectDB();
-            ResultSet rs = konek.slctDB();
+            ResultSet rs = konek.selectDB4();
             while (rs.next()) {
                 tbl.addRow(new Object[]{
-                    rs.getString("id_cust"),
-                    rs.getString("NoKTP"),
-                    rs.getString("NamaLengkap"),
-                    rs.getString("JenisKelamin"),
-                    rs.getString("Alamat"),
-                    rs.getString("NoHpPribadi"),
-                    rs.getString("NoHpDarurat"),
-                    rs.getString("id_user"),
-                    rs.getString("username"),
-                    rs.getString("password"),
-                    rs.getString("akses")
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("Kjenis_Kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
                 });
-                tabel.setModel(tbl);
+                tabelKamar.setModel(tbl);
             }
 
         } catch (Exception ex) {
@@ -3308,7 +3300,14 @@ System.exit(0);
     }//GEN-LAST:event_txtCari1KeyReleased
 
     private void tabelKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKamarMouseClicked
-        
+        int row = tabel.getSelectedRow();
+        txtkodekamar1.setText(tabelKamar.getValueAt(row, 0).toString());
+//        cmb_lokasikamar.setSelectedItem(tabelKamar.getValueAt(row, 1).toString());
+//        cmb_jeniskamar.setSelectedItem(tabelKamar.getValueAt(row, 2).toString());
+        txtjeniskamar1.setText(tabelKamar.getValueAt(row, 3).toString());
+        txtFasilitas.setText(tabelKamar.getValueAt(row, 4).toString());
+        txtharga.setText(tabelKamar.getValueAt(row, 5).toString());
+//        cmb_Status.setSelectedItem(tabelKamar.getValueAt(row, 6).toString());
     }//GEN-LAST:event_tabelKamarMouseClicked
 
     private void lbl_kkamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseClicked
