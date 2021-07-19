@@ -150,6 +150,17 @@ public class ConnectDB {
         return rs;
     }
     
+        public ResultSet selectDB2(String kode_kamar) {
+        try {
+            String sql = "select kode_kamar from kamar";
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+    
     public ResultSet slctDB() {
         try {
             String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";

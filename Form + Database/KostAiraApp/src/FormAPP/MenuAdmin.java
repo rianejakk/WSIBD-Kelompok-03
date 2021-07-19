@@ -48,6 +48,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         InputDataKamar.setVisible(false);
         InputDataKamar.setEnabled(false);
         autoNumber(txtUser);
+        autoNumber(null, txtkodekamar1);
         autoNumber();
         showTables();
     }
@@ -234,6 +235,18 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmbAkses.setSelectedIndex(0);
     }
     
+        private void resetForm(JPanel panel){
+        autoNumber(null, txtkodekamar1);
+        cmb_lokasikamar.setSelectedIndex(0);
+        cmb_jeniskamar.setSelectedIndex(0);
+        txtjeniskamar1.setText("");
+        txtFasilitas.setText("");
+        txtPass.setText("");
+        txtharga.setText("");
+        cmb_Status.setSelectedIndex(0);
+        String jeniskelamin = null;
+    }
+    
     private void LblLength(JTextField txt, int length) {
         String input = txt.getText();
         if (input.length() > length) {
@@ -263,6 +276,29 @@ public class MenuAdmin extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
+    
+   private void autoNumber(JTextField f1, JTextField f2) {
+        String kode_kamar = "K0";
+        int i = 0;
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB2(kode_kamar);
+
+            while (rs.next()) {
+                kode_kamar = rs.getString("kode_kamar");
+            }
+            kode_kamar = kode_kamar.substring(1);
+            i = Integer.parseInt(kode_kamar) + 1;
+            kode_kamar = "00" + i;
+            kode_kamar = "K0" + kode_kamar.substring(kode_kamar.length() - 2);
+            f2.setText(kode_kamar);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error pada Kode Kamar");
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     private void autoNumber() {
         String id_cust = "U0";
@@ -528,10 +564,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_status = new javax.swing.JLabel();
         lbl_foto2 = new javax.swing.JLabel();
         cmb_lokasikamar = new javax.swing.JComboBox<>();
+        cmb_Status = new javax.swing.JComboBox<>();
         cmb_jeniskamar = new javax.swing.JComboBox<>();
         Lbl_Kjeniskamar = new javax.swing.JLabel();
         Lbl_deskripsikamar = new javax.swing.JLabel();
         Lbl_harga = new javax.swing.JLabel();
+        cmb_jeniskamar1 = new javax.swing.JComboBox<>();
+        txtkodekamar1 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2192,14 +2231,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_lokasikamar.setText("Lokasi Kamar");
         panelKamar.add(Lbl_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 126, -1));
 
-        txtstatus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtstatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtstatusActionPerformed(evt);
-            }
-        });
-        panelKamar.add(txtstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 130, -1));
-
         Lbl_HakAkses1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_HakAkses1.setText("Kode Kamar");
         panelKamar.add(Lbl_HakAkses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 126, -1));
@@ -2326,20 +2357,25 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmb_lokasikamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lokasi Kamar...", "Atas", "Bawah" }));
         panelKamar.add(cmb_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 100, 30));
 
+        cmb_Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
+        cmb_Status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_StatusActionPerformed(evt);
+            }
+        });
+        panelKamar.add(cmb_Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 100, 30));
+
         cmb_jeniskamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih kode", "K01", "K02" }));
+        cmb_jeniskamar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_jeniskamarActionPerformed(evt);
+            }
+        });
         panelKamar.add(cmb_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 100, 30));
 
         Lbl_Kjeniskamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Kjeniskamar.setText("Kode Jenis Kamar");
         panelKamar.add(Lbl_Kjeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 126, -1));
-
-        txtkodekamar1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtkodekamar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtkodekamar1ActionPerformed(evt);
-            }
-        });
-        panelKamar.add(txtkodekamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, -1));
 
         Lbl_deskripsikamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_deskripsikamar.setText("Deskripsi Kamar");
@@ -2364,6 +2400,18 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         panelKamar.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 130, -1));
+
+        cmb_jeniskamar1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih kode", "K01", "K02" }));
+        cmb_jeniskamar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_jeniskamar1ActionPerformed(evt);
+            }
+        });
+        panelKamar.add(cmb_jeniskamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 100, 30));
+
+        txtkodekamar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtkodekamar1.setEnabled(false);
+        panelKamar.add(txtkodekamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, 30));
 
         ScrollForm1.setViewportView(panelKamar);
 
@@ -3217,10 +3265,6 @@ System.exit(0);
         LaporanSidebar.setEnabled(false);        
     }//GEN-LAST:event_lbl_back1MouseClicked
 
-    private void txtstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstatusActionPerformed
-        
-    }//GEN-LAST:event_txtstatusActionPerformed
-
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         
     }//GEN-LAST:event_btnEditActionPerformed
@@ -3232,17 +3276,17 @@ System.exit(0);
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
     try {
         String kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status;
-        kode_kamar = txtstatus.getText();
+        kode_kamar = txtkodekamar1.getText();
         dsc_fasilitas = txtFasilitas.getText();
         lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
         Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
-        status = txtstatus.getText();
+        status = cmb_Status.getSelectedItem().toString();
         
         ConnectDB konek = new ConnectDB();
         konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_kamar, dsc_fasilitas, status);
         
         JOptionPane.showMessageDialog(rootPane, "Sukses");
-        resetForm();
+        resetForm(InputDataKamar);
         } catch (Exception e) {
           JOptionPane.showMessageDialog(rootPane, "Error");
             System.out.println(e.getMessage());
@@ -3279,10 +3323,6 @@ System.exit(0);
         InputDataPelanggan.setVisible(false);
     }//GEN-LAST:event_lbl_kkamarMouseClicked
 
-    private void txtkodekamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkodekamar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtkodekamar1ActionPerformed
-
     private void txtjeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtjeniskamar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtjeniskamar1ActionPerformed
@@ -3290,6 +3330,18 @@ System.exit(0);
     private void txthargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txthargaActionPerformed
+
+    private void cmb_jeniskamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamarActionPerformed
+
+    }//GEN-LAST:event_cmb_jeniskamarActionPerformed
+
+    private void cmb_jeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_jeniskamar1ActionPerformed
+
+    private void cmb_StatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_StatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_StatusActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3420,7 +3472,9 @@ System.exit(0);
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
+    private javax.swing.JComboBox<String> cmb_Status;
     private javax.swing.JComboBox<String> cmb_jeniskamar;
+    private javax.swing.JComboBox<String> cmb_jeniskamar1;
     private javax.swing.JComboBox<String> cmb_lokasikamar;
     private javax.swing.JToggleButton edit;
     private javax.swing.JPanel form;
@@ -3587,7 +3641,6 @@ System.exit(0);
     private javax.swing.JTextField txtUsername;
     public static final javax.swing.JTextField txtharga = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtjeniskamar1 = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtkodekamar1 = new javax.swing.JTextField();
-    public static final javax.swing.JTextField txtstatus = new javax.swing.JTextField();
+    private javax.swing.JTextField txtkodekamar1;
     // End of variables declaration//GEN-END:variables
 }
