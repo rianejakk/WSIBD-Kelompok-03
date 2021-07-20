@@ -152,7 +152,7 @@ public class ConnectDB {
     
         public ResultSet selectDB2(String kode_kamar) {
         try {
-            String sql = "select kode_kamar from kamar";
+            String sql = "select * from kamar";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {

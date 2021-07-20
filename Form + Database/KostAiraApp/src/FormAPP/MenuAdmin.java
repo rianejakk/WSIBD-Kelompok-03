@@ -3270,7 +3270,7 @@ System.exit(0);
         kode_kamar = txtKodeKamar.getText();
         ConnectDB konek = new ConnectDB();
         konek.deletesDB(kode_kamar);
-        resetForm();
+        resetForm(InputDataKamar);
         showTableKamar();          
     }//GEN-LAST:event_btnHapusActionPerformed
 
