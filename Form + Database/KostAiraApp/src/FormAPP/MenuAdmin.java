@@ -357,6 +357,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        Cek1 = new javax.swing.JButton();
+        Cek2 = new javax.swing.JButton();
+        Cek3 = new javax.swing.JButton();
+        Cek4 = new javax.swing.JButton();
+        Cek5 = new javax.swing.JButton();
+        Cek6 = new javax.swing.JButton();
+        Cek7 = new javax.swing.JButton();
+        Cek8 = new javax.swing.JButton();
         Kode_kamar1 = new javax.swing.JLabel();
         Kode_kamar3 = new javax.swing.JLabel();
         Kode_kamar4 = new javax.swing.JLabel();
@@ -373,7 +381,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         Status6 = new javax.swing.JLabel();
         Status7 = new javax.swing.JLabel();
         Status8 = new javax.swing.JLabel();
-        Cek1 = new javax.swing.JButton();
         lbl_jk1no1 = new javax.swing.JLabel();
         lbl_kk1no1 = new javax.swing.JLabel();
         lbl_jk1no2 = new javax.swing.JLabel();
@@ -880,6 +887,70 @@ public class MenuAdmin extends javax.swing.JFrame {
         jComboBox1.setBorder(null);
         PanelKamar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 210, -1));
 
+        Cek1.setBackground(new java.awt.Color(140, 119, 110));
+        Cek1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek1.setForeground(new java.awt.Color(255, 255, 255));
+        Cek1.setText("Cek");
+        Cek1.setContentAreaFilled(false);
+        Cek1.setOpaque(true);
+        PanelKamar.add(Cek1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 325, 60, 20));
+
+        Cek2.setBackground(new java.awt.Color(140, 119, 110));
+        Cek2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek2.setForeground(new java.awt.Color(255, 255, 255));
+        Cek2.setText("Cek");
+        Cek2.setContentAreaFilled(false);
+        Cek2.setOpaque(true);
+        PanelKamar.add(Cek2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 325, 60, 20));
+
+        Cek3.setBackground(new java.awt.Color(140, 119, 110));
+        Cek3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek3.setForeground(new java.awt.Color(255, 255, 255));
+        Cek3.setText("Cek");
+        Cek3.setContentAreaFilled(false);
+        Cek3.setOpaque(true);
+        PanelKamar.add(Cek3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 325, 60, 20));
+
+        Cek4.setBackground(new java.awt.Color(140, 119, 110));
+        Cek4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek4.setForeground(new java.awt.Color(255, 255, 255));
+        Cek4.setText("Cek");
+        Cek4.setContentAreaFilled(false);
+        Cek4.setOpaque(true);
+        PanelKamar.add(Cek4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 325, 60, 20));
+
+        Cek5.setBackground(new java.awt.Color(140, 119, 110));
+        Cek5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek5.setForeground(new java.awt.Color(255, 255, 255));
+        Cek5.setText("Cek");
+        Cek5.setContentAreaFilled(false);
+        Cek5.setOpaque(true);
+        PanelKamar.add(Cek5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 565, 60, 20));
+
+        Cek6.setBackground(new java.awt.Color(140, 119, 110));
+        Cek6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek6.setForeground(new java.awt.Color(255, 255, 255));
+        Cek6.setText("Cek");
+        Cek6.setContentAreaFilled(false);
+        Cek6.setOpaque(true);
+        PanelKamar.add(Cek6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 565, 60, 20));
+
+        Cek7.setBackground(new java.awt.Color(140, 119, 110));
+        Cek7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek7.setForeground(new java.awt.Color(255, 255, 255));
+        Cek7.setText("Cek");
+        Cek7.setContentAreaFilled(false);
+        Cek7.setOpaque(true);
+        PanelKamar.add(Cek7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 565, 60, 20));
+
+        Cek8.setBackground(new java.awt.Color(140, 119, 110));
+        Cek8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek8.setForeground(new java.awt.Color(255, 255, 255));
+        Cek8.setText("Cek");
+        Cek8.setContentAreaFilled(false);
+        Cek8.setOpaque(true);
+        PanelKamar.add(Cek8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 565, 60, 20));
+
         Kode_kamar1.setForeground(new java.awt.Color(51, 51, 51));
         Kode_kamar1.setText("Kode Kamar");
         PanelKamar.add(Kode_kamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
@@ -943,14 +1014,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         Status8.setForeground(new java.awt.Color(51, 51, 51));
         Status8.setText("Status");
         PanelKamar.add(Status8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
-
-        Cek1.setBackground(new java.awt.Color(140, 119, 110));
-        Cek1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Cek1.setForeground(new java.awt.Color(255, 255, 255));
-        Cek1.setText("Cek");
-        Cek1.setContentAreaFilled(false);
-        Cek1.setOpaque(true);
-        PanelKamar.add(Cek1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 325, 60, 20));
 
         lbl_jk1no1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_jk1no1.setForeground(new java.awt.Color(255, 255, 255));
@@ -3612,6 +3675,13 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JPanel BerandaSideBar;
     private javax.swing.JPanel Bg;
     private javax.swing.JButton Cek1;
+    private javax.swing.JButton Cek2;
+    private javax.swing.JButton Cek3;
+    private javax.swing.JButton Cek4;
+    private javax.swing.JButton Cek5;
+    private javax.swing.JButton Cek6;
+    private javax.swing.JButton Cek7;
+    private javax.swing.JButton Cek8;
     private javax.swing.JPanel Data_Admin;
     private javax.swing.JPanel Data_EKamar;
     private javax.swing.JPanel Data_EPelanggan;

@@ -111,6 +111,30 @@ public class MenuUser extends javax.swing.JFrame {
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        Kode_kamar1 = new javax.swing.JLabel();
+        Kode_kamar2 = new javax.swing.JLabel();
+        Kode_kamar3 = new javax.swing.JLabel();
+        Kode_kamar4 = new javax.swing.JLabel();
+        Kode_kamar5 = new javax.swing.JLabel();
+        Kode_kamar6 = new javax.swing.JLabel();
+        Kode_kamar7 = new javax.swing.JLabel();
+        Kode_kamar8 = new javax.swing.JLabel();
+        Status1 = new javax.swing.JLabel();
+        Status2 = new javax.swing.JLabel();
+        Status3 = new javax.swing.JLabel();
+        Status4 = new javax.swing.JLabel();
+        Status5 = new javax.swing.JLabel();
+        Status6 = new javax.swing.JLabel();
+        Status7 = new javax.swing.JLabel();
+        Status8 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -278,7 +302,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 13, 20);
+        gb1.setBounds(10, 0, 21, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -288,7 +312,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 13, 20);
+        gb2.setBounds(29, 0, 21, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -298,7 +322,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 13, 20);
+        gb3.setBounds(48, 0, 21, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -308,7 +332,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 13, 20);
+        gb4.setBounds(67, 0, 21, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -318,7 +342,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 13, 20);
+        gb5.setBounds(86, 0, 21, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -328,7 +352,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 13, 20);
+        gb6.setBounds(105, 0, 21, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -338,7 +362,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 13, 20);
+        gb7.setBounds(124, 0, 21, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -348,7 +372,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 13, 20);
+        gb8.setBounds(143, 0, 21, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -358,7 +382,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 13, 20);
+        gb9.setBounds(162, 0, 21, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -368,7 +392,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 13, 20);
+        gb10.setBounds(181, 0, 21, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -480,6 +504,148 @@ public class MenuUser extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*Kategori", "Kamar 1", "Kamar 2", " " }));
         jComboBox1.setBorder(null);
         PanelKamar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 210, -1));
+
+        jButton1.setBackground(new java.awt.Color(140, 119, 110));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Cek");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setOpaque(true);
+        PanelKamar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 325, 60, 20));
+
+        jButton2.setBackground(new java.awt.Color(140, 119, 110));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Cek");
+        jButton2.setContentAreaFilled(false);
+        jButton2.setOpaque(true);
+        PanelKamar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 325, 60, 20));
+
+        jButton3.setBackground(new java.awt.Color(140, 119, 110));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Cek");
+        jButton3.setContentAreaFilled(false);
+        jButton3.setOpaque(true);
+        PanelKamar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 325, 60, 20));
+
+        jButton4.setBackground(new java.awt.Color(140, 119, 110));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Cek");
+        jButton4.setContentAreaFilled(false);
+        jButton4.setOpaque(true);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        PanelKamar.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 325, 60, 20));
+
+        jButton5.setBackground(new java.awt.Color(140, 119, 110));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Cek");
+        jButton5.setContentAreaFilled(false);
+        jButton5.setOpaque(true);
+        PanelKamar.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 565, 60, 20));
+
+        jButton6.setBackground(new java.awt.Color(140, 119, 110));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Cek");
+        jButton6.setContentAreaFilled(false);
+        jButton6.setOpaque(true);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        PanelKamar.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 565, 60, 20));
+
+        jButton7.setBackground(new java.awt.Color(140, 119, 110));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Cek");
+        jButton7.setContentAreaFilled(false);
+        jButton7.setOpaque(true);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        PanelKamar.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 565, 60, 20));
+
+        jButton8.setBackground(new java.awt.Color(140, 119, 110));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Cek");
+        jButton8.setContentAreaFilled(false);
+        jButton8.setOpaque(true);
+        PanelKamar.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 565, 60, 20));
+
+        Kode_kamar1.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar1.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+
+        Kode_kamar2.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar2.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        Kode_kamar3.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar3.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, -1, -1));
+
+        Kode_kamar4.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar4.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, -1));
+
+        Kode_kamar5.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar5.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, -1, -1));
+
+        Kode_kamar6.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar6.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
+
+        Kode_kamar7.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar7.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, -1, -1));
+
+        Kode_kamar8.setText("Kode kamar");
+        PanelKamar.add(Kode_kamar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, -1, -1));
+
+        Status1.setForeground(new java.awt.Color(51, 51, 51));
+        Status1.setText("Status");
+        PanelKamar.add(Status1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
+
+        Status2.setForeground(new java.awt.Color(51, 51, 51));
+        Status2.setText("Status");
+        PanelKamar.add(Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+
+        Status3.setForeground(new java.awt.Color(51, 51, 51));
+        Status3.setText("Status");
+        PanelKamar.add(Status3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+
+        Status4.setForeground(new java.awt.Color(51, 51, 51));
+        Status4.setText("Status");
+        PanelKamar.add(Status4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 300, -1, -1));
+
+        Status5.setForeground(new java.awt.Color(51, 51, 51));
+        Status5.setText("Status");
+        PanelKamar.add(Status5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 540, -1, -1));
+
+        Status6.setForeground(new java.awt.Color(51, 51, 51));
+        Status6.setText("Status");
+        PanelKamar.add(Status6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, -1, -1));
+
+        Status7.setForeground(new java.awt.Color(51, 51, 51));
+        Status7.setText("Status");
+        PanelKamar.add(Status7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 540, -1, -1));
+
+        Status8.setForeground(new java.awt.Color(51, 51, 51));
+        Status8.setText("Status");
+        PanelKamar.add(Status8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 540, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -833,7 +999,7 @@ public class MenuUser extends javax.swing.JFrame {
                 .addComponent(ico_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Lbl_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         berandaLayout.setVerticalGroup(
             berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1220,6 +1386,18 @@ public class MenuUser extends javax.swing.JFrame {
         close4.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu8MouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1289,6 +1467,14 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel Bg;
     private javax.swing.JButton CekButton6;
     private javax.swing.JPanel KamarSideBar;
+    private javax.swing.JLabel Kode_kamar1;
+    private javax.swing.JLabel Kode_kamar2;
+    private javax.swing.JLabel Kode_kamar3;
+    private javax.swing.JLabel Kode_kamar4;
+    private javax.swing.JLabel Kode_kamar5;
+    private javax.swing.JLabel Kode_kamar6;
+    private javax.swing.JLabel Kode_kamar7;
+    private javax.swing.JLabel Kode_kamar8;
     private javax.swing.JLabel Lbl_Judul1;
     private javax.swing.JLabel Lbl_beranda;
     private javax.swing.JLabel Lbl_kamar;
@@ -1302,6 +1488,14 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JScrollPane ScrollData2;
     private javax.swing.JPanel SideBarMenu;
+    private javax.swing.JLabel Status1;
+    private javax.swing.JLabel Status2;
+    private javax.swing.JLabel Status3;
+    private javax.swing.JLabel Status4;
+    private javax.swing.JLabel Status5;
+    private javax.swing.JLabel Status6;
+    private javax.swing.JLabel Status7;
+    private javax.swing.JLabel Status8;
     private javax.swing.JPanel beranda;
     private javax.swing.JLabel bttn_Menu7;
     private javax.swing.JButton bttn_close1;
@@ -1325,6 +1519,14 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel ico_beranda;
     private javax.swing.JLabel ico_kamar;
     private javax.swing.JLabel ico_pemesanan;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
