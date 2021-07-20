@@ -8,6 +8,9 @@ package FormAPP;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +19,7 @@ import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -57,6 +61,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         showTableKamar();
     }
 
+    File file;
+    byte[] gambar = null;
+    String filename = null;
+    
         public void showTables() {
         DefaultTableModel tbl = new DefaultTableModel();
 
@@ -685,7 +693,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 21, 20);
+        gb1.setBounds(10, 0, 13, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -695,7 +703,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 21, 20);
+        gb2.setBounds(29, 0, 13, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -705,7 +713,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 21, 20);
+        gb3.setBounds(48, 0, 13, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -715,7 +723,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 21, 20);
+        gb4.setBounds(67, 0, 13, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -725,7 +733,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 21, 20);
+        gb5.setBounds(86, 0, 13, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -735,7 +743,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 21, 20);
+        gb6.setBounds(105, 0, 13, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -745,7 +753,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 21, 20);
+        gb7.setBounds(124, 0, 13, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -755,7 +763,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 21, 20);
+        gb8.setBounds(143, 0, 13, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -765,7 +773,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 21, 20);
+        gb9.setBounds(162, 0, 13, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -775,7 +783,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 21, 20);
+        gb10.setBounds(181, 0, 13, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -2520,7 +2528,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         panelKamar.add(Lbl_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 126, -1));
 
         lbl_foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
+        panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 50, 210, 170));
 
         cmb_lokasikamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lokasi Kamar...", "Atas", "Bawah" }));
         cmb_lokasikamar.addActionListener(new java.awt.event.ActionListener() {
@@ -3293,32 +3301,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     }//GEN-LAST:event_txtCariKeyReleased
 
     private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
-//        try {
-//            JFileChooser jfc = new JFileChooser();
-//            jfc.showOpenDialog(null);
-//            File f = jfc.getSelectedFile();
-//            if (f.length() > 2097152) {
-//                JOptionPane.showMessageDialog(rootPane, "Ukuran terlalu besar");
-//            } else {
-//
-//                filename = f.getAbsolutePath();
-//                ImageIcon imageicon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(Lbl_image.getWidth(), Lbl_image.getHeight(), Image.SCALE_SMOOTH));
-//                Lbl_image.setIcon(imageicon);
-//
-//                txtNamaFoto.setText(f.getName());
-//            }
-//
-//            File image = new File(filename);
-//            FileInputStream fis = new FileInputStream(image);
-//            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//            byte[] buf = new byte[1024];
-//            for (int readNum; (readNum = fis.read(buf)) != -1;) {
-//                bos.write(buf, 0, readNum);
-//            }
-//            photo = bos.toByteArray();
-//        } catch (Exception e) {
-//
-//        }
+
     }//GEN-LAST:event_browseActionPerformed
 
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
@@ -3475,7 +3458,7 @@ System.exit(0);
         status = cmb_Status.getSelectedItem().toString();
         
         ConnectDB konek = new ConnectDB();
-        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
+        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
         
         JOptionPane.showMessageDialog(rootPane, "Sukses");
         resetForm(InputDataKamar);
@@ -3487,7 +3470,32 @@ System.exit(0);
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void browse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse1ActionPerformed
-        
+        try {
+            JFileChooser jfc = new JFileChooser();
+            jfc.showOpenDialog(null);
+            File f = jfc.getSelectedFile();
+            if (f.length() > 2097152) {
+                JOptionPane.showMessageDialog(rootPane, "Ukuran terlalu besar");
+            } else {
+
+                filename = f.getAbsolutePath();
+                ImageIcon imageicon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(lbl_foto2.getWidth(), lbl_foto2.getHeight(), Image.SCALE_SMOOTH));
+                lbl_foto2.setIcon(imageicon);
+
+                txtPath1.setText(f.getName());
+            }
+
+            File image = new File(filename);
+            FileInputStream fis = new FileInputStream(image);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] buf = new byte[1024];
+            for (int readNum; (readNum = fis.read(buf)) != -1;) {
+                bos.write(buf, 0, readNum);
+            }
+            gambar = bos.toByteArray();
+        } catch (Exception e) {
+
+        }                
     }//GEN-LAST:event_browse1ActionPerformed
 
     private void txtCari1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCari1KeyReleased
@@ -3535,6 +3543,18 @@ DefaultTableModel tbl = new DefaultTableModel();
         txtFasilitas.setText(tabelKamar.getValueAt(row, 4).toString());
         txtharga.setText(tabelKamar.getValueAt(row, 5).toString());
         cmb_Status.setSelectedItem(tabelKamar.getValueAt(row, 6).toString());
+                try {
+            String kode_kamar = txtKodeKamar.getText();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB7(kode_kamar);
+            if(rs.next()){
+            byte[] img = rs.getBytes("gambar");
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_foto2.getWidth(), lbl_foto2.getHeight(), Image.SCALE_SMOOTH));
+            lbl_foto2.setIcon(imageIcon);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_tabelKamarMouseClicked
 
     private void lbl_kkamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseClicked
