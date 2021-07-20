@@ -26,6 +26,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -1417,6 +1421,9 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         lbl_kpelanggan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
         lbl_kpelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_kpelangganMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbl_kpelangganMouseEntered(evt);
             }
@@ -3583,6 +3590,16 @@ DefaultTableModel tbl = new DefaultTableModel();
             }
         }, 1 * 5);
     }//GEN-LAST:event_refresh1MouseClicked
+
+    private void lbl_kpelangganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kpelangganMouseClicked
+        try {
+            ConnectDB konek = new ConnectDB();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("reportDataPengguna.jasper"), null, konek.con);
+            JasperViewer.viewReport(jp, false);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_lbl_kpelangganMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
