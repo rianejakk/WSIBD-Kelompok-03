@@ -216,12 +216,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtPass.setText("");
         txtKTP.setText("");
         txtNama.setText("");
-        String jeniskelamin = null;
-        if (bttn_Opsi_Laki.isSelected()) {
-            jeniskelamin = "Laki-laki";
-        } else if (bttn_Opsi_Perempuan.isSelected()) {
-            jeniskelamin = "Perempuan";
-        }
+        bttn_Opsi_Perempuan.setSelected(true);
 
         txtAlmt.setText("");
         txtNoHp.setText("");
@@ -362,22 +357,39 @@ public class MenuAdmin extends javax.swing.JFrame {
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        lbl_jk1no7 = new javax.swing.JLabel();
-        lbl_jk1no8 = new javax.swing.JLabel();
-        lbl_jk1no6 = new javax.swing.JLabel();
-        lbl_jk1no5 = new javax.swing.JLabel();
-        lbl_jk1no4 = new javax.swing.JLabel();
-        lbl_jk1no3 = new javax.swing.JLabel();
+        Kode_kamar1 = new javax.swing.JLabel();
+        Kode_kamar3 = new javax.swing.JLabel();
+        Kode_kamar4 = new javax.swing.JLabel();
+        Kode_kamar5 = new javax.swing.JLabel();
+        Kode_kamar6 = new javax.swing.JLabel();
+        Kode_kamar7 = new javax.swing.JLabel();
+        Kode_kamar8 = new javax.swing.JLabel();
+        Kode_kamar2 = new javax.swing.JLabel();
+        Status1 = new javax.swing.JLabel();
+        Status2 = new javax.swing.JLabel();
+        Status3 = new javax.swing.JLabel();
+        Status4 = new javax.swing.JLabel();
+        Status5 = new javax.swing.JLabel();
+        Status6 = new javax.swing.JLabel();
+        Status7 = new javax.swing.JLabel();
+        Status8 = new javax.swing.JLabel();
+        Cek1 = new javax.swing.JButton();
         lbl_jk1no1 = new javax.swing.JLabel();
-        lbl_jk1no2 = new javax.swing.JLabel();
-        lbl_kk1no4 = new javax.swing.JLabel();
-        lbl_kk1no8 = new javax.swing.JLabel();
-        lbl_kk1no2 = new javax.swing.JLabel();
-        lbl_kk1no3 = new javax.swing.JLabel();
         lbl_kk1no1 = new javax.swing.JLabel();
+        lbl_jk1no2 = new javax.swing.JLabel();
+        lbl_kk1no2 = new javax.swing.JLabel();
+        lbl_jk1no3 = new javax.swing.JLabel();
+        lbl_kk1no3 = new javax.swing.JLabel();
+        lbl_jk1no4 = new javax.swing.JLabel();
+        lbl_kk1no4 = new javax.swing.JLabel();
+        lbl_jk1no5 = new javax.swing.JLabel();
         lbl_kk1no5 = new javax.swing.JLabel();
+        lbl_jk1no6 = new javax.swing.JLabel();
         lbl_kk1no6 = new javax.swing.JLabel();
+        lbl_jk1no7 = new javax.swing.JLabel();
         lbl_kk1no7 = new javax.swing.JLabel();
+        lbl_jk1no8 = new javax.swing.JLabel();
+        lbl_kk1no8 = new javax.swing.JLabel();
         PemesananSideBar = new javax.swing.JPanel();
         lbl_Menu5 = new javax.swing.JLabel();
         lbl_Menu10 = new javax.swing.JLabel();
@@ -493,6 +505,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         form1 = new javax.swing.JPanel();
         lbl_datapelanggan = new javax.swing.JLabel();
         lbl_back = new javax.swing.JLabel();
+        refresh = new javax.swing.JLabel();
         ScrollForm = new javax.swing.JScrollPane();
         panelPelanggan = new javax.swing.JPanel();
         Lbl_Username = new javax.swing.JLabel();
@@ -536,6 +549,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         form2 = new javax.swing.JPanel();
         lbl_datapelanggan1 = new javax.swing.JLabel();
         lbl_back1 = new javax.swing.JLabel();
+        refresh1 = new javax.swing.JLabel();
         ScrollForm1 = new javax.swing.JScrollPane();
         panelKamar = new javax.swing.JPanel();
         Lbl_jeniskamar = new javax.swing.JLabel();
@@ -866,77 +880,149 @@ public class MenuAdmin extends javax.swing.JFrame {
         jComboBox1.setBorder(null);
         PanelKamar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 210, -1));
 
-        lbl_jk1no7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no7.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no7.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no7, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 378, -1, -1));
+        Kode_kamar1.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar1.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
-        lbl_jk1no8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no8.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no8.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(854, 378, -1, -1));
+        Kode_kamar3.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar3.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, -1, -1));
 
-        lbl_jk1no6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no6.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no6.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no6, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 378, -1, -1));
+        Kode_kamar4.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar4.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, -1));
 
-        lbl_jk1no5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no5.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no5.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 378, -1, -1));
+        Kode_kamar5.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar5.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, -1, -1));
 
-        lbl_jk1no4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no4.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no4.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(854, 138, -1, -1));
+        Kode_kamar6.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar6.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
 
-        lbl_jk1no3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_jk1no3.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_jk1no3.setText("Kamar 1");
-        PanelKamar.add(lbl_jk1no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 138, -1, -1));
+        Kode_kamar7.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar7.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, -1, -1));
+
+        Kode_kamar8.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar8.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, -1, -1));
+
+        Kode_kamar2.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar2.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        Status1.setForeground(new java.awt.Color(51, 51, 51));
+        Status1.setText("Status");
+        PanelKamar.add(Status1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+
+        Status2.setForeground(new java.awt.Color(51, 51, 51));
+        Status2.setText("Status");
+        PanelKamar.add(Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+
+        Status3.setForeground(new java.awt.Color(51, 51, 51));
+        Status3.setText("Status");
+        PanelKamar.add(Status3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 540, -1, -1));
+
+        Status4.setForeground(new java.awt.Color(51, 51, 51));
+        Status4.setText("Status");
+        PanelKamar.add(Status4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 540, -1, -1));
+
+        Status5.setForeground(new java.awt.Color(51, 51, 51));
+        Status5.setText("Status");
+        PanelKamar.add(Status5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, -1, -1));
+
+        Status6.setForeground(new java.awt.Color(51, 51, 51));
+        Status6.setText("Status");
+        PanelKamar.add(Status6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 300, -1, -1));
+
+        Status7.setForeground(new java.awt.Color(51, 51, 51));
+        Status7.setText("Status");
+        PanelKamar.add(Status7, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 540, -1, -1));
+
+        Status8.setForeground(new java.awt.Color(51, 51, 51));
+        Status8.setText("Status");
+        PanelKamar.add(Status8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
+
+        Cek1.setBackground(new java.awt.Color(140, 119, 110));
+        Cek1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Cek1.setForeground(new java.awt.Color(255, 255, 255));
+        Cek1.setText("Cek");
+        Cek1.setContentAreaFilled(false);
+        Cek1.setOpaque(true);
+        PanelKamar.add(Cek1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 325, 60, 20));
 
         lbl_jk1no1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_jk1no1.setForeground(new java.awt.Color(255, 255, 255));
         lbl_jk1no1.setText("Kamar 1");
         PanelKamar.add(lbl_jk1no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 138, -1, -1));
 
+        lbl_kk1no1.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_kk1no1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
+        PanelKamar.add(lbl_kk1no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 180, 240));
+
         lbl_jk1no2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_jk1no2.setForeground(new java.awt.Color(255, 255, 255));
         lbl_jk1no2.setText("Kamar 1");
         PanelKamar.add(lbl_jk1no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 138, -1, -1));
 
-        lbl_kk1no4.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_kk1no4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
-        PanelKamar.add(lbl_kk1no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 180, 240));
-
-        lbl_kk1no8.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_kk1no8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
-        PanelKamar.add(lbl_kk1no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 360, 180, 240));
-
         lbl_kk1no2.setBackground(new java.awt.Color(255, 255, 255));
         lbl_kk1no2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
         PanelKamar.add(lbl_kk1no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 180, 240));
+
+        lbl_jk1no3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no3.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no3.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 138, -1, -1));
 
         lbl_kk1no3.setBackground(new java.awt.Color(255, 255, 255));
         lbl_kk1no3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
         PanelKamar.add(lbl_kk1no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 180, 240));
 
-        lbl_kk1no1.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_kk1no1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
-        PanelKamar.add(lbl_kk1no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 180, 240));
+        lbl_jk1no4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no4.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no4.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(854, 138, -1, -1));
+
+        lbl_kk1no4.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_kk1no4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
+        PanelKamar.add(lbl_kk1no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 180, 240));
+
+        lbl_jk1no5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no5.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no5.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 378, -1, -1));
 
         lbl_kk1no5.setBackground(new java.awt.Color(255, 255, 255));
         lbl_kk1no5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
         PanelKamar.add(lbl_kk1no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 180, 240));
 
+        lbl_jk1no6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no6.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no6.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no6, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 378, -1, -1));
+
         lbl_kk1no6.setBackground(new java.awt.Color(255, 255, 255));
         lbl_kk1no6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
         PanelKamar.add(lbl_kk1no6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 180, 240));
 
+        lbl_jk1no7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no7.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no7.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no7, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 378, -1, -1));
+
         lbl_kk1no7.setBackground(new java.awt.Color(255, 255, 255));
         lbl_kk1no7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
         PanelKamar.add(lbl_kk1no7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 180, 240));
+
+        lbl_jk1no8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_jk1no8.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_jk1no8.setText("Kamar 1");
+        PanelKamar.add(lbl_jk1no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(854, 378, -1, -1));
+
+        lbl_kk1no8.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_kk1no8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/123.png"))); // NOI18N
+        PanelKamar.add(lbl_kk1no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 360, 180, 240));
 
         ScrollData2.setViewportView(PanelKamar);
 
@@ -1891,6 +1977,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         form1.add(lbl_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, 20, 20));
 
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"))); // NOI18N
+        refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refreshMouseClicked(evt);
+            }
+        });
+        form1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 30, 30));
+
         ScrollForm.setBackground(new java.awt.Color(255, 255, 255));
         ScrollForm.setBorder(null);
         ScrollForm.setOpaque(false);
@@ -2218,6 +2312,14 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         form2.add(lbl_back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, 20, 20));
+
+        refresh1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"))); // NOI18N
+        refresh1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refresh1MouseClicked(evt);
+            }
+        });
+        form2.add(refresh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 30, 30));
 
         ScrollForm1.setBackground(new java.awt.Color(255, 255, 255));
         ScrollForm1.setBorder(null);
@@ -2936,9 +3038,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_lbl_Menu9MouseClicked
 
     private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        //        Beranda f3 = new Beranda();
-        //        f3.setVisible(true);
-        //new Beranda().show();
         this.setVisible(false);
     }//GEN-LAST:event_MasukActionPerformed
 
@@ -3392,6 +3491,32 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_lokasikamarActionPerformed
 
+    private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
+         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        refresh.setIcon(gmbr);
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+            resetForm();
+            ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+            refresh.setIcon(gmbr);
+            }
+        }, 1 * 5);
+    }//GEN-LAST:event_refreshMouseClicked
+
+    private void refresh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh1MouseClicked
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        refresh1.setIcon(gmbr);
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+            resetForm(InputDataKamar);
+            ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+            refresh1.setIcon(gmbr);
+            }
+        }, 1 * 5);
+    }//GEN-LAST:event_refresh1MouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -3442,6 +3567,7 @@ System.exit(0);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BerandaSideBar;
     private javax.swing.JPanel Bg;
+    private javax.swing.JButton Cek1;
     private javax.swing.JPanel Data_Admin;
     private javax.swing.JPanel Data_EKamar;
     private javax.swing.JPanel Data_EPelanggan;
@@ -3452,6 +3578,14 @@ System.exit(0);
     private javax.swing.JPanel InputDataKamar;
     private javax.swing.JPanel InputDataPelanggan;
     private javax.swing.JPanel KamarSideBar;
+    private javax.swing.JLabel Kode_kamar1;
+    private javax.swing.JLabel Kode_kamar2;
+    private javax.swing.JLabel Kode_kamar3;
+    private javax.swing.JLabel Kode_kamar4;
+    private javax.swing.JLabel Kode_kamar5;
+    private javax.swing.JLabel Kode_kamar6;
+    private javax.swing.JLabel Kode_kamar7;
+    private javax.swing.JLabel Kode_kamar8;
     private javax.swing.JPanel LaporanSidebar;
     private javax.swing.JLabel Lbl_Alamat;
     private javax.swing.JLabel Lbl_Cari;
@@ -3491,6 +3625,14 @@ System.exit(0);
     private javax.swing.JScrollPane ScrollForm1;
     private javax.swing.JPanel SideBarMenu;
     private javax.swing.JToggleButton Simpan;
+    private javax.swing.JLabel Status1;
+    private javax.swing.JLabel Status2;
+    private javax.swing.JLabel Status3;
+    private javax.swing.JLabel Status4;
+    private javax.swing.JLabel Status5;
+    private javax.swing.JLabel Status6;
+    private javax.swing.JLabel Status7;
+    private javax.swing.JLabel Status8;
     private javax.swing.JPanel beranda;
     private javax.swing.JToggleButton browse;
     private javax.swing.JToggleButton browse1;
@@ -3660,6 +3802,8 @@ System.exit(0);
     private javax.swing.JPanel panelPelanggan;
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
+    private javax.swing.JLabel refresh;
+    private javax.swing.JLabel refresh1;
     private javax.swing.JTable tabel;
     private javax.swing.JTable tabelKamar;
     private com.toedter.calendar.JDateChooser tgl_masuk;
