@@ -198,6 +198,32 @@ public class ConnectDB {
         return rs;
     }
 
+    public ResultSet selectDB5(String cari) {
+        try {
+            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan "
+                    + "INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user where id_cust LIKE '%" + cari
+                    + "%' OR NamaLengkap LIKE '%" + cari + "%'";
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+    
+    public ResultSet selectDB6(String cari) {
+        try {
+            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+                    + "FROM kamar INNER JOIN jns_kamar ON kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar WHERE kode_kamar LIKE '%" + cari
+                    + "%' OR lokasi_kamar LIKE '%" + cari + "%'";
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+    
     public ResultSet slctDB() {
         try {
             String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";

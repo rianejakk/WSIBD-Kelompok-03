@@ -3187,34 +3187,46 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Show2ActionPerformed
 
     private void txtCariKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariKeyReleased
-//        DefaultTableModel tbl = new DefaultTableModel();
-//        tbl.addColumn("NIM");
-//        tbl.addColumn("NAMA");
-//        tbl.addColumn("JURUSAN");
-//        tbl.addColumn("JENIS KELAMIN");
-//        tbl.addColumn("ALAMAT");
-//        tabel.setModel(tbl);
-//
-//        try {
-//            Statement st = (Statement) koneksiDB.getkoneksi().createStatement();
-//            ResultSet rs = st.executeQuery("select * from tabmahasiswa where nim LIKE '%" + txtCari.getText()
-//                + "%' OR nama LIKE '%" + txtCari.getText() + "%'");
-//
-//            while (rs.next()) {
-//                tbl.addRow(new Object[]{
-//                    rs.getString("nim"),
-//                    rs.getString("nama"),
-//                    rs.getString("jurusan"),
-//                    rs.getString("jeniskelamin"),
-//                    rs.getString("alamat")
-//                });
-//                tabel.setModel(tbl);
-//            }
-//
-//        } catch (Exception ex) {
-//            JOptionPane.showMessageDialog(rootPane, "Error !!!");
-//            //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("ID Cust");
+        tbl.addColumn("NO.KTP");
+        tbl.addColumn("NAMA LENGKAP");
+        tbl.addColumn("JENIS KELAMIN");
+        tbl.addColumn("ALAMAT");
+        tbl.addColumn("NO.HP");
+        tbl.addColumn("NO.DARURAT");
+        tbl.addColumn("ID LOGIN");
+        tbl.addColumn("USERNAME");
+        tbl.addColumn("PASSWORD");
+        tbl.addColumn("HAK AKSES");
+        tabel.setModel(tbl);
+
+        try {
+            String cari = txtCari.getText();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB5(cari);
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("id_cust"),
+                    rs.getString("NoKTP"),
+                    rs.getString("NamaLengkap"),
+                    rs.getString("JenisKelamin"),
+                    rs.getString("Alamat"),
+                    rs.getString("NoHpPribadi"),
+                    rs.getString("NoHpDarurat"),
+                    rs.getString("id_user"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("akses")
+                });
+                tabel.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error !!!");
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_txtCariKeyReleased
 
     private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
@@ -3417,6 +3429,38 @@ System.exit(0);
 
     private void txtCari1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCari1KeyReleased
         
+DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("KODE JENIS KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        tabelKamar.setModel(tbl);
+
+        try {
+            String cari = txtCari1.getText();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB6(cari);
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("Kjenis_Kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                tabelKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error !!!");
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_txtCari1KeyReleased
 
     private void tabelKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKamarMouseClicked
