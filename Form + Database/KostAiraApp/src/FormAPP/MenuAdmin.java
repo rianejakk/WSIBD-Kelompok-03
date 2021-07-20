@@ -3382,12 +3382,12 @@ System.exit(0);
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        String jns_kamar;
-        jns_kamar = txtKodeKamar.getText();
+        String kode_kamar;
+        kode_kamar = txtKodeKamar.getText();
         ConnectDB konek = new ConnectDB();
-        konek.deletesDB(jns_kamar);
+        konek.deletesDB(kode_kamar);
         resetForm(InputDataKamar);
-        showTableKamar();          
+        showTableKamar();                 
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
