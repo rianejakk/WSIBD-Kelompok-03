@@ -3262,7 +3262,24 @@ System.exit(0);
     }//GEN-LAST:event_lbl_back1MouseClicked
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        try {
+        String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
+        kode_kamar = txtKodeKamar.getText();
+        dsc_fasilitas = txtFasilitas.getText();
+        lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
+        Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
+        status = cmb_Status.getSelectedItem().toString();
         
+        ConnectDB konek = new ConnectDB();
+        konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
+        
+        JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
+        resetForm(InputDataKamar);
+        showTableKamar();    
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Kamar");
+            System.out.println(e.getMessage());
+        }            
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed

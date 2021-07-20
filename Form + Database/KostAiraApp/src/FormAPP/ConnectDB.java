@@ -70,7 +70,7 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void insertDB1(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status) {
         try {
             String sql = "insert into kamar values (?,?,?,?,?)";
@@ -85,8 +85,8 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-        public void updateDB(String id_cust, String noktp, String nama, String jeniskelamin, String alamat, String nohppribadi, String nohpdarurat) {
+
+    public void updateDB(String id_cust, String noktp, String nama, String jeniskelamin, String alamat, String nohppribadi, String nohpdarurat) {
         try {
             String sql = "update pelanggan set NoKTP=?, NamaLengkap=?, JenisKelamin=?, Alamat=?, NoHpPribadi=?, NoHpDarurat=? where id_cust =?";
             pst = con.prepareStatement(sql);
@@ -116,7 +116,22 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    public void updateDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status) {
+        try {
+            String sql = "update kamar set lokasi_kamar=?, Kjenis_Kamar=?, dsc_fasilitas=?, status=? where kode_kamar =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, lokasi_kamar);
+            pst.setString(2, Kjenis_Kamar);
+            pst.setString(3, dsc_fasilitas);
+            pst.setString(4, status);
+            pst.setString(5, kode_kamar);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public ResultSet selectDB() {
         try {
             String sql = "select * from login_user";
@@ -149,8 +164,8 @@ public class ConnectDB {
         }
         return rs;
     }
-    
-        public ResultSet selectDB2(String kode_kamar) {
+
+    public ResultSet selectDB2(String kode_kamar) {
         try {
             String sql = "select * from kamar";
             st = con.createStatement();
@@ -160,19 +175,19 @@ public class ConnectDB {
         }
         return rs;
     }
-    
+
     public ResultSet selectDB3(String Kjenis_Kamar) {
         try {
-            String sql = "SELECT jenis_kamar, harga FROM jns_kamar WHERE KJenis_Kamar='"+ Kjenis_Kamar + "'";
+            String sql = "SELECT jenis_kamar, harga FROM jns_kamar WHERE KJenis_Kamar='" + Kjenis_Kamar + "'";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
-    }    
-        
-     public ResultSet selectDB4() {
+    }
+
+    public ResultSet selectDB4() {
         try {
             String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
             st = con.createStatement();
@@ -182,6 +197,7 @@ public class ConnectDB {
         }
         return rs;
     }
+
     public ResultSet slctDB() {
         try {
             String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
@@ -227,7 +243,7 @@ public class ConnectDB {
         }
 
     }
-    
+
     public void deleteDB(String id_cust, String id_user) {
         try {
             String sql = "delete from login_user where id_user =?";
@@ -239,7 +255,7 @@ public class ConnectDB {
         }
 
     }
-    
+
     public void deletesDB(String kode_kamar) {
         try {
             String sql = "delete from kamar where kode_kamar=?";
