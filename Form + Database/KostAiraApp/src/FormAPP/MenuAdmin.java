@@ -678,7 +678,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 13, 20);
+        gb1.setBounds(10, 0, 21, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -688,7 +688,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 13, 20);
+        gb2.setBounds(29, 0, 21, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -698,7 +698,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 13, 20);
+        gb3.setBounds(48, 0, 21, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -708,7 +708,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 13, 20);
+        gb4.setBounds(67, 0, 21, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -718,7 +718,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 13, 20);
+        gb5.setBounds(86, 0, 21, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -728,7 +728,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 13, 20);
+        gb6.setBounds(105, 0, 21, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -738,7 +738,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 13, 20);
+        gb7.setBounds(124, 0, 21, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -748,7 +748,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 13, 20);
+        gb8.setBounds(143, 0, 21, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -758,7 +758,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 13, 20);
+        gb9.setBounds(162, 0, 21, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -768,7 +768,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 13, 20);
+        gb10.setBounds(181, 0, 21, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -1686,7 +1686,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addComponent(ico_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Lbl_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         berandaLayout.setVerticalGroup(
             berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3382,10 +3382,10 @@ System.exit(0);
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        String kode_kamar;
-        kode_kamar = txtKodeKamar.getText();
+        String jns_kamar;
+        jns_kamar = txtKodeKamar.getText();
         ConnectDB konek = new ConnectDB();
-        konek.deletesDB(kode_kamar);
+        konek.deletesDB(jns_kamar);
         resetForm(InputDataKamar);
         showTableKamar();          
     }//GEN-LAST:event_btnHapusActionPerformed
