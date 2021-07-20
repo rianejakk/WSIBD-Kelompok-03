@@ -242,6 +242,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtPass.setText("");
         txtharga.setText("");
         cmb_Status.setSelectedIndex(0);
+        lbl_foto2.setIcon(null);
+        txtPath1.setText("");
+        tabelKamar.clearSelection();
+        
     }
     
     private void LblLength(JTextField txt, int length) {
@@ -2469,6 +2473,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_Data1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Lbl_Data1.setText("Data");
         panelKamar.add(Lbl_Data1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+
+        txtPath1.setEnabled(false);
         panelKamar.add(txtPath1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
 
         browse1.setText("...");
@@ -2511,6 +2517,9 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         ));
         tabelKamar.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tabelKamar.setCellSelectionEnabled(false);
+        tabelKamar.setFocusable(false);
+        tabelKamar.setRowSelectionAllowed(true);
         tabelKamar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelKamarMouseClicked(evt);
@@ -3428,7 +3437,7 @@ System.exit(0);
         status = cmb_Status.getSelectedItem().toString();
         
         ConnectDB konek = new ConnectDB();
-        konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
+        konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
         
         JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
         resetForm(InputDataKamar);
@@ -3462,11 +3471,11 @@ System.exit(0);
         
         JOptionPane.showMessageDialog(rootPane, "Sukses");
         resetForm(InputDataKamar);
+        showTableKamar();
         } catch (Exception e) {
           JOptionPane.showMessageDialog(rootPane, "Error");
             System.out.println(e.getMessage());
         }
-        showTableKamar();
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void browse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse1ActionPerformed

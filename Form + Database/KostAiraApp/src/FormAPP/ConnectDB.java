@@ -118,15 +118,16 @@ public class ConnectDB {
         }
     }
 
-    public void updateDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status) {
+    public void updateDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status, byte[] gambar) {
         try {
-            String sql = "update kamar set lokasi_kamar=?, Kjenis_Kamar=?, dsc_fasilitas=?, status=? where kode_kamar =?";
+            String sql = "update kamar set lokasi_kamar=?, Kjenis_Kamar=?, dsc_fasilitas=?, status=?, gambar=? where kode_kamar =?";
             pst = con.prepareStatement(sql);
             pst.setString(1, lokasi_kamar);
             pst.setString(2, Kjenis_Kamar);
             pst.setString(3, dsc_fasilitas);
             pst.setString(4, status);
-            pst.setString(5, kode_kamar);
+            pst.setBytes(5, gambar);
+            pst.setString(6, kode_kamar);
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
