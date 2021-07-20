@@ -229,8 +229,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtAlmt.setText("");
         txtNoHp.setText("");
         txtNoHPDarurat.setText("");
-
         cmbAkses.setSelectedIndex(0);
+        tabel.clearSelection();
     }
     
         private void resetForm(JPanel panel){
@@ -550,9 +550,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlmt = new javax.swing.JTextArea();
         Lbl_Data = new javax.swing.JLabel();
-        lbl_foto = new javax.swing.JLabel();
-        txtPath = new javax.swing.JTextField();
-        browse = new javax.swing.JToggleButton();
         Lbl_Cari = new javax.swing.JLabel();
         txtCari = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -2245,28 +2242,16 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_Data.setText("Data");
         panelPelanggan.add(Lbl_Data, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
 
-        lbl_foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelPelanggan.add(lbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 140, 170));
-        panelPelanggan.add(txtPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 110, 20));
-
-        browse.setText("...");
-        browse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                browseActionPerformed(evt);
-            }
-        });
-        panelPelanggan.add(browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 229, 32, 22));
-
         Lbl_Cari.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Lbl_Cari.setText("Cari Data");
-        panelPelanggan.add(Lbl_Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, -1, -1));
+        panelPelanggan.add(Lbl_Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, -1, -1));
 
         txtCari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCariKeyReleased(evt);
             }
         });
-        panelPelanggan.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 370, -1));
+        panelPelanggan.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, 370, -1));
 
         jScrollPane2.setAutoscrolls(true);
 
@@ -2296,7 +2281,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabel);
 
-        panelPelanggan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, 220));
+        panelPelanggan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, 220));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         panelPelanggan.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 10, 630));
@@ -3309,10 +3294,6 @@ DefaultTableModel tbl = new DefaultTableModel();
         }
     }//GEN-LAST:event_txtCariKeyReleased
 
-    private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
-
-    }//GEN-LAST:event_browseActionPerformed
-
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         int row = tabel.getSelectedRow();
         txtCust.setText(tabel.getValueAt(row, 0).toString());
@@ -3777,7 +3758,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel Status7;
     private javax.swing.JLabel Status8;
     private javax.swing.JPanel beranda;
-    private javax.swing.JToggleButton browse;
     private javax.swing.JToggleButton browse1;
     private javax.swing.JToggleButton btnEdit;
     private javax.swing.JToggleButton btnHapus;
@@ -3891,7 +3871,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_dpelanggan2;
     private javax.swing.JLabel lbl_dpesan;
     private javax.swing.JLabel lbl_duser;
-    private javax.swing.JLabel lbl_foto;
     private javax.swing.JLabel lbl_foto2;
     private javax.swing.JLabel lbl_icoAdmin;
     private javax.swing.JLabel lbl_icoAdmin2;
@@ -3970,7 +3949,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JTextField txtNoKTP;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JPasswordField txtPass1;
-    private javax.swing.JTextField txtPath;
     private javax.swing.JTextField txtPath1;
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
