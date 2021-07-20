@@ -479,11 +479,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_dpelanggan2 = new javax.swing.JLabel();
         lbl_input1 = new javax.swing.JLabel();
         lbl_kpelanggan2 = new javax.swing.JLabel();
-        Data_EUser = new javax.swing.JPanel();
-        lbl_input2 = new javax.swing.JLabel();
-        lbl_duser = new javax.swing.JLabel();
-        lbl_icoAdmin2 = new javax.swing.JLabel();
-        lbl_kuser = new javax.swing.JLabel();
         Data_EKamar = new javax.swing.JPanel();
         lbl_input3 = new javax.swing.JLabel();
         lbl_dkamar = new javax.swing.JLabel();
@@ -1446,7 +1441,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_dadmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_dadmin.setForeground(new java.awt.Color(96, 82, 76));
         lbl_dadmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_dadmin.setText("Data Admin");
+        lbl_dadmin.setText("Data Kamar");
         Data_Admin.add(lbl_dadmin);
         lbl_dadmin.setBounds(12, 230, 180, 20);
 
@@ -1629,40 +1624,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Data_EPelanggan.add(lbl_kpelanggan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         PengaturanSideBar.add(Data_EPelanggan);
-        Data_EPelanggan.setBounds(240, 200, 200, 270);
-
-        Data_EUser.setBackground(new java.awt.Color(255, 255, 255));
-        Data_EUser.setOpaque(false);
-        Data_EUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lbl_input2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_input2.setForeground(new java.awt.Color(96, 82, 76));
-        lbl_input2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_input2.setText("Input /Edit");
-        Data_EUser.add(lbl_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
-
-        lbl_duser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_duser.setForeground(new java.awt.Color(96, 82, 76));
-        lbl_duser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_duser.setText("Data User");
-        Data_EUser.add(lbl_duser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, -1));
-
-        lbl_icoAdmin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataAdmin.png"))); // NOI18N
-        Data_EUser.add(lbl_icoAdmin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 130));
-
-        lbl_kuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        lbl_kuser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbl_kuserMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbl_kuserMouseExited(evt);
-            }
-        });
-        Data_EUser.add(lbl_kuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
-
-        PengaturanSideBar.add(Data_EUser);
-        Data_EUser.setBounds(490, 200, 200, 270);
+        Data_EPelanggan.setBounds(360, 200, 200, 270);
 
         Data_EKamar.setBackground(new java.awt.Color(255, 255, 255));
         Data_EKamar.setOpaque(false);
@@ -1703,7 +1665,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Data_EKamar.add(lbl_kkamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         PengaturanSideBar.add(Data_EKamar);
-        Data_EKamar.setBounds(740, 200, 200, 270);
+        Data_EKamar.setBounds(610, 200, 200, 270);
 
         Bg.add(PengaturanSideBar);
         PengaturanSideBar.setBounds(206, 0, 1160, 768);
@@ -2502,9 +2464,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         ));
         tabelKamar.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tabelKamar.setCellSelectionEnabled(false);
         tabelKamar.setFocusable(false);
-        tabelKamar.setRowSelectionAllowed(true);
         tabelKamar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelKamarMouseClicked(evt);
@@ -2860,9 +2820,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_Menu9.setEnabled(true);
         setPanel(PengaturanSideBar);
         lbl_judul7.setBounds(545, 10, 260, 90);
-        Data_EPelanggan.setBounds(340, 200, 200, 270);
-        Data_EUser.setBounds(590, 200, 200, 270);
-        Data_EKamar.setBounds(840, 200, 200, 270);
+        Data_EPelanggan.setBounds(460, 200, 200, 270);
+        Data_EKamar.setBounds(710, 200, 200, 270);
         bttn_minimized7.setBounds(1286, 15, 20, 20);
         bttn_close7.setBounds(1316, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu8MouseClicked
@@ -2874,14 +2833,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void bttn_close7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close7ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_bttn_close7ActionPerformed
-
-    private void lbl_kuserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kuserMouseEntered
-        setIconPanelButton2(lbl_icoAdmin2);
-    }//GEN-LAST:event_lbl_kuserMouseEntered
-
-    private void lbl_kuserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kuserMouseExited
-        resetIconPanelButton2(lbl_icoAdmin2);
-    }//GEN-LAST:event_lbl_kuserMouseExited
 
     private void lbl_kpelanggan2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kpelanggan2MouseEntered
         setIconPanelButton1(lbl_icoPelanggan2);
@@ -3095,9 +3046,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_Menu8.setEnabled(true);
         resetPanel(PengaturanSideBar);
         lbl_judul7.setBounds(445, 10, 260, 90);
-        Data_EPelanggan.setBounds(240, 200, 200, 270);
-        Data_EUser.setBounds(490, 200, 200, 270);
-        Data_EKamar.setBounds(740, 200, 200, 270);
+        Data_EPelanggan.setBounds(360, 200, 200, 270);
+        Data_EKamar.setBounds(610, 200, 200, 270);
         bttn_minimized7.setBounds(1080, 15, 20, 20);
         bttn_close7.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu9MouseClicked
@@ -3695,7 +3645,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JPanel Data_Admin;
     private javax.swing.JPanel Data_EKamar;
     private javax.swing.JPanel Data_EPelanggan;
-    private javax.swing.JPanel Data_EUser;
     private javax.swing.JPanel Data_Pelanggan;
     private javax.swing.JPanel Data_Pembayaran;
     private javax.swing.JPanel Data_Pemesanan;
@@ -3870,10 +3819,8 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_dpelanggan;
     private javax.swing.JLabel lbl_dpelanggan2;
     private javax.swing.JLabel lbl_dpesan;
-    private javax.swing.JLabel lbl_duser;
     private javax.swing.JLabel lbl_foto2;
     private javax.swing.JLabel lbl_icoAdmin;
-    private javax.swing.JLabel lbl_icoAdmin2;
     private javax.swing.JLabel lbl_icoPay;
     private javax.swing.JLabel lbl_icoPelanggan;
     private javax.swing.JLabel lbl_icoPelanggan2;
@@ -3881,7 +3828,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_icoPemesanan2;
     private javax.swing.JLabel lbl_ikonWA;
     private javax.swing.JLabel lbl_input1;
-    private javax.swing.JLabel lbl_input2;
     private javax.swing.JLabel lbl_input3;
     private javax.swing.JLabel lbl_jk1no1;
     private javax.swing.JLabel lbl_jk1no2;
@@ -3913,7 +3859,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_kpelanggan;
     private javax.swing.JLabel lbl_kpelanggan2;
     private javax.swing.JLabel lbl_kpesan;
-    private javax.swing.JLabel lbl_kuser;
     private javax.swing.JLabel lbl_menu;
     private javax.swing.JLabel lbl_photos;
     private javax.swing.JLabel lbl_photos1;

@@ -39,6 +39,8 @@ public class PopupDataLogin extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         Daftar = new javax.swing.JToggleButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(580, 340));
@@ -125,10 +127,27 @@ public class PopupDataLogin extends javax.swing.JFrame {
         PopupDataLogin.add(Daftar);
         Daftar.setBounds(260, 280, 90, 30);
 
-        getContentPane().add(PopupDataLogin);
-        PopupDataLogin.setBounds(0, 0, 580, 440);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        setSize(new java.awt.Dimension(596, 481));
+        PopupDataLogin.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 330, 570, 106);
+
+        getContentPane().add(PopupDataLogin);
+        PopupDataLogin.setBounds(0, 0, 590, 450);
+
+        setSize(new java.awt.Dimension(606, 488));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -184,6 +203,8 @@ public class PopupDataLogin extends javax.swing.JFrame {
     private javax.swing.JPanel PopupDataLogin;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_Menu16;
     private javax.swing.JLabel lbl_Menu6;
     private javax.swing.JLabel lbl_idbooking;
