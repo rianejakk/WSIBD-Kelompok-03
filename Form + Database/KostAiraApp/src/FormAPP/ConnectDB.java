@@ -155,6 +155,17 @@ public class ConnectDB {
         }
         return rs;
     }
+    
+    public ResultSet selectDB0(String idBooking) {
+        try {
+            String sql = "select * from pemesanan";
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
 
     public ResultSet selectDB1(String id_cust) {
         try {
