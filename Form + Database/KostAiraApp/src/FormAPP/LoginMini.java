@@ -35,7 +35,7 @@ public class LoginMini extends javax.swing.JFrame {
     private void iconApp() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/SI_AiraKost_Asset/ico2.png")));
     }
-
+    
     private void loginUser() {
         LoginMini.setVisible(false);
         LoginMini.setEnabled(false);

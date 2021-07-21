@@ -63,11 +63,34 @@ public class MenuAdmin extends javax.swing.JFrame {
         autoNumber();
         showTables();
         showTableKamar();
+        showDataKamar();
     }
 
     File file;
     byte[] gambar = null;
     String filename = null;
+    
+    
+    private void showDataKamar(){
+        try {
+        ConnectDB konek = new ConnectDB();
+        ResultSet rs = konek.selectDB8();
+        rs.next();
+         MenuAdmin.FieldKodeKamar1.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar2.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar3.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar4.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar5.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar6.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar7.setText(rs.getString("kode_kamar"));
+         MenuAdmin.FieldKodeKamar8.setText(rs.getString("kode_kamar"));
+              
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+        
+    }
     
         public void showTables() {
         DefaultTableModel tbl = new DefaultTableModel();
