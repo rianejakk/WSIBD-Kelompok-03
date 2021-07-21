@@ -179,6 +179,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Salah");
+            System.out.println(ex.getMessage());
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
