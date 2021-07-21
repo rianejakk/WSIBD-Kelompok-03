@@ -95,7 +95,6 @@ public class DaftarMini extends javax.swing.JFrame {
         }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -634,48 +633,57 @@ public class DaftarMini extends javax.swing.JFrame {
     }//GEN-LAST:event_ShowActionPerformed
 
     private void Opsi_PerempuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Opsi_PerempuanActionPerformed
-        
+
     }//GEN-LAST:event_Opsi_PerempuanActionPerformed
 
     private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
-        DaftarMini.setVisible(false);
-        DaftarMini.setEnabled(false);
-        loader.setVisible(true);
-        loader.setEnabled(true);
-        new java.util.Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
-                id_cust = txtCust.getText();
-                id_user = txtId.getText();
-                username = UserField.getText();
-                noktp = KTPField.getText();
-                nama = NamaField.getText();
-                jeniskelamin = null;
-                if (Opsi_Laki.isSelected()) {
-                    jeniskelamin = "Laki-laki";
-                } else if (Opsi_Perempuan.isSelected()) {
-                    jeniskelamin = "Perempuan";
-                }
+        if (UserField.getText().isEmpty()
+                || KTPField.getText().isEmpty()
+                || NamaField.getText().isEmpty()
+                || AlamatField.getText().isEmpty()
+                || NoField1.getText().isEmpty()
+                || NamaField.getText().isEmpty()
+                || PassField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Data isian ada yang kosong");
+        } else {
+            DaftarMini.setVisible(false);
+            DaftarMini.setEnabled(false);
+            loader.setVisible(true);
+            loader.setEnabled(true);
+            new java.util.Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
+                    id_cust = txtCust.getText();
+                    id_user = txtId.getText();
+                    username = UserField.getText();
+                    noktp = KTPField.getText();
+                    nama = NamaField.getText();
+                    jeniskelamin = null;
+                    if (Opsi_Laki.isSelected()) {
+                        jeniskelamin = "Laki-laki";
+                    } else if (Opsi_Perempuan.isSelected()) {
+                        jeniskelamin = "Perempuan";
+                    }
 
-                alamat = AlamatField.getText();
-                nohppribadi = NoField1.getText();
-                nohpdarurat = NoField2.getText();
-                password = PassField.getText();
-                akses = (String) cmbAkses.getSelectedItem();
+                    alamat = AlamatField.getText();
+                    nohppribadi = NoField1.getText();
+                    nohpdarurat = NoField2.getText();
+                    password = PassField.getText();
+                    akses = (String) cmbAkses.getSelectedItem();
 
-                ConnectDB konek = new ConnectDB();
-                konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
-                konek.insertDB(id_user, username, password, akses);
+                    ConnectDB konek = new ConnectDB();
+                    konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
+                    konek.insertDB(id_user, username, password, akses);
 
 //                autoNumber(txtId);
-                loader.setVisible(false);
-                loader.setEnabled(false);
-                sukses.setVisible(true);
-                sukses.setEnabled(true);
-            }
-        }, 1120 * 5);
-
+                    loader.setVisible(false);
+                    loader.setEnabled(false);
+                    sukses.setVisible(true);
+                    sukses.setEnabled(true);
+                }
+            }, 1120 * 5);
+        }
     }//GEN-LAST:event_DaftarActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -728,7 +736,6 @@ public class DaftarMini extends javax.swing.JFrame {
         }, 5 * 5);
     }//GEN-LAST:event_MasukActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

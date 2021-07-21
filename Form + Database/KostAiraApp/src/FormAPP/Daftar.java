@@ -591,6 +591,15 @@ public class Daftar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtButton_DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtButton_DaftarActionPerformed
+        if (UserField.getText().isEmpty()
+                || KTPField.getText().isEmpty()
+                || NamaField.getText().isEmpty()
+                || AlamatField.getText().isEmpty()
+                || NoField1.getText().isEmpty()
+                || NamaField.getText().isEmpty()
+                || PassField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Data isian ada yang kosong");
+        } else {
         jtButton_Daftar.setVisible(false);
         jtButton_Daftar.setEnabled(false);
         loader.setVisible(true);
@@ -629,6 +638,7 @@ public class Daftar extends javax.swing.JFrame {
                 sukses.setEnabled(true);
             }
         }, 1120 * 5);
+        }
     }//GEN-LAST:event_jtButton_DaftarActionPerformed
 
     private void HideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HideActionPerformed

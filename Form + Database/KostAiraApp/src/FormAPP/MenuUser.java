@@ -42,6 +42,8 @@ public class MenuUser extends javax.swing.JFrame {
         PemesananSideBar.setEnabled(false);
         showTableKamar2();
         autoNumbers();
+        cmb_Status2.setSelectedItem("Tidak Tersedia");
+        gb1.setSelected(true);
     }
 
     public void showTableKamar2() {
@@ -229,6 +231,7 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         txtTotaBayar = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
@@ -252,6 +255,7 @@ public class MenuUser extends javax.swing.JFrame {
         tgl_keluar = new com.toedter.calendar.JDateChooser();
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
+        cmb_Status2 = new javax.swing.JComboBox<>();
         lbl_besar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -920,7 +924,7 @@ public class MenuUser extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 770, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 830, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -970,6 +974,10 @@ public class MenuUser extends javax.swing.JFrame {
 
         txtAlamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
+
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel52.setText("Status");
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 735, 126, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
@@ -1102,6 +1110,11 @@ public class MenuUser extends javax.swing.JFrame {
 
         txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
+
+        cmb_Status2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmb_Status2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
+        cmb_Status2.setEnabled(false);
+        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 335, 30));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -1636,6 +1649,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel button;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
+    private javax.swing.JComboBox<String> cmb_Status2;
     private javax.swing.JComboBox<String> cmbkategori;
     private javax.swing.JPanel form;
     private javax.swing.JRadioButton gb1;
@@ -1669,6 +1683,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

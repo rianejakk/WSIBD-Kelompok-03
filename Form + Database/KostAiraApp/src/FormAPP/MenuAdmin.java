@@ -44,6 +44,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     public MenuAdmin() {
         initComponents();
         ScrollForm.getVerticalScrollBar().setUnitIncrement(8);
+        ScrollData.getVerticalScrollBar().setUnitIncrement(8);
         iconApp();
         BerandaSideBar.setVisible(true);
         BerandaSideBar.setEnabled(true);
@@ -67,6 +68,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         showTableKamar();
         showTableKamar2();
         showDataUser();
+        cmb_Status2.setSelectedItem("Tidak Tersedia");
+        gb1.setSelected(true);
     }
 
     File file;
@@ -499,6 +502,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
         txtKodeBayar = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -523,6 +527,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_User = new javax.swing.JLabel();
         cmb_User = new javax.swing.JComboBox<>();
         txtNoKTP = new javax.swing.JTextField();
+        cmb_Status2 = new javax.swing.JComboBox<>();
         lbl_besar = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
         lbl_Menu7 = new javax.swing.JLabel();
@@ -1172,7 +1177,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 870, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 920, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1237,6 +1242,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
         jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 126, -1));
+
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel52.setText("Status");
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 835, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 780, 335, -1));
@@ -1373,6 +1382,11 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
+
+        cmb_Status2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmb_Status2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
+        cmb_Status2.setEnabled(false);
+        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 830, 335, 30));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -2520,15 +2534,16 @@ public class MenuAdmin extends javax.swing.JFrame {
                 cmb_lokasikamarActionPerformed(evt);
             }
         });
-        panelKamar.add(cmb_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 100, 30));
+        panelKamar.add(cmb_lokasikamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 310, 30));
 
+        cmb_Status.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         cmb_Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
         cmb_Status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmb_StatusActionPerformed(evt);
             }
         });
-        panelKamar.add(cmb_Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 100, 30));
+        panelKamar.add(cmb_Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 310, 30));
 
         cmb_jeniskamar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih kode", "K01", "K02" }));
         cmb_jeniskamar.addActionListener(new java.awt.event.ActionListener() {
@@ -2536,7 +2551,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 cmb_jeniskamarActionPerformed(evt);
             }
         });
-        panelKamar.add(cmb_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 100, 30));
+        panelKamar.add(cmb_jeniskamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 310, 30));
 
         Lbl_Kjeniskamar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_Kjeniskamar.setText("Kode Jenis Kamar");
@@ -2552,7 +2567,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 txtjeniskamar1ActionPerformed(evt);
             }
         });
-        panelKamar.add(txtjeniskamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 100, -1));
+        panelKamar.add(txtjeniskamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 310, -1));
 
         Lbl_harga.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_harga.setText("Harga");
@@ -2564,7 +2579,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 txthargaActionPerformed(evt);
             }
         });
-        panelKamar.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 130, -1));
+        panelKamar.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 310, -1));
 
         cmb_jeniskamar1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih kode", "K01", "K02" }));
         cmb_jeniskamar1.addActionListener(new java.awt.event.ActionListener() {
@@ -2576,7 +2591,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         txtKodeKamar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtKodeKamar.setEnabled(false);
-        panelKamar.add(txtKodeKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 100, 30));
+        panelKamar.add(txtKodeKamar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 310, 30));
 
         ScrollForm1.setViewportView(panelKamar);
 
@@ -3942,6 +3957,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
     private javax.swing.JComboBox<String> cmb_Status;
+    private javax.swing.JComboBox<String> cmb_Status2;
     private javax.swing.JComboBox<String> cmb_User;
     private javax.swing.JComboBox<String> cmb_jeniskamar;
     private javax.swing.JComboBox<String> cmb_jeniskamar1;
@@ -3987,6 +4003,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
