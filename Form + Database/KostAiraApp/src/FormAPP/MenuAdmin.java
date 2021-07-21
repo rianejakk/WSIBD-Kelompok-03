@@ -947,7 +947,9 @@ public class MenuAdmin extends javax.swing.JFrame {
             new String [] {
                 "Kode Kamar", "Jeni Kamar", "Deskripsi Fasilitas", "Harga", "Status"
             }
-        ) {
+        )
+
+        {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
@@ -959,10 +961,11 @@ public class MenuAdmin extends javax.swing.JFrame {
                 return types [columnIndex];
             }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+            public boolean isCellEditable(int row, int column) {
+                return false;
             }
         });
+        DataKamar.setDefaultEditor(Object.class, null);
         DataKamar.setFocusable(false);
         DataKamar.setGridColor(new java.awt.Color(255, 255, 255));
         DataKamar.setIntercellSpacing(new java.awt.Dimension(0, 0));
