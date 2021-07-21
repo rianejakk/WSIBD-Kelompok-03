@@ -60,6 +60,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         InputDataKamar.setEnabled(false);
         autoNumber(txtUser);
         autoNumbers(txtKodeKamar);
+        autoNumbers();
         autoNumber();
         showTables();
         showTableKamar();
@@ -339,6 +340,28 @@ public class MenuAdmin extends javax.swing.JFrame {
         }
     }
     
+    private void autoNumbers() {
+        String idBooking = "B0";
+        int i = 0;
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB0(idBooking);
+
+            while (rs.next()) {
+                idBooking = rs.getString("kode_kamar");
+            }
+            idBooking = idBooking.substring(1);
+            i = Integer.parseInt(idBooking) + 1;
+            idBooking = "00" + i;
+            idBooking = "B0" + idBooking.substring(idBooking.length() - 2);
+            txtBooking.setText(idBooking);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error pada Pemesanan");
+            System.out.println(e.getMessage());
+        }
+    }
+    
     private void autoNumber() {
         String id_cust = "U0";
         int i = 0;
@@ -407,11 +430,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_judul2 = new javax.swing.JLabel();
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbkategori = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         DataKamar = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcari2 = new javax.swing.JTextField();
         PemesananSideBar = new javax.swing.JPanel();
         lbl_Menu5 = new javax.swing.JLabel();
         lbl_Menu10 = new javax.swing.JLabel();
@@ -454,6 +477,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
         txtNoKTP = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        txtIdCust = new javax.swing.JTextField();
         lbl_besar = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
         lbl_Menu7 = new javax.swing.JLabel();
@@ -892,10 +917,15 @@ public class MenuAdmin extends javax.swing.JFrame {
         PanelKamar.setBackground(new java.awt.Color(242, 242, 242));
         PanelKamar.setLayout(null);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*Kategori", "Kamar 1", "Kamar 2", " " }));
-        jComboBox1.setBorder(null);
-        PanelKamar.add(jComboBox1);
-        jComboBox1.setBounds(330, 60, 130, 30);
+        cmbkategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*Kategori", "Kamar 1", "Kamar 2", " " }));
+        cmbkategori.setBorder(null);
+        cmbkategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbkategoriActionPerformed(evt);
+            }
+        });
+        PanelKamar.add(cmbkategori);
+        cmbkategori.setBounds(330, 60, 130, 30);
 
         jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -975,8 +1005,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel1.setText("Cari");
         PanelKamar.add(jLabel1);
         jLabel1.setBounds(30, 63, 30, 22);
-        PanelKamar.add(jTextField1);
-        jTextField1.setBounds(90, 60, 220, 30);
+
+        txtcari2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtcari2KeyReleased(evt);
+            }
+        });
+        PanelKamar.add(txtcari2);
+        txtcari2.setBounds(90, 60, 220, 30);
 
         ScrollData2.setViewportView(PanelKamar);
 
@@ -1084,7 +1120,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 720, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 820, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1095,6 +1131,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 126, -1));
 
         txtBooking.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtBooking.setEnabled(false);
         jPanel1.add(txtBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 335, -1));
 
         txtKodeKamarPsn.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -1103,7 +1140,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel40.setText("Nama Lengkap");
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 126, -1));
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
 
         nm_lengkap.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         nm_lengkap.addActionListener(new java.awt.event.ActionListener() {
@@ -1111,62 +1148,62 @@ public class MenuAdmin extends javax.swing.JFrame {
                 nm_lengkapActionPerformed(evt);
             }
         });
-        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 335, -1));
+        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 335, -1));
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel42.setText("No. HP Pribadi");
-        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
+        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 126, -1));
 
         txtNoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 335, -1));
+        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 335, -1));
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel43.setText("Jenis Kelamin");
-        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 126, -1));
 
         txtJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 335, -1));
+        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 335, -1));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel44.setText("Alamat");
-        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 126, -1));
 
         txtAlamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
+        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 335, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, -1));
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 690, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 126, -1));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel47.setText("Tanggal Masuk");
-        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
+        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 126, -1));
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel48.setText("No. HP Darurat");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 126, -1));
 
         txtNoDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 335, -1));
+        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 335, -1));
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 740, 335, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("6 Bulan/disc.5%");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 130, -1));
+        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 130, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
@@ -1176,12 +1213,12 @@ public class MenuAdmin extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, -1, -1));
+        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, -1, -1));
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("3 bulan/normal");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 120, -1));
+        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 620, 120, -1));
 
         jPanel2.setLayout(null);
 
@@ -1253,14 +1290,22 @@ public class MenuAdmin extends javax.swing.JFrame {
         jScrollPane6.setBounds(130, 320, 210, 70);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 360, 480));
-        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 340, 30));
+        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 340, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel50.setText("No. KTP");
-        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
+        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 126, -1));
 
         txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
+        jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 335, -1));
+
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel41.setText("ID Cust");
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
+
+        txtIdCust.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtIdCust.setEnabled(false);
+        jPanel1.add(txtIdCust, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -3556,6 +3601,75 @@ DefaultTableModel tbl = new DefaultTableModel();
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_kadminMouseClicked
 
+    private void txtcari2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcari2KeyReleased
+ DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        DataKamar.setModel(tbl);
+
+        try {
+            String cari = txtcari2.getText();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB6(cari);
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error !!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_txtcari2KeyReleased
+
+    private void cmbkategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkategoriActionPerformed
+ try {
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        DataKamar.setModel(tbl);
+
+
+            String cari = cmbkategori.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB9(cari);
+            if("Kategori".equals("Kategori")){
+                showTableKamar2();
+            }
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_cmbkategoriActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -3694,6 +3808,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JComboBox<String> cmb_jeniskamar;
     private javax.swing.JComboBox<String> cmb_jeniskamar1;
     private javax.swing.JComboBox<String> cmb_lokasikamar;
+    private javax.swing.JComboBox<String> cmbkategori;
     private javax.swing.JToggleButton edit;
     private javax.swing.JPanel form;
     private javax.swing.JPanel form1;
@@ -3714,7 +3829,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel ico_laporan;
     private javax.swing.JLabel ico_pemesanan;
     private javax.swing.JLabel ico_pengaturan;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel25;
@@ -3723,6 +3837,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -3751,7 +3866,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel kamar;
     private javax.swing.JPanel laporan;
     private javax.swing.JLabel lbl_Kamar3;
@@ -3827,6 +3941,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JTextField txtCari1;
     private javax.swing.JTextField txtCust;
     private javax.swing.JTextArea txtFasilitas;
+    private javax.swing.JTextField txtIdCust;
     public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtKodeBayar;
@@ -3844,6 +3959,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JTextField txtTotaBayar;
     private javax.swing.JTextField txtUser;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtcari2;
     public static final javax.swing.JTextField txtharga = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtjeniskamar1 = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
