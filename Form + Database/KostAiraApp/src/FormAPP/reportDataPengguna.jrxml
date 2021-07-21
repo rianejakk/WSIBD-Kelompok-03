@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a7a1176-a1a6-48ca-9fee-9764f2f9e9b2">
-	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.zoom" value="1.6105100000000028"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
@@ -62,8 +62,8 @@ FROM
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="35" y="10" width="74" height="65" uuid="0e32c1bf-efc3-49af-b09d-82a14ba17cc6"/>
-				<imageExpression><![CDATA["$P{imagesDir}"+"LOGOKOST.png"]]></imageExpression>
+				<reportElement x="24" y="0" width="155" height="82" uuid="66539c3d-458e-4ad2-ab5f-0c0e93c8e6c5"/>
+				<imageExpression><![CDATA["D:\\Lemme measure ur pp\\Projects Goes Here\\Everynyan\\WSIBD-Kelompok-03\\Form + Database\\KostAiraApp\\src\\FormAPP\\LOGOKOST.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

@@ -75,16 +75,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         try {
         ConnectDB konek = new ConnectDB();
         ResultSet rs = konek.selectDB8();
-        rs.next();
-         MenuAdmin.FieldKodeKamar1.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar2.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar3.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar4.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar5.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar6.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar7.setText(rs.getString("kode_kamar"));
-         MenuAdmin.FieldKodeKamar8.setText(rs.getString("kode_kamar"));
-              
+        
+        while (rs.next()) {
+            FieldKodeKamar1.setText(rs.getString("kode_kamar"));
+            break;
+        }
+          
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -3601,19 +3597,19 @@ DefaultTableModel tbl = new DefaultTableModel();
     }//GEN-LAST:event_cmb_jeniskamar1ActionPerformed
 
     private void cmb_StatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_StatusActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cmb_StatusActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void cmb_lokasikamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_lokasikamarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cmb_lokasikamarActionPerformed
 
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
