@@ -5,6 +5,7 @@
  */
 package FormAPP;
 
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -65,14 +66,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         showTables();
         showTableKamar();
         showTableKamar2();
+        showDataUser();
     }
 
     File file;
     byte[] gambar = null;
     String filename = null;
-    
-    
-        public void showTables() {
+
+    public void showTables() {
         DefaultTableModel tbl = new DefaultTableModel();
 
         tbl.addColumn("ID Cust");
@@ -87,8 +88,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         tbl.addColumn("PASSWORD");
         tbl.addColumn("HAK AKSES");
 
-
- 
         tabel.setModel(tbl);
 
         try {
@@ -116,8 +115,8 @@ public class MenuAdmin extends javax.swing.JFrame {
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-        
-        public void showTableKamar() {
+
+    public void showTableKamar() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
         tbl.addColumn("LOKASI KAMAR");
@@ -126,8 +125,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         tbl.addColumn("DESKRIPSI KAMAR");
         tbl.addColumn("HARGA");
         tbl.addColumn("STATUS");
-        
- 
+
         tabelKamar.setModel(tbl);
 
         try {
@@ -151,8 +149,8 @@ public class MenuAdmin extends javax.swing.JFrame {
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-         
-        public void showTableKamar2() {
+
+    public void showTableKamar2() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
         tbl.addColumn("LOKASI KAMAR");
@@ -160,7 +158,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         tbl.addColumn("DESKRIPSI KAMAR");
         tbl.addColumn("HARGA");
         tbl.addColumn("STATUS");
- 
+
         DataKamar.setModel(tbl);
 
         try {
@@ -184,7 +182,22 @@ public class MenuAdmin extends javax.swing.JFrame {
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    public void showDataUser() {
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB();
+            while (rs.next()) {
+                cmb_User.addItem(rs.getString("username"));
+            }
+            rs.last();
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
     private void iconApp() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/SI_AiraKost_Asset/ico2.png")));
     }
@@ -257,7 +270,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         panel.setBounds(206, 0, 1160, 768);
     }
 
-    private void resetForm(){
+    private void resetForm() {
         autoNumber(txtUser);
         autoNumber();
         txtUsername.setText("");
@@ -272,8 +285,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmbAkses.setSelectedIndex(0);
         tabel.clearSelection();
     }
-    
-        private void resetForm(JPanel panel){
+
+    private void resetForm(JPanel panel) {
         autoNumbers(txtKodeKamar);
         cmb_lokasikamar.setSelectedIndex(0);
         cmb_jeniskamar.setSelectedIndex(0);
@@ -285,9 +298,33 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_foto2.setIcon(null);
         txtPath1.setText("");
         tabelKamar.clearSelection();
-        
     }
-    
+
+    private void resetForm2() {
+        autoNumbers();
+        txtKodeKamarPsn.setText("");
+        txtIdCust.setText("");
+        cmb_User.setSelectedIndex(0);
+        txtNoKTP.setText("");
+        nm_lengkap.setText("");
+        txtAlamat.setText("");
+        txtJenisKelamin.setText("");
+        txtNoHP.setText("");
+        txtNoDarurat.setText("");
+        tgl_masuk.setDate(null);
+        buttonGroup1.clearSelection();
+        tgl_keluar.setDate(null);
+        txtTotaBayar.setText("");
+        txtKodeBayar.setText("");
+        FotoKamar.setIcon(null);
+        FieldKodeKamar.setText("");
+        FieldLokasiKamar.setText("");
+        FieldJenisKamar.setText("");
+        FieldDsc.setText("");
+        FieldHarga.setText("");
+        FieldStatus.setText("");
+    }
+
     private void LblLength(JTextField txt, int length) {
         String input = txt.getText();
         if (input.length() > length) {
@@ -317,7 +354,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
+
     private void autoNumbers(JTextField field) {
         String kode_kamar = "K0";
         int i = 0;
@@ -339,7 +376,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
+
     private void autoNumbers() {
         String idBooking = "B0";
         int i = 0;
@@ -361,7 +398,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
+
     private void autoNumber() {
         String id_cust = "U0";
         int i = 0;
@@ -444,6 +481,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         bttn_CekButton6 = new javax.swing.JButton();
         form = new javax.swing.JPanel();
         lbl_judul = new javax.swing.JLabel();
+        refresh2 = new javax.swing.JLabel();
         ScrollData = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Masuk = new javax.swing.JToggleButton();
@@ -474,11 +512,17 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
+        jLabel51 = new javax.swing.JLabel();
+        tgl_keluar = new com.toedter.calendar.JDateChooser();
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
-        txtNoKTP = new javax.swing.JTextField();
+        nm_lengkap = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
+        txtJenisKelamin = new javax.swing.JTextField();
         txtIdCust = new javax.swing.JTextField();
+        lbl_User = new javax.swing.JLabel();
+        cmb_User = new javax.swing.JComboBox<>();
+        txtNoKTP = new javax.swing.JTextField();
         lbl_besar = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
         lbl_Menu7 = new javax.swing.JLabel();
@@ -719,7 +763,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 21, 20);
+        gb1.setBounds(10, 0, 13, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -729,7 +773,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 21, 20);
+        gb2.setBounds(29, 0, 13, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -739,7 +783,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 21, 20);
+        gb3.setBounds(48, 0, 13, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -749,7 +793,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 21, 20);
+        gb4.setBounds(67, 0, 13, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -759,7 +803,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 21, 20);
+        gb5.setBounds(86, 0, 13, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -769,7 +813,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 21, 20);
+        gb6.setBounds(105, 0, 13, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -779,7 +823,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 21, 20);
+        gb7.setBounds(124, 0, 13, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -789,7 +833,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 21, 20);
+        gb8.setBounds(143, 0, 13, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -799,7 +843,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 21, 20);
+        gb9.setBounds(162, 0, 13, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -809,7 +853,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 21, 20);
+        gb10.setBounds(181, 0, 13, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -1006,11 +1050,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         PanelKamar.add(jLabel1);
         jLabel1.setBounds(30, 63, 30, 22);
 
-        txtcari2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcari2ActionPerformed(evt);
-            }
-        });
         txtcari2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtcari2KeyReleased(evt);
@@ -1104,6 +1143,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_judul.setText("Formulir Pemesanan Kamar");
         form.add(lbl_judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
 
+        refresh2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"))); // NOI18N
+        refresh2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refresh2MouseClicked(evt);
+            }
+        });
+        form.add(refresh2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, -1, -1));
+
         ScrollData.setBackground(new java.awt.Color(255, 255, 255));
         ScrollData.setBorder(null);
         ScrollData.setOpaque(false);
@@ -1125,7 +1172,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 820, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 870, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1145,70 +1192,59 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel40.setText("Nama Lengkap");
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 126, -1));
-
-        nm_lengkap.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        nm_lengkap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nm_lengkapActionPerformed(evt);
-            }
-        });
-        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 335, -1));
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 126, -1));
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel42.setText("No. HP Pribadi");
-        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 126, -1));
+        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 126, -1));
 
         txtNoHP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 335, -1));
+        jPanel1.add(txtNoHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 335, -1));
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel43.setText("Jenis Kelamin");
-        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 126, -1));
-
-        txtJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 335, -1));
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 126, -1));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel44.setText("Alamat");
-        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 126, -1));
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 126, -1));
 
         txtAlamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 335, -1));
+        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 335, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 690, 335, -1));
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 126, -1));
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel47.setText("Tanggal Masuk");
-        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 126, -1));
+        jLabel47.setText("Tanggal Keluar");
+        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 684, 126, -1));
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel48.setText("No. HP Darurat");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 126, -1));
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
 
         txtNoDarurat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 335, -1));
+        jPanel1.add(txtNoDarurat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 335, -1));
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 740, 335, -1));
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 780, 335, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("6 Bulan/disc.5%");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 130, -1));
+        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 640, 130, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
@@ -1218,12 +1254,12 @@ public class MenuAdmin extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, -1, -1));
+        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, -1, -1));
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("3 bulan/normal");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 620, 120, -1));
+        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 120, -1));
 
         jPanel2.setLayout(null);
 
@@ -1268,23 +1304,23 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         FieldKodeKamar.setText("??");
         jPanel2.add(FieldKodeKamar);
-        FieldKodeKamar.setBounds(130, 230, 129, 20);
+        FieldKodeKamar.setBounds(130, 230, 129, 14);
 
         FieldLokasiKamar.setText("??");
         jPanel2.add(FieldLokasiKamar);
-        FieldLokasiKamar.setBounds(130, 260, 129, 20);
+        FieldLokasiKamar.setBounds(130, 260, 129, 14);
 
         FieldJenisKamar.setText("??");
         jPanel2.add(FieldJenisKamar);
-        FieldJenisKamar.setBounds(130, 290, 129, 20);
+        FieldJenisKamar.setBounds(130, 290, 129, 14);
 
         FieldHarga.setText("??");
         jPanel2.add(FieldHarga);
-        FieldHarga.setBounds(130, 400, 129, 20);
+        FieldHarga.setBounds(130, 400, 129, 14);
 
         FieldStatus.setText("??");
         jPanel2.add(FieldStatus);
-        FieldStatus.setBounds(130, 430, 129, 20);
+        FieldStatus.setBounds(130, 430, 129, 14);
 
         FieldDsc.setEditable(false);
         FieldDsc.setColumns(20);
@@ -1295,22 +1331,48 @@ public class MenuAdmin extends javax.swing.JFrame {
         jScrollPane6.setBounds(130, 320, 210, 70);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 360, 480));
-        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 340, 30));
+
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel51.setText("Tanggal Masuk");
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
+
+        tgl_keluar.setEnabled(false);
+        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, 30));
+        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 335, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel50.setText("No. KTP");
-        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 126, -1));
+        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 126, -1));
 
-        txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 335, -1));
+        nm_lengkap.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(nm_lengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 335, -1));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel41.setText("ID Cust");
         jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 126, -1));
 
+        txtJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtJenisKelamin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 335, 30));
+
         txtIdCust.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtIdCust.setEnabled(false);
-        jPanel1.add(txtIdCust, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, -1));
+        jPanel1.add(txtIdCust, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 335, 30));
+
+        lbl_User.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lbl_User.setText("Username");
+        jPanel1.add(lbl_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 126, -1));
+
+        cmb_User.setMaximumRowCount(5);
+        cmb_User.setAutoscrolls(true);
+        cmb_User.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_UserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmb_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 335, 30));
+
+        txtNoKTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel1.add(txtNoKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 335, -1));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -3014,11 +3076,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_MasukActionPerformed
 
-    private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-
-
-    }//GEN-LAST:event_nm_lengkapActionPerformed
-
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
 
     }//GEN-LAST:event_jRadioButton2ActionPerformed
@@ -3045,40 +3102,40 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Opsi_PerempuanActionPerformed
 
     private void txtKTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKTPActionPerformed
-        
+
     }//GEN-LAST:event_txtKTPActionPerformed
 
     private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
         try {
-        String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
-        id_cust = txtCust.getText();
-        id_user = txtUser.getText();
-        username = txtUsername.getText();
-        password = txtPass.getText();
-        noktp = txtKTP.getText();
-        nama = txtNama.getText();
-        jeniskelamin = null;
-        if (bttn_Opsi_Laki.isSelected()) {
-            jeniskelamin = "Laki-laki";
-        } else if (bttn_Opsi_Perempuan.isSelected()) {
-            jeniskelamin = "Perempuan";
-        }
+            String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
+            id_cust = txtCust.getText();
+            id_user = txtUser.getText();
+            username = txtUsername.getText();
+            password = txtPass.getText();
+            noktp = txtKTP.getText();
+            nama = txtNama.getText();
+            jeniskelamin = null;
+            if (bttn_Opsi_Laki.isSelected()) {
+                jeniskelamin = "Laki-laki";
+            } else if (bttn_Opsi_Perempuan.isSelected()) {
+                jeniskelamin = "Perempuan";
+            }
 
-        alamat = txtAlmt.getText();
-        nohppribadi = txtNoHp.getText();
-        nohpdarurat = txtNoHPDarurat.getText();
+            alamat = txtAlmt.getText();
+            nohppribadi = txtNoHp.getText();
+            nohpdarurat = txtNoHPDarurat.getText();
 
-        akses = (String) cmbAkses.getSelectedItem();
+            akses = (String) cmbAkses.getSelectedItem();
 
-        ConnectDB konek = new ConnectDB();
-        konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
-        konek.insertDB(id_user, username, password, akses);
-        
-        JOptionPane.showMessageDialog(rootPane, "Tambah Data Pelanggan Sukses!!!");
-        resetForm();
-        showTables();
+            ConnectDB konek = new ConnectDB();
+            konek.insertDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
+            konek.insertDB(id_user, username, password, akses);
+
+            JOptionPane.showMessageDialog(rootPane, "Tambah Data Pelanggan Sukses!!!");
+            resetForm();
+            showTables();
         } catch (Exception e) {
-          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan Pada Data Pelanggan");
+            JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan Pada Data Pelanggan");
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_SimpanActionPerformed
@@ -3160,7 +3217,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Show2ActionPerformed
 
     private void txtCariKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariKeyReleased
-DefaultTableModel tbl = new DefaultTableModel();
+        DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("ID Cust");
         tbl.addColumn("NO.KTP");
         tbl.addColumn("NAMA LENGKAP");
@@ -3196,7 +3253,7 @@ DefaultTableModel tbl = new DefaultTableModel();
                 tabel.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error !!!");
             System.out.println(ex.getMessage());
         }
@@ -3230,45 +3287,45 @@ DefaultTableModel tbl = new DefaultTableModel();
         konek.deleteDB(null, id_user);
         resetForm();
         txtUsername.requestFocus();
-        showTables();        
+        showTables();
     }//GEN-LAST:event_hapusActionPerformed
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         try {
-        String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
-        id_cust = txtCust.getText();
-        id_user = txtUser.getText();
-        username = txtUsername.getText();
-        password = txtPass.getText();
-        noktp = txtKTP.getText();
-        nama = txtNama.getText();
-        jeniskelamin = null;
-        if (bttn_Opsi_Laki.isSelected()) {
-            jeniskelamin = "Laki-laki";
-        } else if (bttn_Opsi_Perempuan.isSelected()) {
-            jeniskelamin = "Perempuan";
-        }
+            String id_user, id_cust, username, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat, password, akses;
+            id_cust = txtCust.getText();
+            id_user = txtUser.getText();
+            username = txtUsername.getText();
+            password = txtPass.getText();
+            noktp = txtKTP.getText();
+            nama = txtNama.getText();
+            jeniskelamin = null;
+            if (bttn_Opsi_Laki.isSelected()) {
+                jeniskelamin = "Laki-laki";
+            } else if (bttn_Opsi_Perempuan.isSelected()) {
+                jeniskelamin = "Perempuan";
+            }
 
-        alamat = txtAlmt.getText();
-        nohppribadi = txtNoHp.getText();
-        nohpdarurat = txtNoHPDarurat.getText();
+            alamat = txtAlmt.getText();
+            nohppribadi = txtNoHp.getText();
+            nohpdarurat = txtNoHPDarurat.getText();
 
-        akses = (String) cmbAkses.getSelectedItem();
+            akses = (String) cmbAkses.getSelectedItem();
 
-        ConnectDB konek = new ConnectDB();
-        konek.updateDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
-        konek.updateDB(id_user, username, password, akses);
-        JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
-        resetForm();
-        showTables();    
+            ConnectDB konek = new ConnectDB();
+            konek.updateDB(id_cust, noktp, nama, jeniskelamin, alamat, nohppribadi, nohpdarurat);
+            konek.updateDB(id_user, username, password, akses);
+            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
+            resetForm();
+            showTables();
         } catch (Exception e) {
-          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Pelanggan");
+            JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Pelanggan");
             System.out.println(e.getMessage());
-        }    
+        }
     }//GEN-LAST:event_editActionPerformed
 
     private void bttn_Opsi_LakiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Opsi_LakiActionPerformed
-        
+
     }//GEN-LAST:event_bttn_Opsi_LakiActionPerformed
 
     private void lbl_Menu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu4MouseClicked
@@ -3280,7 +3337,7 @@ DefaultTableModel tbl = new DefaultTableModel();
         lbl_judul8.setBounds(545, 10, 260, 90);
         form2.setBounds(154, 110, 1050, 610);
         bttn_minimized10.setBounds(1286, 15, 20, 20);
-        bttn_close8.setBounds(1316, 10, 20, 20);        
+        bttn_close8.setBounds(1316, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu4MouseClicked
 
     private void lbl_Menu15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu15MouseClicked
@@ -3292,15 +3349,15 @@ DefaultTableModel tbl = new DefaultTableModel();
         lbl_judul8.setBounds(445, 10, 260, 90);
         form2.setBounds(50, 110, 1050, 610);
         bttn_minimized10.setBounds(1080, 15, 20, 20);
-        bttn_close8.setBounds(1110, 10, 20, 20);        
+        bttn_close8.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu15MouseClicked
 
     private void bttn_minimized10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_minimized10ActionPerformed
-this.setState(JFrame.ICONIFIED );
+        this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_bttn_minimized10ActionPerformed
 
     private void bttn_close8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close8ActionPerformed
-System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_bttn_close8ActionPerformed
 
     private void lbl_back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_back1MouseClicked
@@ -3313,28 +3370,28 @@ System.exit(0);
         PemesananSideBar.setVisible(false);
         PemesananSideBar.setEnabled(false);
         LaporanSidebar.setVisible(false);
-        LaporanSidebar.setEnabled(false);        
+        LaporanSidebar.setEnabled(false);
     }//GEN-LAST:event_lbl_back1MouseClicked
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         try {
-        String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
-        kode_kamar = txtKodeKamar.getText();
-        dsc_fasilitas = txtFasilitas.getText();
-        lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
-        Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
-        status = cmb_Status.getSelectedItem().toString();
-        
-        ConnectDB konek = new ConnectDB();
-        konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
-        
-        JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
-        resetForm(InputDataKamar);
-        showTableKamar();    
+            String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
+            kode_kamar = txtKodeKamar.getText();
+            dsc_fasilitas = txtFasilitas.getText();
+            lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
+            Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
+            status = cmb_Status.getSelectedItem().toString();
+
+            ConnectDB konek = new ConnectDB();
+            konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
+
+            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
+            resetForm(InputDataKamar);
+            showTableKamar();
         } catch (Exception e) {
-          JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Kamar");
+            JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Kamar");
             System.out.println(e.getMessage());
-        }            
+        }
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
@@ -3343,26 +3400,26 @@ System.exit(0);
         ConnectDB konek = new ConnectDB();
         konek.deletesDB(kode_kamar);
         resetForm(InputDataKamar);
-        showTableKamar();                 
+        showTableKamar();
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-    try {
-        String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
-        kode_kamar = txtKodeKamar.getText();
-        dsc_fasilitas = txtFasilitas.getText();
-        lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
-        Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
-        status = cmb_Status.getSelectedItem().toString();
-        
-        ConnectDB konek = new ConnectDB();
-        konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
-        
-        JOptionPane.showMessageDialog(rootPane, "Sukses");
-        resetForm(InputDataKamar);
-        showTableKamar();
+        try {
+            String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
+            kode_kamar = txtKodeKamar.getText();
+            dsc_fasilitas = txtFasilitas.getText();
+            lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
+            Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
+            status = cmb_Status.getSelectedItem().toString();
+
+            ConnectDB konek = new ConnectDB();
+            konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
+
+            JOptionPane.showMessageDialog(rootPane, "Sukses");
+            resetForm(InputDataKamar);
+            showTableKamar();
         } catch (Exception e) {
-          JOptionPane.showMessageDialog(rootPane, "Error");
+            JOptionPane.showMessageDialog(rootPane, "Error");
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
@@ -3393,12 +3450,12 @@ System.exit(0);
             gambar = bos.toByteArray();
         } catch (Exception e) {
 
-        }                
+        }
     }//GEN-LAST:event_browse1ActionPerformed
 
     private void txtCari1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCari1KeyReleased
-        
-DefaultTableModel tbl = new DefaultTableModel();
+
+        DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
         tbl.addColumn("LOKASI KAMAR");
         tbl.addColumn("KODE JENIS KAMAR");
@@ -3426,7 +3483,7 @@ DefaultTableModel tbl = new DefaultTableModel();
                 tabelKamar.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error !!!");
             System.out.println(ex.getMessage());
         }
@@ -3441,14 +3498,14 @@ DefaultTableModel tbl = new DefaultTableModel();
         txtFasilitas.setText(tabelKamar.getValueAt(row, 4).toString());
         txtharga.setText(tabelKamar.getValueAt(row, 5).toString());
         cmb_Status.setSelectedItem(tabelKamar.getValueAt(row, 6).toString());
-                try {
+        try {
             String kode_kamar = txtKodeKamar.getText();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB7(kode_kamar);
-            if(rs.next()){
-            byte[] img = rs.getBytes("gambar");
-            ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_foto2.getWidth(), lbl_foto2.getHeight(), Image.SCALE_SMOOTH));
-            lbl_foto2.setIcon(imageIcon);
+            if (rs.next()) {
+                byte[] img = rs.getBytes("gambar");
+                ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(lbl_foto2.getWidth(), lbl_foto2.getHeight(), Image.SCALE_SMOOTH));
+                lbl_foto2.setIcon(imageIcon);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -3485,46 +3542,45 @@ DefaultTableModel tbl = new DefaultTableModel();
             String Kjenis_kamar = cmb_jeniskamar.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB3(Kjenis_kamar);
-            if (rs.next()){
-            txtjeniskamar1.setText(rs.getString("jenis_kamar"));
-            txtharga.setText(rs.getString("harga"));}
-       } catch (SQLException ex) {
+            if (rs.next()) {
+                txtjeniskamar1.setText(rs.getString("jenis_kamar"));
+                txtharga.setText(rs.getString("harga"));
+            }
+        } catch (SQLException ex) {
             Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cmb_jeniskamarActionPerformed
 
-    
-    
-    
+
     private void cmb_jeniskamar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_jeniskamar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_jeniskamar1ActionPerformed
 
     private void cmb_StatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_StatusActionPerformed
-        
+
     }//GEN-LAST:event_cmb_StatusActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-       
+
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        
+
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void cmb_lokasikamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_lokasikamarActionPerformed
-        
+
     }//GEN-LAST:event_cmb_lokasikamarActionPerformed
 
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
-         ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
         refresh.setIcon(gmbr);
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-            resetForm();
-            ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
-            refresh.setIcon(gmbr);
+                resetForm();
+                ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+                refresh.setIcon(gmbr);
             }
         }, 1 * 5);
     }//GEN-LAST:event_refreshMouseClicked
@@ -3535,9 +3591,9 @@ DefaultTableModel tbl = new DefaultTableModel();
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-            resetForm(InputDataKamar);
-            ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
-            refresh1.setIcon(gmbr);
+                resetForm(InputDataKamar);
+                ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+                refresh1.setIcon(gmbr);
             }
         }, 1 * 5);
     }//GEN-LAST:event_refresh1MouseClicked
@@ -3555,51 +3611,73 @@ DefaultTableModel tbl = new DefaultTableModel();
     private void DataKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DataKamarMouseClicked
         try {
             int row = DataKamar.getSelectedRow();
-            txtKodeKamarPsn.setText(tabelKamar.getValueAt(row, 0).toString());
-            FieldKodeKamar.setText(tabelKamar.getValueAt(row, 0).toString());
-            FieldLokasiKamar.setText(tabelKamar.getValueAt(row, 1).toString());
-            FieldJenisKamar.setText(tabelKamar.getValueAt(row, 3).toString());
-            FieldDsc.setText(tabelKamar.getValueAt(row, 4).toString());
-            FieldHarga.setText(tabelKamar.getValueAt(row, 5).toString());
-            FieldStatus.setText(tabelKamar.getValueAt(row, 6).toString());
-            
+            txtKodeKamarPsn.setText(DataKamar.getValueAt(row, 0).toString());
+            FieldKodeKamar.setText(DataKamar.getValueAt(row, 0).toString());
+            FieldLokasiKamar.setText(DataKamar.getValueAt(row, 1).toString());
+            FieldJenisKamar.setText(DataKamar.getValueAt(row, 2).toString());
+            FieldDsc.setText(DataKamar.getValueAt(row, 3).toString());
+            FieldHarga.setText(DataKamar.getValueAt(row, 4).toString());
+            FieldStatus.setText(DataKamar.getValueAt(row, 5).toString());
+
             String kode_kamar = txtKodeKamarPsn.getText();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB7(kode_kamar);
-            if(rs.next()){
+            if (rs.next()) {
                 byte[] img = rs.getBytes("gambar");
                 ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(FotoKamar.getWidth(), FotoKamar.getHeight(), Image.SCALE_SMOOTH));
                 FotoKamar.setIcon(imageIcon);
-                
-                if("Tersedia".equals(rs.getString("status"))){
-                                
-            BerandaSideBar.setVisible(false);
-            BerandaSideBar.setEnabled(false);
-            KamarSideBar.setVisible(false);
-            KamarSideBar.setEnabled(false);
-            PemesananSideBar.setVisible(false);
-            PemesananSideBar.setEnabled(false);
-            LaporanSidebar.setVisible(false);
-            LaporanSidebar.setEnabled(false);
-            PengaturanSideBar.setVisible(false);
-            PengaturanSideBar.setEnabled(false);
-            InputDataPelanggan.setVisible(false);
-            InputDataPelanggan.setEnabled(false);
-            InputDataKamar.setVisible(false);
-            InputDataKamar.setEnabled(false);
-            PemesananSideBar.setVisible(true);
-            PemesananSideBar.setEnabled(true);
-                }else{
+
+                if ("Tersedia".equals(rs.getString("status"))) {
+                    ImageIcon ptn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_5_30px_P.png"));
+                    ico_pengaturan.setIcon(ptn);
+                    ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+                    ico_beranda.setIcon(brd);
+                    ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px.png"));
+                    ico_kamar.setIcon(kmr);
+                    ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
+                    ico_pemesanan.setIcon(psn);
+                    ImageIcon lpr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_4_30px.png"));
+                    ico_laporan.setIcon(lpr);
+
+                    setColor(pengaturan);
+                    setColorText(Lbl_pengaturan);
+                    resetColor(beranda);
+                    resetColorText(Lbl_beranda);
+                    resetColor(kamar);
+                    resetColorText(Lbl_kamar);
+                    resetColor(pemesanan);
+                    resetColorText(Lbl_pemesanan);
+                    resetColor(laporan);
+                    resetColorText(Lbl_laporan);
+
+                    BerandaSideBar.setVisible(false);
+                    BerandaSideBar.setEnabled(false);
+                    KamarSideBar.setVisible(false);
+                    KamarSideBar.setEnabled(false);
+                    PemesananSideBar.setVisible(false);
+                    PemesananSideBar.setEnabled(false);
+                    LaporanSidebar.setVisible(false);
+                    LaporanSidebar.setEnabled(false);
+                    PengaturanSideBar.setVisible(false);
+                    PengaturanSideBar.setEnabled(false);
+                    InputDataPelanggan.setVisible(false);
+                    InputDataPelanggan.setEnabled(false);
+                    InputDataKamar.setVisible(false);
+                    InputDataKamar.setEnabled(false);
+                    PemesananSideBar.setVisible(true);
+                    PemesananSideBar.setEnabled(true);
+                } else {
                     JOptionPane.showMessageDialog(null, "Pilih Kamar Yang Tersedia");
+                    resetForm2();
                 }
-                
+
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
+
     }//GEN-LAST:event_DataKamarMouseClicked
 
     private void lbl_kadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kadminMouseClicked
@@ -3633,28 +3711,27 @@ DefaultTableModel tbl = new DefaultTableModel();
                 DataKamar.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error !!!");
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_txtcari2KeyReleased
 
     private void cmbkategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkategoriActionPerformed
-    try {
-        DefaultTableModel tbl = new DefaultTableModel();
-        tbl.addColumn("KODE KAMAR");
-        tbl.addColumn("LOKASI KAMAR");
-        tbl.addColumn("JENIS KAMAR");
-        tbl.addColumn("DESKRIPSI KAMAR");
-        tbl.addColumn("HARGA");
-        tbl.addColumn("STATUS");
-        DataKamar.setModel(tbl);
-
+        try {
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("KODE KAMAR");
+            tbl.addColumn("LOKASI KAMAR");
+            tbl.addColumn("JENIS KAMAR");
+            tbl.addColumn("DESKRIPSI KAMAR");
+            tbl.addColumn("HARGA");
+            tbl.addColumn("STATUS");
+            DataKamar.setModel(tbl);
 
             String cari = cmbkategori.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB9(cari);
-            if("Kategori".equals("Kategori")){
+            if ("Kategori".equals("Kategori")) {
                 showTableKamar2();
             }
             while (rs.next()) {
@@ -3669,15 +3746,50 @@ DefaultTableModel tbl = new DefaultTableModel();
                 DataKamar.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_cmbkategoriActionPerformed
 
-    private void txtcari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcari2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcari2ActionPerformed
+    private void cmb_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_UserActionPerformed
+        try {
+            String username = cmb_User.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.gabungDB(username);
+            if (rs.next()) {
+                txtIdCust.setText(rs.getString("id_cust"));
+                txtIdCust.setEnabled(false);
+                txtNoKTP.setText(rs.getString("NoKTP"));
+                txtNoKTP.setEnabled(false);
+                nm_lengkap.setText(rs.getString("NamaLengkap"));
+                nm_lengkap.setEnabled(false);
+                txtAlamat.setText(rs.getString("Alamat"));
+                txtAlamat.setEnabled(true);
+                txtJenisKelamin.setText(rs.getString("JenisKelamin"));
+                txtJenisKelamin.setEnabled(false);
+                txtNoHP.setText(rs.getString("NoHpPribadi"));
+                txtNoHP.setEnabled(true);
+                txtNoDarurat.setText(rs.getString("NoHpDarurat"));
+                txtNoDarurat.setEnabled(true);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro Pada Pilihan User");
+        }
+    }//GEN-LAST:event_cmb_UserActionPerformed
+
+    private void refresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh2MouseClicked
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        refresh2.setIcon(gmbr);
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                resetForm2();
+                ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+                refresh2.setIcon(gmbr);
+            }
+        }, 1 * 5);
+    }//GEN-LAST:event_refresh2MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3701,6 +3813,22 @@ DefaultTableModel tbl = new DefaultTableModel();
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -3814,6 +3942,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
     private javax.swing.JComboBox<String> cmb_Status;
+    private javax.swing.JComboBox<String> cmb_User;
     private javax.swing.JComboBox<String> cmb_jeniskamar;
     private javax.swing.JComboBox<String> cmb_jeniskamar1;
     private javax.swing.JComboBox<String> cmb_lokasikamar;
@@ -3857,6 +3986,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -3896,6 +4026,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     public static final javax.swing.JLabel lbl_NamaUser1 = new javax.swing.JLabel();
     private javax.swing.JLabel lbl_Slide1;
     private javax.swing.JLabel lbl_Text2;
+    private javax.swing.JLabel lbl_User;
     private javax.swing.JLabel lbl_back;
     private javax.swing.JLabel lbl_back1;
     private javax.swing.JLabel lbl_besar;
@@ -3933,15 +4064,17 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_photos1;
     private javax.swing.JLabel lbl_spasi;
     private javax.swing.JLabel lbl_tekschat;
-    public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
+    private javax.swing.JTextField nm_lengkap;
     private javax.swing.JPanel panelKamar;
     private javax.swing.JPanel panelPelanggan;
     private javax.swing.JPanel pemesanan;
     private javax.swing.JPanel pengaturan;
     private javax.swing.JLabel refresh;
     private javax.swing.JLabel refresh1;
+    private javax.swing.JLabel refresh2;
     private javax.swing.JTable tabel;
     private javax.swing.JTable tabelKamar;
+    private com.toedter.calendar.JDateChooser tgl_keluar;
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
     private javax.swing.JTextArea txtAlmt;
@@ -3951,7 +4084,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JTextField txtCust;
     private javax.swing.JTextArea txtFasilitas;
     private javax.swing.JTextField txtIdCust;
-    public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
+    private javax.swing.JTextField txtJenisKelamin;
     public static final javax.swing.JTextField txtKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtKodeBayar;
     private javax.swing.JTextField txtKodeKamar;

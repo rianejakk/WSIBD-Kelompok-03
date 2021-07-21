@@ -65,6 +65,8 @@ public class Login extends javax.swing.JFrame {
                             try {
                                 rs2.next();
                                 NamaUser2.setText(rs2.getString("NamaLengkap"));
+                                MenuUser.txtNoKTP.setText(rs2.getString("NoKTP"));
+                                MenuUser.txtNoKTP.setEnabled(false);
                                 MenuUser.nm_lengkap.setText(rs2.getString("NamaLengkap"));
                                 MenuUser.nm_lengkap.setEnabled(false);
                                 MenuUser.txtAlamat.setText(rs2.getString("Alamat"));

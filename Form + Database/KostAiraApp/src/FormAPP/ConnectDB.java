@@ -296,7 +296,7 @@ public class ConnectDB {
 
     public ResultSet gabungDB(String username) {
         try {
-            String sql = "SELECT NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user WHERE login_user.username='" + username + "'";
+            String sql = "SELECT * From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user WHERE login_user.username='" + username + "'";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {

@@ -41,8 +41,9 @@ public class MenuUser extends javax.swing.JFrame {
         PemesananSideBar.setVisible(false);
         PemesananSideBar.setEnabled(false);
         showTableKamar2();
+        autoNumbers();
     }
-    
+
     public void showTableKamar2() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
@@ -51,7 +52,7 @@ public class MenuUser extends javax.swing.JFrame {
         tbl.addColumn("DESKRIPSI KAMAR");
         tbl.addColumn("HARGA");
         tbl.addColumn("STATUS");
- 
+
         DataKamar.setModel(tbl);
 
         try {
@@ -75,7 +76,46 @@ public class MenuUser extends javax.swing.JFrame {
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    private void resetForm2() {
+        autoNumbers();
+        txtKodeKamarPsn.setText("");
+        tgl_masuk.setDate(null);
+        buttonGroup1.clearSelection();
+        tgl_keluar.setDate(null);
+        txtTotaBayar.setText("");
+        txtKodeBayar.setText("");
+        FotoKamar.setIcon(null);
+        FieldKodeKamar.setText("");
+        FieldLokasiKamar.setText("");
+        FieldJenisKamar.setText("");
+        FieldDsc.setText("");
+        FieldHarga.setText("");
+        FieldStatus.setText("");
+    }
+
+    private void autoNumbers() {
+        String idBooking = "B0";
+        int i = 0;
+        try {
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB0(idBooking);
+
+            while (rs.next()) {
+                idBooking = rs.getString("kode_kamar");
+            }
+            idBooking = idBooking.substring(1);
+            i = Integer.parseInt(idBooking) + 1;
+            idBooking = "00" + i;
+            idBooking = "B0" + idBooking.substring(idBooking.length() - 2);
+            txtBooking.setText(idBooking);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error pada Pemesanan");
+            System.out.println(e.getMessage());
+        }
+    }
+
     private void iconApp() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/SI_AiraKost_Asset/ico2.png")));
     }
@@ -101,16 +141,15 @@ public class MenuUser extends javax.swing.JFrame {
         SideBarMenu.setEnabled(false);
         panel.setBounds(0, 0, 1366, 768);
     }
-    
+
     private void resetPanel(JPanel panel) {
         SideBarMenu.setVisible(true);
         SideBarMenu.setEnabled(true);
         panel.setBounds(206, 0, 1160, 768);
     }
-    
+
     int xy, xx;
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -178,6 +217,7 @@ public class MenuUser extends javax.swing.JFrame {
         bttn_CekButton6 = new javax.swing.JButton();
         form = new javax.swing.JPanel();
         lbl_judul = new javax.swing.JLabel();
+        refresh2 = new javax.swing.JLabel();
         ScrollData = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         Masuk = new javax.swing.JToggleButton();
@@ -208,9 +248,10 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
+        jLabel51 = new javax.swing.JLabel();
+        tgl_keluar = new com.toedter.calendar.JDateChooser();
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
-        txtNoKTP = new javax.swing.JTextField();
         lbl_besar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -312,7 +353,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 21, 20);
+        gb1.setBounds(10, 0, 13, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -322,7 +363,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 21, 20);
+        gb2.setBounds(29, 0, 13, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -332,7 +373,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 21, 20);
+        gb3.setBounds(48, 0, 13, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -342,7 +383,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 21, 20);
+        gb4.setBounds(67, 0, 13, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -352,7 +393,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 21, 20);
+        gb5.setBounds(86, 0, 13, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -362,7 +403,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 21, 20);
+        gb6.setBounds(105, 0, 13, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -372,7 +413,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 21, 20);
+        gb7.setBounds(124, 0, 13, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -382,7 +423,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 21, 20);
+        gb8.setBounds(143, 0, 13, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -392,7 +433,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 21, 20);
+        gb9.setBounds(162, 0, 13, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -402,7 +443,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 21, 20);
+        gb10.setBounds(181, 0, 13, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -574,6 +615,7 @@ public class MenuUser extends javax.swing.JFrame {
                 return false;
             }
         });
+        DataKamar.setDefaultEditor(Object.class, null);
         DataKamar.setFocusable(false);
         DataKamar.setGridColor(new java.awt.Color(255, 255, 255));
         DataKamar.setIntercellSpacing(new java.awt.Dimension(0, 0));
@@ -849,6 +891,14 @@ public class MenuUser extends javax.swing.JFrame {
         lbl_judul.setText("Formulir Pemesanan Kamar");
         form.add(lbl_judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
 
+        refresh2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"))); // NOI18N
+        refresh2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refresh2MouseClicked(evt);
+            }
+        });
+        form.add(refresh2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, -1, -1));
+
         ScrollData.setBackground(new java.awt.Color(255, 255, 255));
         ScrollData.setBorder(null);
         ScrollData.setOpaque(false);
@@ -870,7 +920,7 @@ public class MenuUser extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 720, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 770, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -881,6 +931,7 @@ public class MenuUser extends javax.swing.JFrame {
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 126, -1));
 
         txtBooking.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtBooking.setEnabled(false);
         jPanel1.add(txtBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 335, -1));
 
         txtKodeKamarPsn.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -922,10 +973,10 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, -1));
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
@@ -944,10 +995,10 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("6 Bulan/disc.5%");
@@ -1009,23 +1060,23 @@ public class MenuUser extends javax.swing.JFrame {
 
         FieldKodeKamar.setText("??");
         jPanel2.add(FieldKodeKamar);
-        FieldKodeKamar.setBounds(130, 230, 129, 20);
+        FieldKodeKamar.setBounds(130, 230, 129, 14);
 
         FieldLokasiKamar.setText("??");
         jPanel2.add(FieldLokasiKamar);
-        FieldLokasiKamar.setBounds(130, 260, 129, 20);
+        FieldLokasiKamar.setBounds(130, 260, 129, 14);
 
         FieldJenisKamar.setText("??");
         jPanel2.add(FieldJenisKamar);
-        FieldJenisKamar.setBounds(130, 290, 129, 20);
+        FieldJenisKamar.setBounds(130, 290, 129, 14);
 
         FieldHarga.setText("??");
         jPanel2.add(FieldHarga);
-        FieldHarga.setBounds(130, 400, 129, 20);
+        FieldHarga.setBounds(130, 400, 129, 14);
 
         FieldStatus.setText("??");
         jPanel2.add(FieldStatus);
-        FieldStatus.setBounds(130, 430, 129, 20);
+        FieldStatus.setBounds(130, 430, 129, 14);
 
         FieldDsc.setEditable(false);
         FieldDsc.setColumns(20);
@@ -1036,7 +1087,14 @@ public class MenuUser extends javax.swing.JFrame {
         jScrollPane6.setBounds(130, 320, 210, 70);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 360, 480));
-        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 340, 30));
+
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel51.setText("Tanggal Keluar");
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
+
+        tgl_keluar.setEnabled(false);
+        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, 30));
+        jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 335, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel50.setText("No. KTP");
@@ -1152,7 +1210,7 @@ public class MenuUser extends javax.swing.JFrame {
         BerandaSideBar.setEnabled(false);
         KamarSideBar.setVisible(false);
         KamarSideBar.setEnabled(false);
-        
+
     }//GEN-LAST:event_pemesananMouseClicked
 
     private void lbl_Menu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu1MouseClicked
@@ -1184,52 +1242,52 @@ public class MenuUser extends javax.swing.JFrame {
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void gb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb1ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/1.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb1ActionPerformed
 
     private void gb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb2ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/2.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/2.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb2ActionPerformed
 
     private void gb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb3ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/3.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/3.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb3ActionPerformed
 
     private void gb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb4ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/4.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/4.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb4ActionPerformed
 
     private void gb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb5ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/5.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/5.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb5ActionPerformed
 
     private void gb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb6ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/6.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/6.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb6ActionPerformed
 
     private void gb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb7ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/7.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/7.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb7ActionPerformed
 
     private void gb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb8ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/8.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/8.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb8ActionPerformed
 
     private void gb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb9ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/9.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/9.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb9ActionPerformed
 
     private void gb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gb10ActionPerformed
-        ImageIcon gmbr =  new ImageIcon(getClass().getResource("/SI_AiraKostFoto/10.png"));
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKostFoto/10.png"));
         lbl_Slide1.setIcon(gmbr);
     }//GEN-LAST:event_gb10ActionPerformed
 
@@ -1251,9 +1309,9 @@ public class MenuUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_Menu7MouseClicked
 
     private void chatBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chatBxActionPerformed
-        try{
+        try {
             Desktop.getDesktop().browse(new URL("https://api.whatsapp.com/send?phone=6287743310528&text=Kak%20saya%20ingin%20cek%20kamar.😊").toURI());
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
         }
     }//GEN-LAST:event_chatBxActionPerformed
@@ -1296,20 +1354,33 @@ public class MenuUser extends javax.swing.JFrame {
             txtKodeKamarPsn.setText(DataKamar.getValueAt(row, 0).toString());
             FieldKodeKamar.setText(DataKamar.getValueAt(row, 0).toString());
             FieldLokasiKamar.setText(DataKamar.getValueAt(row, 1).toString());
-            FieldJenisKamar.setText(DataKamar.getValueAt(row, 3).toString());
-            FieldDsc.setText(DataKamar.getValueAt(row, 4).toString());
-            FieldHarga.setText(DataKamar.getValueAt(row, 5).toString());
-            FieldStatus.setText(DataKamar.getValueAt(row, 6).toString());
+            FieldJenisKamar.setText(DataKamar.getValueAt(row, 2).toString());
+            FieldDsc.setText(DataKamar.getValueAt(row, 3).toString());
+            FieldHarga.setText(DataKamar.getValueAt(row, 4).toString());
+            FieldStatus.setText(DataKamar.getValueAt(row, 5).toString());
 
             String kode_kamar = txtKodeKamarPsn.getText();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB7(kode_kamar);
-            if(rs.next()){
+            if (rs.next()) {
                 byte[] img = rs.getBytes("gambar");
                 ImageIcon imageIcon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(FotoKamar.getWidth(), FotoKamar.getHeight(), Image.SCALE_SMOOTH));
                 FotoKamar.setIcon(imageIcon);
 
-                if("Tersedia".equals(rs.getString("status"))){
+                if ("Tersedia".equals(rs.getString("status"))) {
+                    ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px_P.png"));
+                    ico_pemesanan.setIcon(psn);
+                    ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+                    ico_beranda.setIcon(brd);
+                    ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px.png"));
+                    ico_kamar.setIcon(kmr);
+
+                    setColor(pemesanan);
+                    setColorText(Lbl_pemesanan);
+                    resetColor(beranda);
+                    resetColorText(Lbl_beranda);
+                    resetColor(kamar);
+                    resetColorText(Lbl_kamar);
 
                     BerandaSideBar.setVisible(false);
                     BerandaSideBar.setEnabled(false);
@@ -1319,8 +1390,9 @@ public class MenuUser extends javax.swing.JFrame {
                     PemesananSideBar.setEnabled(false);
                     PemesananSideBar.setVisible(true);
                     PemesananSideBar.setEnabled(true);
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Pilih Kamar Yang Tersedia");
+                    resetForm2();
                 }
 
             }
@@ -1382,25 +1454,23 @@ public class MenuUser extends javax.swing.JFrame {
     private void txtcari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcari2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcari2ActionPerformed
-    
 
-    
+
     private void cmbkategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkategoriActionPerformed
-    try {
-        DefaultTableModel tbl = new DefaultTableModel();
-        tbl.addColumn("KODE KAMAR");
-        tbl.addColumn("LOKASI KAMAR");
-        tbl.addColumn("JENIS KAMAR");
-        tbl.addColumn("DESKRIPSI KAMAR");
-        tbl.addColumn("HARGA");
-        tbl.addColumn("STATUS");
-        DataKamar.setModel(tbl);
-
+        try {
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("KODE KAMAR");
+            tbl.addColumn("LOKASI KAMAR");
+            tbl.addColumn("JENIS KAMAR");
+            tbl.addColumn("DESKRIPSI KAMAR");
+            tbl.addColumn("HARGA");
+            tbl.addColumn("STATUS");
+            DataKamar.setModel(tbl);
 
             String cari = cmbkategori.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB9(cari);
-            if("Kategori".equals("Kategori")){
+            if ("Kategori".equals("Kategori")) {
                 showTableKamar2();
             }
             while (rs.next()) {
@@ -1415,7 +1485,7 @@ public class MenuUser extends javax.swing.JFrame {
                 DataKamar.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
             System.out.println(ex.getMessage());
         }
@@ -1448,13 +1518,25 @@ public class MenuUser extends javax.swing.JFrame {
                 DataKamar.setModel(tbl);
             }
 
-        } catch (Exception ex ) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Error !!!");
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_txtcari2KeyReleased
 
-    
+    private void refresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh2MouseClicked
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        refresh2.setIcon(gmbr);
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                resetForm2();
+                ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+                refresh2.setIcon(gmbr);
+            }
+        }, 1 * 5);
+    }//GEN-LAST:event_refresh2MouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1586,6 +1668,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1618,6 +1701,8 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_wa_icon;
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
     private javax.swing.JPanel pemesanan;
+    private javax.swing.JLabel refresh2;
+    private com.toedter.calendar.JDateChooser tgl_keluar;
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
     private javax.swing.JTextField txtBooking;
@@ -1626,7 +1711,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JTextField txtKodeKamarPsn;
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
-    private javax.swing.JTextField txtNoKTP;
+    public static final javax.swing.JTextField txtNoKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtTotaBayar;
     private javax.swing.JTextField txtcari2;
     // End of variables declaration//GEN-END:variables
