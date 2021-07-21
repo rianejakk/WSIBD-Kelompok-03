@@ -66,13 +66,13 @@ public class LoginMini extends javax.swing.JFrame {
                                 MenuUser.nm_lengkap.setText(rs2.getString("NamaLengkap"));
                                 MenuUser.nm_lengkap.setEnabled(false);
                                 MenuUser.txtAlamat.setText(rs2.getString("Alamat"));
-                                MenuUser.txtAlamat.setEnabled(false);
+                                MenuUser.txtAlamat.setEnabled(true);
                                 MenuUser.txtJenisKelamin.setText(rs2.getString("JenisKelamin"));
                                 MenuUser.txtJenisKelamin.setEnabled(false);
                                 MenuUser.txtNoHP.setText(rs2.getString("NoHpPribadi"));
-                                MenuUser.txtNoHP.setEnabled(false);
+                                MenuUser.txtNoHP.setEnabled(true);
                                 MenuUser.txtNoDarurat.setText(rs2.getString("NoHpDarurat"));
-                                MenuUser.txtNoDarurat.setEnabled(false);
+                                MenuUser.txtNoDarurat.setEnabled(true);
                             } catch (SQLException ex) {
                                 JOptionPane.showMessageDialog(null, ex.getMessage());
                             }
