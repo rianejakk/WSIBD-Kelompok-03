@@ -63,7 +63,7 @@ FROM
 			</textField>
 			<image>
 				<reportElement x="35" y="10" width="74" height="65" uuid="0e32c1bf-efc3-49af-b09d-82a14ba17cc6"/>
-				<imageExpression><![CDATA["D:\\Tony's PC\\Music\\MK POLIJE\\MK Workshop SI Desktop\\WSIBD-Kelompok-03\\Form + Database\\KostAiraApp\\src\\SI_AiraKost_Asset\\LOGOKOST.png"]]></imageExpression>
+				<imageExpression><![CDATA["$P{imagesDir}"+"LOGOKOST.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

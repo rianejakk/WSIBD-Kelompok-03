@@ -186,7 +186,6 @@ public class MenuUser extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
-        txtNoKTP = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         SideBarMenu = new javax.swing.JPanel();
         lbl_photos = new javax.swing.JLabel();
@@ -302,7 +301,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 21, 20);
+        gb1.setBounds(10, 0, 13, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -312,7 +311,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 21, 20);
+        gb2.setBounds(29, 0, 13, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -322,7 +321,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 21, 20);
+        gb3.setBounds(48, 0, 13, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -332,7 +331,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 21, 20);
+        gb4.setBounds(67, 0, 13, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -342,7 +341,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 21, 20);
+        gb5.setBounds(86, 0, 13, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -352,7 +351,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 21, 20);
+        gb6.setBounds(105, 0, 13, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -362,7 +361,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 21, 20);
+        gb7.setBounds(124, 0, 13, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -372,7 +371,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 21, 20);
+        gb8.setBounds(143, 0, 13, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -382,7 +381,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 21, 20);
+        gb9.setBounds(162, 0, 13, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -392,7 +391,7 @@ public class MenuUser extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 21, 20);
+        gb10.setBounds(181, 0, 13, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -1593,7 +1592,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JTextField txtLokasiKamar;
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
-    private javax.swing.JTextField txtNoKTP;
+    public static final javax.swing.JTextField txtNoKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtTipeKamar;
     private javax.swing.JTextField txtTotaBayar;
     // End of variables declaration//GEN-END:variables

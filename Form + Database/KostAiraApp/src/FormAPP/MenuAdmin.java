@@ -382,13 +382,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         Cek7 = new javax.swing.JButton();
         Cek8 = new javax.swing.JButton();
         Kode_kamar1 = new javax.swing.JLabel();
+        Kode_kamar2 = new javax.swing.JLabel();
         Kode_kamar3 = new javax.swing.JLabel();
         Kode_kamar4 = new javax.swing.JLabel();
         Kode_kamar5 = new javax.swing.JLabel();
         Kode_kamar6 = new javax.swing.JLabel();
         Kode_kamar7 = new javax.swing.JLabel();
         Kode_kamar8 = new javax.swing.JLabel();
-        Kode_kamar2 = new javax.swing.JLabel();
         Status1 = new javax.swing.JLabel();
         Status2 = new javax.swing.JLabel();
         Status3 = new javax.swing.JLabel();
@@ -397,21 +397,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         Status6 = new javax.swing.JLabel();
         Status7 = new javax.swing.JLabel();
         Status8 = new javax.swing.JLabel();
-        lbl_jk1no1 = new javax.swing.JLabel();
         lbl_kk1no1 = new javax.swing.JLabel();
-        lbl_jk1no2 = new javax.swing.JLabel();
         lbl_kk1no2 = new javax.swing.JLabel();
-        lbl_jk1no3 = new javax.swing.JLabel();
         lbl_kk1no3 = new javax.swing.JLabel();
-        lbl_jk1no4 = new javax.swing.JLabel();
         lbl_kk1no4 = new javax.swing.JLabel();
-        lbl_jk1no5 = new javax.swing.JLabel();
         lbl_kk1no5 = new javax.swing.JLabel();
-        lbl_jk1no6 = new javax.swing.JLabel();
         lbl_kk1no6 = new javax.swing.JLabel();
-        lbl_jk1no7 = new javax.swing.JLabel();
         lbl_kk1no7 = new javax.swing.JLabel();
-        lbl_jk1no8 = new javax.swing.JLabel();
         lbl_kk1no8 = new javax.swing.JLabel();
         PemesananSideBar = new javax.swing.JPanel();
         lbl_Menu5 = new javax.swing.JLabel();
@@ -460,7 +452,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_icoPelanggan = new javax.swing.JLabel();
         lbl_dpelanggan = new javax.swing.JLabel();
         lbl_kpelanggan = new javax.swing.JLabel();
-        Data_Admin = new javax.swing.JPanel();
+        Data_Kamar = new javax.swing.JPanel();
         lbl_icoAdmin = new javax.swing.JLabel();
         lbl_dadmin = new javax.swing.JLabel();
         lbl_kadmin = new javax.swing.JLabel();
@@ -468,10 +460,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_icoPemesanan = new javax.swing.JLabel();
         lbl_dpesan = new javax.swing.JLabel();
         lbl_kpesan = new javax.swing.JLabel();
-        Data_Pembayaran = new javax.swing.JPanel();
-        lbl_icoPay = new javax.swing.JLabel();
-        lbl_dbayar = new javax.swing.JLabel();
-        lbl_kbayar = new javax.swing.JLabel();
         PengaturanSideBar = new javax.swing.JPanel();
         lbl_Menu8 = new javax.swing.JLabel();
         lbl_Menu9 = new javax.swing.JLabel();
@@ -895,6 +883,38 @@ public class MenuAdmin extends javax.swing.JFrame {
         jComboBox1.setBorder(null);
         PanelKamar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 210, -1));
 
+        gambarK1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK1.setText("Gambar");
+        PanelKamar.add(gambarK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 140, 90));
+
+        gambarK2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK2.setText("Gambar");
+        PanelKamar.add(gambarK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 140, 90));
+
+        gambarK3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK3.setText("Gambar");
+        PanelKamar.add(gambarK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 140, 90));
+
+        gambarK4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK4.setText("Gambar");
+        PanelKamar.add(gambarK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, 140, 90));
+
+        gambarK5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK5.setText("Gambar");
+        PanelKamar.add(gambarK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 140, 90));
+
+        gambarK6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK6.setText("Gambar");
+        PanelKamar.add(gambarK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 140, 90));
+
+        gambarK7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK7.setText("Gambar");
+        PanelKamar.add(gambarK7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 140, 90));
+
+        gambarK8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarK8.setText("Gambar");
+        PanelKamar.add(gambarK8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 420, 140, 90));
+
         Cek1.setBackground(new java.awt.Color(140, 119, 110));
         Cek1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cek1.setForeground(new java.awt.Color(255, 255, 255));
@@ -963,6 +983,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         Kode_kamar1.setText("Kode Kamar");
         PanelKamar.add(Kode_kamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
+        Kode_kamar2.setForeground(new java.awt.Color(51, 51, 51));
+        Kode_kamar2.setText("Kode Kamar");
+        PanelKamar.add(Kode_kamar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
         Kode_kamar3.setForeground(new java.awt.Color(51, 51, 51));
         Kode_kamar3.setText("Kode Kamar");
         PanelKamar.add(Kode_kamar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, -1, -1));
@@ -987,9 +1011,29 @@ public class MenuAdmin extends javax.swing.JFrame {
         Kode_kamar8.setText("Kode Kamar");
         PanelKamar.add(Kode_kamar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, -1, -1));
 
-        Kode_kamar2.setForeground(new java.awt.Color(51, 51, 51));
-        Kode_kamar2.setText("Kode Kamar");
-        PanelKamar.add(Kode_kamar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+        FieldKodeKamar1.setText("???");
+        PanelKamar.add(FieldKodeKamar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 70, -1));
+
+        FieldKodeKamar2.setText("???");
+        PanelKamar.add(FieldKodeKamar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 70, -1));
+
+        FieldKodeKamar3.setText("???");
+        PanelKamar.add(FieldKodeKamar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 70, -1));
+
+        FieldKodeKamar4.setText("???");
+        PanelKamar.add(FieldKodeKamar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 280, 70, -1));
+
+        FieldKodeKamar5.setText("???");
+        PanelKamar.add(FieldKodeKamar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 70, -1));
+
+        FieldKodeKamar6.setText("???");
+        PanelKamar.add(FieldKodeKamar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, 70, -1));
+
+        FieldKodeKamar7.setText("???");
+        PanelKamar.add(FieldKodeKamar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 520, 70, -1));
+
+        FieldKodeKamar8.setText("???");
+        PanelKamar.add(FieldKodeKamar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 520, 70, -1));
 
         Status1.setForeground(new java.awt.Color(51, 51, 51));
         Status1.setText("Status");
@@ -1022,6 +1066,30 @@ public class MenuAdmin extends javax.swing.JFrame {
         Status8.setForeground(new java.awt.Color(51, 51, 51));
         Status8.setText("Status");
         PanelKamar.add(Status8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
+
+        FieldStatus1.setText("???");
+        PanelKamar.add(FieldStatus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 70, -1));
+
+        FieldStatus2.setText("???");
+        PanelKamar.add(FieldStatus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 70, -1));
+
+        FieldStatus3.setText("???");
+        PanelKamar.add(FieldStatus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 70, -1));
+
+        FieldStatus4.setText("???");
+        PanelKamar.add(FieldStatus4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 300, 70, -1));
+
+        FieldStatus5.setText("???");
+        PanelKamar.add(FieldStatus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 70, -1));
+
+        FieldStatus6.setText("???");
+        PanelKamar.add(FieldStatus6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 70, -1));
+
+        FieldStatus7.setText("???");
+        PanelKamar.add(FieldStatus7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 70, -1));
+
+        FieldStatus8.setText("???");
+        PanelKamar.add(FieldStatus8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, 70, -1));
 
         lbl_jk1no1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_jk1no1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1435,21 +1503,21 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_kpelanggan.setBounds(0, 20, 204, 254);
 
         LaporanSidebar.add(Data_Pelanggan);
-        Data_Pelanggan.setBounds(110, 200, 200, 270);
+        Data_Pelanggan.setBounds(240, 200, 200, 270);
 
-        Data_Admin.setBackground(new java.awt.Color(255, 255, 255));
-        Data_Admin.setOpaque(false);
-        Data_Admin.setLayout(null);
+        Data_Kamar.setBackground(new java.awt.Color(255, 255, 255));
+        Data_Kamar.setOpaque(false);
+        Data_Kamar.setLayout(null);
 
         lbl_icoAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataAdmin.png"))); // NOI18N
-        Data_Admin.add(lbl_icoAdmin);
+        Data_Kamar.add(lbl_icoAdmin);
         lbl_icoAdmin.setBounds(40, 70, 130, 130);
 
         lbl_dadmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_dadmin.setForeground(new java.awt.Color(96, 82, 76));
         lbl_dadmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_dadmin.setText("Data Kamar");
-        Data_Admin.add(lbl_dadmin);
+        Data_Kamar.add(lbl_dadmin);
         lbl_dadmin.setBounds(12, 230, 180, 20);
 
         lbl_kadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
@@ -1461,11 +1529,11 @@ public class MenuAdmin extends javax.swing.JFrame {
                 lbl_kadminMouseExited(evt);
             }
         });
-        Data_Admin.add(lbl_kadmin);
+        Data_Kamar.add(lbl_kadmin);
         lbl_kadmin.setBounds(0, 20, 204, 254);
 
-        LaporanSidebar.add(Data_Admin);
-        Data_Admin.setBounds(360, 200, 200, 270);
+        LaporanSidebar.add(Data_Kamar);
+        Data_Kamar.setBounds(490, 200, 200, 270);
 
         Data_Pemesanan.setBackground(new java.awt.Color(255, 255, 255));
         Data_Pemesanan.setOpaque(false);
@@ -1495,37 +1563,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_kpesan.setBounds(0, 20, 204, 254);
 
         LaporanSidebar.add(Data_Pemesanan);
-        Data_Pemesanan.setBounds(610, 200, 200, 270);
-
-        Data_Pembayaran.setBackground(new java.awt.Color(255, 255, 255));
-        Data_Pembayaran.setOpaque(false);
-        Data_Pembayaran.setLayout(null);
-
-        lbl_icoPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/dataPembayaran.png"))); // NOI18N
-        Data_Pembayaran.add(lbl_icoPay);
-        lbl_icoPay.setBounds(40, 70, 130, 130);
-
-        lbl_dbayar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_dbayar.setForeground(new java.awt.Color(96, 82, 76));
-        lbl_dbayar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_dbayar.setText("Data Pembayaran");
-        Data_Pembayaran.add(lbl_dbayar);
-        lbl_dbayar.setBounds(12, 230, 180, 20);
-
-        lbl_kbayar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
-        lbl_kbayar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbl_kbayarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbl_kbayarMouseExited(evt);
-            }
-        });
-        Data_Pembayaran.add(lbl_kbayar);
-        lbl_kbayar.setBounds(0, 20, 204, 254);
-
-        LaporanSidebar.add(Data_Pembayaran);
-        Data_Pembayaran.setBounds(850, 200, 200, 270);
+        Data_Pemesanan.setBounds(740, 200, 200, 270);
 
         Bg.add(LaporanSidebar);
         LaporanSidebar.setBounds(206, 0, 1160, 768);
@@ -2789,14 +2827,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         setIconPanelButton3(lbl_icoPemesanan);
     }//GEN-LAST:event_lbl_kpesanMouseEntered
 
-    private void lbl_kbayarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kbayarMouseExited
-        resetIconPanelButton4(lbl_icoPay);
-    }//GEN-LAST:event_lbl_kbayarMouseExited
-
-    private void lbl_kbayarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kbayarMouseEntered
-        setIconPanelButton4(lbl_icoPay);
-    }//GEN-LAST:event_lbl_kbayarMouseEntered
-
     private void bttn_close6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_close6ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_bttn_close6ActionPerformed
@@ -2812,10 +2842,9 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_Menu13.setEnabled(true);
         setPanel(LaporanSidebar);
         lbl_judul6.setBounds(545, 10, 260, 90);
-        Data_Pelanggan.setBounds(210, 200, 200, 270);
-        Data_Admin.setBounds(460, 200, 200, 270);
-        Data_Pemesanan.setBounds(710, 200, 200, 270);
-        Data_Pembayaran.setBounds(950, 200, 200, 270);
+        Data_Pelanggan.setBounds(310, 200, 200, 270);
+        Data_Kamar.setBounds(570, 200, 200, 270);
+        Data_Pemesanan.setBounds(810, 200, 200, 270);
         bttn_minimized3.setBounds(1286, 15, 20, 20);
         bttn_close6.setBounds(1316, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu7MouseClicked
@@ -3038,10 +3067,9 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_Menu7.setEnabled(true);
         resetPanel(LaporanSidebar);
         lbl_judul6.setBounds(445, 10, 260, 90);
-        Data_Pelanggan.setBounds(110, 200, 200, 270);
-        Data_Admin.setBounds(360, 200, 200, 270);
-        Data_Pemesanan.setBounds(610, 200, 200, 270);
-        Data_Pembayaran.setBounds(850, 200, 200, 270);
+        Data_Pelanggan.setBounds(240, 200, 200, 270);
+        Data_Kamar.setBounds(490, 200, 200, 270);
+        Data_Pemesanan.setBounds(740, 200, 200, 270);
         bttn_minimized3.setBounds(1080, 15, 20, 20);
         bttn_close6.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu13MouseClicked
@@ -3659,12 +3687,27 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JButton Cek6;
     private javax.swing.JButton Cek7;
     private javax.swing.JButton Cek8;
-    private javax.swing.JPanel Data_Admin;
     private javax.swing.JPanel Data_EKamar;
     private javax.swing.JPanel Data_EPelanggan;
+    private javax.swing.JPanel Data_Kamar;
     private javax.swing.JPanel Data_Pelanggan;
-    private javax.swing.JPanel Data_Pembayaran;
     private javax.swing.JPanel Data_Pemesanan;
+    public static final javax.swing.JLabel FieldKodeKamar1 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar2 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar3 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar4 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar5 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar6 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar7 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldKodeKamar8 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus1 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus2 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus3 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus4 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus5 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus6 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus7 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel FieldStatus8 = new javax.swing.JLabel();
     private javax.swing.JPanel InputDataKamar;
     private javax.swing.JPanel InputDataPelanggan;
     private javax.swing.JPanel KamarSideBar;
@@ -3760,6 +3803,14 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JPanel form;
     private javax.swing.JPanel form1;
     private javax.swing.JPanel form2;
+    public static final javax.swing.JLabel gambarK1 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK2 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK3 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK4 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK5 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK6 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK7 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel gambarK8 = new javax.swing.JLabel();
     private javax.swing.JRadioButton gb1;
     private javax.swing.JRadioButton gb10;
     private javax.swing.JRadioButton gb2;
@@ -3831,14 +3882,12 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_dadmin;
     private javax.swing.JLabel lbl_datapelanggan;
     private javax.swing.JLabel lbl_datapelanggan1;
-    private javax.swing.JLabel lbl_dbayar;
     private javax.swing.JLabel lbl_dkamar;
     private javax.swing.JLabel lbl_dpelanggan;
     private javax.swing.JLabel lbl_dpelanggan2;
     private javax.swing.JLabel lbl_dpesan;
     private javax.swing.JLabel lbl_foto2;
     private javax.swing.JLabel lbl_icoAdmin;
-    private javax.swing.JLabel lbl_icoPay;
     private javax.swing.JLabel lbl_icoPelanggan;
     private javax.swing.JLabel lbl_icoPelanggan2;
     private javax.swing.JLabel lbl_icoPemesanan;
@@ -3846,14 +3895,14 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_ikonWA;
     private javax.swing.JLabel lbl_input1;
     private javax.swing.JLabel lbl_input3;
-    private javax.swing.JLabel lbl_jk1no1;
-    private javax.swing.JLabel lbl_jk1no2;
-    private javax.swing.JLabel lbl_jk1no3;
-    private javax.swing.JLabel lbl_jk1no4;
-    private javax.swing.JLabel lbl_jk1no5;
-    private javax.swing.JLabel lbl_jk1no6;
-    private javax.swing.JLabel lbl_jk1no7;
-    private javax.swing.JLabel lbl_jk1no8;
+    public static final javax.swing.JLabel lbl_jk1no1 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no2 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no3 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no4 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no5 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no6 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no7 = new javax.swing.JLabel();
+    public static final javax.swing.JLabel lbl_jk1no8 = new javax.swing.JLabel();
     private javax.swing.JLabel lbl_judul;
     private javax.swing.JLabel lbl_judul1;
     private javax.swing.JLabel lbl_judul2;
@@ -3863,7 +3912,6 @@ DefaultTableModel tbl = new DefaultTableModel();
     private javax.swing.JLabel lbl_judul7;
     private javax.swing.JLabel lbl_judul8;
     private javax.swing.JLabel lbl_kadmin;
-    private javax.swing.JLabel lbl_kbayar;
     private javax.swing.JLabel lbl_kk1no1;
     private javax.swing.JLabel lbl_kk1no2;
     private javax.swing.JLabel lbl_kk1no3;
