@@ -71,23 +71,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     String filename = null;
     
     
-//    private void showDataKamar(){
-//        try {
-//        ConnectDB konek = new ConnectDB();
-//        ResultSet rs = konek.selectDB8();
-//        
-//        while (rs.next()) {
-//            FieldKodeKamar1.setText(rs.getString("kode_kamar"));
-//            break;
-//        }
-//          
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, e.getMessage());
-//        }
-//
-//        
-//    }
-    
         public void showTables() {
         DefaultTableModel tbl = new DefaultTableModel();
 
@@ -168,10 +151,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         }
     }
          
-        public boolean isCellEditable(){
-     return false;
-}
-        
         public void showTableKamar2() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
