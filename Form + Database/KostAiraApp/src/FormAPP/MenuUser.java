@@ -150,11 +150,11 @@ public class MenuUser extends javax.swing.JFrame {
         lbl_judul2 = new javax.swing.JLabel();
         ScrollData2 = new javax.swing.JScrollPane();
         PanelKamar = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbkategori = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         DataKamar = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcari2 = new javax.swing.JTextField();
         SideBarMenu = new javax.swing.JPanel();
         lbl_photos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -510,10 +510,15 @@ public class MenuUser extends javax.swing.JFrame {
         PanelKamar.setBackground(new java.awt.Color(242, 242, 242));
         PanelKamar.setLayout(null);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*Kategori", "Kamar 1", "Kamar 2", " " }));
-        jComboBox1.setBorder(null);
-        PanelKamar.add(jComboBox1);
-        jComboBox1.setBounds(330, 60, 130, 30);
+        cmbkategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*Kategori", "Kamar 1", "Kamar 2", " " }));
+        cmbkategori.setBorder(null);
+        cmbkategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbkategoriActionPerformed(evt);
+            }
+        });
+        PanelKamar.add(cmbkategori);
+        cmbkategori.setBounds(330, 60, 130, 30);
 
         jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -589,13 +594,18 @@ public class MenuUser extends javax.swing.JFrame {
         PanelKamar.add(jLabel1);
         jLabel1.setBounds(30, 63, 30, 22);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtcari2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtcari2ActionPerformed(evt);
             }
         });
-        PanelKamar.add(jTextField1);
-        jTextField1.setBounds(90, 60, 220, 30);
+        txtcari2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtcari2KeyReleased(evt);
+            }
+        });
+        PanelKamar.add(txtcari2);
+        txtcari2.setBounds(90, 60, 220, 30);
 
         ScrollData2.setViewportView(PanelKamar);
 
@@ -1369,9 +1379,80 @@ public class MenuUser extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtcari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcari2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtcari2ActionPerformed
+    
+
+    
+    private void cmbkategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkategoriActionPerformed
+    try {
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        DataKamar.setModel(tbl);
+
+
+            String cari = cmbkategori.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB9(cari);
+            if("Kategori".equals("Kategori")){
+                showTableKamar2();
+            }
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_cmbkategoriActionPerformed
+
+    private void txtcari2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcari2KeyReleased
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("KODE KAMAR");
+        tbl.addColumn("LOKASI KAMAR");
+        tbl.addColumn("JENIS KAMAR");
+        tbl.addColumn("DESKRIPSI KAMAR");
+        tbl.addColumn("HARGA");
+        tbl.addColumn("STATUS");
+        DataKamar.setModel(tbl);
+
+        try {
+            String cari = txtcari2.getText();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB6(cari);
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(rootPane, "Error !!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_txtcari2KeyReleased
 
     
     public static void main(String args[]) {
@@ -1473,6 +1554,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel button;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
+    private javax.swing.JComboBox<String> cmbkategori;
     private javax.swing.JPanel form;
     private javax.swing.JRadioButton gb1;
     private javax.swing.JRadioButton gb10;
@@ -1487,7 +1569,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel ico_beranda;
     private javax.swing.JLabel ico_kamar;
     private javax.swing.JLabel ico_pemesanan;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -1517,7 +1598,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel kamar;
     private javax.swing.JLabel lbl_Kamar3;
     private javax.swing.JLabel lbl_Kamar4;
@@ -1548,5 +1628,6 @@ public class MenuUser extends javax.swing.JFrame {
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
     private javax.swing.JTextField txtNoKTP;
     private javax.swing.JTextField txtTotaBayar;
+    private javax.swing.JTextField txtcari2;
     // End of variables declaration//GEN-END:variables
 }

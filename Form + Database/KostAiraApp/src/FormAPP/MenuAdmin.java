@@ -719,7 +719,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb1);
-        gb1.setBounds(10, 0, 13, 20);
+        gb1.setBounds(10, 0, 21, 20);
 
         buttonGroup1.add(gb2);
         gb2.setBorder(null);
@@ -729,7 +729,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb2);
-        gb2.setBounds(29, 0, 13, 20);
+        gb2.setBounds(29, 0, 21, 20);
 
         buttonGroup1.add(gb3);
         gb3.setBorder(null);
@@ -739,7 +739,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb3);
-        gb3.setBounds(48, 0, 13, 20);
+        gb3.setBounds(48, 0, 21, 20);
 
         buttonGroup1.add(gb4);
         gb4.setBorder(null);
@@ -749,7 +749,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb4);
-        gb4.setBounds(67, 0, 13, 20);
+        gb4.setBounds(67, 0, 21, 20);
 
         buttonGroup1.add(gb5);
         gb5.setBorder(null);
@@ -759,7 +759,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb5);
-        gb5.setBounds(86, 0, 13, 20);
+        gb5.setBounds(86, 0, 21, 20);
 
         buttonGroup1.add(gb6);
         gb6.setBorder(null);
@@ -769,7 +769,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb6);
-        gb6.setBounds(105, 0, 13, 20);
+        gb6.setBounds(105, 0, 21, 20);
 
         buttonGroup1.add(gb7);
         gb7.setBorder(null);
@@ -779,7 +779,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb7);
-        gb7.setBounds(124, 0, 13, 20);
+        gb7.setBounds(124, 0, 21, 20);
 
         buttonGroup1.add(gb8);
         gb8.setBorder(null);
@@ -789,7 +789,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb8);
-        gb8.setBounds(143, 0, 13, 20);
+        gb8.setBounds(143, 0, 21, 20);
 
         buttonGroup1.add(gb9);
         gb9.setBorder(null);
@@ -799,7 +799,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb9);
-        gb9.setBounds(162, 0, 13, 20);
+        gb9.setBounds(162, 0, 21, 20);
 
         buttonGroup1.add(gb10);
         gb10.setBorder(null);
@@ -809,7 +809,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         button.add(gb10);
-        gb10.setBounds(181, 0, 13, 20);
+        gb10.setBounds(181, 0, 21, 20);
 
         BerandaSideBar.add(button);
         button.setBounds(480, 390, 200, 20);
@@ -1006,6 +1006,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         PanelKamar.add(jLabel1);
         jLabel1.setBounds(30, 63, 30, 22);
 
+        txtcari2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcari2ActionPerformed(evt);
+            }
+        });
         txtcari2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtcari2KeyReleased(evt);
@@ -1263,23 +1268,23 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         FieldKodeKamar.setText("??");
         jPanel2.add(FieldKodeKamar);
-        FieldKodeKamar.setBounds(130, 230, 129, 14);
+        FieldKodeKamar.setBounds(130, 230, 129, 20);
 
         FieldLokasiKamar.setText("??");
         jPanel2.add(FieldLokasiKamar);
-        FieldLokasiKamar.setBounds(130, 260, 129, 14);
+        FieldLokasiKamar.setBounds(130, 260, 129, 20);
 
         FieldJenisKamar.setText("??");
         jPanel2.add(FieldJenisKamar);
-        FieldJenisKamar.setBounds(130, 290, 129, 14);
+        FieldJenisKamar.setBounds(130, 290, 129, 20);
 
         FieldHarga.setText("??");
         jPanel2.add(FieldHarga);
-        FieldHarga.setBounds(130, 400, 129, 14);
+        FieldHarga.setBounds(130, 400, 129, 20);
 
         FieldStatus.setText("??");
         jPanel2.add(FieldStatus);
-        FieldStatus.setBounds(130, 430, 129, 14);
+        FieldStatus.setBounds(130, 430, 129, 20);
 
         FieldDsc.setEditable(false);
         FieldDsc.setColumns(20);
@@ -3602,7 +3607,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     }//GEN-LAST:event_lbl_kadminMouseClicked
 
     private void txtcari2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcari2KeyReleased
- DefaultTableModel tbl = new DefaultTableModel();
+        DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
         tbl.addColumn("LOKASI KAMAR");
         tbl.addColumn("JENIS KAMAR");
@@ -3635,7 +3640,7 @@ DefaultTableModel tbl = new DefaultTableModel();
     }//GEN-LAST:event_txtcari2KeyReleased
 
     private void cmbkategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkategoriActionPerformed
- try {
+    try {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("KODE KAMAR");
         tbl.addColumn("LOKASI KAMAR");
@@ -3669,6 +3674,10 @@ DefaultTableModel tbl = new DefaultTableModel();
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_cmbkategoriActionPerformed
+
+    private void txtcari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcari2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcari2ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
