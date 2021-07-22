@@ -11,6 +11,8 @@ import java.awt.Toolkit;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -115,6 +117,33 @@ public class MenuUser extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Error pada Pemesanan");
             System.out.println(e.getMessage());
+        }
+    }
+    
+        private void hitungselisih() {
+        try {
+            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            String strDate1 = df.format(tgl_masuk.getDate());
+            String strDate2 = df.format(tgl_keluar.getDate());
+            Date Tanggal1 = df.parse(strDate1);
+            Date Tanggal2 = df.parse(strDate2);
+            long Hari1 = Tanggal1.getTime();
+            long Hari2 = Tanggal2.getTime();
+            long diff = Hari2 - Hari1;
+            long Lama = diff / (24 * 60 * 60 * 1000);
+            String Hasil = (Long.toString(Lama));
+            LamaSewa.setText(Hasil);
+
+            int harga_sewa = Integer.parseInt(FieldHarga.getText()); 
+            int lama_sewa = Integer.parseInt(LamaSewa.getText());   
+            int Total = harga_sewa * lama_sewa;                     
+            String a = Integer.toString(Total);
+            txtTotaBayar.setText(a);
+
+
+
+        } catch (Exception a) {
+            JOptionPane.showMessageDialog(this, "Masukan Tanggal Peminjaman dan Tanggal Pengembalian");
         }
     }
 
@@ -242,9 +271,6 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         txtKodeBayar = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -259,6 +285,7 @@ public class MenuUser extends javax.swing.JFrame {
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
         cmb_Status2 = new javax.swing.JComboBox<>();
+        LamaSewa = new javax.swing.JTextField();
         lbl_besar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -957,7 +984,7 @@ public class MenuUser extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 830, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 740, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1010,18 +1037,18 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel52.setText("Status");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 735, 126, -1));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel47.setText("Tanggal Masuk");
@@ -1036,27 +1063,10 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, -1));
-
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("6 Bulan/disc.5%");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 130, -1));
-
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Per-Bulan/normal");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, -1, -1));
-
-        jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("3 bulan/normal");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 120, -1));
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 335, -1));
 
         jPanel2.setLayout(null);
 
@@ -1131,10 +1141,8 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel51.setText("Tanggal Keluar");
-        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
-
-        tgl_keluar.setEnabled(false);
-        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 335, 30));
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 126, -1));
+        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 335, 30));
         jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 335, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -1147,7 +1155,8 @@ public class MenuUser extends javax.swing.JFrame {
         cmb_Status2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         cmb_Status2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
         cmb_Status2.setEnabled(false);
-        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 335, 30));
+        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, 30));
+        jPanel1.add(LamaSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 335, 30));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -1485,18 +1494,6 @@ public class MenuUser extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bttn_CekButton6ActionPerformed
 
-    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_MasukActionPerformed
-
-    private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
-
-    }//GEN-LAST:event_nm_lengkapActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void txtcari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcari2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcari2ActionPerformed
@@ -1702,6 +1699,14 @@ public class MenuUser extends javax.swing.JFrame {
         }, 1 * 5);
     }//GEN-LAST:event_refresh3MouseClicked
 
+    private void nm_lengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nm_lengkapActionPerformed
+
+    }//GEN-LAST:event_nm_lengkapActionPerformed
+
+    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_MasukActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1779,6 +1784,7 @@ public class MenuUser extends javax.swing.JFrame {
     public static final javax.swing.JLabel FieldStatus = new javax.swing.JLabel();
     public static final javax.swing.JLabel FotoKamar = new javax.swing.JLabel();
     private javax.swing.JPanel KamarSideBar;
+    private javax.swing.JTextField LamaSewa;
     private javax.swing.JLabel Lbl_beranda;
     private javax.swing.JLabel Lbl_kamar;
     private javax.swing.JLabel Lbl_pemesanan;
@@ -1844,9 +1850,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;

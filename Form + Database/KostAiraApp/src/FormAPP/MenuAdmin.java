@@ -16,6 +16,8 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -116,6 +118,33 @@ public class MenuAdmin extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "Salah");
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        private void hitungselisih() {
+        try {
+            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            String strDate1 = df.format(tgl_masuk.getDate());
+            String strDate2 = df.format(tgl_keluar.getDate());
+            Date Tanggal1 = df.parse(strDate1);
+            Date Tanggal2 = df.parse(strDate2);
+            long Hari1 = Tanggal1.getTime();
+            long Hari2 = Tanggal2.getTime();
+            long diff = Hari2 - Hari1;
+            long Lama = diff / (24 * 60 * 60 * 1000);
+            String Hasil = (Long.toString(Lama));
+            LamaSewa.setText(Hasil);
+
+            int harga_sewa = Integer.parseInt(FieldHarga.getText()); 
+            int lama_sewa = Integer.parseInt(LamaSewa.getText());   
+            int Total = harga_sewa * lama_sewa;                     
+            String a = Integer.toString(Total);
+            txtTotaBayar.setText(a);
+
+
+
+        } catch (Exception a) {
+            JOptionPane.showMessageDialog(this, "Masukan Tanggal Peminjaman dan Tanggal Pengembalian");
         }
     }
 
@@ -507,9 +536,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         txtKodeBayar = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -531,6 +557,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmb_User = new javax.swing.JComboBox<>();
         txtNoKTP = new javax.swing.JTextField();
         cmb_Status2 = new javax.swing.JComboBox<>();
+        LamaSewa = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         lbl_besar = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
         lbl_Menu7 = new javax.swing.JLabel();
@@ -749,7 +777,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         Cek1.setContentAreaFilled(false);
         Cek1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Cek1.setOpaque(false);
         Cek1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Cek1ActionPerformed(evt);
@@ -1211,7 +1238,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 MasukActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 920, 100, 40));
+        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 870, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1253,18 +1280,18 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel45.setText("Total Bayar");
-        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 126, -1));
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 126, -1));
 
         txtTotaBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 335, -1));
+        jPanel1.add(txtTotaBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 700, 335, -1));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel46.setText("Lama sewa");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 126, -1));
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 650, 126, -1));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel47.setText("Tanggal Keluar");
-        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 684, 126, -1));
+        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 126, -1));
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel48.setText("No. HP Darurat");
@@ -1275,34 +1302,15 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel49.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel49.setText("Kode Bayar");
-        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 126, -1));
+        jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, 126, -1));
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel52.setText("Status");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 835, 126, -1));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 810, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 780, 335, -1));
-
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("6 Bulan/disc.5%");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 640, 130, -1));
-
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Per-Bulan/normal");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, -1, -1));
-
-        jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("3 bulan/normal");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 120, -1));
+        txtKodeBayar.setText("0410-01-000301-50-4");
+        jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 750, 335, -1));
 
         jPanel2.setLayout(null);
 
@@ -1379,8 +1387,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel51.setText("Tanggal Masuk");
         jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
 
-        tgl_keluar.setEnabled(false);
-        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 335, 30));
+        tgl_keluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tgl_keluarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 335, 30));
         jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 335, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -1420,7 +1432,17 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmb_Status2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         cmb_Status2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
         cmb_Status2.setEnabled(false);
-        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 830, 335, 30));
+        jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 800, 335, 30));
+        jPanel1.add(LamaSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 335, 30));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icons8_refresh_24px.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 590, 30, 30));
 
         ScrollData.setViewportView(jPanel1);
 
@@ -3125,10 +3147,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_MasukActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void lbl_kkamarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseEntered
         setIconPanelButton3(lbl_icoPemesanan2);
 
@@ -3984,6 +4002,14 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_refresh3MouseClicked
 
+    private void tgl_keluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tgl_keluarMouseClicked
+
+    }//GEN-LAST:event_tgl_keluarMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+hitungselisih();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -4068,6 +4094,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel InputDataKamar;
     private javax.swing.JPanel InputDataPelanggan;
     private javax.swing.JPanel KamarSideBar;
+    private javax.swing.JTextField LamaSewa;
     private javax.swing.JPanel LaporanSidebar;
     private javax.swing.JLabel Lbl_Alamat;
     private javax.swing.JLabel Lbl_Cari;
@@ -4163,6 +4190,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel ico_laporan;
     private javax.swing.JLabel ico_pemesanan;
     private javax.swing.JLabel ico_pengaturan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel25;
@@ -4190,9 +4218,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
