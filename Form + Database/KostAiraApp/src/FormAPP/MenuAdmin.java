@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +22,7 @@ import java.util.Date;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -2588,6 +2590,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_status.setText("Status");
         panelKamar.add(Lbl_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 126, -1));
 
+        lbl_foto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/notImage.png"))); // NOI18N
         lbl_foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelKamar.add(lbl_foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 50, 210, 170));
 
@@ -3501,6 +3504,9 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        if (txtPath1.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Gambar harus diisi");
+        } else {
         try {
             String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
             kode_kamar = txtKodeKamar.getText();
@@ -3508,7 +3514,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
             Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
             status = cmb_Status.getSelectedItem().toString();
-
+                    
             ConnectDB konek = new ConnectDB();
             konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
 
@@ -3518,6 +3524,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Error");
             System.out.println(e.getMessage());
+        }
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
