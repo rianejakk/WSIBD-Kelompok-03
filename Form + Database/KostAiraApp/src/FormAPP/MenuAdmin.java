@@ -344,6 +344,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtNoHP.setText("");
         txtNoDarurat.setText("");
         tgl_masuk.setDate(null);
+        LamaSewa.setText("");
         buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtTotaBayar.setText("");
