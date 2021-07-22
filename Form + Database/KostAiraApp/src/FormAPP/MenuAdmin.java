@@ -3605,7 +3605,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 lbl_foto2.setIcon(imageIcon);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error Pada Data Kamar");
         }
     }//GEN-LAST:event_tabelKamarMouseClicked
 
