@@ -554,7 +554,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         lbl_User = new javax.swing.JLabel();
         cmb_User = new javax.swing.JComboBox<>();
         txtNoKTP = new javax.swing.JTextField();
-        cmb_Status2 = new javax.swing.JComboBox<>();
         txtLamaSewa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lbl_besar = new javax.swing.JLabel();
@@ -3143,7 +3142,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
         try {
-            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga;
+            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga, status;
             String  LamaSewa = null;
             IdBooking = txtBooking.getText();
             KodeKamar = txtKodeKamarPsn.getText();
@@ -3155,10 +3154,11 @@ public class MenuAdmin extends javax.swing.JFrame {
             LamaSewa = txtLamaSewa.getText();
             kode_pembayaran = txtKodeBayar.getText();
             TotalHarga = txtTotaBayar.getText();
-
+            status = cmb_Status2.getSelectedItem().toString();
+            
             ConnectDB konek = new ConnectDB();
             konek.insertDB0(IdBooking, KodeKamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
-
+            konek.updateDB(null, null, null, null, status, null);
             JOptionPane.showMessageDialog(rootPane, "Tambah Data Pemesanan Sukses!!!");
             resetForm2();
         } catch (Exception e) {
@@ -4183,7 +4183,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmbAkses;
     private javax.swing.JComboBox<String> cmb_Status;
-    private javax.swing.JComboBox<String> cmb_Status2;
+    public static final javax.swing.JComboBox<String> cmb_Status2 = new javax.swing.JComboBox<>();
     private javax.swing.JComboBox<String> cmb_User;
     private javax.swing.JComboBox<String> cmb_jeniskamar;
     private javax.swing.JComboBox<String> cmb_jeniskamar1;

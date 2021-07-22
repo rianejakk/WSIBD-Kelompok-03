@@ -285,7 +285,6 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         lbl_User = new javax.swing.JLabel();
-        cmb_Status2 = new javax.swing.JComboBox<>();
         txtLamaSewa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lbl_besar = new javax.swing.JLabel();
@@ -1054,7 +1053,7 @@ public class MenuUser extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel52.setText("Status");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 810, 126, -1));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 805, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtKodeBayar.setText("0410-01-000301-50-4");
@@ -1735,7 +1734,7 @@ public class MenuUser extends javax.swing.JFrame {
 
     private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
         try {
-            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga;
+            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga, status;
             String  LamaSewa = null;
             IdBooking = txtBooking.getText();
             KodeKamar = txtKodeKamarPsn.getText();
@@ -1747,10 +1746,11 @@ public class MenuUser extends javax.swing.JFrame {
             LamaSewa = txtLamaSewa.getText();
             kode_pembayaran = txtKodeBayar.getText();
             TotalHarga = txtTotaBayar.getText();
+            status = cmb_Status2.getSelectedItem().toString();
 
             ConnectDB konek = new ConnectDB();
             konek.insertDB0(IdBooking, KodeKamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
-
+            konek.updateDB(null, null, null, null, status, null);
             JOptionPane.showMessageDialog(rootPane, "Tambah Data Pemesanan Sukses!!!");
             resetForm2();
         } catch (Exception e) {
@@ -1894,7 +1894,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JPanel button;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
-    private javax.swing.JComboBox<String> cmb_Status2;
+    public static final javax.swing.JComboBox<String> cmb_Status2 = new javax.swing.JComboBox<>();
     public static final javax.swing.JComboBox<String> cmb_User = new javax.swing.JComboBox<>();
     private javax.swing.JComboBox<String> cmbkategori;
     private javax.swing.JPanel form;
