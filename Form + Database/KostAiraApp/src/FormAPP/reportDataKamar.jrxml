@@ -44,7 +44,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Report Data Pelanggan]]></text>
+				<text><![CDATA[Report Data Kamar]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="140" y="45" width="276" height="17" uuid="a50b2859-6463-421e-a25f-0914b23bb922"/>

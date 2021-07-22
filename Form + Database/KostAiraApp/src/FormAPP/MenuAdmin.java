@@ -633,10 +633,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_Username = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         Lbl_Pass = new javax.swing.JLabel();
-        txtPass = new javax.swing.JPasswordField();
+        jPanel3 = new javax.swing.JPanel();
         bttn_Hide2 = new javax.swing.JButton();
         bttn_Show2 = new javax.swing.JButton();
-        txtPass1 = new javax.swing.JPasswordField();
+        txtPass = new javax.swing.JPasswordField();
         Lbl_KTP = new javax.swing.JLabel();
         Lbl_Nama = new javax.swing.JLabel();
         Lbl_Jkl = new javax.swing.JLabel();
@@ -2146,8 +2146,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         Lbl_Pass.setText("Password");
         panelPelanggan.add(Lbl_Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 126, -1));
 
-        txtPass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        panelPelanggan.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 280, 30));
+        jPanel3.setLayout(null);
 
         bttn_Hide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/hide_32px.png"))); // NOI18N
         bttn_Hide2.setBorder(null);
@@ -2159,7 +2158,8 @@ public class MenuAdmin extends javax.swing.JFrame {
                 bttn_Hide2ActionPerformed(evt);
             }
         });
-        panelPelanggan.add(bttn_Hide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
+        jPanel3.add(bttn_Hide2);
+        bttn_Hide2.setBounds(282, 8, 26, 18);
 
         bttn_Show2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/show_32px.png"))); // NOI18N
         bttn_Show2.setBorder(null);
@@ -2171,11 +2171,14 @@ public class MenuAdmin extends javax.swing.JFrame {
                 bttn_Show2ActionPerformed(evt);
             }
         });
-        panelPelanggan.add(bttn_Show2, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 76, 26, 18));
+        jPanel3.add(bttn_Show2);
+        bttn_Show2.setBounds(282, 8, 26, 18);
 
-        txtPass1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtPass1.setEnabled(false);
-        panelPelanggan.add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 310, 30));
+        txtPass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jPanel3.add(txtPass);
+        txtPass.setBounds(0, 0, 280, 30);
+
+        panelPelanggan.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 310, 30));
 
         Lbl_KTP.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Lbl_KTP.setText("No. KTP");
@@ -3777,7 +3780,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void lbl_kadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kadminMouseClicked
         try {
             ConnectDB konek = new ConnectDB();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("DataKamar.jasper"), null, konek.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("reportDataKamar.jasper"), null, konek.con);
             JasperViewer.viewReport(jp, false);
         } catch (JRException e) {
             JOptionPane.showMessageDialog(rootPane, e);
@@ -4040,7 +4043,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void lbl_kpesanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kpesanMouseClicked
         try {
             ConnectDB konek = new ConnectDB();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("DataPemesanan.jasper"), null, konek.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("reportDataPemesanan.jasper"), null, konek.con);
             JasperViewer.viewReport(jp, false);
         } catch (JRException e) {
             JOptionPane.showMessageDialog(rootPane, e);
@@ -4254,6 +4257,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -4356,7 +4360,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     public static final javax.swing.JTextField txtNoHp = new javax.swing.JTextField();
     private javax.swing.JTextField txtNoKTP;
     private javax.swing.JPasswordField txtPass;
-    private javax.swing.JPasswordField txtPass1;
     private javax.swing.JTextField txtPath1;
     private javax.swing.JTextField txtTotaBayar;
     private javax.swing.JTextField txtUser;
