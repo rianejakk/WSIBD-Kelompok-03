@@ -120,8 +120,8 @@ public class MenuAdmin extends javax.swing.JFrame {
 //            Logger.getLogger(DataMahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-        private void hitungselisih() {
+
+    private void hitungselisih() {
         try {
             SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
             String strDate1 = df.format(tgl_masuk.getDate());
@@ -133,15 +133,13 @@ public class MenuAdmin extends javax.swing.JFrame {
             long diff = Hari2 - Hari1;
             long Lama = diff / (24 * 60 * 60 * 1000);
             String Hasil = (Long.toString(Lama));
-            LamaSewa.setText(Hasil);
+            txtLamaSewa.setText(Hasil);
 
-            int harga_sewa = Integer.parseInt(FieldHarga.getText()); 
-            int lama_sewa = Integer.parseInt(LamaSewa.getText());   
-            int Total = harga_sewa * lama_sewa;                     
+            int harga_sewa = Integer.parseInt(FieldHarga.getText());
+            int lama_sewa = Integer.parseInt(txtLamaSewa.getText());
+            int Total = harga_sewa * lama_sewa;
             String a = Integer.toString(Total);
             txtTotaBayar.setText(a);
-
-
 
         } catch (Exception a) {
             JOptionPane.showMessageDialog(this, "Masukan Tanggal Peminjaman dan Tanggal Pengembalian");
@@ -344,11 +342,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtNoHP.setText("");
         txtNoDarurat.setText("");
         tgl_masuk.setDate(null);
-        LamaSewa.setText("");
+        txtLamaSewa.setText("");
         buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtTotaBayar.setText("");
-        txtKodeBayar.setText("");
         FotoKamar.setIcon(null);
         FieldKodeKamar.setText("");
         FieldLokasiKamar.setText("");
@@ -418,7 +415,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             ResultSet rs = konek.selectDB0(idBooking);
 
             while (rs.next()) {
-                idBooking = rs.getString("kode_kamar");
+                idBooking = rs.getString("idBooking");
             }
             idBooking = idBooking.substring(1);
             i = Integer.parseInt(idBooking) + 1;
@@ -520,7 +517,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         refresh2 = new javax.swing.JLabel();
         ScrollData = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        Masuk = new javax.swing.JToggleButton();
+        Pesan = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         txtBooking = new javax.swing.JTextField();
@@ -558,7 +555,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmb_User = new javax.swing.JComboBox<>();
         txtNoKTP = new javax.swing.JTextField();
         cmb_Status2 = new javax.swing.JComboBox<>();
-        LamaSewa = new javax.swing.JTextField();
+        txtLamaSewa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lbl_besar = new javax.swing.JLabel();
         LaporanSidebar = new javax.swing.JPanel();
@@ -1225,21 +1222,21 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Masuk.setBackground(new java.awt.Color(52, 135, 239));
-        Masuk.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Masuk.setForeground(new java.awt.Color(255, 255, 255));
-        Masuk.setText("Pesan");
-        Masuk.setBorder(null);
-        Masuk.setBorderPainted(false);
-        Masuk.setContentAreaFilled(false);
-        Masuk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Masuk.setOpaque(true);
-        Masuk.addActionListener(new java.awt.event.ActionListener() {
+        Pesan.setBackground(new java.awt.Color(52, 135, 239));
+        Pesan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Pesan.setForeground(new java.awt.Color(255, 255, 255));
+        Pesan.setText("Pesan");
+        Pesan.setBorder(null);
+        Pesan.setBorderPainted(false);
+        Pesan.setContentAreaFilled(false);
+        Pesan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Pesan.setOpaque(true);
+        Pesan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MasukActionPerformed(evt);
+                PesanActionPerformed(evt);
             }
         });
-        jPanel1.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 870, 100, 40));
+        jPanel1.add(Pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 870, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel6.setText("ID Booking");
@@ -1434,7 +1431,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         cmb_Status2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Status", "Tersedia", "Tidak Tersedia" }));
         cmb_Status2.setEnabled(false);
         jPanel1.add(cmb_Status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 800, 335, 30));
-        jPanel1.add(LamaSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 335, 30));
+        jPanel1.add(txtLamaSewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 335, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icons8_refresh_24px.png"))); // NOI18N
         jButton1.setContentAreaFilled(false);
@@ -3144,9 +3141,31 @@ public class MenuAdmin extends javax.swing.JFrame {
         bttn_close7.setBounds(1110, 10, 20, 20);
     }//GEN-LAST:event_lbl_Menu9MouseClicked
 
-    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_MasukActionPerformed
+    private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
+        try {
+            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga;
+            String  LamaSewa = null;
+            IdBooking = txtBooking.getText();
+            KodeKamar = txtKodeKamarPsn.getText();
+            id_cust = txtIdCust.getText();
+            String tampil = "yyyy-MM-dd";
+            SimpleDateFormat fmt = new SimpleDateFormat(tampil);
+            TglMasuk = String.valueOf(fmt.format(tgl_masuk.getDate()));
+            TglKeluar = String.valueOf(fmt.format(tgl_keluar.getDate()));
+            LamaSewa = txtLamaSewa.getText();
+            kode_pembayaran = txtKodeBayar.getText();
+            TotalHarga = txtTotaBayar.getText();
+
+            ConnectDB konek = new ConnectDB();
+            konek.insertDB0(IdBooking, KodeKamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
+
+            JOptionPane.showMessageDialog(rootPane, "Tambah Data Pemesanan Sukses!!!");
+            resetForm2();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan Pada Data Pemesanan");
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_PesanActionPerformed
 
     private void lbl_kkamarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kkamarMouseEntered
         setIconPanelButton3(lbl_icoPemesanan2);
@@ -3866,37 +3885,37 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_refresh2MouseClicked
 
     private void Cek1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cek1ActionPerformed
-       try {
-        ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
-        ico_kamar.setIcon(kmr);
-        ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
-        ico_beranda.setIcon(brd);
-        ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
-        ico_pemesanan.setIcon(psn);
-        ImageIcon lpr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_4_30px.png"));
-        ico_laporan.setIcon(lpr);
-        ImageIcon ptn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_5_30px.png"));
-        ico_pengaturan.setIcon(ptn);
+        try {
+            ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
+            ico_kamar.setIcon(kmr);
+            ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+            ico_beranda.setIcon(brd);
+            ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
+            ico_pemesanan.setIcon(psn);
+            ImageIcon lpr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_4_30px.png"));
+            ico_laporan.setIcon(lpr);
+            ImageIcon ptn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_5_30px.png"));
+            ico_pengaturan.setIcon(ptn);
 
-        setColor(kamar);
-        setColorText(Lbl_kamar);
-        resetColor(beranda);
-        resetColorText(Lbl_beranda);
-        resetColor(pemesanan);
-        resetColorText(Lbl_pemesanan);
-        resetColor(laporan);
-        resetColorText(Lbl_laporan);
-        resetColor(pengaturan);
-        resetColorText(Lbl_pengaturan);
+            setColor(kamar);
+            setColorText(Lbl_kamar);
+            resetColor(beranda);
+            resetColorText(Lbl_beranda);
+            resetColor(pemesanan);
+            resetColorText(Lbl_pemesanan);
+            resetColor(laporan);
+            resetColorText(Lbl_laporan);
+            resetColor(pengaturan);
+            resetColorText(Lbl_pengaturan);
 
-        KamarSideBar.setVisible(true);
-        KamarSideBar.setEnabled(true);
-        BerandaSideBar.setVisible(false);
-        BerandaSideBar.setEnabled(false);
-        PemesananSideBar.setVisible(false);
-        PemesananSideBar.setEnabled(false);
-           
-           DefaultTableModel tbl = new DefaultTableModel();
+            KamarSideBar.setVisible(true);
+            KamarSideBar.setEnabled(true);
+            BerandaSideBar.setVisible(false);
+            BerandaSideBar.setEnabled(false);
+            PemesananSideBar.setVisible(false);
+            PemesananSideBar.setEnabled(false);
+
+            DefaultTableModel tbl = new DefaultTableModel();
             tbl.addColumn("KODE KAMAR");
             tbl.addColumn("LOKASI KAMAR");
             tbl.addColumn("JENIS KAMAR");
@@ -3908,7 +3927,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             String cari = cmbkategori.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB10();
- 
+
             while (rs.next()) {
                 tbl.addRow(new Object[]{
                     rs.getString("kode_kamar"),
@@ -3928,37 +3947,37 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_Cek1ActionPerformed
 
     private void Cek2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cek2ActionPerformed
-       try {
-        ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
-        ico_kamar.setIcon(kmr);
-        ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
-        ico_beranda.setIcon(brd);
-        ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
-        ico_pemesanan.setIcon(psn);
-        ImageIcon lpr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_4_30px.png"));
-        ico_laporan.setIcon(lpr);
-        ImageIcon ptn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_5_30px.png"));
-        ico_pengaturan.setIcon(ptn);
+        try {
+            ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
+            ico_kamar.setIcon(kmr);
+            ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+            ico_beranda.setIcon(brd);
+            ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
+            ico_pemesanan.setIcon(psn);
+            ImageIcon lpr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_4_30px.png"));
+            ico_laporan.setIcon(lpr);
+            ImageIcon ptn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_5_30px.png"));
+            ico_pengaturan.setIcon(ptn);
 
-        setColor(kamar);
-        setColorText(Lbl_kamar);
-        resetColor(beranda);
-        resetColorText(Lbl_beranda);
-        resetColor(pemesanan);
-        resetColorText(Lbl_pemesanan);
-        resetColor(laporan);
-        resetColorText(Lbl_laporan);
-        resetColor(pengaturan);
-        resetColorText(Lbl_pengaturan);
+            setColor(kamar);
+            setColorText(Lbl_kamar);
+            resetColor(beranda);
+            resetColorText(Lbl_beranda);
+            resetColor(pemesanan);
+            resetColorText(Lbl_pemesanan);
+            resetColor(laporan);
+            resetColorText(Lbl_laporan);
+            resetColor(pengaturan);
+            resetColorText(Lbl_pengaturan);
 
-        KamarSideBar.setVisible(true);
-        KamarSideBar.setEnabled(true);
-        BerandaSideBar.setVisible(false);
-        BerandaSideBar.setEnabled(false);
-        PemesananSideBar.setVisible(false);
-        PemesananSideBar.setEnabled(false);
-           
-           DefaultTableModel tbl = new DefaultTableModel();
+            KamarSideBar.setVisible(true);
+            KamarSideBar.setEnabled(true);
+            BerandaSideBar.setVisible(false);
+            BerandaSideBar.setEnabled(false);
+            PemesananSideBar.setVisible(false);
+            PemesananSideBar.setEnabled(false);
+
+            DefaultTableModel tbl = new DefaultTableModel();
             tbl.addColumn("KODE KAMAR");
             tbl.addColumn("LOKASI KAMAR");
             tbl.addColumn("JENIS KAMAR");
@@ -3970,7 +3989,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             String cari = cmbkategori.getSelectedItem().toString();
             ConnectDB konek = new ConnectDB();
             ResultSet rs = konek.selectDB11();
- 
+
             while (rs.next()) {
                 tbl.addRow(new Object[]{
                     rs.getString("kode_kamar"),
@@ -4008,7 +4027,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_tgl_keluarMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-hitungselisih();
+        hitungselisih();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
@@ -4095,7 +4114,6 @@ hitungselisih();
     private javax.swing.JPanel InputDataKamar;
     private javax.swing.JPanel InputDataPelanggan;
     private javax.swing.JPanel KamarSideBar;
-    private javax.swing.JTextField LamaSewa;
     private javax.swing.JPanel LaporanSidebar;
     private javax.swing.JLabel Lbl_Alamat;
     private javax.swing.JLabel Lbl_Cari;
@@ -4124,11 +4142,11 @@ hitungselisih();
     private javax.swing.JLabel Lbl_pemesanan;
     private javax.swing.JLabel Lbl_pengaturan;
     private javax.swing.JLabel Lbl_status;
-    private javax.swing.JToggleButton Masuk;
     private javax.swing.JPanel PanelChat;
     private javax.swing.JPanel PanelKamar;
     private javax.swing.JPanel PemesananSideBar;
     private javax.swing.JPanel PengaturanSideBar;
+    private javax.swing.JToggleButton Pesan;
     private javax.swing.JScrollPane ScrollData;
     private javax.swing.JScrollPane ScrollData2;
     private javax.swing.JScrollPane ScrollForm;
@@ -4313,6 +4331,7 @@ hitungselisih();
     private javax.swing.JTextField txtKodeBayar;
     private javax.swing.JTextField txtKodeKamar;
     private javax.swing.JTextField txtKodeKamarPsn;
+    private javax.swing.JTextField txtLamaSewa;
     public static final javax.swing.JTextField txtNama = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();

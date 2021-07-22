@@ -40,6 +40,24 @@ public class ConnectDB {
         }
     }
 
+        public void insertDB0(String IdBooking, String KodeKamar, String id_cust, String TglMasuk, String LamaSewa, String TglKeluar, String kode_pembayaran, String TotalHarga) {
+        try {
+            String sql = "insert into pemesanan values (?,?,?,?,?,?,?,?)";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, IdBooking);
+            pst.setString(2, KodeKamar);
+            pst.setString(3, id_cust);
+            pst.setString(4, TglMasuk);
+            pst.setString(5, TglKeluar);
+            pst.setString(6, LamaSewa);
+            pst.setString(7, TotalHarga);
+            pst.setString(8, kode_pembayaran);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void insertDB(String id_cust, String noktp, String nama, String jeniskelamin, String alamat, String nohppribadi, String nohpdarurat) {
         try {
             String sql = "insert into pelanggan values (?,?,?,?,?,?,?)";
