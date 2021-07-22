@@ -163,6 +163,8 @@ public class MenuUser extends javax.swing.JFrame {
         bttn_Menu7 = new javax.swing.JLabel();
         bttn_minimized2 = new javax.swing.JButton();
         bttn_close1 = new javax.swing.JButton();
+        Cek2 = new javax.swing.JButton();
+        Cek1 = new javax.swing.JButton();
         lbl_judul1 = new javax.swing.JLabel();
         lbl_Slide1 = new javax.swing.JLabel();
         lbl_Text2 = new javax.swing.JLabel();
@@ -196,6 +198,7 @@ public class MenuUser extends javax.swing.JFrame {
         DataKamar = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtcari2 = new javax.swing.JTextField();
+        refresh3 = new javax.swing.JLabel();
         SideBarMenu = new javax.swing.JPanel();
         lbl_photos = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -322,6 +325,26 @@ public class MenuUser extends javax.swing.JFrame {
         });
         BerandaSideBar.add(bttn_close1);
         bttn_close1.setBounds(1110, 10, 20, 20);
+
+        Cek2.setContentAreaFilled(false);
+        Cek2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Cek2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cek2ActionPerformed(evt);
+            }
+        });
+        BerandaSideBar.add(Cek2);
+        Cek2.setBounds(720, 665, 62, 25);
+
+        Cek1.setContentAreaFilled(false);
+        Cek1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Cek1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cek1ActionPerformed(evt);
+            }
+        });
+        BerandaSideBar.add(Cek1);
+        Cek1.setBounds(385, 665, 62, 25);
 
         lbl_judul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/Label.png"))); // NOI18N
         BerandaSideBar.add(lbl_judul1);
@@ -652,6 +675,16 @@ public class MenuUser extends javax.swing.JFrame {
         });
         PanelKamar.add(txtcari2);
         txtcari2.setBounds(90, 60, 220, 30);
+
+        refresh3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"))); // NOI18N
+        refresh3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        refresh3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refresh3MouseClicked(evt);
+            }
+        });
+        PanelKamar.add(refresh3);
+        refresh3.setBounds(1100, 70, 30, 30);
 
         ScrollData2.setViewportView(PanelKamar);
 
@@ -1550,6 +1583,125 @@ public class MenuUser extends javax.swing.JFrame {
         }, 1 * 5);
     }//GEN-LAST:event_refresh2MouseClicked
 
+    private void Cek1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cek1ActionPerformed
+        try {
+        ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
+        ico_kamar.setIcon(kmr);
+        ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+        ico_beranda.setIcon(brd);
+        ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
+        ico_pemesanan.setIcon(psn);
+        setColor(kamar);
+        setColorText(Lbl_kamar);
+        resetColor(beranda);
+        resetColorText(Lbl_beranda);
+        resetColor(pemesanan);
+        resetColorText(Lbl_pemesanan);
+
+        KamarSideBar.setVisible(true);
+        KamarSideBar.setEnabled(true);
+        BerandaSideBar.setVisible(false);
+        BerandaSideBar.setEnabled(false);
+        PemesananSideBar.setVisible(false);
+        PemesananSideBar.setEnabled(false);
+
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("KODE KAMAR");
+            tbl.addColumn("LOKASI KAMAR");
+            tbl.addColumn("JENIS KAMAR");
+            tbl.addColumn("DESKRIPSI KAMAR");
+            tbl.addColumn("HARGA");
+            tbl.addColumn("STATUS");
+            DataKamar.setModel(tbl);
+
+            String cari = cmbkategori.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB10();
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_Cek1ActionPerformed
+
+    private void Cek2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cek2ActionPerformed
+        try {
+        ImageIcon kmr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_2_30px_P.png"));
+        ico_kamar.setIcon(kmr);
+        ImageIcon brd = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_1_30px.png"));
+        ico_beranda.setIcon(brd);
+        ImageIcon psn = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/icon_3_30px.png"));
+        ico_pemesanan.setIcon(psn);
+        setColor(kamar);
+        setColorText(Lbl_kamar);
+        resetColor(beranda);
+        resetColorText(Lbl_beranda);
+        resetColor(pemesanan);
+        resetColorText(Lbl_pemesanan);
+
+        KamarSideBar.setVisible(true);
+        KamarSideBar.setEnabled(true);
+        BerandaSideBar.setVisible(false);
+        BerandaSideBar.setEnabled(false);
+        PemesananSideBar.setVisible(false);
+        PemesananSideBar.setEnabled(false);
+
+            DefaultTableModel tbl = new DefaultTableModel();
+            tbl.addColumn("KODE KAMAR");
+            tbl.addColumn("LOKASI KAMAR");
+            tbl.addColumn("JENIS KAMAR");
+            tbl.addColumn("DESKRIPSI KAMAR");
+            tbl.addColumn("HARGA");
+            tbl.addColumn("STATUS");
+            DataKamar.setModel(tbl);
+
+            String cari = cmbkategori.getSelectedItem().toString();
+            ConnectDB konek = new ConnectDB();
+            ResultSet rs = konek.selectDB11();
+
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("kode_kamar"),
+                    rs.getString("lokasi_kamar"),
+                    rs.getString("jenis_kamar"),
+                    rs.getString("dsc_fasilitas"),
+                    rs.getString("harga"),
+                    rs.getString("status")
+                });
+                DataKamar.setModel(tbl);
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Error Pada Pilih Kategori!!!");
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_Cek2ActionPerformed
+
+    private void refresh3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh3MouseClicked
+        ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh.gif"));
+        refresh3.setIcon(gmbr);
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                showTableKamar2();
+                ImageIcon gmbr = new ImageIcon(getClass().getResource("/SI_AiraKost_Asset/refresh1.png"));
+                refresh3.setIcon(gmbr);
+            }
+        }, 1 * 5);
+    }//GEN-LAST:event_refresh3MouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1616,6 +1768,8 @@ public class MenuUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BerandaSideBar;
     private javax.swing.JPanel Bg;
+    private javax.swing.JButton Cek1;
+    private javax.swing.JButton Cek2;
     private javax.swing.JTable DataKamar;
     public static final javax.swing.JTextArea FieldDsc = new javax.swing.JTextArea();
     public static final javax.swing.JLabel FieldHarga = new javax.swing.JLabel();
@@ -1717,6 +1871,7 @@ public class MenuUser extends javax.swing.JFrame {
     public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
     private javax.swing.JPanel pemesanan;
     private javax.swing.JLabel refresh2;
+    private javax.swing.JLabel refresh3;
     private com.toedter.calendar.JDateChooser tgl_keluar;
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
