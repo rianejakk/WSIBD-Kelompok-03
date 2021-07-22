@@ -64,6 +64,7 @@ public class LoginMini extends javax.swing.JFrame {
                             try {
                                 rs2.next();
                                 NamaUser2.setText(rs2.getString("NamaLengkap"));
+                                MenuUser.txtIdCust.setText(rs2.getString("id_cust"));
                                 MenuUser.txtNoKTP.setText(rs2.getString("NoKTP"));
                                 MenuUser.txtNoKTP.setEnabled(false);
                                 MenuUser.nm_lengkap.setText(rs2.getString("NamaLengkap"));

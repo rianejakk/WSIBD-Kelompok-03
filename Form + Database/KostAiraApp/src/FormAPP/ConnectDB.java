@@ -151,6 +151,18 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+        public void updateDB(String kode_kamar, String status) {
+        try {
+            String sql = "update kamar set status=? where kode_kamar =?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, status);
+            pst.setString(2, kode_kamar);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public ResultSet selectDB() {
         try {
