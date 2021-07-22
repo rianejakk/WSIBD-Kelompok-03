@@ -28,6 +28,8 @@ public class Daftar extends javax.swing.JFrame {
 
         loader.setVisible(false);
         loader.setEnabled(false);
+        sukses.setVisible(false);
+        sukses.setEnabled(false);
         autoNumber(txtId);
         autoNumber();
         cmbAkses.setSelectedItem("User");
@@ -602,6 +604,8 @@ public class Daftar extends javax.swing.JFrame {
         } else {
         jtButton_Daftar.setVisible(false);
         jtButton_Daftar.setEnabled(false);
+        DaftarFull.setVisible(false);
+        DaftarFull.setEnabled(false);
         loader.setVisible(true);
         loader.setEnabled(true);
         new java.util.Timer().schedule(new TimerTask() {
