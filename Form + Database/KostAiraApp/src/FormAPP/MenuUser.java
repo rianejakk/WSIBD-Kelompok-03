@@ -258,7 +258,6 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         txtBooking = new javax.swing.JTextField();
-        txtKodeKamarPsn = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
@@ -284,13 +283,8 @@ public class MenuUser extends javax.swing.JFrame {
         tgl_keluar = new com.toedter.calendar.JDateChooser();
         tgl_masuk = new com.toedter.calendar.JDateChooser();
         jLabel50 = new javax.swing.JLabel();
-        nm_lengkap = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        txtJenisKelamin = new javax.swing.JTextField();
-        txtIdCust = new javax.swing.JTextField();
         lbl_User = new javax.swing.JLabel();
-        cmb_User = new javax.swing.JComboBox<>();
-        txtNoKTP = new javax.swing.JTextField();
         cmb_Status2 = new javax.swing.JComboBox<>();
         txtLamaSewa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -1901,7 +1895,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JToggleButton chatBx;
     private javax.swing.JComboBox<String> cmb_Status2;
-    private javax.swing.JComboBox<String> cmb_User;
+    public static final javax.swing.JComboBox<String> cmb_User = new javax.swing.JComboBox<>();
     private javax.swing.JComboBox<String> cmbkategori;
     private javax.swing.JPanel form;
     private javax.swing.JRadioButton gb1;
@@ -1966,7 +1960,7 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_judul4;
     private javax.swing.JLabel lbl_photos;
     private javax.swing.JLabel lbl_wa_icon;
-    private javax.swing.JTextField nm_lengkap;
+    public static final javax.swing.JTextField nm_lengkap = new javax.swing.JTextField();
     private javax.swing.JPanel pemesanan;
     private javax.swing.JLabel refresh2;
     private javax.swing.JLabel refresh3;
@@ -1974,14 +1968,14 @@ public class MenuUser extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser tgl_masuk;
     public static final javax.swing.JTextField txtAlamat = new javax.swing.JTextField();
     private javax.swing.JTextField txtBooking;
-    private javax.swing.JTextField txtIdCust;
-    private javax.swing.JTextField txtJenisKelamin;
+    public static final javax.swing.JTextField txtIdCust = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtJenisKelamin = new javax.swing.JTextField();
     private javax.swing.JTextField txtKodeBayar;
-    private javax.swing.JTextField txtKodeKamarPsn;
+    public static final javax.swing.JTextField txtKodeKamarPsn = new javax.swing.JTextField();
     private javax.swing.JTextField txtLamaSewa;
     public static final javax.swing.JTextField txtNoDarurat = new javax.swing.JTextField();
     public static final javax.swing.JTextField txtNoHP = new javax.swing.JTextField();
-    private javax.swing.JTextField txtNoKTP;
+    public static final javax.swing.JTextField txtNoKTP = new javax.swing.JTextField();
     private javax.swing.JTextField txtTotaBayar;
     private javax.swing.JTextField txtcari2;
     // End of variables declaration//GEN-END:variables
