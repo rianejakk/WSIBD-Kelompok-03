@@ -46,6 +46,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     public MenuAdmin() {
         initComponents();
         ScrollForm.getVerticalScrollBar().setUnitIncrement(8);
+        ScrollForm1.getVerticalScrollBar().setUnitIncrement(8);
         ScrollData.getVerticalScrollBar().setUnitIncrement(8);
         iconApp();
         BerandaSideBar.setVisible(true);
@@ -1303,7 +1304,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel52.setText("Status");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 810, 126, -1));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 805, 126, -1));
 
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtKodeBayar.setText("0410-01-000301-50-4");
@@ -1384,12 +1385,15 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel51.setText("Tanggal Masuk");
         jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 126, -1));
 
+        tgl_keluar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tgl_keluar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tgl_keluarMouseClicked(evt);
             }
         });
         jPanel1.add(tgl_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 335, 30));
+
+        tgl_masuk.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jPanel1.add(tgl_masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 335, 30));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -1604,6 +1608,9 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         lbl_kpesan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SI_AiraKost_Asset/kotakLaporan.png"))); // NOI18N
         lbl_kpesan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_kpesanMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbl_kpesanMouseEntered(evt);
             }
@@ -3142,10 +3149,10 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
         try {
-            String IdBooking, KodeKamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga, status;
+            String IdBooking, kode_kamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga, status;
             String  LamaSewa = null;
             IdBooking = txtBooking.getText();
-            KodeKamar = txtKodeKamarPsn.getText();
+            kode_kamar = txtKodeKamarPsn.getText();
             id_cust = txtIdCust.getText();
             String tampil = "yyyy-MM-dd";
             SimpleDateFormat fmt = new SimpleDateFormat(tampil);
@@ -3157,8 +3164,8 @@ public class MenuAdmin extends javax.swing.JFrame {
             status = cmb_Status2.getSelectedItem().toString();
             
             ConnectDB konek = new ConnectDB();
-            konek.insertDB0(IdBooking, KodeKamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
-            konek.updateDB(null, null, null, null, status, null);
+            konek.insertDB0(IdBooking, kode_kamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
+            konek.updateDB(kode_kamar, status);
             JOptionPane.showMessageDialog(rootPane, "Tambah Data Pemesanan Sukses!!!");
             resetForm2();
         } catch (Exception e) {
@@ -4029,6 +4036,16 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         hitungselisih();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lbl_kpesanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_kpesanMouseClicked
+        try {
+            ConnectDB konek = new ConnectDB();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("DataPemesanan.jasper"), null, konek.con);
+            JasperViewer.viewReport(jp, false);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_lbl_kpesanMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
