@@ -1459,8 +1459,6 @@ public class MenuUser extends javax.swing.JFrame {
                     BerandaSideBar.setEnabled(false);
                     KamarSideBar.setVisible(false);
                     KamarSideBar.setEnabled(false);
-                    PemesananSideBar.setVisible(false);
-                    PemesananSideBar.setEnabled(false);
                     PemesananSideBar.setVisible(true);
                     PemesananSideBar.setEnabled(true);
                 } else {

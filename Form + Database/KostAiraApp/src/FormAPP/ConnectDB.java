@@ -243,7 +243,8 @@ public class ConnectDB {
 
     public ResultSet selectDB4() {
         try {
-            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
+            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+                    + "FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar ORDER BY kode_kamar ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
@@ -291,7 +292,8 @@ public class ConnectDB {
 
     public ResultSet selectDB8() {
         try {
-            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
+            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+                    + "FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar ORDER BY kode_kamar ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
@@ -339,7 +341,8 @@ public class ConnectDB {
 
     public ResultSet slctDB() {
         try {
-            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
+            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan "
+                    + "INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user ORDER BY id_cust ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
