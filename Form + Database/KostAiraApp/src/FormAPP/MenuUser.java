@@ -85,7 +85,6 @@ public class MenuUser extends javax.swing.JFrame {
         autoNumbers();
         txtKodeKamarPsn.setText("");
         tgl_masuk.setDate(null);
-        buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtLamaSewa.setText("");
         txtTotaBayar.setText("");

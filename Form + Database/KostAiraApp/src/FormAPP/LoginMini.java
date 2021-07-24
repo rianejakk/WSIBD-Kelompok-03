@@ -94,7 +94,7 @@ public class LoginMini extends javax.swing.JFrame {
                     System.out.println(ex.getMessage());
                 }
             }
-        }, 500 * 5);
+        }, 5 * 5);
     }
 
     

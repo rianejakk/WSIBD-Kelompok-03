@@ -93,7 +93,7 @@ public class Login extends javax.swing.JFrame {
                     System.out.println(ex.getMessage());
                 }
             }
-        }, 500 * 5);
+        }, 5 * 5);
     }
 
     @SuppressWarnings("unchecked")

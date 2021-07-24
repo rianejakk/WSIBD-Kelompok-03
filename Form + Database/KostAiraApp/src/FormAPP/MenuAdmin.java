@@ -346,7 +346,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtNoDarurat.setText("");
         tgl_masuk.setDate(null);
         txtLamaSewa.setText("");
-        buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtTotaBayar.setText("");
         FotoKamar.setIcon(null);
@@ -1308,6 +1307,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel52.setText("Status");
         jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 805, 126, -1));
 
+        txtKodeBayar.setEditable(false);
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtKodeBayar.setText("0410-01-000301-50-4");
         jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 750, 335, -1));
@@ -3483,11 +3483,18 @@ public class MenuAdmin extends javax.swing.JFrame {
             status = cmb_Status.getSelectedItem().toString();
 
             ConnectDB konek = new ConnectDB();
-            konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
-
-            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
+            if(gambar == null){
+            konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
+            gambar = null;            
             resetForm(InputDataKamar);
             showTableKamar();
+            } else {
+                konek.updateGbr(kode_kamar, gambar);
+                gambar = null;
+                resetForm(InputDataKamar);
+                showTableKamar();
+            }
+            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Kamar");
             System.out.println(e.getMessage());
