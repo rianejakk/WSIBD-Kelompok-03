@@ -85,7 +85,6 @@ public class MenuUser extends javax.swing.JFrame {
         autoNumbers();
         txtKodeKamarPsn.setText("");
         tgl_masuk.setDate(null);
-        buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtLamaSewa.setText("");
         txtTotaBayar.setText("");
@@ -1460,8 +1459,6 @@ public class MenuUser extends javax.swing.JFrame {
                     BerandaSideBar.setEnabled(false);
                     KamarSideBar.setVisible(false);
                     KamarSideBar.setEnabled(false);
-                    PemesananSideBar.setVisible(false);
-                    PemesananSideBar.setEnabled(false);
                     PemesananSideBar.setVisible(true);
                     PemesananSideBar.setEnabled(true);
                 } else {

@@ -346,7 +346,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         txtNoDarurat.setText("");
         tgl_masuk.setDate(null);
         txtLamaSewa.setText("");
-        buttonGroup1.clearSelection();
         tgl_keluar.setDate(null);
         txtTotaBayar.setText("");
         FotoKamar.setIcon(null);
@@ -1308,6 +1307,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel52.setText("Status");
         jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 805, 126, -1));
 
+        txtKodeBayar.setEditable(false);
         txtKodeBayar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtKodeBayar.setText("0410-01-000301-50-4");
         jPanel1.add(txtKodeBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 750, 335, -1));
@@ -2720,6 +2720,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         PemesananSideBar.setEnabled(false);
         LaporanSidebar.setVisible(false);
         LaporanSidebar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_pengaturanMouseClicked
 
     private void laporanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laporanMouseClicked
@@ -2755,6 +2759,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         PemesananSideBar.setEnabled(false);
         PengaturanSideBar.setVisible(false);
         PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_laporanMouseClicked
 
     private void bttn_LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_LogoutActionPerformed
@@ -2797,6 +2805,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         BerandaSideBar.setEnabled(false);
         KamarSideBar.setVisible(false);
         KamarSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);
+        PengaturanSideBar.setVisible(false);
+        PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_pemesananMouseClicked
 
     private void kamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kamarMouseClicked
@@ -2828,6 +2844,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         BerandaSideBar.setEnabled(false);
         PemesananSideBar.setVisible(false);
         PemesananSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);
+        PengaturanSideBar.setVisible(false);
+        PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_kamarMouseClicked
 
     private void berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_berandaMouseClicked
@@ -2859,6 +2883,14 @@ public class MenuAdmin extends javax.swing.JFrame {
         KamarSideBar.setEnabled(false);
         PemesananSideBar.setVisible(false);
         PemesananSideBar.setEnabled(false);
+        LaporanSidebar.setVisible(false);
+        LaporanSidebar.setEnabled(false);
+        PengaturanSideBar.setVisible(false);
+        PengaturanSideBar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_berandaMouseClicked
 
     private void LaporanSidebarSidebarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporanSidebarSidebarMousePressed
@@ -3156,7 +3188,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
         try {
             String IdBooking, kode_kamar, id_cust, TglMasuk, TglKeluar, kode_pembayaran, TotalHarga, status;
-            String  LamaSewa = null;
+            String LamaSewa = null;
             IdBooking = txtBooking.getText();
             kode_kamar = txtKodeKamarPsn.getText();
             id_cust = txtIdCust.getText();
@@ -3168,7 +3200,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             kode_pembayaran = txtKodeBayar.getText();
             TotalHarga = txtTotaBayar.getText();
             status = cmb_Status2.getSelectedItem().toString();
-            
+
             ConnectDB konek = new ConnectDB();
             konek.insertDB0(IdBooking, kode_kamar, id_cust, TglMasuk, LamaSewa, TglKeluar, kode_pembayaran, TotalHarga);
             konek.updateDB(kode_kamar, status);
@@ -3253,6 +3285,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         LaporanSidebar.setEnabled(false);
         PengaturanSideBar.setVisible(false);
         PengaturanSideBar.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_lbl_kpelanggan2MouseClicked
 
     private void lbl_Menu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Menu3MouseClicked
@@ -3298,6 +3332,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         PemesananSideBar.setEnabled(false);
         LaporanSidebar.setVisible(false);
         LaporanSidebar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_lbl_backMouseClicked
 
     private void bttn_Hide2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_Hide2ActionPerformed
@@ -3471,6 +3509,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         PemesananSideBar.setEnabled(false);
         LaporanSidebar.setVisible(false);
         LaporanSidebar.setEnabled(false);
+        InputDataPelanggan.setVisible(false);
+        InputDataPelanggan.setEnabled(false);
+        InputDataKamar.setVisible(false);
+        InputDataKamar.setEnabled(false);
     }//GEN-LAST:event_lbl_back1MouseClicked
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -3483,11 +3525,18 @@ public class MenuAdmin extends javax.swing.JFrame {
             status = cmb_Status.getSelectedItem().toString();
 
             ConnectDB konek = new ConnectDB();
-            konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
-
-            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");
-            resetForm(InputDataKamar);
-            showTableKamar();
+            if (gambar == null) {
+                konek.updateDB(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status);
+                gambar = null;
+                resetForm(InputDataKamar);
+                showTableKamar();
+            } else {
+                konek.updateGbr(kode_kamar, gambar);
+                gambar = null;
+                resetForm(InputDataKamar);
+                showTableKamar();
+            }
+            JOptionPane.showMessageDialog(rootPane, "Edit Data Sukses");;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Ada Kesalahan dalam Pengeditan Data Kamar");
             System.out.println(e.getMessage());
@@ -3507,24 +3556,24 @@ public class MenuAdmin extends javax.swing.JFrame {
         if (txtPath1.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Gambar harus diisi");
         } else {
-        try {
-            String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
-            kode_kamar = txtKodeKamar.getText();
-            dsc_fasilitas = txtFasilitas.getText();
-            lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
-            Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
-            status = cmb_Status.getSelectedItem().toString();
-                    
-            ConnectDB konek = new ConnectDB();
-            konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
+            try {
+                String kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status;
+                kode_kamar = txtKodeKamar.getText();
+                dsc_fasilitas = txtFasilitas.getText();
+                lokasi_kamar = cmb_lokasikamar.getSelectedItem().toString();
+                Kjenis_Kamar = cmb_jeniskamar.getSelectedItem().toString();
+                status = cmb_Status.getSelectedItem().toString();
 
-            JOptionPane.showMessageDialog(rootPane, "Sukses");
-            resetForm(InputDataKamar);
-            showTableKamar();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error");
-            System.out.println(e.getMessage());
-        }
+                ConnectDB konek = new ConnectDB();
+                konek.insertDB1(kode_kamar, lokasi_kamar, Kjenis_Kamar, dsc_fasilitas, status, gambar);
+
+                JOptionPane.showMessageDialog(rootPane, "Sukses");
+                resetForm(InputDataKamar);
+                showTableKamar();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error");
+                System.out.println(e.getMessage());
+            }
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
@@ -3758,8 +3807,6 @@ public class MenuAdmin extends javax.swing.JFrame {
                     BerandaSideBar.setEnabled(false);
                     KamarSideBar.setVisible(false);
                     KamarSideBar.setEnabled(false);
-                    PemesananSideBar.setVisible(false);
-                    PemesananSideBar.setEnabled(false);
                     LaporanSidebar.setVisible(false);
                     LaporanSidebar.setEnabled(false);
                     PengaturanSideBar.setVisible(false);
@@ -3931,6 +3978,14 @@ public class MenuAdmin extends javax.swing.JFrame {
             BerandaSideBar.setEnabled(false);
             PemesananSideBar.setVisible(false);
             PemesananSideBar.setEnabled(false);
+            LaporanSidebar.setVisible(false);
+            LaporanSidebar.setEnabled(false);
+            PengaturanSideBar.setVisible(false);
+            PengaturanSideBar.setEnabled(false);
+            InputDataPelanggan.setVisible(false);
+            InputDataPelanggan.setEnabled(false);
+            InputDataKamar.setVisible(false);
+            InputDataKamar.setEnabled(false);
 
             DefaultTableModel tbl = new DefaultTableModel();
             tbl.addColumn("KODE KAMAR");
@@ -3993,6 +4048,14 @@ public class MenuAdmin extends javax.swing.JFrame {
             BerandaSideBar.setEnabled(false);
             PemesananSideBar.setVisible(false);
             PemesananSideBar.setEnabled(false);
+            LaporanSidebar.setVisible(false);
+            LaporanSidebar.setEnabled(false);
+            PengaturanSideBar.setVisible(false);
+            PengaturanSideBar.setEnabled(false);
+            InputDataPelanggan.setVisible(false);
+            InputDataPelanggan.setEnabled(false);
+            InputDataKamar.setVisible(false);
+            InputDataKamar.setEnabled(false);
 
             DefaultTableModel tbl = new DefaultTableModel();
             tbl.addColumn("KODE KAMAR");

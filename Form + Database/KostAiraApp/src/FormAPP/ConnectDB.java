@@ -40,7 +40,7 @@ public class ConnectDB {
         }
     }
 
-        public void insertDB0(String IdBooking, String KodeKamar, String id_cust, String TglMasuk, String LamaSewa, String TglKeluar, String kode_pembayaran, String TotalHarga) {
+    public void insertDB0(String IdBooking, String KodeKamar, String id_cust, String TglMasuk, String LamaSewa, String TglKeluar, String kode_pembayaran, String TotalHarga) {
         try {
             String sql = "insert into pemesanan values (?,?,?,?,?,?,?,?)";
             pst = con.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class ConnectDB {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void insertDB(String id_cust, String noktp, String nama, String jeniskelamin, String alamat, String nohppribadi, String nohpdarurat) {
         try {
             String sql = "insert into pelanggan values (?,?,?,?,?,?,?)";
@@ -136,23 +136,34 @@ public class ConnectDB {
         }
     }
 
-    public void updateDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status, byte[] gambar) {
+    public void updateDB(String kode_kamar, String lokasi_kamar, String Kjenis_Kamar, String dsc_fasilitas, String status) {
         try {
-            String sql = "update kamar set lokasi_kamar=?, Kjenis_Kamar=?, dsc_fasilitas=?, status=?, gambar=? where kode_kamar =?";
+            String sql = "update kamar set lokasi_kamar=?, Kjenis_Kamar=?, dsc_fasilitas=?, status=? where kode_kamar =?";
             pst = con.prepareStatement(sql);
             pst.setString(1, lokasi_kamar);
             pst.setString(2, Kjenis_Kamar);
             pst.setString(3, dsc_fasilitas);
             pst.setString(4, status);
-            pst.setBytes(5, gambar);
-            pst.setString(6, kode_kamar);
+            pst.setString(5, kode_kamar);
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-        public void updateDB(String kode_kamar, String status) {
+
+    public void updateGbr(String kode_kamar, byte[] gambar) {
+        try {
+            String sql = "update kamar set gambar=? where kode_kamar =?";
+            pst = con.prepareStatement(sql);
+            pst.setBytes(1, gambar);
+            pst.setString(2, kode_kamar);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateDB(String kode_kamar, String status) {
         try {
             String sql = "update kamar set status=? where kode_kamar =?";
             pst = con.prepareStatement(sql);
@@ -185,7 +196,7 @@ public class ConnectDB {
         }
         return rs;
     }
-    
+
     public ResultSet selectDB0(String idBooking) {
         try {
             String sql = "select * from pemesanan";
@@ -232,7 +243,8 @@ public class ConnectDB {
 
     public ResultSet selectDB4() {
         try {
-            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
+            String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+                    + "FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar ORDER BY kode_kamar ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
@@ -253,7 +265,7 @@ public class ConnectDB {
         }
         return rs;
     }
-    
+
     public ResultSet selectDB6(String cari) {
         try {
             String sql = "SELECT kode_kamar, lokasi_kamar, kamar.Kjenis_Kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
@@ -266,10 +278,10 @@ public class ConnectDB {
         }
         return rs;
     }
-    
+
     public ResultSet selectDB7(String kode_kamar) {
         try {
-            String sql = "select * from kamar where kode_kamar='"+ kode_kamar + "'";
+            String sql = "select * from kamar where kode_kamar='" + kode_kamar + "'";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
@@ -277,10 +289,11 @@ public class ConnectDB {
         }
         return rs;
     }
-    
+
     public ResultSet selectDB8() {
         try {
-            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar";
+            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+                    + "FROM kamar, jns_kamar WHERE kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar ORDER BY kode_kamar ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
@@ -288,9 +301,10 @@ public class ConnectDB {
         }
         return rs;
     }
+
     public ResultSet selectDB9(String cari) {
         try {
-                        String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
                     + "FROM kamar INNER JOIN jns_kamar ON kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar WHERE jns_kamar.jenis_kamar LIKE '" + cari
                     + "'";;
             st = con.createStatement();
@@ -300,10 +314,10 @@ public class ConnectDB {
         }
         return rs;
     }
-    
-        public ResultSet selectDB10() {
+
+    public ResultSet selectDB10() {
         try {
-                        String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
                     + "FROM kamar INNER JOIN jns_kamar ON kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar WHERE jns_kamar.jenis_kamar LIKE 'Kamar 1'";;
             st = con.createStatement();
             rs = st.executeQuery(sql);
@@ -312,10 +326,10 @@ public class ConnectDB {
         }
         return rs;
     }
-        
-        public ResultSet selectDB11() {
+
+    public ResultSet selectDB11() {
         try {
-                        String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
+            String sql = "SELECT kode_kamar, lokasi_kamar, jns_kamar.jenis_kamar, dsc_fasilitas, jns_kamar.harga, status "
                     + "FROM kamar INNER JOIN jns_kamar ON kamar.Kjenis_Kamar=jns_kamar.Kjenis_Kamar WHERE jns_kamar.jenis_kamar LIKE 'Kamar 2'";;
             st = con.createStatement();
             rs = st.executeQuery(sql);
@@ -324,12 +338,11 @@ public class ConnectDB {
         }
         return rs;
     }
-        
-    
-    
+
     public ResultSet slctDB() {
         try {
-            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user";
+            String sql = "SELECT id_cust, NoKTP,  NamaLengkap, Alamat, JenisKelamin, NoHpPribadi, NoHpDarurat, id_user, login_user.username, login_user.password, akses From pelanggan "
+                    + "INNER JOIN login_user ON pelanggan.id_cust=login_user.id_user ORDER BY id_cust ASC";
             st = con.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException ex) {
